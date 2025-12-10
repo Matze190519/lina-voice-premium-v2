@@ -95,7 +95,7 @@ export default function Process() {
                 <span className="text-muted-foreground">Das LR Profi Business Pro Set.</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Sie investieren nicht in eine Lizenzgebühr, die verpufft. Sie erhalten physische Werte. 
+                Sie investieren nicht in leere Setup-Kosten. Sie erhalten physische Werte. 
                 Hochwertige Health & Beauty Produkte im Wert von über 1.500€ (UVP).
               </p>
               

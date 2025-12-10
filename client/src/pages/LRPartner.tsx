@@ -21,13 +21,13 @@ export default function LRPartner() {
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden bg-background border-b border-border">
         <div className="container mx-auto px-4 text-center">
-          <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Unser Hardware-Partner</Badge>
+          <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Unser Produkt-Partner</Badge>
           <h1 className="text-5xl md:text-6xl font-heading font-bold leading-tight mb-6 text-primary">
             LR Health & Beauty <br />
-            <span className="text-muted-foreground">Der Lieferant Ihres Startpakets.</span>
+            <span className="text-muted-foreground">Der Lieferant Ihres Business-Pakets.</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Warum LR? Wir nutzen die Infrastruktur und die hochwertigen Produkt-Bundles eines der größten deutschen Direktvertriebsunternehmen als Basis für unser Lizenzmodell.
+            Warum LR? Wir nutzen die Infrastruktur und die hochwertigen Produkt-Bundles eines der größten deutschen Direktvertriebsunternehmen als Basis für unser Geschäftsmodell.
           </p>
         </div>
       </section>
@@ -69,11 +69,11 @@ export default function LRPartner() {
                 <div className="mb-4 p-3 w-fit rounded-lg bg-primary/5">
                   <Package className="w-8 h-8 text-primary" />
                 </div>
-                <CardTitle className="font-heading text-xl text-primary">Hardware & Logistik</CardTitle>
+                <CardTitle className="font-heading text-xl text-primary">Logistik & Fulfillment</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  LR liefert das physische "Profi Business Set" (Zeitgard Pro, etc.), das als Hardware-Komponente Ihres Einstiegs dient.
+                  LR liefert das physische "Profi Business Set" (Zeitgard Pro, etc.), das als physische Komponente Ihres Einstiegs dient.
                 </p>
               </CardContent>
             </Card>
@@ -86,11 +86,11 @@ export default function LRPartner() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10">
             <h2 className="text-3xl font-heading font-bold mb-6 text-primary text-center">
-              Das Prinzip: Hardware statt Lizenzgebühr
+              Das Prinzip: Produktwert statt Setup-Kosten
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-center">
               Anstatt einer hohen Einrichtungsgebühr für die KI-Integration erwerben Sie das <strong>LR Profi Business Set</strong>. 
-              Dies dient als "Eintrittskarte" in unser Ökosystem.
+              Dies dient als "Eintrittskarte" in unsere Plattform.
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -132,7 +132,7 @@ export default function LRPartner() {
             <AccordionItem value="item-1">
               <AccordionTrigger>Warum läuft die Abwicklung über LR?</AccordionTrigger>
               <AccordionContent>
-                Wir nutzen das LR Profi Business Set als standardisiertes Hardware-Paket. Dies ermöglicht uns, die KI-Einrichtung ohne separate Agentur-Rechnung anzubieten. Sie erhalten für Ihr Geld also echten Warenwert statt nur einer Dienstleistung.
+                Wir nutzen das LR Profi Business Set als standardisiertes Business-Paket. Dies ermöglicht uns, die KI-Einrichtung ohne separate Agentur-Rechnung anzubieten. Sie erhalten für Ihr Geld also echten Warenwert statt nur einer Dienstleistung.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">

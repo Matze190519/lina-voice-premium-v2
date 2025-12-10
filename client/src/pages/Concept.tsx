@@ -15,10 +15,10 @@ export default function Concept() {
       {/* Hero */}
       <section className="bg-background py-24 border-b border-border">
         <div className="container mx-auto px-4 text-center">
-          <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Das Lizenzmodell</Badge>
+          <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Das Geschäftsmodell</Badge>
           <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 text-primary">
-            Hardware statt <br />
-            <span className="text-muted-foreground">Lizenzgebühr.</span>
+            Produktwert statt <br />
+            <span className="text-muted-foreground">Setup-Kosten.</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Statt hoher Setup-Kosten erwerben Sie ein physisches Produktpaket. Die KI-Einrichtung ist inklusive.
@@ -39,9 +39,9 @@ export default function Concept() {
                   Bei uns ist das anders.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Wir nutzen die Infrastruktur von LR Health & Beauty als Hardware-Lieferant. 
+                  Wir nutzen die Infrastruktur von LR Health & Beauty als Produkt-Partner. 
                   Sie erwerben das <strong>LR Profi Business Pro Set</strong> als physische Basis. 
-                  Die KI-Technologie Lina Voice erhalten Sie im Rahmen dieses Hardware-Kaufs <strong>kostenfrei</strong> dazu.
+                  Die KI-Technologie Lina Voice erhalten Sie im Rahmen dieses Produkt-Investition <strong>kostenfrei</strong> dazu.
                 </p>
               </div>
 
@@ -230,7 +230,7 @@ export default function Concept() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-sm text-muted-foreground">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Keine Lizenzkosten</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Keine Setup-Kosten</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Server & Updates inklusive</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Dashboard Zugang inklusive</li>
                 </ul>
