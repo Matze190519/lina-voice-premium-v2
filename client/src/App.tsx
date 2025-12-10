@@ -11,6 +11,7 @@ import Concept from "./pages/Concept";
 import About from "./pages/About";
 import Process from "./pages/Process";
 import Privacy from "./pages/Privacy";
+import Impressum from "./pages/Impressum";
 
 function Router() {
   return (
@@ -19,9 +20,10 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/technologie" component={Technology} />
         <Route path="/konzept" component={Concept} />
-        <Route path="/about" component={About} />
+        <Route path="/ueber-uns" component={About} />
           <Route path="/process" component={Process} />
         <Route path="/privacy" component={Privacy} />
+        <Route path="/impressum" component={Impressum} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
