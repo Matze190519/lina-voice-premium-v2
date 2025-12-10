@@ -56,7 +56,7 @@ export default function Concept() {
                   <div className="px-6 pb-4">
                     <p className="mb-4">
                       Seit über 40 Jahren erfolgreich: Über 50.000 Firmenwagen wurden bereits übergeben. 
-                      Als Partner profitieren Sie von Großkunden-Konditionen, die sonst nur Konzernen vorbehalten sind.
+                      Als Unternehmer profitieren Sie von Großkunden-Konditionen, die sonst nur Konzernen vorbehalten sind.
                     </p>
                   </div>
                   
@@ -100,8 +100,8 @@ export default function Concept() {
                       </div>
                     </div>
                     <ul className="space-y-2 text-sm border-t border-border pt-4">
-                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Ohne Anzahlung</strong> möglich</li>
-                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Monatlicher Autobonus</strong> von LR möglich</li>
+                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Keine Anzahlung</strong> (Liquiditätsschonend)</li>
+                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Sofort bestellbar</strong> (Einmalige Qualifikation)</li>
                       <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Privat & geschäftlich nutzbar</li>
                     </ul>
                   </div>
