@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface ContactFormProps {
   open: boolean;
@@ -65,6 +66,13 @@ export default function ContactForm({ open, onOpenChange }: ContactFormProps) {
             <div className="space-y-2">
               <Label htmlFor="message">Nachricht (Optional)</Label>
               <Textarea id="message" placeholder="Ich interessiere mich für das LR Profi Business Pro Set..." />
+            </div>
+
+            <div className="flex items-start space-x-2">
+              <Checkbox id="terms" required />
+              <Label htmlFor="terms" className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden. Hinweis: Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Weitere Informationen finden Sie in der <a href="/privacy" className="underline text-primary hover:text-primary/80">Datenschutzerklärung</a>.
+              </Label>
             </div>
 
             <Button type="submit" className="w-full bg-primary text-white hover:bg-primary/90" disabled={isSubmitting}>
