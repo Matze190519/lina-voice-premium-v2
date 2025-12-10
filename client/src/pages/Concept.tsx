@@ -45,39 +45,66 @@ export default function Concept() {
                 </p>
               </div>
 
-              <Card className="bg-white border-border shadow-sm">
+              <Card className="bg-white border-border shadow-sm overflow-hidden">
                 <CardHeader>
                   <CardTitle className="font-heading text-xl text-primary flex items-center gap-2">
                     <Car className="w-6 h-6" />
                     Das LR Autokonzept
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-muted-foreground">
-                  <p className="mb-4">
-                    Seit über 40 Jahren erfolgreich: Über 50.000 Firmenwagen wurden bereits übergeben. 
-                    Als Partner profitieren Sie von Großkunden-Konditionen, die sonst nur Konzernen vorbehalten sind.
-                  </p>
-                  <div className="space-y-4 mb-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary font-bold text-xs">VW</div>
-                      <div>
-                        <p className="font-bold text-foreground text-sm">Volkswagen & Audi</p>
-                        <p className="text-xs">Attraktive Leasingraten für Einsteiger und Profis.</p>
+                <CardContent className="text-muted-foreground p-0">
+                  <div className="px-6 pb-4">
+                    <p className="mb-4">
+                      Seit über 40 Jahren erfolgreich: Über 50.000 Firmenwagen wurden bereits übergeben. 
+                      Als Partner profitieren Sie von Großkunden-Konditionen, die sonst nur Konzernen vorbehalten sind.
+                    </p>
+                  </div>
+                  
+                  {/* Car Gallery */}
+                  <div className="grid grid-cols-3 gap-1 px-1 mb-4">
+                    <div className="relative group cursor-pointer overflow-hidden rounded-sm aspect-[4/3]">
+                      <img src="/images/mercedes-a-class.jpg" alt="Mercedes A-Class" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
+                        <span className="text-white text-xs font-bold">Mercedes-Benz</span>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary font-bold text-xs">MB</div>
-                      <div>
-                        <p className="font-bold text-foreground text-sm">Mercedes-Benz</p>
-                        <p className="text-xs">Premium-Fahrzeuge zu Sonderkonditionen.</p>
+                    <div className="relative group cursor-pointer overflow-hidden rounded-sm aspect-[4/3]">
+                      <img src="/images/audi-q3.jpg" alt="Audi Q3" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
+                        <span className="text-white text-xs font-bold">Audi Q3</span>
+                      </div>
+                    </div>
+                    <div className="relative group cursor-pointer overflow-hidden rounded-sm aspect-[4/3]">
+                      <img src="/images/vw-tiguan.jpg" alt="VW Tiguan" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
+                        <span className="text-white text-xs font-bold">VW Tiguan</span>
                       </div>
                     </div>
                   </div>
-                  <ul className="space-y-2 text-sm border-t border-border pt-4">
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Ohne Anzahlung</strong> möglich</li>
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Monatlicher Autobonus</strong> von LR möglich</li>
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Privat & geschäftlich nutzbar</li>
-                  </ul>
+
+                  <div className="px-6 pb-6">
+                    <div className="space-y-4 mb-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary font-bold text-xs">VW</div>
+                        <div>
+                          <p className="font-bold text-foreground text-sm">Volkswagen & Audi</p>
+                          <p className="text-xs">Attraktive Leasingraten für Einsteiger und Profis.</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary font-bold text-xs">MB</div>
+                        <div>
+                          <p className="font-bold text-foreground text-sm">Mercedes-Benz</p>
+                          <p className="text-xs">Premium-Fahrzeuge zu Sonderkonditionen.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <ul className="space-y-2 text-sm border-t border-border pt-4">
+                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Ohne Anzahlung</strong> möglich</li>
+                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Monatlicher Autobonus</strong> von LR möglich</li>
+                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Privat & geschäftlich nutzbar</li>
+                    </ul>
+                  </div>
                 </CardContent>
               </Card>
 
