@@ -22,6 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { href: "/", label: "Vision" },
     { href: "/technologie", label: "Technologie" },
     { href: "/konzept", label: "Konzept & Preise" },
+    { href: "/process", label: "Ablauf" },
     { href: "/ueber-uns", label: "Über Uns" },
   ];
 

@@ -18,7 +18,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <Badge variant="outline" className="mb-6 border-primary/20 text-primary bg-primary/5 px-4 py-1 text-sm uppercase tracking-widest font-semibold">
-                Exklusives Pilotprojekt
+                Exklusives Pilotprojekt - Jetzt Starten
               </Badge>
               <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6 text-primary">
                 Ihr 24/7 <br />
@@ -26,8 +26,8 @@ export default function Home() {
                 Assistent.
               </h1>
               <p className="text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed font-light">
-                Lina telefoniert für Sie, vereinbart Termine und qualifiziert Leads. 
-                Präzise wie ein Uhrwerk. Charmant wie ein Mensch.
+                Wir starten jetzt das exklusive Pilotprojekt für ausgewählte Unternehmer. 
+                Seien Sie einer der Ersten, der von dieser Technologie profitiert.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -49,7 +49,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <p>Bereits <span className="text-primary font-bold">500+</span> Unternehmer auf der Warteliste</p>
+                <p>Bereits <span className="text-primary font-bold">100+</span> Unternehmer auf der Warteliste</p>
               </div>
             </motion.div>
 
@@ -82,7 +82,59 @@ export default function Home() {
       </section>
         
 
-        {/* Value Proposition */}
+        {/* LR Product Set Teaser */}
+      <section className="py-24 bg-background border-b border-border">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">Ihr Startpaket</Badge>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-primary">
+                Mehr als nur Software. <br />
+                <span className="text-muted-foreground">Physische Werte inklusive.</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Mit dem LR Profi Business Pro Set erhalten Sie nicht nur Zugang zu Lina, sondern hochwertige Produkte im Wert von über 1.500€.
+              </p>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-primary" />
+                  <span className="text-foreground font-medium">Zeitgard Pro Cosmetic Device</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-primary" />
+                  <span className="text-foreground font-medium">Aloe Vera Special Care Box</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-primary" />
+                  <span className="text-foreground font-medium">Mind Master & Pro Balance</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-primary" />
+                  <span className="text-foreground font-medium">Komplette Lina Voice Einrichtung</span>
+                </div>
+              </div>
+
+              <Button variant="outline" className="text-primary border-primary/20 hover:bg-primary/5" onClick={() => window.location.href = '/process'}>
+                Details zum Ablauf ansehen <ChevronRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+            <div className="order-1 lg:order-2 relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl transform rotate-3" />
+              <img 
+                src="/images/lr-set-preview.png" 
+                alt="LR Profi Business Pro Set" 
+                className="relative rounded-2xl shadow-xl w-full h-auto border border-border bg-white p-2"
+                onError={(e) => {
+                  e.currentTarget.src = "https://via.placeholder.com/600x400?text=LR+Profi+Business+Pro+Set";
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">

@@ -2,37 +2,24 @@ import { useEffect } from 'react';
 
 export default function BotpressChat() {
   useEffect(() => {
+    // Check if script is already present to avoid duplicates
+    if (document.querySelector('script[src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"]')) {
+      return;
+    }
+
     const script = document.createElement('script');
-    script.src = 'https://cdn.botpress.cloud/webchat/v1/inject.js';
+    script.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js';
     script.async = true;
     document.body.appendChild(script);
 
-    script.onload = () => {
-      // @ts-ignore
-      window.botpressWebChat.init({
-        "composerPlaceholder": "Frag Lina etwas...",
-        "botConversationDescription": "Lina Voice AI Assistant",
-        "botId": "5206232e-4377-44da-9664-43610444659c", // Extracted from lrlifestyle.pro
-        "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
-        "messagingUrl": "https://messaging.botpress.cloud",
-        "clientId": "5206232e-4377-44da-9664-43610444659c",
-        "webhookId": "63602506-6552-4096-8a7b-5e038f0a006e",
-        "lazySocket": true,
-        "themeName": "prism",
-        "botName": "Lina Voice",
-        "avatarUrl": "https://ki-voice.net/wp-content/uploads/2024/10/Lina-Avatar.png", // Using existing avatar
-        "stylesheet": "https://webchat-styler-css.botpress.app/prod/code/06f6b646-8d43-4566-9369-182367839660/v66368/style.css",
-        "frontendVersion": "v1",
-        "useSessionStorage": true,
-        "enableConversationDeletion": true,
-        "showPoweredBy": false,
-        "theme": "prism",
-        "themeColor": "#2563eb"
-      });
-    };
+    const script2 = document.createElement('script');
+    script2.src = 'https://files.bpcontent.cloud/2024/10/08/10/20241008103322-L8K3G7X0.js';
+    script2.async = true;
+    document.body.appendChild(script2);
 
     return () => {
-      document.body.removeChild(script);
+      // Cleanup if needed, though Botpress usually handles its own lifecycle
+      // Removing the script tag doesn't necessarily remove the widget instance
     };
   }, []);
 

@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ArrowRight, Package, ShieldCheck, TrendingUp } from "lucide-react";
+import { Check, Package, Sparkles, CreditCard } from "lucide-react";
 
 export default function Concept() {
   return (
@@ -24,7 +24,7 @@ export default function Concept() {
       {/* The Concept */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-primary">Warum ein Startset?</h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
@@ -36,33 +36,65 @@ export default function Concept() {
                   Wir schenken Ihnen diese Einrichtungskosten. Im Gegenzug werden Sie Teil unseres Partner-Netzwerks (LR Health & Beauty).
                   Das Startset ist Ihre Eintrittskarte – und Sie erhalten dafür echte, physische Werte.
                 </p>
-                <ul className="space-y-4 mt-8">
-                  <li className="flex items-start gap-3">
-                    <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
-                    <span>Sie erhalten hochwertige Produkte im Wert von <strong>855 €</strong>.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
-                    <span>Sie bekommen Zugang zu unserem exklusiven Business-Netzwerk.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="w-6 h-6 text-primary shrink-0 mt-1" />
-                    <span>Wir finanzieren die Entwicklung von Lina durch dieses Netzwerk-Wachstum.</span>
-                  </li>
-                </ul>
+                
+                <div className="bg-white p-6 rounded-xl border border-border shadow-sm mt-8">
+                  <h3 className="font-heading font-bold text-primary mb-4 flex items-center gap-2">
+                    <Sparkles className="w-5 h-5" />
+                    Was Sie bekommen (Profi Business Pro):
+                  </h3>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-1" />
+                      <span><strong>Zeitgard Pro Cosmetic Device</strong> (Das Highlight!)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-1" />
+                      <span>Zeitgard Face Cleansing Tool & Brush</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-1" />
+                      <span>Zeitgard Face Smoothing, Peeling & Body Skincare Tools</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-1" />
+                      <span>Aloe Vera All-in One Set (inkl. Special Care Bag)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-1" />
+                      <span>Mind Master Formula Gold & 5in1 Beauty Elixir</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-1" />
+                      <span>LR Discovery Box & ProBalance</span>
+                    </li>
+                  </ul>
+                </div>
+
               </div>
             </div>
-            <div className="relative">
+            
+            <div className="relative sticky top-24">
               <div className="absolute inset-0 bg-primary/5 rounded-3xl transform rotate-3" />
               <Card className="relative bg-white shadow-xl border-border">
                 <CardHeader>
-                  <CardTitle className="font-heading text-2xl">LR Profi Business Set</CardTitle>
+                  <CardTitle className="font-heading text-2xl">LR Profi Business Pro</CardTitle>
+                  <Badge variant="secondary" className="w-fit mt-2">Artikel-Nr. 96726101</Badge>
                 </CardHeader>
                 <CardContent>
-                  <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center text-muted-foreground">
-                    <Package className="w-16 h-16 opacity-20" />
-                    {/* Placeholder for Product Image */}
+                  <div className="aspect-video bg-muted rounded-lg mb-6 overflow-hidden relative group">
+                    <img 
+                      src="/images/lr-set-product.png" 
+                      alt="LR Profi Business Set" 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      onError={(e) => {
+                        e.currentTarget.src = "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=2070&auto=format&fit=crop";
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                      <p className="text-white font-medium">Inkl. Zeitgard Pro Device</p>
+                    </div>
                   </div>
+                  
                   <div className="flex justify-between items-end mb-4">
                     <div>
                       <p className="text-sm text-muted-foreground">Regulärer Preis</p>
@@ -73,8 +105,24 @@ export default function Concept() {
                       <p className="text-4xl font-bold text-primary">712,50 €</p>
                     </div>
                   </div>
+
+                  <div className="bg-primary/5 p-4 rounded-lg mb-6 border border-primary/10">
+                    <div className="flex items-center gap-2 mb-2">
+                      <CreditCard className="w-4 h-4 text-primary" />
+                      <span className="font-bold text-primary text-sm">Bequeme Ratenzahlung möglich:</span>
+                    </div>
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>1. Rate (sofort):</span>
+                      <span className="font-medium text-foreground">285,00 €</span>
+                    </div>
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>2.-4. Rate (monatlich):</span>
+                      <span className="font-medium text-foreground">142,50 €</span>
+                    </div>
+                  </div>
+
                   <p className="text-xs text-muted-foreground text-center mb-6">+ 29,90 € einmalige Admin-Gebühr</p>
-                  <Button className="w-full bg-primary text-white hover:bg-primary/90 h-12 text-lg">
+                  <Button className="w-full bg-primary text-white hover:bg-primary/90 h-12 text-lg shadow-lg shadow-primary/20">
                     Jetzt Partner werden & Lina sichern
                   </Button>
                 </CardContent>

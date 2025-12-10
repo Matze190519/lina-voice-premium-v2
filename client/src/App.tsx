@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Technology from "./pages/Technology";
 import Concept from "./pages/Concept";
 import About from "./pages/About";
+import Process from "./pages/Process";
+import Privacy from "./pages/Privacy";
 
 function Router() {
   return (
@@ -17,25 +19,19 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/technologie" component={Technology} />
         <Route path="/konzept" component={Concept} />
-        <Route path="/ueber-uns" component={About} />
+        <Route path="/about" component={About} />
+          <Route path="/process" component={Process} />
+        <Route path="/privacy" component={Privacy} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />
