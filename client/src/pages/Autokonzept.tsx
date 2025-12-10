@@ -100,8 +100,7 @@ export default function Autokonzept() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Mit Ihrem <strong>Profi Business Startpaket</strong> erfüllen Sie bereits die Voraussetzungen (ca. 2.000 PW). 
-                  Sie können Ihr Fahrzeug direkt bestellen.
+                 Mit Ihrem <strong>Profi Business Startpaket</strong> (2.000 PW) und nur <strong>zwei Empfehlungen</strong> erreichen Sie die nötigen 4.000 PW. Damit sind Sie sofort bestellberechtigt.
                 </p>
               </CardContent>
             </Card>
@@ -169,7 +168,7 @@ export default function Autokonzept() {
             <AccordionItem value="item-1">
               <AccordionTrigger>Wie schnell kann ich ein Fahrzeug bestellen?</AccordionTrigger>
               <AccordionContent>
-                Sofort. Mit dem Erwerb des Profi Business Startpakets erfüllen Sie die einmalige Qualifikation (Punktwerte) und sind direkt bestellberechtigt.
+                Sobald Sie gesamt 4.000 Punktwerte erreicht haben. Das schaffen Sie einfach: Ihr eigenes Profi Business Paket bringt bereits 2.000 PW. Vermitteln Sie das Konzept an nur zwei weitere Partner (z.B. aus Ihrem Netzwerk), haben Sie die Qualifikation sofort erreicht.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">

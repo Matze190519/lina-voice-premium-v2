@@ -101,7 +101,7 @@ export default function Concept() {
                     </div>
                     <ul className="space-y-2 text-sm border-t border-border pt-4">
                       <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Keine Anzahlung</strong> (Liquiditätsschonend)</li>
-                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Sofort bestellbar</strong> (Einmalige Qualifikation)</li>
+                      <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Sofort bestellbar</strong> (ab 4.000 PW Gesamtumsatz)</li>
                       <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Privat & geschäftlich nutzbar</li>
                     </ul>
                   </div>
