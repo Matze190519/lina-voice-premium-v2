@@ -19,6 +19,21 @@ export default function BotpressChat() {
     script2.async = true;
     document.body.appendChild(script2);
 
+    // Add custom styles to adjust position on mobile
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @media (max-width: 768px) {
+        .bpw-widget-btn {
+          bottom: 90px !important; /* Move up to avoid overlapping bottom navigation/buttons */
+          right: 20px !important;
+        }
+        .bpw-chat-container {
+          bottom: 90px !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
     return () => {
       // Cleanup not strictly necessary for global widget, but good practice to avoid memory leaks if component unmounts frequently
     };
