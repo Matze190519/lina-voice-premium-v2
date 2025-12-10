@@ -42,29 +42,29 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-primary text-white flex items-center justify-center rounded-sm shadow-lg group-hover:shadow-primary/20 transition-all">
-                <span className="font-heading font-bold text-xl">L</span>
-              </div>
-              <span className="font-heading font-bold text-xl tracking-tight text-primary">
-                LINA VOICE
-              </span>
-            </a>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 bg-primary text-white flex items-center justify-center rounded-sm shadow-lg group-hover:shadow-primary/20 transition-all">
+              <span className="font-heading font-bold text-xl">L</span>
+            </div>
+            <span className="font-heading font-bold text-xl tracking-tight text-primary">
+              LINA VOICE
+            </span>
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <a className={cn(
+              <Link 
+                key={link.href} 
+                href={link.href}
+                className={cn(
                   "text-sm font-medium transition-colors hover:text-primary relative py-1",
                   location === link.href 
                     ? "text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary" 
                     : "text-muted-foreground"
-                )}>
-                  {link.label}
-                </a>
+                )}
+              >
+                {link.label}
               </Link>
             ))}
           </div>
@@ -91,16 +91,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-border shadow-xl p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <a 
-                  className={cn(
-                    "text-lg font-medium py-2 border-b border-border/50",
-                    location === link.href ? "text-primary" : "text-muted-foreground"
-                  )}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
+              <Link 
+                key={link.href} 
+                href={link.href}
+                className={cn(
+                  "text-lg font-medium py-2 border-b border-border/50",
+                  location === link.href ? "text-primary" : "text-muted-foreground"
+                )}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
               </Link>
             ))}
             <Button className="w-full mt-4 bg-primary text-white">
@@ -136,17 +136,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="font-heading font-bold text-lg mb-6">Unternehmen</h4>
               <ul className="space-y-3 text-white/70">
-                <li><Link href="/ueber-uns"><a className="hover:text-white transition-colors">Über Uns</a></Link></li>
-                <li><Link href="/konzept"><a className="hover:text-white transition-colors">Karriere</a></Link></li>
-                <li><Link href="/kontakt"><a className="hover:text-white transition-colors">Kontakt</a></Link></li>
+                <li><Link href="/ueber-uns" className="hover:text-white transition-colors">Über Uns</Link></li>
+                <li><Link href="/konzept" className="hover:text-white transition-colors">Karriere</Link></li>
+                <li><Link href="/kontakt" className="hover:text-white transition-colors">Kontakt</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-heading font-bold text-lg mb-6">Rechtliches</h4>
               <ul className="space-y-3 text-white/70">
-                <li><Link href="/impressum"><a className="hover:text-white transition-colors">Impressum</a></Link></li>
-                <li><Link href="/privacy"><a className="hover:text-white transition-colors">Datenschutz</a></Link></li>
+                <li><Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link></li>
+                <li><Link href="/privacy" className="hover:text-white transition-colors">Datenschutz</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors">AGB</a></li>
               </ul>
             </div>
