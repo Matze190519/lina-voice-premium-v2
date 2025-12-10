@@ -7,7 +7,8 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Technology from "./pages/Technology";
-import Concept from "./pages/Concept";
+import Concept from "@/pages/Concept";
+import Autokonzept from "@/pages/Autokonzept";
 import About from "./pages/About";
 import Process from "./pages/Process";
 import Privacy from "./pages/Privacy";
@@ -20,6 +21,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/technologie" component={Technology} />
         <Route path="/konzept" component={Concept} />
+      <Route path="/autokonzept" component={Autokonzept} />
         <Route path="/ueber-uns" component={About} />
           <Route path="/process" component={Process} />
         <Route path="/privacy" component={Privacy} />
