@@ -2,10 +2,16 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles, CreditCard, Car, Star, ShieldCheck } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
+import { useState } from "react";
 
 export default function Concept() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
     <div className="pb-20">
+      <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} />
+      
       {/* Hero */}
       <section className="bg-background py-24 border-b border-border">
         <div className="container mx-auto px-4 text-center">
@@ -48,13 +54,29 @@ export default function Concept() {
                 </CardHeader>
                 <CardContent className="text-muted-foreground">
                   <p className="mb-4">
-                    Als LR-Partner profitieren Sie zusätzlich von exklusiven Mobilitätslösungen. 
-                    Fahren Sie Premium-Fahrzeuge (Mercedes, Audi, VW) zu unschlagbaren Leasing-Konditionen.
+                    Seit über 40 Jahren erfolgreich: Über 50.000 Firmenwagen wurden bereits übergeben. 
+                    Als Partner profitieren Sie von Großkunden-Konditionen, die sonst nur Konzernen vorbehalten sind.
                   </p>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Ohne Anzahlung möglich</li>
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Inklusive Versicherung & Service</li>
-                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Für Sie und Ihre Mitarbeiter</li>
+                  <div className="space-y-4 mb-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary font-bold text-xs">VW</div>
+                      <div>
+                        <p className="font-bold text-foreground text-sm">Volkswagen & Audi</p>
+                        <p className="text-xs">Attraktive Leasingraten für Einsteiger und Profis.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary font-bold text-xs">MB</div>
+                      <div>
+                        <p className="font-bold text-foreground text-sm">Mercedes-Benz</p>
+                        <p className="text-xs">Premium-Fahrzeuge zu Sonderkonditionen.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-sm border-t border-border pt-4">
+                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Ohne Anzahlung</strong> möglich</li>
+                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> <strong>Monatlicher Autobonus</strong> von LR möglich</li>
+                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-primary" /> Privat & geschäftlich nutzbar</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -149,7 +171,10 @@ export default function Concept() {
                     </div>
                   </div>
 
-                  <Button className="w-full bg-primary text-white hover:bg-primary/90 h-14 text-lg font-bold shadow-lg shadow-primary/20 transition-all hover:scale-[1.02]">
+                  <Button 
+                    className="w-full bg-primary text-white hover:bg-primary/90 h-14 text-lg font-bold shadow-lg shadow-primary/20 transition-all hover:scale-[1.02]"
+                    onClick={() => setIsContactOpen(true)}
+                  >
                     Jetzt Startpaket anfragen
                   </Button>
                 </CardContent>
