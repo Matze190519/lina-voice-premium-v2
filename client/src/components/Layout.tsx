@@ -23,6 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { href: "/technologie", label: "Technologie" },
     { href: "/konzept", label: "Konzept & Preise" },
     { href: "/autokonzept", label: "Autokonzept" },
+    { href: "/lr-partner", label: "LR Partner" },
     { href: "/process", label: "Ablauf" },
     { href: "/ueber-uns", label: "Über Uns" },
   ];
