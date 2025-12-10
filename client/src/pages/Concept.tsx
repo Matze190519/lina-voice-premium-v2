@@ -15,14 +15,14 @@ export default function Concept() {
       {/* Hero */}
       <section className="bg-background py-24 border-b border-border">
         <div className="container mx-auto px-4 text-center">
-          <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Das Geschäftsmodell</Badge>
+          <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Das Lizenzmodell</Badge>
           <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6 text-primary">
-            Investition in <br />
-            <span className="text-muted-foreground">echte Werte.</span>
+            Hardware statt <br />
+            <span className="text-muted-foreground">Lizenzgebühr.</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Keine Lizenzgebühren für "Luft". Sie investieren in physische Produkte und erhalten die Technologie als Bonus.
-            Ein Modell, das sich für Unternehmer rechnet.
+            Statt hoher Setup-Kosten erwerben Sie ein physisches Produktpaket. Die KI-Einrichtung ist inklusive.
+            Ein transparentes Modell für Unternehmer.
           </p>
         </div>
       </section>
@@ -39,9 +39,9 @@ export default function Concept() {
                   Bei uns ist das anders.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Durch unsere Partnerschaft mit LR Health & Beauty refinanzieren wir die Technologie-Entwicklung. 
-                  Sie erwerben das <strong>LR Profi Business Pro Set</strong> – hochwertige Produkte für Ihre Gesundheit und Ästhetik – 
-                  und erhalten den Zugang zu Lina Voice <strong>kostenfrei</strong> dazu.
+                  Wir nutzen die Infrastruktur von LR Health & Beauty als Hardware-Lieferant. 
+                  Sie erwerben das <strong>LR Profi Business Pro Set</strong> als physische Basis. 
+                  Die KI-Technologie Lina Voice erhalten Sie im Rahmen dieses Hardware-Kaufs <strong>kostenfrei</strong> dazu.
                 </p>
               </div>
 
