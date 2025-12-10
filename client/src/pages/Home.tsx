@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Phone, Zap, Shield, Globe, Cpu, ChevronRight, Play, Star, TrendingUp } from "lucide-react";
+import { Check, Phone, Zap, Shield, Globe, Cpu, ChevronRight, Play, Star, TrendingUp, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import BotpressChat from "@/components/BotpressChat";
 import ContactForm from "@/components/ContactForm";
@@ -20,38 +20,50 @@ export default function Home() {
     <div className="pb-20">
       <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} type={contactType} />
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="relative pt-24 pb-32 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse-slow" />
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Badge variant="outline" className="mb-6 border-primary/20 text-primary bg-primary/5 px-4 py-1 text-sm uppercase tracking-widest font-semibold">
-                Exklusives Pilotprojekt - Jetzt Starten
-              </Badge>
-              <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-6 text-primary">
-                Ihr 24/7 <br />
-                <span className="text-muted-foreground">Geschäftsführer</span> <br />
-                Assistent.
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-primary/30 text-primary font-medium text-sm mb-8 neon-border">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                ULTRAVOX v0.7 ENGINE ONLINE
+              </div>
+              
+              <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-tight mb-6 text-foreground">
+                Die KI, die für dich <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-gradient bg-300%">ans Telefon geht.</span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed font-light">
-                Wir starten jetzt das exklusive Pilotprojekt für ausgewählte Unternehmer. 
-                Seien Sie einer der Ersten, der von dieser Technologie profitiert.
+              <p className="text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
+                Lina ist deine intelligente Telefon-Assistentin. Sie nimmt Anrufe an, vereinbart Termine und qualifiziert Leads – 24/7, mehrsprachig und in Echtzeit. <br/>
+                <span className="text-primary font-medium">Verpasse nie wieder einen Kunden.</span>
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+4951116653654" className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-sm bg-primary px-8 font-medium text-white transition-all duration-300 hover:bg-primary/90 shadow-lg shadow-primary/20">
-                  <span className="mr-2 text-lg font-bold">5 MIN LIVE DEMO</span>
-                  <Phone className="w-5 h-5 transition-transform group-hover:rotate-12" />
-                </a>
+                <div className="glass-panel p-1 rounded-lg inline-block">
+                  <a href="tel:+4951116653654" className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-md bg-primary/10 border border-primary/50 px-8 font-medium text-primary transition-all duration-300 hover:bg-primary/20 hover:shadow-[0_0_20px_rgba(196,155,255,0.3)]">
+                    <Phone className="w-5 h-5 mr-3 transition-transform group-hover:rotate-12" />
+                    <span className="text-lg font-bold tracking-wide">+49 511 16653654</span>
+                    <span className="ml-2 text-xs opacity-70 font-normal border-l border-primary/30 pl-2">TESTE LIVE</span>
+                  </a>
+                </div>
                 <Button 
-                  variant="outline" 
-                  className="h-14 px-8 border-border hover:bg-muted text-lg text-foreground font-medium rounded-sm"
+                  className="h-16 px-8 bg-white text-black hover:bg-white/90 text-lg font-bold rounded-md shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all hover:scale-105"
                   onClick={() => openContact('consultation')}
                 >
-                  Beratung anfordern
+                  Unverbindlich anfragen <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </div>
               
@@ -73,40 +85,84 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-border bg-white">
-                <img src="/images/future-office.png" alt="Modern Office" className="w-full h-auto object-cover" />
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-border glass-card">
+                <img src="/images/future-office.png" alt="Modern Office" className="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity duration-700" />
                 
-                {/* Floating UI Elements - Clean Business Style */}
-                <div className="absolute top-8 right-8 bg-white/90 backdrop-blur-md border border-border p-4 rounded-lg shadow-lg">
+                {/* Floating UI Elements - Futuristic Style */}
+                <div className="absolute top-8 right-8 glass-panel p-4 rounded-lg shadow-lg border border-primary/20">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">System Active</span>
+                    <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                    <span className="text-xs font-bold text-secondary uppercase tracking-wider">System Active</span>
                   </div>
-                  <div className="text-3xl font-heading font-bold text-primary">300ms</div>
+                  <div className="text-3xl font-heading font-bold text-white text-glow">300ms</div>
                   <div className="text-xs text-muted-foreground font-medium">Reaktionszeit (Ultravox v0.7)</div>
                 </div>
               </div>
               
-              {/* Decorative Elements - Subtle & Elegant */}
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-secondary/30 blur-[80px] rounded-full opacity-50" />
-              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/10 blur-[80px] rounded-full opacity-50" />
+              {/* Decorative Elements - Neon Glow */}
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-secondary/20 blur-[80px] rounded-full opacity-50" />
+              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/20 blur-[80px] rounded-full opacity-50" />
             </motion.div>
           </div>
         </div>
       </section>
-        
 
-        
+      {/* Value Proposition */}
+      <section className="py-24 bg-muted/30 relative">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">
+              Dein Sekretariat der <span className="text-gradient">Zukunft.</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              Lina übernimmt die Routineaufgaben, damit du dich zu 100% auf dein Kerngeschäft konzentrieren kannst.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Phone className="w-8 h-8 text-secondary" />,
+                title: "Nimmt alle Anrufe ab",
+                desc: "Freundliche Begrüßung im Namen deiner Firma – egal ob du im Meeting, auf der Baustelle oder im Urlaub bist."
+              },
+              {
+                icon: <Zap className="w-8 h-8 text-secondary" />,
+                title: "Qualifiziert Leads",
+                desc: "Lina filtert Anrufer vor, fragt Budget und Bedarf ab und bereitet das Gespräch perfekt für dich vor."
+              },
+              {
+                icon: <Globe className="w-8 h-8 text-secondary" />,
+                title: "Mehrsprachig Global",
+                desc: "Lina spricht Deutsch und über 20 weitere Sprachen fließend. Perfekt für internationale Kunden."
+              }
+            ].map((feature, i) => (
+              <Card key={i} className="glass-card border-border/50 hover:border-primary/50 transition-all duration-300 group">
+                <CardHeader>
+                  <div className="mb-4 p-3 w-fit rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    {feature.icon}
+                  </div>
+                  <CardTitle className="font-heading text-xl text-foreground group-hover:text-primary transition-colors">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* LR Product Set Teaser */}
-      <section className="py-24 bg-muted/30 border-b border-border">
-        <div className="container mx-auto px-4">
+      <section className="py-24 border-y border-border/50 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">Ihr Startpaket</Badge>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-primary">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-foreground">
                 Mehr als nur Software. <br />
-                <span className="text-muted-foreground">Realer Warenwert inklusive.</span>
+                <span className="text-gradient">Realer Warenwert inklusive.</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Mit dem LR Profi Business Pro Set erhalten Sie nicht nur Zugang zu Lina, sondern hochwertige Produkte im Wert von über 1.500€.
@@ -131,16 +187,16 @@ export default function Home() {
                 </div>
               </div>
 
-              <Button variant="outline" className="text-primary border-primary/20 hover:bg-primary/5" onClick={() => window.location.href = '/process'}>
+              <Button variant="outline" className="text-primary border-primary/20 hover:bg-primary/10 hover:text-primary" onClick={() => window.location.href = '/process'}>
                 Details zum Ablauf ansehen <ChevronRight className="w-4 h-4 ml-2" />
               </Button>
             </div>
             <div className="order-1 lg:order-2 relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl transform rotate-3" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform rotate-3 blur-xl" />
               <img 
                 src="/images/lr-set-preview.png" 
                 alt="LR Profi Business Pro Set" 
-                className="relative rounded-2xl shadow-xl w-full h-auto border border-border bg-white p-2"
+                className="relative rounded-2xl shadow-2xl w-full h-auto border border-border/50 bg-black/40 backdrop-blur-sm p-2"
                 onError={(e) => {
                   e.currentTarget.src = "https://via.placeholder.com/600x400?text=LR+Profi+Business+Pro+Set";
                 }}
@@ -150,69 +206,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Value Proposition */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-primary">
-              Exzellenz im Detail.
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Lina ist keine Spielerei. Sie ist ein Hochleistungswerkzeug für Unternehmen, die wachsen wollen.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Zap className="w-8 h-8 text-primary" />,
-                title: "Geschwindigkeit",
-                desc: "Ultravox v0.7 Technologie ermöglicht Gespräche in Echtzeit. Keine peinlichen Pausen."
-              },
-              {
-                icon: <Shield className="w-8 h-8 text-primary" />,
-                title: "Zuverlässigkeit",
-                desc: "Deutsche Server-Infrastruktur. 99,9% Uptime. DSGVO-konform."
-              },
-              {
-                icon: <TrendingUp className="w-8 h-8 text-primary" />,
-                title: "Skalierbarkeit",
-                desc: "Vom Einzelunternehmer zum Konzern. Lina wächst mit Ihren Anforderungen."
-              }
-            ].map((feature, i) => (
-              <Card key={i} className="bg-white border-border shadow-sm hover:shadow-md transition-all duration-300">
-                <CardHeader>
-                  <div className="mb-4 p-3 w-fit rounded-lg bg-primary/5">
-                    {feature.icon}
-                  </div>
-                  <CardTitle className="font-heading text-xl text-primary">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-        {/* CTA Section */}
+      {/* CTA Section */}
       <section className="container mx-auto px-4 py-24">
-        <div className="bg-primary rounded-2xl p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="glass-panel rounded-2xl p-12 md:p-20 text-center relative overflow-hidden shadow-2xl border border-primary/30">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+          
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8">Bereit für den nächsten Schritt?</h2>
-            <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto font-light">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8 text-white">Bereit für die Zukunft?</h2>
+            <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto font-light">
               Sichern Sie sich jetzt Ihren Platz im Pilotprojekt und profitieren Sie von Konditionen, die es so nie wieder geben wird.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <a href="tel:+4951116653654" className="bg-white text-primary hover:bg-secondary px-10 py-4 rounded-sm font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-lg">
+              <a href="tel:+4951116653654" className="bg-white text-black hover:bg-white/90 px-10 py-4 rounded-md font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105">
                 <Phone className="w-5 h-5" />
                 +49 511 16653654
               </a>
               <Button 
                 variant="outline" 
-                className="px-10 py-8 border-white/30 hover:bg-white/10 text-lg text-white font-medium rounded-sm"
+                className="px-10 py-8 border-white/20 hover:bg-white/10 text-lg text-white font-medium rounded-md backdrop-blur-sm"
                 onClick={() => openContact('default')}
               >
                 Jetzt anfragen
@@ -221,7 +233,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-        </div>
+    </div>
   );
 }

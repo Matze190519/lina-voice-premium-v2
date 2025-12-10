@@ -9,7 +9,7 @@ export default function BotpressChat() {
 
     const script = document.createElement('script');
     script.id = 'botpress-inject';
-    script.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js';
+    script.src = 'https://cdn.botpress.cloud/webchat/v3.4/inject.js';
     script.async = true;
     document.body.appendChild(script);
 
