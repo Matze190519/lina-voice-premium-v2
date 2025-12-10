@@ -87,8 +87,73 @@ export default function Home() {
       </section>
         
 
-        {/* LR Product Set Teaser */}
+        {/* Autokonzept Teaser */}
       <section className="py-24 bg-background border-b border-border">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">Mobilität für Ihr Business</Badge>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-primary">
+                Fahren Sie Premium. <br />
+                <span className="text-muted-foreground">Zu Großkunden-Konditionen.</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Als Partner profitieren Sie von unserem exklusiven Autokonzept. Fahren Sie Mercedes-Benz, Audi oder Volkswagen zu Konditionen, die sonst nur Großkonzernen vorbehalten sind.
+              </p>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-primary" />
+                  <span className="text-foreground font-medium">Ohne Anzahlung möglich</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-primary" />
+                  <span className="text-foreground font-medium">Inklusive 10.000 km / Jahr</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-primary" />
+                  <span className="text-foreground font-medium">Monatlicher Autobonus möglich</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-primary" />
+                  <span className="text-foreground font-medium">Privat & geschäftlich nutzbar</span>
+                </div>
+              </div>
+
+              <Button variant="outline" className="text-primary border-primary/20 hover:bg-primary/5" onClick={() => window.location.href = '/konzept'}>
+                Mehr zum Autokonzept <ChevronRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+            <div className="order-1 lg:order-2 relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl transform -rotate-3" />
+              <img 
+                src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2070&auto=format&fit=crop" 
+                alt="Premium Business Car" 
+                className="relative rounded-2xl shadow-xl w-full h-auto border border-border bg-white p-2 object-cover aspect-video"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg border border-border flex gap-4">
+                <div className="text-center">
+                  <div className="text-xs text-muted-foreground uppercase font-bold">Audi</div>
+                  <div className="font-bold text-primary">Q3 / A3</div>
+                </div>
+                <div className="w-px bg-border" />
+                <div className="text-center">
+                  <div className="text-xs text-muted-foreground uppercase font-bold">Mercedes</div>
+                  <div className="font-bold text-primary">A / CLA / GLA</div>
+                </div>
+                <div className="w-px bg-border" />
+                <div className="text-center">
+                  <div className="text-xs text-muted-foreground uppercase font-bold">VW</div>
+                  <div className="font-bold text-primary">Golf / Tiguan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LR Product Set Teaser */}
+      <section className="py-24 bg-muted/30 border-b border-border">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
