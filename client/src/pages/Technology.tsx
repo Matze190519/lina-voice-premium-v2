@@ -66,6 +66,86 @@ export default function Technology() {
         </div>
       </section>
 
+      {/* Integration & Requirements */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-primary">Einfache Integration</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Lina integriert sich nahtlos in Ihre bestehende Infrastruktur. Keine komplexe IT-Umstellung nötig.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <span className="font-heading font-bold text-xl text-primary">1</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Rufnummern-Weiterleitung</h3>
+                  <p className="text-muted-foreground">
+                    Sie erhalten eine dedizierte Lina-Rufnummer. Richten Sie einfach eine Anrufweiterschaltung (AWS) 
+                    von Ihrer Hauptnummer ein – bei Besetzt, nach Zeit oder sofort.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <span className="font-heading font-bold text-xl text-primary">2</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Kalender-Synchronisation</h3>
+                  <p className="text-muted-foreground">
+                    Verbinden Sie Ihren Google Calendar, Outlook oder Calendly. Lina bucht Termine nur dann, 
+                    wenn Sie wirklich frei sind. Echtzeit-Abgleich verhindert Doppelbuchungen.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <span className="font-heading font-bold text-xl text-primary">3</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">CRM & Benachrichtigungen</h3>
+                  <p className="text-muted-foreground">
+                    Nach jedem Gespräch erhalten Sie eine Zusammenfassung per E-Mail, SMS oder direkt in Ihr CRM 
+                    (HubSpot, Salesforce, Pipedrive, etc.) via Webhook oder Zapier.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-muted/30 p-8 rounded-xl border border-border">
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                <Activity className="w-5 h-5 text-primary" />
+                Technische Voraussetzungen
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <span className="text-sm text-muted-foreground">Aktive Telefonnummer (Festnetz oder Mobil) mit Weiterleitungsfunktion</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <span className="text-sm text-muted-foreground">Digitaler Kalender (optional, für Terminbuchung)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <span className="text-sm text-muted-foreground">Keine spezielle Hardware nötig – läuft in der Cloud</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <span className="text-sm text-muted-foreground">Internetverbindung für Dashboard-Zugriff</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Comparison Table */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">

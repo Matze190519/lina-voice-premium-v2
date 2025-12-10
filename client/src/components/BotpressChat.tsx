@@ -57,6 +57,23 @@ export default function BotpressChat() {
       .bpw-widget-btn, .bpw-chat-container {
         z-index: 9999 !important;
       }
+
+      /* Pulse animation for the chat button */
+      @keyframes pulse-glow {
+        0% {
+          box-shadow: 0 0 0 0 rgba(196, 155, 255, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(196, 155, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(196, 155, 255, 0);
+        }
+      }
+
+      .bpw-widget-btn {
+        animation: pulse-glow 2s infinite;
+      }
     `;
     document.head.appendChild(style);
 
