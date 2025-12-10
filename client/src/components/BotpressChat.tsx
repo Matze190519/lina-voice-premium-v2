@@ -26,6 +26,10 @@ export default function BotpressChat() {
         .bpw-widget-btn {
           bottom: 90px !important; /* Move up to avoid overlapping bottom navigation/buttons */
           right: 20px !important;
+          z-index: 9999 !important;
+        }
+        .bpw-chat-container {
+          z-index: 9999 !important;
         }
         .bpw-chat-container {
           bottom: 90px !important;
