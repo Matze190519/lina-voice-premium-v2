@@ -106,7 +106,7 @@ export default function Home() {
               <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">Ihr Startpaket</Badge>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-primary">
                 Mehr als nur Software. <br />
-                <span className="text-muted-foreground">Physische Werte inklusive.</span>
+                <span className="text-muted-foreground">Realer Warenwert inklusive.</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Mit dem LR Profi Business Pro Set erhalten Sie nicht nur Zugang zu Lina, sondern hochwertige Produkte im Wert von über 1.500€.

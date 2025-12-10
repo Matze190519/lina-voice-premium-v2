@@ -21,7 +21,7 @@ export default function Concept() {
             <span className="text-muted-foreground">Setup-Kosten.</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Statt hoher Setup-Kosten erwerben Sie ein physisches Produktpaket. Die KI-Einrichtung ist inklusive.
+            Statt hoher Setup-Kosten erwerben Sie einen realen Warenwert. Die KI-Einrichtung ist inklusive.
             Ein transparentes Modell für Unternehmer.
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function Concept() {
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Wir nutzen die Infrastruktur von LR Health & Beauty als Produkt-Partner. 
-                  Sie erwerben das <strong>LR Profi Business Pro Set</strong> als physische Basis. 
+                  Sie erwerben das <strong>LR Profi Business Pro Set</strong> als Produktgegenwert. 
                   Die KI-Technologie Lina Voice erhalten Sie im Rahmen dieses Produkt-Investition <strong>kostenfrei</strong> dazu.
                 </p>
               </div>
