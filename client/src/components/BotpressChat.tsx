@@ -30,16 +30,18 @@ export default function BotpressChat() {
         }
         .bpw-chat-container {
           z-index: 9999 !important;
-        }
-        .bpw-chat-container {
           bottom: 90px !important;
         }
+      }
+      /* Ensure it sits above other elements */
+      .bpw-widget-btn, .bpw-chat-container {
+        z-index: 9999 !important;
       }
     `;
     document.head.appendChild(style);
 
     return () => {
-      // Cleanup not strictly necessary for global widget, but good practice to avoid memory leaks if component unmounts frequently
+      // Cleanup
     };
   }, []);
 
