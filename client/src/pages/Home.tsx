@@ -9,10 +9,16 @@ import { useState } from "react";
 
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [contactType, setContactType] = useState<'default' | 'consultation'>('default');
+
+  const openContact = (type: 'default' | 'consultation' = 'default') => {
+    setContactType(type);
+    setIsContactOpen(true);
+  };
 
   return (
     <div className="pb-20">
-      <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} />
+      <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} type={contactType} />
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden">
         <div className="container mx-auto px-4">
@@ -40,9 +46,12 @@ export default function Home() {
                   <span className="mr-2 text-lg font-bold">5 MIN LIVE DEMO</span>
                   <Phone className="w-5 h-5 transition-transform group-hover:rotate-12" />
                 </a>
-                <Button variant="outline" className="h-14 px-8 border-border hover:bg-muted text-lg text-foreground font-medium rounded-sm">
-                  <Play className="w-5 h-5 mr-2 text-primary" />
-                  Video Ansehen
+                <Button 
+                  variant="outline" 
+                  className="h-14 px-8 border-border hover:bg-muted text-lg text-foreground font-medium rounded-sm"
+                  onClick={() => openContact('consultation')}
+                >
+                  Beratung anfordern
                 </Button>
               </div>
               
@@ -204,7 +213,7 @@ export default function Home() {
               <Button 
                 variant="outline" 
                 className="px-10 py-8 border-white/30 hover:bg-white/10 text-lg text-white font-medium rounded-sm"
-                onClick={() => setIsContactOpen(true)}
+                onClick={() => openContact('default')}
               >
                 Jetzt anfragen
               </Button>

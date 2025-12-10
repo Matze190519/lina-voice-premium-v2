@@ -10,9 +10,10 @@ import { Checkbox } from "@/components/ui/checkbox";
 interface ContactFormProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  type?: 'default' | 'consultation';
 }
 
-export default function ContactForm({ open, onOpenChange }: ContactFormProps) {
+export default function ContactForm({ open, onOpenChange, type = 'default' }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -37,7 +38,9 @@ export default function ContactForm({ open, onOpenChange }: ContactFormProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-heading font-bold text-primary">Startpaket anfragen</DialogTitle>
+          <DialogTitle className="text-2xl font-heading font-bold text-primary">
+            {type === 'consultation' ? 'Beratungsgespräch anfordern' : 'Startpaket anfragen'}
+          </DialogTitle>
           <DialogDescription>
             Füllen Sie das Formular aus. Wir melden uns innerhalb von 24 Stunden bei Ihnen.
           </DialogDescription>
@@ -65,7 +68,12 @@ export default function ContactForm({ open, onOpenChange }: ContactFormProps) {
             
             <div className="space-y-2">
               <Label htmlFor="message">Nachricht (Optional)</Label>
-              <Textarea id="message" placeholder="Ich interessiere mich für das LR Profi Business Pro Set..." />
+              <Textarea 
+                id="message" 
+                placeholder={type === 'consultation' 
+                  ? "Ich möchte mehr darüber erfahren, wie Lina in meinem Unternehmen eingesetzt werden kann..." 
+                  : "Ich interessiere mich für das LR Profi Business Pro Set..."} 
+              />
             </div>
 
             <div className="flex items-start space-x-2">
