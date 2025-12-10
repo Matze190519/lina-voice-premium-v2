@@ -4,10 +4,15 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Phone, Zap, Shield, Globe, Cpu, ChevronRight, Play, Star, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 import BotpressChat from "@/components/BotpressChat";
+import ContactForm from "@/components/ContactForm";
+import { useState } from "react";
 
 export default function Home() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
     <div className="pb-20">
+      <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} />
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden">
         <div className="container mx-auto px-4">
@@ -194,8 +199,12 @@ export default function Home() {
                 <Phone className="w-5 h-5" />
                 +49 511 16653654
               </a>
-              <Button variant="outline" className="px-10 py-8 border-white/30 hover:bg-white/10 text-lg text-white font-medium rounded-sm">
-                Konzept ansehen
+              <Button 
+                variant="outline" 
+                className="px-10 py-8 border-white/30 hover:bg-white/10 text-lg text-white font-medium rounded-sm"
+                onClick={() => setIsContactOpen(true)}
+              >
+                Jetzt anfragen
               </Button>
             </div>
           </div>
