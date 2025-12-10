@@ -73,7 +73,7 @@ export default function LRPartner() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  LR liefert das physische "Profi Business Set" (Zeitgard Pro, etc.), das als physische Komponente Ihres Einstiegs dient.
+                  LR liefert das "Profi Business Set" (Zeitgard Pro, etc.), das als materieller Gegenwert Ihres Einstiegs dient.
                 </p>
               </CardContent>
             </Card>
