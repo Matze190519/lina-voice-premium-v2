@@ -211,7 +211,7 @@ export default function Home() {
             <ScrollReveal className="order-1 lg:order-2 relative" delay={0.2}>
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform rotate-3 blur-xl" />
               <img 
-                src="/images/lr-profi-set-v3.png" 
+                src="/images/lr-profi-set-edited.png" 
                 alt="LR Profi Business Pro Set" 
                 className="relative rounded-2xl shadow-2xl w-full h-auto border border-border/50 bg-black/40 backdrop-blur-sm p-2"
                 onError={(e) => {
