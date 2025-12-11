@@ -6,7 +6,7 @@ import { Check, Phone, Zap, Shield, Globe, Cpu, ChevronRight, Play, Star, Trendi
 import { motion } from "framer-motion";
 import BotpressChat from "@/components/BotpressChat";
 import ScrollReveal from "@/components/ScrollReveal";
-// import VoiceOrb from "@/components/VoiceOrb";
+import VoiceOrb from "@/components/VoiceOrb";
 import ContactForm from "@/components/ContactForm";
 import { useState } from "react";
 
@@ -90,9 +90,13 @@ export default function Home() {
               className="relative"
             >
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-border glass-card group">
+                {/* 3D Background Orb */}
+                <div className="absolute inset-0 z-0 opacity-60">
+                  <VoiceOrb />
+                </div>
                 <video 
                   src="/videos/lina-demo.mp4" 
-                  className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
+                  className="relative z-10 w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700 mix-blend-lighten"
                   loop
                   muted={false}
                   playsInline
