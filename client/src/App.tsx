@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Process from "./pages/Process";
 import Privacy from "./pages/Privacy";
 import Impressum from "./pages/Impressum";
+import Contact from "./pages/Contact";
 
 function Router() {
   return (
@@ -31,6 +32,7 @@ function Router() {
         <Route path="/process" component={Process} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/impressum" component={Impressum} />
+        <Route path="/kontakt" component={Contact} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

@@ -198,7 +198,7 @@ export default function Concept() {
                     </div>
                   </div>
 
-                  <NeonButton className="w-full justify-center py-4 text-lg" onClick={() => window.location.href = 'mailto:start@lina-voice.de'}>
+                  <NeonButton className="w-full justify-center py-4 text-lg" href="/lr-partner">
                     Jetzt Starten & Lina sichern
                   </NeonButton>
                   
