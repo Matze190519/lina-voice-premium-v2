@@ -10,159 +10,198 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function LRPartner() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <div className="pb-20">
+    <div className="pb-20 pt-20">
       <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} />
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden bg-background border-b border-border">
+      <section className="relative pt-20 pb-32 overflow-hidden bg-deep-space border-b border-white/10">
         <div className="container mx-auto px-4 text-center">
-          <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Unser Produkt-Partner</Badge>
-          <h1 className="text-5xl md:text-6xl font-heading font-bold leading-tight mb-6 text-primary">
-            LR Health & Beauty <br />
-            <span className="text-muted-foreground">Der Lieferant Ihres Business-Pakets.</span>
-          </h1>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Warum LR? Wir nutzen die Infrastruktur und die hochwertigen Produkt-Bundles eines der größten deutschen Direktvertriebsunternehmen als Basis für unser Geschäftsmodell.
-          </p>
+          <ScrollReveal>
+            <div className="inline-block px-4 py-1 rounded-full bg-electric-purple/20 border border-electric-purple/50 text-neon-cyan text-sm font-bold mb-6">
+              Unser Produkt-Partner
+            </div>
+            <h1 className="text-5xl md:text-7xl font-playfair font-bold leading-tight mb-6 text-white">
+              LR Health & Beauty <br />
+              <span className="text-gray-400">Der Lieferant Ihres Business-Pakets.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+              Warum LR? Wir nutzen die Infrastruktur und die hochwertigen Produkt-Bundles eines der größten deutschen Direktvertriebsunternehmen als Basis für unser Geschäftsmodell.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Key Facts Grid */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24 bg-deep-navy/30">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-white border-border shadow-sm hover:shadow-md transition-all">
-              <CardHeader>
-                <div className="mb-4 p-3 w-fit rounded-lg bg-primary/5">
-                  <Building2 className="w-8 h-8 text-primary" />
+            <ScrollReveal delay={0.1}>
+              <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/30 transition-colors h-full">
+                <div className="mb-6 p-4 w-fit rounded-xl bg-electric-purple/10">
+                  <Building2 className="w-10 h-10 text-neon-cyan" />
                 </div>
-                <CardTitle className="font-heading text-xl text-primary">Deutsches Unternehmen</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
+                <h3 className="font-playfair font-bold text-2xl text-white mb-4">Deutsches Unternehmen</h3>
+                <p className="text-lg text-gray-400 leading-relaxed">
                   Gegründet 1985 in Ahlen (Westfalen). Ein seriöser Partner mit über 40 Jahren Marktbestandigkeit.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </ScrollReveal>
 
-            <Card className="bg-white border-border shadow-sm hover:shadow-md transition-all">
-              <CardHeader>
-                <div className="mb-4 p-3 w-fit rounded-lg bg-primary/5">
-                  <ShieldCheck className="w-8 h-8 text-primary" />
+            <ScrollReveal delay={0.2}>
+              <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/30 transition-colors h-full">
+                <div className="mb-6 p-4 w-fit rounded-xl bg-electric-purple/10">
+                  <ShieldCheck className="w-10 h-10 text-neon-cyan" />
                 </div>
-                <CardTitle className="font-heading text-xl text-primary">Keine Verpflichtungen</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
+                <h3 className="font-playfair font-bold text-2xl text-white mb-4">Keine Verpflichtungen</h3>
+                <p className="text-lg text-gray-400 leading-relaxed">
                   Sie erwerben lediglich das Startpaket. Es bestehen keine Abnahmeverpflichtungen, keine Mindestumsätze und keine Tätigkeitspflichten.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </ScrollReveal>
 
-            <Card className="bg-white border-border shadow-sm hover:shadow-md transition-all">
-              <CardHeader>
-                <div className="mb-4 p-3 w-fit rounded-lg bg-primary/5">
-                  <Package className="w-8 h-8 text-primary" />
+            <ScrollReveal delay={0.3}>
+              <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/30 transition-colors h-full">
+                <div className="mb-6 p-4 w-fit rounded-xl bg-electric-purple/10">
+                  <Package className="w-10 h-10 text-neon-cyan" />
                 </div>
-                <CardTitle className="font-heading text-xl text-primary">Logistik & Fulfillment</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
+                <h3 className="font-playfair font-bold text-2xl text-white mb-4">Logistik & Fulfillment</h3>
+                <p className="text-lg text-gray-400 leading-relaxed">
                   LR liefert das "Profi Business Set" (Zeitgard Pro, etc.), das als materieller Gegenwert Ihres Einstiegs dient.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* Clarification Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10">
-            <h2 className="text-3xl font-heading font-bold mb-6 text-primary text-center">
-              Das Prinzip: Produktwert statt Setup-Kosten
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-center">
-              Anstatt einer hohen Einrichtungsgebühr für die KI-Integration erwerben Sie das <strong>LR Profi Business Set</strong>. 
-              Dies dient als "Eintrittskarte" in unsere Plattform.
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
-              <div>
-                <h3 className="font-bold text-xl mb-4 flex items-center gap-2">
-                  <Check className="text-green-500" /> Was Sie bekommen
-                </h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-2">• Vollständige Einrichtung Ihrer Lina Voice KI</li>
-                  <li className="flex items-start gap-2">• Das hochwertige LR Profi Business Set (Warenwert &gt; 1.500€)</li>
-                  <li className="flex items-start gap-2">• Zugang zum LR Autokonzept (optionales Firmenleasing)</li>
-                  <li className="flex items-start gap-2">• Einkaufskonditionen (-30%) für Eigenbedarf</li>
-                </ul>
-              </div>
+      <section className="py-24 bg-deep-space">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <ScrollReveal>
+            <div className="glass-card p-10 rounded-3xl border border-electric-purple/30 bg-deep-navy/50">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-8 text-white text-center">
+                Das Prinzip: Produktwert statt Setup-Kosten
+              </h2>
+              <p className="text-xl text-gray-300 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
+                Anstatt einer hohen Einrichtungsgebühr für die KI-Integration erwerben Sie das <strong className="text-white">LR Profi Business Set</strong>. 
+                Dies dient als "Eintrittskarte" in unsere Plattform.
+              </p>
               
-              <div>
-                <h3 className="font-bold text-xl mb-4 flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full border border-red-500 flex items-center justify-center text-red-500 text-xs">✕</div>
-                  Was Sie NICHT tun müssen
-                </h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-2">• Kein Strukturvertrieb oder Network Marketing</li>
-                  <li className="flex items-start gap-2">• Kein Verkauf von Kosmetikprodukten</li>
-                  <li className="flex items-start gap-2">• Keine Anwerbung von neuen Partnern</li>
-                  <li className="flex items-start gap-2">• Keine monatlichen Pflichtkäufe</li>
-                </ul>
+              <div className="grid md:grid-cols-2 gap-12 mt-12">
+                <div className="bg-black/20 p-8 rounded-2xl border border-white/5">
+                  <h3 className="font-bold text-2xl mb-6 flex items-center gap-3 text-white">
+                    <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center border border-green-500/50">
+                      <Check className="w-5 h-5 text-green-500" />
+                    </div>
+                    Was Sie bekommen
+                  </h3>
+                  <ul className="space-y-4 text-lg text-gray-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-green-500 mt-1">•</span>
+                      <span>Vollständige Einrichtung Ihrer Lina Voice KI</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-green-500 mt-1">•</span>
+                      <span>Das hochwertige LR Profi Business Set (Warenwert &gt; 1.500€)</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-green-500 mt-1">•</span>
+                      <span>Zugang zum LR Autokonzept (optionales Firmenleasing)</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-green-500 mt-1">•</span>
+                      <span>Einkaufskonditionen (-30%) für Eigenbedarf</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-black/20 p-8 rounded-2xl border border-white/5">
+                  <h3 className="font-bold text-2xl mb-6 flex items-center gap-3 text-white">
+                    <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center border border-red-500/50">
+                      <span className="text-red-500 font-bold text-lg">✕</span>
+                    </div>
+                    Was Sie NICHT tun müssen
+                  </h3>
+                  <ul className="space-y-4 text-lg text-gray-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-red-500 mt-1">•</span>
+                      <span>Kein Strukturvertrieb oder Network Marketing</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-red-500 mt-1">•</span>
+                      <span>Kein Verkauf von Kosmetikprodukten</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-red-500 mt-1">•</span>
+                      <span>Keine Anwerbung von neuen Partnern</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-red-500 mt-1">•</span>
+                      <span>Keine monatlichen Pflichtkäufe</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-heading font-bold mb-12 text-center text-primary">Häufige Fragen zum Partner LR</h2>
-          
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Warum läuft die Abwicklung über LR?</AccordionTrigger>
-              <AccordionContent>
-                Wir nutzen das LR Profi Business Set als standardisiertes Business-Paket. Dies ermöglicht uns, die KI-Einrichtung ohne separate Agentur-Rechnung anzubieten. Sie erhalten für Ihr Geld also echten Warenwert statt nur einer Dienstleistung.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Bin ich dann LR-Vertreter?</AccordionTrigger>
-              <AccordionContent>
-                Formal werden Sie als Partner registriert, um das Set zu beziehen und Zugriff auf das Autokonzept zu erhalten. Praktisch nutzen Sie dies jedoch rein als Endkunde/Unternehmer für die KI-Lösung und ggf. das Firmenleasing. Sie müssen nicht als Vertriebspartner aktiv werden.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Gibt es versteckte Kosten?</AccordionTrigger>
-              <AccordionContent>
-                Nein. Nach dem Kauf des Startsets zahlen Sie für die KI-Nutzung lediglich die reinen Verbrauchskosten (Minutenpreise für Telefonie/KI), die direkt abgerechnet werden. Es gibt keine LR-Abos oder versteckte Gebühren.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+      <section className="py-24 bg-deep-navy/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-12 text-center text-white">Häufige Fragen zum Partner LR</h2>
+            
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem value="item-1" className="border border-white/10 rounded-xl bg-black/20 px-4">
+                <AccordionTrigger className="text-xl font-medium text-white hover:text-neon-cyan hover:no-underline py-6">
+                  Warum läuft die Abwicklung über LR?
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-gray-400 pb-6 leading-relaxed">
+                  Wir nutzen das LR Profi Business Set als standardisiertes Business-Paket. Dies ermöglicht uns, die KI-Einrichtung ohne separate Agentur-Rechnung anzubieten. Sie erhalten für Ihr Geld also echten Warenwert statt nur einer Dienstleistung.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="border border-white/10 rounded-xl bg-black/20 px-4">
+                <AccordionTrigger className="text-xl font-medium text-white hover:text-neon-cyan hover:no-underline py-6">
+                  Bin ich dann LR-Vertreter?
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-gray-400 pb-6 leading-relaxed">
+                  Formal werden Sie als Partner registriert, um das Set zu beziehen und Zugriff auf das Autokonzept zu erhalten. Praktisch nutzen Sie dies jedoch rein als Endkunde/Unternehmer für die KI-Lösung und ggf. das Firmenleasing. Sie müssen nicht als Vertriebspartner aktiv werden.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="border border-white/10 rounded-xl bg-black/20 px-4">
+                <AccordionTrigger className="text-xl font-medium text-white hover:text-neon-cyan hover:no-underline py-6">
+                  Gibt es versteckte Kosten?
+                </AccordionTrigger>
+                <AccordionContent className="text-lg text-gray-400 pb-6 leading-relaxed">
+                  Nein. Nach dem Kauf des Startsets zahlen Sie für die KI-Nutzung lediglich die reinen Verbrauchskosten (Minutenpreise für Telefonie/KI), die direkt abgerechnet werden. Es gibt keine LR-Abos oder versteckte Gebühren.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-primary text-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-6">Fokus auf Ihr Business – mit starker Infrastruktur</h2>
-          <Button 
-            variant="secondary" 
-            size="lg" 
-            className="font-bold"
-            onClick={() => setIsContactOpen(true)}
-          >
-            Jetzt Startpaket anfragen
-          </Button>
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-electric-purple/20 to-neon-blue/20 blur-3xl opacity-30 pointer-events-none" />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-8 text-white">Fokus auf Ihr Business – mit starker Infrastruktur</h2>
+            <Button 
+              className="bg-white text-electric-purple hover:bg-gray-100 font-bold text-xl px-10 py-6 rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all transform hover:scale-105"
+              onClick={() => setIsContactOpen(true)}
+            >
+              Jetzt Startpaket anfragen
+            </Button>
+          </ScrollReveal>
         </div>
       </section>
     </div>
