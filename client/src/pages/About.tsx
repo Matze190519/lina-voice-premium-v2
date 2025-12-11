@@ -6,39 +6,50 @@ export default function About() {
   return (
     <div className="pb-20">
       {/* Hero */}
-      <section className="bg-background py-24 border-b border-border">
-        <div className="container mx-auto px-4 text-center">
-          <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Die Geschichte hinter Lina</Badge>
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-primary">
+      <section className="relative py-24 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-deep-navy/80 z-0"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/grid-pattern.svg')] opacity-[0.05] z-0"></div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="inline-block px-4 py-1 rounded-full bg-electric-purple/20 border border-electric-purple/50 text-neon-cyan text-sm font-bold mb-6">
+            Die Geschichte hinter Lina
+          </div>
+          <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 text-white">
             Vom Dachdecker zum <br />
-            <span className="text-muted-foreground">KI-Pionier.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-electric-purple">KI-Pionier.</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
             Eine Reise von Schwerin über Hannover nach Mallorca. Und wie aus einem persönlichen Bedürfnis eine Vision für den deutschen Mittelstand wurde.
           </p>
         </div>
       </section>
 
       {/* The Story */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24 bg-black/20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div className="relative sticky top-24">
               <div className="absolute inset-0 bg-primary/5 rounded-3xl transform -rotate-3" />
-              <img 
-                src="/images/founder-story.png" 
-                alt="Gründer Story" 
-                className="relative rounded-2xl shadow-xl w-full h-auto object-cover border border-border"
-                onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop";
-                }}
-              />
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg border border-border max-w-xs">
+              <div className="relative rounded-2xl overflow-hidden border border-electric-purple/30 bg-gradient-to-b from-electric-purple/10 to-deep-navy/50 shadow-2xl shadow-electric-purple/20">
+                <img 
+                  src="/images/founder-transparent.png" 
+                  alt="Matze - Gründer von Lina Voice" 
+                  className="relative w-full h-auto object-cover z-10 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                  onError={(e) => {
+                    // Fallback to original if transparent fails
+                    e.currentTarget.src = "/images/founder.png";
+                  }}
+                />
+                {/* Background Glow Effect behind the person */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-2/3 bg-gradient-to-t from-electric-purple/40 to-transparent opacity-60 z-0 blur-xl"></div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-xl shadow-lg border border-electric-purple/30 max-w-xs backdrop-blur-xl bg-deep-navy/80 z-20">
                 <div className="flex items-center gap-2 mb-2">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <span className="font-bold text-primary">Mallorca, Spanien</span>
+                  <MapPin className="w-5 h-5 text-neon-pink" />
+                  <span className="font-bold text-white">Mallorca, Spanien</span>
                 </div>
-                <p className="text-sm text-muted-foreground">Seit 2023 mein Zuhause. Mit Frau, Hund und dem Blick aufs Meer.</p>
+                <p className="text-sm text-gray-300">Seit 2023 mein Zuhause. Mit Frau, Hund und dem Blick aufs Meer.</p>
               </div>
             </div>
 
