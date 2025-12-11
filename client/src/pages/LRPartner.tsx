@@ -37,7 +37,7 @@ export default function LRPartner() {
               <br /><br />
               <span className="text-neon-cyan font-bold text-2xl">Investition: 712,50 € + 29,90 € Lizenz</span>
               <br />
-              <span className="text-gray-400 text-lg">Gesamt: 742,40 € (1.900 PW)</span>
+              <span className="text-gray-400 text-lg">Gesamt: 742,40 € (ca. 2.000 PW)</span>
               <br /><br />
               <span className="text-white font-semibold">Ratenzahlung möglich:</span>
               <br />
@@ -219,11 +219,14 @@ export default function LRPartner() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-8 text-white">Fokus auf Ihr Business – mit starker Infrastruktur</h2>
+            <p className="text-gray-400 mb-6">
+              Füllen Sie das Formular aus. Wir rufen Sie an und besprechen alle Einzelheiten persönlich.
+            </p>
             <Button 
               className="bg-white text-black hover:bg-primary hover:text-white font-bold text-xl px-10 py-6 rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(196,155,255,0.8)] transition-all transform hover:scale-105"
               onClick={() => setIsContactOpen(true)}
             >
-              Business Set Pro anfordern
+              Jetzt Beratung anfordern
             </Button>
           </ScrollReveal>
         </div>
