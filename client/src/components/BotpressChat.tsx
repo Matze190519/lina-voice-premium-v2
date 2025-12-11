@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 declare global {
   interface Window {
     botpressWebChat: any;
+    botpress: any;
   }
 }
 
@@ -13,22 +14,56 @@ export default function BotpressChat() {
       return;
     }
 
+    // 1. Inject the main Botpress script
     const script = document.createElement('script');
     script.id = 'botpress-inject';
-    script.src = 'https://cdn.botpress.cloud/webchat/v3.4/inject.js';
+    script.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js'; // Use stable v2.2
     script.async = true;
-    document.body.appendChild(script);
-
-    const script2 = document.createElement('script');
-    script2.id = 'botpress-config';
-    // Use the updated configuration script found on the reference site
-    script2.src = 'https://files.bpcontent.cloud/2025/05/06/15/20250506153427-V2JQXLMN.js';
-    script2.async = true;
     
-    // Add event listener to configure feedback when the webchat is ready
-    script2.onload = () => {
-      // Ensure botpressWebChat is available before accessing it
+    script.onload = () => {
+      // 2. Initialize Botpress with the configuration extracted from the reference site
+      // This avoids loading an external config file that might fail or be blocked
       if (window.botpressWebChat) {
+        window.botpressWebChat.init({
+          "botId": "cac882a1-cf8f-4b8f-9740-8f96ea9558db",
+          "configuration": {
+            "version": "v2",
+            "botName": "Lina vom LR Lifestyle Team",
+            "botAvatar": "https://files.bpcontent.cloud/2025/09/30/22/20250930222336-BY08EPCV.jpeg",
+            "botDescription": "Hallo, ich bin Lina, der Chat bot des LR Lifestyle Teams. Achtung, diese Version von mir ist extrem eingeschränkt, wenn du im LR Lifestyle Team bist werden alle Funktionen für dich freigeschaltet. ",
+            "website": {},
+            "email": {
+              "title": "Info@lr-lifestyle.info",
+              "link": "Info@lr-lifestyle.info"
+            },
+            "phone": {
+              "title": "+491715060008",
+              "link": "+491715060008"
+            },
+            "termsOfService": {},
+            "privacyPolicy": {},
+            "color": "#9333EA",
+            "variant": "solid",
+            "headerVariant": "solid",
+            "themeMode": "dark",
+            "fontFamily": "AR One Sans",
+            "radius": 4,
+            "feedbackEnabled": false,
+            "footer": "[⚡ LR Lifestyle Team](https://botpress.com/?from=webchat)",
+            "additionalStylesheetUrl": "https://files.bpcontent.cloud/2025/11/17/18/20251117183249-ODXZWBXJ.css",
+            "allowFileUpload": true,
+            "soundEnabled": true,
+            "toggleChatId": "bp-embedded-webchat",
+            "embeddedChatId": "bp-embedded-webchat",
+            "proactiveMessageEnabled": false,
+            "proactiveBubbleMessage": "Hi! 👋 Need help?",
+            "proactiveBubbleTriggerType": "afterDelay",
+            "proactiveBubbleDelayTime": 10
+          },
+          "clientId": "32dfe644-9e09-4072-bd72-34340d56cb7b"
+        });
+
+        // Add event listener for showing the chat
         window.botpressWebChat.onEvent(
           function (event: any) {
             if (event.type === 'LIFECYCLE.LOADED') {
@@ -37,28 +72,10 @@ export default function BotpressChat() {
           },
           ['LIFECYCLE.LOADED']
         );
-      } else {
-        // Retry if not immediately available
-        const checkInterval = setInterval(() => {
-          if (window.botpressWebChat) {
-            clearInterval(checkInterval);
-            window.botpressWebChat.onEvent(
-              function (event: any) {
-                if (event.type === 'LIFECYCLE.LOADED') {
-                  window.botpressWebChat.sendEvent({ type: 'show' });
-                }
-              },
-              ['LIFECYCLE.LOADED']
-            );
-          }
-        }, 100);
-        
-        // Clear interval after 10 seconds to prevent infinite loop
-        setTimeout(() => clearInterval(checkInterval), 10000);
       }
     };
-    
-    document.body.appendChild(script2);
+
+    document.body.appendChild(script);
 
     // Add custom styles to adjust position on mobile
     const style = document.createElement('style');
