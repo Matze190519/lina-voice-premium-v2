@@ -102,6 +102,7 @@ export default function Home() {
                     muted 
                     loop 
                     playsInline
+                    controls
                     poster="/images/video-poster.jpg" // Fallback
                   >
                     <source src="/videos/lina-demo.mp4" type="video/mp4" />

@@ -89,7 +89,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 +49 171 5060008
               </a>
             </div>
-            <NeonButton className="px-4 xl:px-6 py-2 text-xs xl:text-sm h-9 xl:h-10 min-h-0 whitespace-nowrap">
+            <NeonButton href="tel:+4951116653654" className="px-4 xl:px-6 py-2 text-xs xl:text-sm h-9 xl:h-10 min-h-0 whitespace-nowrap">
               Live Demo
             </NeonButton>
           </div>
