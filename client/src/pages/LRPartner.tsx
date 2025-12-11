@@ -33,7 +33,7 @@ export default function LRPartner() {
               <span className="text-gray-400">Ihr All-in-One Startpaket.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Starten Sie professionell ohne hohe Agenturkosten. Das "Profi Business Pro" Set beinhaltet alles für Ihren Start.
+              Nutzen Sie Ihr Budget intelligent: Statt Honorare für die Einrichtung zu zahlen, erwerben Sie mit dem "Profi Business Pro" Set echte Sachwerte für Ihr Unternehmen. Die komplette technische Integration Ihrer KI ist inklusive.
               <br /><br />
               <span className="text-neon-cyan font-bold text-2xl">Investition: 712,50 € + 29,90 € Lizenz</span>
               <br />
