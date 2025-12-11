@@ -17,17 +17,24 @@ export default function Home() {
     <div className="bg-[#0b0e18] min-h-screen text-white overflow-x-hidden font-sans">
       <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} type={contactType} />
       
-      {/* Hero Section - FLEXBOX REWRITE */}
+      {/* Hero Section - BRUTE FORCE LAYOUT FIX */}
       <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
         {/* Background Noise */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          {/* Main Layout: Flexbox with Wrap */}
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          {/* 
+            BRUTE FORCE STYLE: 
+            Using style tag to enforce flex-direction based on media query logic 
+            because Tailwind classes seem to be failing or overridden.
+          */}
+          <div 
+            className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20"
+            style={{ display: 'flex', flexWrap: 'wrap' }}
+          >
             
             {/* Left Column: Text Content */}
-            <div className="w-full lg:w-1/2 flex flex-col items-start space-y-8">
+            <div className="w-full lg:w-1/2 flex flex-col items-start space-y-8" style={{ flex: '1 1 500px' }}>
               <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#00f0ff]/30 bg-[#00f0ff]/5 backdrop-blur-sm">
                 <span className="w-2 h-2 bg-[#00f0ff] rounded-full animate-pulse mr-2"></span>
                 <span className="text-sm font-mono text-[#00f0ff] tracking-wide">ULTRAVOX v0.7 ONLINE</span>
@@ -45,11 +52,12 @@ export default function Home() {
                 vereinbart Termine und qualifiziert Leads – 24/7, mehrsprachig und in Echtzeit.
               </p>
 
-              {/* Buttons - Fixed: items-start to prevent stretching */}
+              {/* Buttons - HARDCODED WIDTHS */}
               <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto items-start sm:items-center">
                 <a 
                   href="tel:+4951116653654" 
-                  className="inline-flex items-center justify-center h-14 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/50 px-8 font-medium text-[#00f0ff] hover:bg-[#00f0ff]/20 transition-all whitespace-nowrap w-auto min-w-[200px]"
+                  className="inline-flex items-center justify-center h-14 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/50 px-8 font-medium text-[#00f0ff] hover:bg-[#00f0ff]/20 transition-all whitespace-nowrap"
+                  style={{ width: 'auto', minWidth: '220px', maxWidth: '300px' }}
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   +49 511 16653654
@@ -57,7 +65,8 @@ export default function Home() {
                 
                 <button 
                   onClick={() => openContact('consultation')} 
-                  className="inline-flex items-center justify-center h-14 rounded-full bg-white/5 border border-white/10 px-8 font-medium text-white hover:bg-white/10 transition-all whitespace-nowrap w-auto min-w-[200px]"
+                  className="inline-flex items-center justify-center h-14 rounded-full bg-white/5 border border-white/10 px-8 font-medium text-white hover:bg-white/10 transition-all whitespace-nowrap"
+                  style={{ width: 'auto', minWidth: '220px', maxWidth: '300px' }}
                 >
                   Unverbindlich anfragen <ArrowRight className="ml-2 w-5 h-5" />
                 </button>
@@ -87,7 +96,7 @@ export default function Home() {
             </div>
 
             {/* Right Column: Video */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0" style={{ flex: '1 1 500px' }}>
               <div className="relative w-full max-w-[600px] aspect-video rounded-2xl overflow-hidden border border-[#c49bff]/20 shadow-2xl bg-black/50 backdrop-blur-sm group">
                 {/* Background Orb Animation */}
                 <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
