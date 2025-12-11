@@ -9,29 +9,23 @@
   --color-neon-cyan: oklch(0.90 0.20 190);
 }
 
-/* Removed aggressive global reset that conflicts with Tailwind */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
-  height: 100%;
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background-color: #0b0e18; /* Fallback for deep-navy */
+  background-color: var(--color-deep-navy);
   color: #ffffff;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-#root {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Glassmorphism Effects */
@@ -66,27 +60,27 @@ h1, h2, h3, h4 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0e18;
+  background: var(--color-deep-navy);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c49bff; /* electric-purple fallback */
+  background: var(--color-electric-purple);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00f0ff; /* neon-cyan fallback */
+  background: var(--color-neon-cyan);
 }
 
 /* Selection */
 ::selection {
-  background: #00f0ff;
-  color: #0b0e18;
+  background: var(--color-neon-cyan);
+  color: var(--color-deep-navy);
 }
 
 /* Focus Styles */
 *:focus-visible {
-  outline: 2px solid #00f0ff;
+  outline: 2px solid var(--color-neon-cyan);
   outline-offset: 2px;
 }
 
