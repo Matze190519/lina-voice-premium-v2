@@ -7,13 +7,17 @@ import { motion } from 'framer-motion'; // Re-import framer-motion
 export default function Home() {
   return (
     <main className="relative z-10">
-      {/* Hero Section - ROBUST FLEX LAYOUT */}
-      <section className="min-h-screen flex items-center justify-center py-24 lg:py-32 relative overflow-hidden">
+      {/* Hero Section - IMMERSIVE FUTURISTIC DESIGN */}
+      <section className="min-h-screen flex items-center justify-center py-24 lg:py-32 relative overflow-hidden bg-background">
         
-        {/* Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-          <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-electric-purple/20 rounded-full blur-[120px] animate-pulse-slow"></div>
-          <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-neon-cyan/10 rounded-full blur-[100px] animate-pulse-slow delay-1000"></div>
+        {/* Immersive Background */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background opacity-60"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/grid-pattern.svg')] opacity-[0.03] bg-repeat"></div>
+          
+          {/* Animated Orbs */}
+          <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] animate-pulse-slow mix-blend-screen"></div>
+          <div className="absolute bottom-[-20%] left-[-10%] w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[150px] animate-pulse-slow delay-1000 mix-blend-screen"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -40,16 +44,16 @@ export default function Home() {
                     </span>
                   </motion.div>
 
-                  <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight text-white">
+                  <h1 className="text-6xl md:text-8xl font-heading font-bold mb-8 leading-tight text-white tracking-tight">
                     Die KI, die für dich<br />
-                    <span className="text-neon-cyan">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-white to-secondary animate-shimmer bg-[length:200%_100%]">
                       ans Telefon geht.
                     </span>
                   </h1>
 
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
+                  <p className="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed max-w-xl font-light">
                     Lina ist deine intelligente Telefon-Assistentin. Sie nimmt Anrufe an, 
-                    vereinbart Termine und qualifiziert Leads – 24/7, mehrsprachig und in Echtzeit.
+                    vereinbart Termine und qualifiziert Leads – <span className="text-white font-medium">24/7, mehrsprachig und in Echtzeit.</span>
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10">

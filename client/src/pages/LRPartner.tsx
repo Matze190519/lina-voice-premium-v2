@@ -198,7 +198,7 @@ export default function LRPartner() {
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-8 text-white">Fokus auf Ihr Business – mit starker Infrastruktur</h2>
             <Button 
-              className="bg-white text-black hover:bg-gray-100 font-bold text-xl px-10 py-6 rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all transform hover:scale-105"
+              className="bg-white text-black hover:bg-primary hover:text-white font-bold text-xl px-10 py-6 rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(196,155,255,0.8)] transition-all transform hover:scale-105"
               onClick={() => setIsContactOpen(true)}
             >
               Startpaket anfordern
