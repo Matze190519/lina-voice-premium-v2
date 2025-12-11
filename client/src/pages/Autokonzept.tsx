@@ -45,6 +45,8 @@ export default function Autokonzept() {
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
               Erreichen Sie die erste Karrierestufe "Junior Manager" und fahren Sie einen Mercedes A-Klasse, Audi Q3 oder VW Tiguan für nur 125€ netto im Monat.
+              <br /><br />
+              <span className="text-neon-cyan font-bold">Qualifikation: einmalig 4.000 PW nach dem jeweils aktuellen LR-Marketingplan.</span>
             </p>
             <NeonButton href="tel:+491715060008">
               Konditionen prüfen
@@ -79,7 +81,7 @@ export default function Autokonzept() {
               </div>
               <h3 className="text-xl font-bold mb-4 text-white">Sofortiger Zugriff</h3>
               <p className="text-gray-400">
-                Mit Ihrem <span className="text-white font-bold">Profi Business Startpaket</span> (2.000 PW) und nur <span className="text-white font-bold">zwei Empfehlungen</span> erreichen Sie die nötigen 4.000 PW. Damit sind Sie sofort bestellberechtigt.
+                Mit Ihrem <span className="text-white font-bold">Business Set Pro</span> (1.500 PW) und weiteren Umsätzen erreichen Sie die nötigen 4.000 PW. Damit sind Sie sofort bestellberechtigt.
               </p>
             </div>
           </div>
@@ -93,7 +95,7 @@ export default function Autokonzept() {
             </h2>
             <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
               * Rate gilt bei Erreichung und Bestätigung des Titels "Junior Manager". Ohne Anzahlung, ohne Schlussrate. 
-              Inklusive KFZ-Versicherung und Steuern (je nach Paket). Bonität vorausgesetzt.
+              Inklusive KFZ-Versicherung und Steuern (je nach Paket). Bonität vorausgesetzt. Details nach dem jeweils aktuellen LR-Marketingplan.
             </p>
           </ScrollReveal>
 

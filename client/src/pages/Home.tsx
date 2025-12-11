@@ -45,28 +45,24 @@ export default function Home() {
                     </span>
                   </motion.div>
 
-                  <h1 className="text-6xl md:text-8xl font-heading font-bold mb-8 leading-tight text-white tracking-tight">
-                    Nie wieder einen<br />
+                  <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8 leading-tight text-white tracking-tight">
+                    Telefon-KI, die deine Anrufe wie ein Mitarbeiter annimmt – <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-white to-secondary animate-shimmer bg-[length:200%_100%]">
-                      Kunden verpassen.
+                      ohne 2.000 € Setup-Gebühr
                     </span>
                   </h1>
 
                   <p className="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed max-w-xl font-light">
-                    Lina ist deine intelligente Telefon-Assistentin. Sie nimmt Anrufe an, 
-                    vereinbart Termine und qualifiziert Leads – <span className="text-white font-medium">24/7, mehrsprachig und in Echtzeit.</span>
-                    <br /><br />
-                    <span className="text-neon-cyan font-bold">Jetzt neu:</span> Komplettes Business-Setup inklusive Hardware & Firmenwagen-Option.
+                    LINA nimmt Anrufe im Namen der Firma entgegen, beantwortet Standardfragen, bucht Termine, organisiert Rückrufe und leitet nur die wichtigen Gespräche weiter. Einrichtung durch einen IT-Partner in Frankfurt – der Unternehmer zahlt nur, wenn LINA wirklich telefoniert.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10 relative z-50 pointer-events-auto">
-                    <NeonButton href="tel:+4951116653654" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
-                      <Phone className="w-5 h-5 inline mr-2 group-hover:animate-bounce" />
-                      +49 511 16653654
-                    </NeonButton>
-                    <NeonButton href="/kontakt" variant="secondary" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
-                      Unverbindlich anfragen
+                    <NeonButton href="/kontakt" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
+                      Kostenlose Kurz-Demo anfragen
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </NeonButton>
+                    <NeonButton href="/preise" variant="secondary" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
+                      Technik & Kosten verstehen
                     </NeonButton>
                   </div>
 
@@ -168,7 +164,7 @@ export default function Home() {
               {
                 step: '04',
                 title: 'Abrechnung',
-                description: 'Minutengenaue Abrechnung. Du zahlst nur, wenn Lina wirklich arbeitet (ab 0,20€/Min + Providerkosten).',
+                description: 'Minutengenaue Abrechnung: Ultravox + Telefondienstleister direkt an Anbieter, plus 0,20 € pro Minute an IT-Firma für Setup & Betreuung.',
                 icon: CheckCircle,
               },
             ].map((item, index) => (
@@ -195,11 +191,8 @@ export default function Home() {
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6 text-white">
-                Dein Sekretariat der <span className="text-neon-cyan">Zukunft</span>.
+                Was LINA wirklich kann
                 </h2>
-                <p className="text-gray-400 text-lg">
-                Lina übernimmt die Routineaufgaben, damit du dich zu 100% auf dein Kerngeschäft konzentrieren kannst.
-                </p>
             </div>
           </ScrollReveal>
 
@@ -211,7 +204,7 @@ export default function Home() {
               },
               {
                 title: 'Anfragen qualifizieren',
-                description: 'Fragen stellen („Neupatient oder Bestandspatient?“, „Welche Leistung?“) und Infos strukturiert erfassen.',
+                description: 'Fragen stellen („Neupatient oder Bestandspatient?“, „Welche Leistung?“, „Wie dringend?“) und Infos strukturiert erfassen.',
               },
               {
                 title: 'Rückrufe organisieren',

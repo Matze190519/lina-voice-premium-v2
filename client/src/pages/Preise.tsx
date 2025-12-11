@@ -29,7 +29,7 @@ export default function Preise() {
                     <span className="text-gray-400 text-xl">/Dienstleistung</span>
                   </div>
                   <p className="text-sm text-gray-400 mt-4">
-                    Sie zahlen nur das <strong>Business Set Pro</strong> (ca. 1.500€) direkt an den Lieferanten LR.
+                    Sie zahlen nur das <strong>Business Set Pro</strong> (ca. 720€) direkt an den Lieferanten LR.
                   </p>
                 </div>
                 <ul className="space-y-4 mb-8 flex-grow">
@@ -39,7 +39,7 @@ export default function Preise() {
                   </li>
                   <li className="flex items-start gap-3 text-white">
                     <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span><strong>Hardware inklusive</strong> (Zeitgard Pro Set)</span>
+                    <span><strong>Hardware inklusive</strong> (Zeitgard Pro Set, Wert ca. 1.500€)</span>
                   </li>
                   <li className="flex items-start gap-3 text-white">
                     <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
@@ -75,17 +75,24 @@ export default function Preise() {
                   </li>
                   <li className="flex items-start gap-3 text-gray-300">
                     <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span>KI-Minuten: ab ca. 0,20€ / Min (direkt über Provider)</span>
+                    <span>Ultravox-Realtime: ca. 0,05 $ pro Minute (Sprach-KI)</span>
                   </li>
                   <li className="flex items-start gap-3 text-gray-300">
                     <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span>Telefonnummer: ca. 1-3€ / Monat (Twilio/Sipgate)</span>
+                    <span>Telefondienstleister: ca. 0,01–0,02 $ pro Minute</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-gray-300">
+                    <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
+                    <span>IT-Service: 0,20 € pro Minute (Setup, Betreuung, Optimierung)</span>
                   </li>
                   <li className="flex items-start gap-3 text-gray-300">
                     <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
                     <span>Volle Kostenkontrolle & Transparenz</span>
                   </li>
                 </ul>
+                <p className="text-xs text-gray-500 mb-4 italic text-center">
+                  Preise können sich ändern. Es gelten stets die aktuellen Konditionen der jeweiligen Anbieter (Ultravox, Telefondienstleister).
+                </p>
                 <NeonButton href="/kontakt" variant="secondary" className="w-full justify-center">
                   Fragen zur Abrechnung?
                 </NeonButton>

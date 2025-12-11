@@ -102,11 +102,14 @@ export default function Privacy() {
                 <CardContent className="pt-6">
                   <h4 className="font-bold text-lg mb-2 flex items-center gap-2">
                     <Database className="w-5 h-5 text-primary" />
-                    Wo liegen meine Daten?
+                    Telefon-KI (LINA Voice)
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    Ihre Kundendaten (Namen, Termine) liegen auf gesicherten Servern in Frankfurt (AWS EU-Central-1). 
-                    Die Sprachverarbeitung erfolgt über Ultravox-Server mit strikten Data-Processing-Agreements (DPA).
+                    Die Sprachverarbeitung erfolgt über die Plattform Ultravox Realtime (Drittlandverarbeitung möglich, z. B. USA).
+                    Die Telefonie wird über einen Telefondienstleister (z. B. Twilio) abgewickelt.
+                    Die Konfigurations- und Gesprächsdaten liegen primär in den Accounts des Unternehmers bei diesen Anbietern.
+                    Unsere IT-Firma speichert auf eigenen Systemen keine Gesprächstranskripte, sondern nur Daten, die für Einrichtung, Konfiguration und minutengenaue Abrechnung nötig sind.
+                    Wir vermeiden die Speicherung von Gesprächsinhalten und arbeiten mit Auftragsverarbeitungsverträgen und den jeweils erforderlichen rechtlichen Grundlagen (z. B. AVV, Standardvertragsklauseln).
                   </p>
                 </CardContent>
               </Card>

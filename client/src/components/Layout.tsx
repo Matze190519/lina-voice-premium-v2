@@ -177,7 +177,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="font-playfair font-bold text-lg text-white mb-6">Unternehmen</h4>
               <ul className="space-y-3 text-gray-400">
                 <li><Link href="/ueber-uns" className="hover:text-neon-cyan transition-colors">Über Uns</Link></li>
-                <li><Link href="/concept" className="hover:text-neon-cyan transition-colors">Karriere</Link></li>
+                <li><Link href="/lr-partner" className="hover:text-neon-cyan transition-colors">Business Set Pro</Link></li>
                 <li><Link href="/kontakt" className="hover:text-neon-cyan transition-colors">Kontakt</Link></li>
               </ul>
             </div>

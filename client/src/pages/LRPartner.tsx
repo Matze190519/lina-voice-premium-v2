@@ -34,6 +34,8 @@ export default function LRPartner() {
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
               Starten Sie professionell ohne hohe Agenturkosten. Das Business Set Pro beinhaltet alles, was Sie brauchen: Technik, Hardware und den Zugang zur Plattform.
+              <br /><br />
+              <span className="text-neon-cyan font-bold">Einmalige Investition: ca. 720 €</span>
             </p>
           </ScrollReveal>
         </div>
@@ -110,7 +112,7 @@ export default function LRPartner() {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-green-500 mt-1">•</span>
-                      <span>Das hochwertige Business Set Pro (Warenwert ca. 1.500€)</span>
+                      <span>LR-Produktpaket im Wert von ca. 1.500 € (für Mitarbeiter, Kunden, Praxis, Empfang etc.)</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-green-500 mt-1">•</span>
@@ -118,7 +120,11 @@ export default function LRPartner() {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-green-500 mt-1">•</span>
-                      <span>Ca. 30% Einkaufsvorteil auf zukünftige Bestellungen</span>
+                      <span>Ca. 30 % Einkaufsvorteil bei LR auf zukünftige Bestellungen</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-green-500 mt-1">•</span>
+                      <span>LR-Partnerstatus (selbständige Tätigkeit, kein Arbeitsvertrag)</span>
                     </li>
                   </ul>
                 </div>
@@ -167,7 +173,7 @@ export default function LRPartner() {
                   Warum läuft die Abwicklung über LR?
                 </AccordionTrigger>
                 <AccordionContent className="text-lg text-gray-400 pb-6 leading-relaxed">
-                  Wir nutzen das Business Set Pro von LR als Basis. Dies ermöglicht uns, die KI-Einrichtung ohne separate Agentur-Rechnung anzubieten. Sie erhalten für Ihr Geld also echten Warenwert (Hardware & Produkte) statt nur einer Dienstleistung.
+                  Wir nutzen das Business Set Pro von LR als Basis. Dies ermöglicht uns, die KI-Einrichtung ohne separate Agentur-Rechnung anzubieten. Sie erhalten für Ihr Geld also echten Warenwert (Hardware & Produkte) statt nur einer Dienstleistung. Mit dem Business Set Pro werden Sie LR-Partner. Du bleibst selbständig, es ist kein Arbeitsverhältnis. Die Empfehlung des Systems an andere Unternehmer ist optional, kein Muss.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2" className="border border-white/10 rounded-xl bg-black/20 px-4">
