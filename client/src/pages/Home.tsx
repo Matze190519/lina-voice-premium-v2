@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { NeonButton } from "@/components/ui/NeonButton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Phone, Zap, Shield, Globe, Cpu, ChevronRight, Play, Star, TrendingUp, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import BotpressChat from "@/components/BotpressChat";
+import ScrollReveal from "@/components/ScrollReveal";
 import ContactForm from "@/components/ContactForm";
 import { useState } from "react";
 
@@ -34,7 +36,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-primary/30 text-primary font-medium text-sm mb-8 neon-border">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-primary/30 text-primary font-mono text-sm mb-8 neon-border">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -56,15 +58,16 @@ export default function Home() {
                   <a href="tel:+4951116653654" className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-md bg-primary/10 border border-primary/50 px-8 font-medium text-primary transition-all duration-300 hover:bg-primary/20 hover:shadow-[0_0_20px_rgba(196,155,255,0.3)]">
                     <Phone className="w-5 h-5 mr-3 transition-transform group-hover:rotate-12" />
                     <span className="text-lg font-bold tracking-wide">+49 511 16653654</span>
-                    <span className="ml-2 text-xs opacity-70 font-normal border-l border-primary/30 pl-2">TESTE LIVE</span>
+                    <span className="ml-2 text-xs opacity-70 font-mono border-l border-primary/30 pl-2">TESTE LIVE</span>
                   </a>
                 </div>
-                <Button 
-                  className="h-16 px-8 bg-white text-black hover:bg-white/90 text-lg font-bold rounded-md shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all hover:scale-105"
+                <NeonButton 
+                  variant="primary"
+                  className="h-16 text-lg"
                   onClick={() => openContact('consultation')}
                 >
                   Unverbindlich anfragen <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                </NeonButton>
               </div>
               
               <div className="mt-12 flex items-center gap-4 text-sm text-muted-foreground">
@@ -99,10 +102,10 @@ export default function Home() {
                 <div className="absolute top-4 right-4 md:top-8 md:right-8 glass-panel p-3 md:p-4 rounded-lg shadow-lg border border-primary/20 z-20 max-w-[160px] md:max-w-none">
                   <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
                     <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-secondary animate-pulse" />
-                    <span className="text-[10px] md:text-xs font-bold text-secondary uppercase tracking-wider">System Active</span>
+                    <span className="text-[10px] md:text-xs font-mono font-bold text-secondary uppercase tracking-wider">System Active</span>
                   </div>
-                  <div className="text-2xl md:text-3xl font-heading font-bold text-white text-glow">200ms</div>
-                  <div className="text-[10px] md:text-xs text-muted-foreground font-medium">Reaktionszeit (Ultravox v0.7)</div>
+                  <div className="text-2xl md:text-3xl font-mono font-bold text-white text-glow">200ms</div>
+                  <div className="text-[10px] md:text-xs text-muted-foreground font-mono">Reaktionszeit (Ultravox v0.7)</div>
                 </div>
               </div>
               
@@ -117,14 +120,14 @@ export default function Home() {
       {/* Value Proposition */}
       <section className="py-24 bg-muted/30 relative">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">
               Dein Sekretariat der <span className="text-gradient">Zukunft.</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Lina übernimmt die Routineaufgaben, damit du dich zu 100% auf dein Kerngeschäft konzentrieren kannst.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -144,7 +147,8 @@ export default function Home() {
                 desc: "Lina spricht Deutsch und über 20 weitere Sprachen fließend. Perfekt für internationale Kunden."
               }
             ].map((feature, i) => (
-              <Card key={i} className="glass-card border-border/50 hover:border-primary/50 transition-all duration-300 group">
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <Card className="glass-card border-border/50 hover:border-primary/50 transition-all duration-300 group h-full">
                 <CardHeader>
                   <div className="mb-4 p-3 w-fit rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                     {feature.icon}
@@ -155,6 +159,7 @@ export default function Home() {
                   <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
                 </CardContent>
               </Card>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -165,7 +170,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
+            <ScrollReveal className="order-2 lg:order-1">
               <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">Ihr Startpaket</Badge>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-foreground">
                 Mehr als nur Software. <br />
@@ -197,8 +202,8 @@ export default function Home() {
               <Button variant="outline" className="text-primary border-primary/20 hover:bg-primary/10 hover:text-primary" onClick={() => window.location.href = '/process'}>
                 Details zum Ablauf ansehen <ChevronRight className="w-4 h-4 ml-2" />
               </Button>
-            </div>
-            <div className="order-1 lg:order-2 relative">
+            </ScrollReveal>
+            <ScrollReveal className="order-1 lg:order-2 relative" delay={0.2}>
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform rotate-3 blur-xl" />
               <img 
                 src="/images/lr-set-preview.png" 
@@ -208,7 +213,7 @@ export default function Home() {
                   e.currentTarget.src = "https://via.placeholder.com/600x400?text=LR+Profi+Business+Pro+Set";
                 }}
               />
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

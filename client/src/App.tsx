@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Layout from "./components/Layout";
+import BackgroundEffects from "@/components/BackgroundEffects";
 import Home from "./pages/Home";
 import Technology from "@/pages/Technology";
 import Partners from "@/pages/Partners";
@@ -42,6 +43,7 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
+          <BackgroundEffects />
           <Router />
         </TooltipProvider>
       </ThemeProvider>
