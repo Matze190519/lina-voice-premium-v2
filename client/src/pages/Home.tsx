@@ -42,7 +42,7 @@ export default function Home() {
 
                   <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight text-white">
                     Die KI, die für dich<br />
-                    <span className="bg-gradient-to-r from-electric-purple to-neon-cyan bg-clip-text text-transparent animate-gradient-x">
+                    <span className="text-neon-cyan">
                       ans Telefon geht.
                     </span>
                   </h1>
