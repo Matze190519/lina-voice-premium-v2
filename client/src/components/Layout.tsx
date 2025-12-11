@@ -153,10 +153,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 bg-gradient-to-br from-electric-purple to-neon-blue flex items-center justify-center rounded-md">
-                  <span className="font-playfair font-bold text-lg text-white">L</span>
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-electric-purple/50 shadow-[0_0_15px_rgba(124,58,237,0.5)]">
+                  <img src="/images/logo-lr.png" alt="Lina Voice Logo" className="w-full h-full object-cover" />
                 </div>
-                <span className="font-playfair font-bold text-2xl text-white">LINA VOICE</span>
+                <div className="flex flex-col">
+                  <span className="font-playfair font-bold text-xl tracking-wide text-white leading-none">
+                    LINA
+                  </span>
+                  <span className="font-sans text-xs tracking-[0.2em] text-neon-cyan font-bold">
+                    VOICE
+                  </span>
+                </div>
               </div>
               <p className="text-gray-400 max-w-md leading-relaxed mb-8">
                 Die fortschrittlichste KI-Sprachassistentin für den deutschen Mittelstand. 

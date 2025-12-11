@@ -89,9 +89,12 @@ export default function Autokonzept() {
         {/* Fleet Showcase */}
         <div className="mb-32">
           <ScrollReveal>
-            <h2 className="text-4xl font-playfair font-bold text-center mb-16 text-white">
+            <h2 className="text-4xl font-playfair font-bold text-center mb-4 text-white">
               Premium-Flotte <span className="text-neon-cyan">Sofort bestellbar</span>
             </h2>
+            <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+              Dies sind nur einige Beispiele. Aktuell stehen ca. 20 verschiedene Modelle für Sie zur Verfügung.
+            </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -148,12 +151,12 @@ export default function Autokonzept() {
                   alt="Mercedes CLA" 
                   className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 relative z-10"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end z-20">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end z-20">
                   <h3 className="text-2xl font-bold mb-1 text-white">Mercedes CLA</h3>
                   <p className="text-gray-300 mb-4 text-sm">Coupé, AMG Line</p>
                   <div className="flex items-center justify-between">
                     <div className="text-neon-cyan font-bold text-xl">
-                      ab 349€ <span className="text-xs text-gray-400 font-normal">/Monat</span>
+                      ab 199€ <span className="text-xs text-gray-400 font-normal">/Monat</span>
                     </div>
                     <ChevronRight className="w-5 h-5 text-neon-cyan group-hover:translate-x-1 transition-transform" />
                   </div>
