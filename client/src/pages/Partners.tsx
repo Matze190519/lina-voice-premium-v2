@@ -3,8 +3,48 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Users, TrendingUp, ShieldCheck, Rocket, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+
+const formSchema = z.object({
+  companyName: z.string().min(2, "Firmenname muss mindestens 2 Zeichen lang sein"),
+  contactName: z.string().min(2, "Name muss mindestens 2 Zeichen lang sein"),
+  email: z.string().email("Ungültige E-Mail-Adresse"),
+  phone: z.string().min(6, "Telefonnummer ist erforderlich"),
+  website: z.string().url("Bitte geben Sie eine gültige URL ein").optional().or(z.literal("")),
+  partnerType: z.string().min(1, "Bitte wählen Sie einen Partnertyp"),
+  clientBaseSize: z.string().min(1, "Bitte geben Sie die Größe Ihres Kundenstamms an"),
+  message: z.string().optional(),
+});
 
 export default function Partners() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      companyName: "",
+      contactName: "",
+      email: "",
+      phone: "",
+      website: "",
+      partnerType: "",
+      clientBaseSize: "",
+      message: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // In a real app, this would send data to an API
+    console.log(values);
+    toast.success("Vielen Dank für Ihre Bewerbung! Wir melden uns in Kürze.");
+    form.reset();
+  }
   return (
     <div className="pb-20">
       {/* Hero Section */}
@@ -174,24 +214,178 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* CTA / Application Form Placeholder */}
+      {/* Application Form Section */}
       <section id="apply" className="container mx-auto px-4 mt-24">
-        <div className="bg-gradient-to-br from-primary/20 to-background border border-primary/20 rounded-2xl p-12 text-center relative overflow-hidden">
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Werden Sie Teil der Revolution.</h2>
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-primary">Werden Sie Teil der Revolution.</h2>
             <p className="text-lg text-muted-foreground mb-8">
               Die Nachfrage nach Voice AI explodiert. Positionieren Sie sich jetzt als Vorreiter. 
-              Füllen Sie das Formular aus oder kontaktieren Sie unser Partner-Team direkt.
+              Füllen Sie das Formular aus, um sich für das Partnerprogramm zu bewerben.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:partner@lina-voice.com" className="bg-primary text-white font-bold py-4 px-8 rounded-sm hover:bg-primary/90 transition-colors shadow-lg inline-flex items-center justify-center">
-                Partner-Anfrage senden
-              </a>
-              <a href="tel:+4951116653654" className="bg-transparent border border-primary/30 text-primary font-bold py-4 px-8 rounded-sm hover:bg-primary/10 transition-colors inline-flex items-center justify-center">
-                <Phone className="w-5 h-5 mr-2" />
-                Direkt sprechen
+            
+            <div className="bg-muted/30 p-8 rounded-xl border border-border mb-8">
+              <h3 className="text-xl font-bold mb-4">Ihr direkter Draht</h3>
+              <p className="text-muted-foreground mb-6">
+                Sie haben vorab Fragen? Unser Partner-Management steht Ihnen gerne zur Verfügung.
+              </p>
+              <a href="tel:+4951116653654" className="flex items-center gap-3 text-primary font-bold hover:underline text-lg">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Phone className="w-5 h-5" />
+                </div>
+                +49 511 16653654
               </a>
             </div>
+          </div>
+
+          <div className="bg-card border border-border rounded-xl p-8 shadow-lg">
+            <h3 className="text-2xl font-bold mb-6">Partner-Bewerbung</h3>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="companyName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Firmenname</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Ihre Agentur GmbH" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="website"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Website</FormLabel>
+                        <FormControl>
+                          <Input placeholder="https://..." {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="contactName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Ansprechpartner</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Max Mustermann" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>E-Mail</FormLabel>
+                        <FormControl>
+                          <Input placeholder="partner@firma.de" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Telefon</FormLabel>
+                      <FormControl>
+                        <Input placeholder="+49 ..." {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="partnerType"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Art der Partnerschaft</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Bitte wählen" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="agency">Agentur / Reseller</SelectItem>
+                            <SelectItem value="consultant">Unternehmensberater</SelectItem>
+                            <SelectItem value="integrator">IT-Integrator</SelectItem>
+                            <SelectItem value="affiliate">Affiliate / Tippgeber</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="clientBaseSize"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Anzahl B2B Kunden</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Bitte wählen" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="1-10">1 - 10</SelectItem>
+                            <SelectItem value="11-50">11 - 50</SelectItem>
+                            <SelectItem value="51-200">51 - 200</SelectItem>
+                            <SelectItem value="200+">200+</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Nachricht (Optional)</FormLabel>
+                      <FormControl>
+                        <Textarea 
+                          placeholder="Erzählen Sie uns kurz von Ihren Plänen..." 
+                          className="resize-none" 
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button type="submit" className="w-full bg-primary text-white font-bold py-6 text-lg shadow-lg hover:bg-primary/90">
+                  Jetzt Bewerben
+                </Button>
+              </form>
+            </Form>
           </div>
         </div>
       </section>
