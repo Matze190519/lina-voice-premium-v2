@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 interface ContactFormProps {
   open: boolean;
@@ -17,27 +18,37 @@ export default function ContactForm({ open, onOpenChange, type = 'default' }: Co
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    const formData = new FormData(e.currentTarget);
     
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    
-    // Reset after showing success message
-    setTimeout(() => {
-      setIsSuccess(false);
-      onOpenChange(false);
-    }, 3000);
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+      
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      
+      // Reset after showing success message
+      setTimeout(() => {
+        setIsSuccess(false);
+        onOpenChange(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogOverlay className="bg-black/80 backdrop-blur-sm z-[9999]" />
-      <DialogContent className="sm:max-w-[425px] bg-card border-white/10 text-white z-[10000]">
+      <DialogContent className="sm:max-w-[500px] bg-card border-white/10 text-white z-[10000] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-heading font-bold text-white">
             {type === 'consultation' ? 'Beratungsgespräch anfordern' : 'Startpaket anfragen'}
@@ -56,36 +67,67 @@ export default function ContactForm({ open, onOpenChange, type = 'default' }: Co
             <p className="text-gray-400">Vielen Dank für Ihr Interesse. Wir haben Ihre Daten erhalten.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6 mt-4">
-            <div className="space-y-2">
-              <Label htmlFor="name" className="text-gray-300">Name</Label>
-              <Input id="name" required placeholder="Max Mustermann" className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-neon-cyan/50" />
+          <form 
+            name="contact" 
+            method="POST" 
+            data-netlify="true" 
+            onSubmit={handleSubmit} 
+            className="space-y-4 mt-4"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-gray-300">Name *</Label>
+                <Input id="name" name="name" required placeholder="Max Mustermann" className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-neon-cyan/50" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="company" className="text-gray-300">Firma (Optional)</Label>
+                <Input id="company" name="company" placeholder="Muster GmbH" className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-neon-cyan/50" />
+              </div>
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-gray-300">E-Mail</Label>
-              <Input id="email" type="email" required placeholder="max@firma.de" className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-neon-cyan/50" />
+              <Label htmlFor="email" className="text-gray-300">E-Mail *</Label>
+              <Input id="email" name="email" type="email" required placeholder="max@firma.de" className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-neon-cyan/50" />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="source" className="text-gray-300">Wie sind Sie auf uns aufmerksam geworden?</Label>
+              <Select name="source">
+                <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50">
+                  <SelectValue placeholder="Bitte auswählen" />
+                </SelectTrigger>
+                <SelectContent className="bg-deep-navy border-white/10 text-white">
+                  <SelectItem value="google">Google Suche</SelectItem>
+                  <SelectItem value="social">Social Media (LinkedIn, Instagram, etc.)</SelectItem>
+                  <SelectItem value="recommendation">Empfehlung</SelectItem>
+                  <SelectItem value="advertisement">Werbeanzeige</SelectItem>
+                  <SelectItem value="other">Sonstiges</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             
             <div className="space-y-2">
               <Label htmlFor="message" className="text-gray-300">Nachricht (Optional)</Label>
               <Textarea 
                 id="message" 
+                name="message"
                 placeholder={type === 'consultation' 
                   ? "Ich möchte mehr darüber erfahren, wie Lina in meinem Unternehmen eingesetzt werden kann..." 
                   : "Ich interessiere mich für das LR Profi Business Pro Set..."} 
-                className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-neon-cyan/50 min-h-[100px]"
+                className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-neon-cyan/50 min-h-[80px]"
               />
             </div>
 
-            <div className="flex items-start space-x-2">
-              <Checkbox id="terms" required className="border-white/30 data-[state=checked]:bg-neon-cyan data-[state=checked]:text-black" />
-              <Label htmlFor="terms" className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400">
+            <div className="flex items-start space-x-2 pt-2">
+              <Checkbox id="terms" required className="border-white/30 data-[state=checked]:bg-neon-cyan data-[state=checked]:text-black mt-1" />
+              <Label htmlFor="terms" className="text-xs font-normal leading-tight peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400">
                 Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden. Hinweis: Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Weitere Informationen finden Sie in der <a href="/privacy" className="underline text-neon-cyan hover:text-neon-cyan/80">Datenschutzerklärung</a>.
               </Label>
             </div>
 
-            <Button type="submit" className="w-full bg-electric-purple text-white hover:bg-electric-purple/90 font-bold" disabled={isSubmitting}>
+            <Button type="submit" className="w-full bg-electric-purple text-white hover:bg-electric-purple/90 font-bold py-6" disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
