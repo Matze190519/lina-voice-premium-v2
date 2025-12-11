@@ -85,8 +85,16 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-border glass-card">
-                <img src="/images/future-office.png" alt="Modern Office" className="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-border glass-card group">
+                <video 
+                  src="/videos/lina-demo.mp4" 
+                  className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls={false}
+                />
                 
                 {/* Floating UI Elements - Futuristic Style */}
                 <div className="absolute top-8 right-8 glass-panel p-4 rounded-lg shadow-lg border border-primary/20">
