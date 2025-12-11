@@ -33,7 +33,7 @@ export default function LRPartner() {
               <span className="text-gray-400">Ihr All-in-One Startpaket.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Nutzen Sie Ihr Budget intelligent: Statt Honorare für die Einrichtung zu zahlen, erwerben Sie mit dem "Profi Business Pro" Set echte Sachwerte für Ihr Unternehmen. Die komplette technische Integration Ihrer KI ist inklusive.
+              Nutzen Sie Ihr Budget intelligent: Statt Honorare für die Einrichtung zu zahlen, investieren Sie in das "Profi Business Pro" Set. Nutzen Sie die enthaltenen Gesundheits- und Pflegeprodukte als Mitarbeiter-Incentives, Kundengeschenke oder für den Eigenbedarf. Ihr Vorteil: Sie erhalten einen realen Gegenwert für Ihr Geld, die KI-Einrichtung ist inklusive.
               <br /><br />
               <span className="text-neon-cyan font-bold text-2xl">Investition: 712,50 € + 29,90 € Lizenz</span>
               <br />
@@ -189,7 +189,7 @@ export default function LRPartner() {
                   Warum läuft die Abwicklung über LR?
                 </AccordionTrigger>
                 <AccordionContent className="text-lg text-gray-400 pb-6 leading-relaxed">
-                  Wir nutzen das Business Set Pro von LR als Basis. Dies ermöglicht uns, die KI-Einrichtung ohne separate Agentur-Rechnung anzubieten. Sie erhalten für Ihr Geld also echten Warenwert (Hardware & Produkte) statt nur einer Dienstleistung. Mit dem Business Set Pro werden Sie LR-Partner. Du bleibst selbständig, es ist kein Arbeitsverhältnis. Die Empfehlung des Systems an andere Unternehmer ist optional, kein Muss.
+                  Wir nutzen das Business Set Pro von LR als Basis. Dies ermöglicht uns, die KI-Einrichtung ohne separate Agentur-Rechnung anzubieten. Sie erhalten für Ihr Geld also echten Warenwert (Hardware & Produkte) statt nur einer Dienstleistung. Mit dem Business Set Pro werden Sie LR-Partner. Sie bleiben selbständig, es ist kein Arbeitsverhältnis. Die Empfehlung des Systems an andere Unternehmer ist optional, kein Muss.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2" className="border border-white/10 rounded-xl bg-black/20 px-4">
