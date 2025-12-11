@@ -34,11 +34,11 @@ export default function ContactForm({ open, onOpenChange, type = 'default' }: Co
       setIsSubmitting(false);
       setIsSuccess(true);
       
-      // Reset after showing success message
-      setTimeout(() => {
-        setIsSuccess(false);
-        onOpenChange(false);
-      }, 3000);
+      // Keep success message visible until user closes it
+      // setTimeout(() => {
+      //   setIsSuccess(false);
+      //   onOpenChange(false);
+      // }, 3000);
     } catch (error) {
       console.error("Form submission error:", error);
       setIsSubmitting(false);
@@ -64,7 +64,16 @@ export default function ContactForm({ open, onOpenChange, type = 'default' }: Co
               <CheckCircle2 className="w-8 h-8 text-green-500" />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Anfrage gesendet!</h3>
-            <p className="text-gray-400">Vielen Dank für Ihr Interesse. Wir haben Ihre Daten erhalten.</p>
+            <p className="text-gray-400 mb-6">Vielen Dank für Ihr Interesse. Wir haben Ihre Daten erhalten.</p>
+            <Button 
+              onClick={() => {
+                setIsSuccess(false);
+                onOpenChange(false);
+              }}
+              className="bg-white/10 hover:bg-white/20 text-white"
+            >
+              Schließen
+            </Button>
           </div>
         ) : (
           <form 
