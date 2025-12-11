@@ -13,16 +13,9 @@ export default function BotpressChat() {
       return;
     }
 
-    // 1. Inject the main Botpress script (v3.4 as found on reference site)
+    // 1. Inject the main Botpress script (v2.2 stable)
     const script = document.createElement('script');
     script.id = 'botpress-inject';
-    script.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js'; 
-    // Note: Reference site uses v3.4 inject.js but the config structure we have is for v2.
-    // Let's try to stick with v2.2 first but ensure the config is passed correctly.
-    // If this fails, we will switch to the exact script src from reference site.
-    // Wait, the reference site had: <script src="https://cdn.botpress.cloud/webchat/v3.4/inject.js"></script>
-    // But the config object structure in our previous file looked like v2.
-    // Let's try to use the exact script from reference site.
     script.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js'; 
     script.async = true;
     
@@ -54,6 +47,16 @@ export default function BotpressChat() {
           },
           "clientId": "32dfe644-9e09-4072-bd72-34340d56cb7b"
         });
+
+        // Add event listener for showing the chat
+        window.botpressWebChat.onEvent(
+          function (event: any) {
+            if (event.type === 'LIFECYCLE.LOADED') {
+              window.botpressWebChat.sendEvent({ type: 'show' });
+            }
+          },
+          ['LIFECYCLE.LOADED']
+        );
       }
     };
 
