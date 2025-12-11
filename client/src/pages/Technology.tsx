@@ -33,7 +33,7 @@ export default function Technology() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
-                  Mit unter <strong>300ms Reaktionszeit</strong> ist Lina schneller als ein menschlicher Gedanke. 
+                  Mit unter <strong>200ms Reaktionszeit</strong> ist Lina schneller als ein menschlicher Gedanke. 
                   Herkömmliche Systeme (Bland AI, Retell) benötigen oft 800ms+, was zu unangenehmen Pausen führt.
                 </p>
               </CardContent>
@@ -185,7 +185,7 @@ export default function Technology() {
                   </tr>
                   <tr>
                     <td className="p-6 font-medium">Latenzzeit (Durchschnitt)</td>
-                    <td className="p-6 font-bold text-primary bg-primary/5 border-x border-primary/10">~300 ms ⚡</td>
+                    <td className="p-6 font-bold text-primary bg-primary/5 border-x border-primary/10">~200 ms ⚡</td>
                     <td className="p-6 text-muted-foreground">~800 ms</td>
                     <td className="p-6 text-muted-foreground">~500 ms</td>
                     <td className="p-6 text-muted-foreground">~600 ms</td>

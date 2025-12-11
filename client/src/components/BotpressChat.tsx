@@ -76,13 +76,29 @@ export default function BotpressChat() {
     // Adjusted for mobile to avoid overlap with bottom navigation or other elements
     const style = document.createElement('style');
     style.innerHTML = `
+      /* Force visibility on the widget button container */
       .bpw-widget-btn {
         z-index: 2147483647 !important; /* Max z-index */
         bottom: 20px !important;
         right: 20px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
       }
+      
+      /* Force visibility on the chat container */
       .bpw-chat-container {
         z-index: 2147483647 !important;
+        display: block !important;
+        visibility: visible !important;
+      }
+
+      /* Ensure the icon image inside is visible */
+      .bpw-widget-btn img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
       
       /* Mobile specific adjustments */
@@ -90,8 +106,8 @@ export default function BotpressChat() {
         .bpw-widget-btn {
           bottom: 20px !important;
           right: 16px !important;
-          width: 56px !important;
-          height: 56px !important;
+          width: 60px !important;
+          height: 60px !important;
         }
       }
     `;
