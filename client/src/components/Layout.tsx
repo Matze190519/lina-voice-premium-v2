@@ -85,8 +85,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0 z-50">
             <div className="flex flex-col items-end hidden xl:flex">
               <span className="text-[10px] text-gray-400 uppercase tracking-wider">24/7 Support</span>
-              <a href="tel:+4951116653654" className="text-sm font-bold text-white hover:text-neon-cyan transition-colors font-mono">
-                +49 511 16653654
+              <a href="tel:+491715060008" className="text-sm font-bold text-white hover:text-neon-cyan transition-colors font-mono">
+                +49 171 5060008
               </a>
             </div>
             <NeonButton className="px-4 xl:px-6 py-2 text-xs xl:text-sm h-9 xl:h-10 min-h-0 whitespace-nowrap">
@@ -122,13 +122,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="mt-auto pb-8">
                <div className="flex flex-col items-center mb-6">
                 <span className="text-xs text-gray-400 uppercase tracking-wider mb-1">24/7 Support</span>
-                <a href="tel:+4951116653654" className="text-lg font-bold text-white hover:text-neon-cyan transition-colors font-mono">
-                  +49 511 16653654
+                <a href="tel:+491715060008" className="text-lg font-bold text-white hover:text-neon-cyan transition-colors font-mono">
+                  +49 171 5060008
                 </a>
               </div>
               <NeonButton 
                 className="w-full justify-center"
-                onClick={() => window.location.href = 'tel:+4951116653654'}
+                href="tel:+491715060008"
               >
                 <Phone className="w-4 h-4 mr-2" />
                 Jetzt Anrufen

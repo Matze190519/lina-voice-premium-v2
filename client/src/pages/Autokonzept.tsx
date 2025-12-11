@@ -47,7 +47,7 @@ export default function Autokonzept() {
               Warum marktübliche Leasingraten zahlen? Nutzen Sie unser Großkunden-Konzept als strategischen Wettbewerbsvorteil.
               <br /><span className="text-white font-bold">Keine Anzahlung. Sofort verfügbar.</span>
             </p>
-            <NeonButton onClick={() => window.location.href = 'tel:+4923827658750'}>
+            <NeonButton href="tel:+491715060008">
               Konditionen prüfen
             </NeonButton>
           </div>
@@ -211,10 +211,10 @@ export default function Autokonzept() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
             <h2 className="text-4xl font-playfair font-bold mb-6 text-white relative z-10">Optimieren Sie jetzt Ihren Fuhrpark</h2>
             <p className="text-xl text-gray-300 mb-8 relative z-10">
-              Business Hotline: <a href="tel:+4923827658750" className="text-white font-bold hover:text-neon-cyan transition-colors">+49 2382 / 7658–750</a>
+              Business Hotline: <a href="tel:+491715060008" className="text-white font-bold hover:text-neon-cyan transition-colors">+49 171 5060008</a>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-              <NeonButton onClick={() => window.location.href = 'mailto:incentives@LRworld.com'}>
+              <NeonButton href="mailto:info@lr-lifestyle.info">
                 Angebot anfordern
               </NeonButton>
             </div>

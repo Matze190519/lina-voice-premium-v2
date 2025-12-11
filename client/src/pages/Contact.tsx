@@ -75,8 +75,8 @@ export default function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-400 mb-4">Rufen Sie uns an oder lassen Sie sich von Lina beraten.</p>
-                <a href="tel:+4951116653654" className="text-xl font-bold text-white hover:text-neon-cyan transition-colors block">
-                  +49 511 16653654
+                <a href="tel:+491715060008" className="text-xl font-bold text-white hover:text-neon-cyan transition-colors block">
+                  +49 171 5060008
                 </a>
                 <p className="text-sm text-gray-500 mt-2">Mo-Fr, 09:00 - 18:00 Uhr</p>
               </CardContent>
@@ -93,8 +93,8 @@ export default function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-400 mb-4">Schreiben Sie uns eine E-Mail. Wir antworten innerhalb von 24 Stunden.</p>
-                <a href="mailto:info@lina-voice.de" className="text-lg font-bold text-white hover:text-neon-cyan transition-colors block">
-                  info@lina-voice.de
+                <a href="mailto:info@lr-lifestyle.info" className="text-lg font-bold text-white hover:text-neon-cyan transition-colors block">
+                  info@lr-lifestyle.info
                 </a>
               </CardContent>
             </Card>

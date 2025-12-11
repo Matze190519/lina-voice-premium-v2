@@ -87,7 +87,7 @@ export default function Preise() {
               <div className="text-center mt-10">
                 <NeonButton 
                   className="text-xl px-12 py-4 w-full sm:w-auto"
-                  onClick={() => window.location.href = 'tel:+4951116653654'}
+                  href="tel:+491715060008"
                 >
                   Jetzt Pilotprojekt-Platz sichern
                 </NeonButton>
@@ -103,11 +103,11 @@ export default function Preise() {
             <div className="mt-12 text-center text-gray-400">
               <p className="mb-2">Haben Sie Fragen zum Angebot?</p>
               <a 
-                href="tel:+4951116653654" 
+                href="tel:+491715060008" 
                 className="text-neon-cyan hover:text-electric-purple transition-colors font-semibold flex items-center gap-2 justify-center text-lg"
               >
                 <Phone className="w-5 h-5" />
-                +49 511 16653654
+                +49 171 5060008
               </a>
             </div>
           </ScrollReveal>

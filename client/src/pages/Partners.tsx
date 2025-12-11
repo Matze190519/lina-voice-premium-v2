@@ -229,11 +229,11 @@ export default function Partners() {
               <p className="text-muted-foreground mb-6">
                 Sie haben vorab Fragen? Unser Partner-Management steht Ihnen gerne zur Verfügung.
               </p>
-              <a href="tel:+4951116653654" className="flex items-center gap-3 text-primary font-bold hover:underline text-lg">
+              <a href="tel:+491715060008" className="flex items-center gap-3 text-primary font-bold hover:underline text-lg">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <Phone className="w-5 h-5" />
                 </div>
-                +49 511 16653654
+                +49 171 5060008
               </a>
             </div>
           </div>

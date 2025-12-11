@@ -189,9 +189,9 @@ export default function Home() {
                 Konditionen, die es so nie wieder geben wird.
               </p>
               <div className="flex justify-center">
-                <NeonButton onClick={() => window.location.href = 'tel:+4951116653654'} className="text-lg px-10 py-4 w-full sm:w-auto">
+                <NeonButton href="tel:+491715060008" className="text-lg px-10 py-4 w-full sm:w-auto cursor-pointer">
                     <Phone className="w-6 h-6 inline mr-3" />
-                    +49 511 16653654
+                    +49 171 5060008
                 </NeonButton>
               </div>
             </div>
