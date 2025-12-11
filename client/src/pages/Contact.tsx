@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Send, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Send, MessageSquare, CheckCircle } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { NeonButton } from "@/components/ui/NeonButton";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name muss mindestens 2 Zeichen lang sein"),
@@ -21,6 +22,7 @@ const formSchema = z.object({
 });
 
 export default function Contact() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -48,6 +50,7 @@ export default function Contact() {
       .then(() => {
         toast.success("Vielen Dank für Ihre Nachricht! Wir melden uns in Kürze.");
         form.reset();
+        setIsSubmitted(true);
       })
       .catch((error) => {
         console.error("Form submission error:", error);
@@ -140,118 +143,135 @@ export default function Contact() {
           <div className="lg:col-span-2">
             <Card className="glass-card border-white/10 bg-deep-navy/50 backdrop-blur-xl h-full">
               <CardHeader>
-                <CardTitle className="text-2xl text-white">Nachricht senden</CardTitle>
+                <CardTitle className="text-2xl text-white">
+                  {isSubmitted ? "Nachricht gesendet" : "Nachricht senden"}
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" name="contact" data-netlify="true">
-                    <input type="hidden" name="form-name" value="contact" />
-                    
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-gray-300">Name</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Ihr Name" {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="company"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-gray-300">Firma (Optional)</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Ihre Firma" {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                {isSubmitted ? (
+                  <div className="flex flex-col items-center justify-center py-12 text-center animate-in fade-in zoom-in duration-500">
+                    <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mb-6">
+                      <CheckCircle className="w-10 h-10 text-green-500" />
                     </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-gray-300">E-Mail</FormLabel>
-                            <FormControl>
-                              <Input placeholder="ihre@email.de" {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-gray-300">Telefon</FormLabel>
-                            <FormControl>
-                              <Input placeholder="+49 ..." {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-300">Nachricht</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Wie können wir Ihnen helfen?" 
-                              className="resize-none min-h-[150px] bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" 
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="privacy"
-                      render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md p-4 border border-white/5 bg-white/5">
-                          <FormControl>
-                            <input 
-                              type="checkbox" 
-                              checked={field.value} 
-                              onChange={field.onChange}
-                              className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-                            />
-                          </FormControl>
-                          <div className="space-y-1 leading-none">
-                            <FormLabel className="text-gray-300">
-                              Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden.
-                            </FormLabel>
-                            <FormMessage />
-                          </div>
-                        </FormItem>
-                      )}
-                    />
-
-                    <NeonButton type="submit" className="w-full justify-center">
-                      <Send className="w-5 h-5 mr-2" />
-                      Nachricht senden
+                    <h3 className="text-2xl font-bold text-white mb-4">Vielen Dank!</h3>
+                    <p className="text-gray-400 max-w-md mb-8">
+                      Ihre Nachricht wurde erfolgreich an uns übermittelt. Wir werden uns so schnell wie möglich bei Ihnen melden.
+                    </p>
+                    <NeonButton onClick={() => setIsSubmitted(false)} variant="secondary">
+                      Neue Nachricht schreiben
                     </NeonButton>
-                  </form>
-                </Form>
+                  </div>
+                ) : (
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" name="contact" data-netlify="true">
+                      <input type="hidden" name="form-name" value="contact" />
+                      
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <FormField
+                          control={form.control}
+                          name="name"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-gray-300">Name</FormLabel>
+                              <FormControl>
+                                <Input placeholder="Ihr Name" {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="company"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-gray-300">Firma (Optional)</FormLabel>
+                              <FormControl>
+                                <Input placeholder="Ihre Firma" {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-gray-300">E-Mail</FormLabel>
+                              <FormControl>
+                                <Input placeholder="ihre@email.de" {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="phone"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-gray-300">Telefon</FormLabel>
+                              <FormControl>
+                                <Input placeholder="+49 ..." {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-gray-300">Nachricht</FormLabel>
+                            <FormControl>
+                              <Textarea 
+                                placeholder="Wie können wir Ihnen helfen?" 
+                                className="resize-none min-h-[150px] bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" 
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="privacy"
+                        render={({ field }) => (
+                          <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md p-4 border border-white/5 bg-white/5">
+                            <FormControl>
+                              <input 
+                                type="checkbox" 
+                                checked={field.value} 
+                                onChange={field.onChange}
+                                className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                              />
+                            </FormControl>
+                            <div className="space-y-1 leading-none">
+                              <FormLabel className="text-gray-300">
+                                Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden.
+                              </FormLabel>
+                              <FormMessage />
+                            </div>
+                          </FormItem>
+                        )}
+                      />
+
+                      <NeonButton type="submit" className="w-full justify-center">
+                        <Send className="w-5 h-5 mr-2" />
+                        Nachricht senden
+                      </NeonButton>
+                    </form>
+                  </Form>
+                )}
               </CardContent>
             </Card>
           </div>
