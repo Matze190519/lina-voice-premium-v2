@@ -237,10 +237,12 @@ export default function Technology() {
                 Technische Daten sind gut. Ein echtes Gespräch ist besser. 
                 Rufen Sie Lina jetzt an und versuchen Sie, sie aus dem Konzept zu bringen.
               </p>
-              <a href="tel:+4951116653654" className="inline-flex items-center justify-center bg-white text-electric-purple font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
-                <Phone className="w-5 h-5 mr-2" />
-                <span>+49 511 16653654 anrufen</span>
-              </a>
+              <div className="flex justify-center">
+                <a href="tel:+4951116653654" className="inline-flex items-center justify-center bg-white text-black font-bold text-xl py-4 px-10 rounded-xl hover:bg-gray-100 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.4)]">
+                  <Phone className="w-6 h-6 mr-3" />
+                  <span>+49 511 16653654 anrufen</span>
+                </a>
+              </div>
             </div>
           </div>
         </ScrollReveal>
