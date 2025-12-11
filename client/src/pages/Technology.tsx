@@ -239,7 +239,7 @@ export default function Technology() {
               </p>
               <a href="tel:+4951116653654" className="inline-flex items-center justify-center bg-white text-electric-purple font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
                 <Phone className="w-5 h-5 mr-2" />
-                +49 511 16653654 anrufen
+                <span className="text-electric-purple">+49 511 16653654 anrufen</span>
               </a>
             </div>
           </div>

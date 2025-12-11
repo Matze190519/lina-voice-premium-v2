@@ -32,7 +32,7 @@ export default function Preise() {
               <div className="flex justify-center mb-8">
                 <div className="relative w-full max-w-2xl rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-electric-purple/20 bg-black/50">
                   <img 
-                    src="/images/lr-profi-business-set.png" 
+                    src="/images/lr-profi-set.jpg" 
                     alt="LR Profi Business Pro Set" 
                     className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
                   />

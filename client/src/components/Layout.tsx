@@ -117,7 +117,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {link.label}
               </Link>
             ))}
-            <NeonButton className="w-full mt-4 justify-center">
+            <NeonButton 
+              className="w-full mt-4 justify-center"
+              onClick={() => window.location.href = 'tel:+4951116653654'}
+            >
               <Phone className="w-4 h-4 mr-2" />
               Jetzt Anrufen
             </NeonButton>

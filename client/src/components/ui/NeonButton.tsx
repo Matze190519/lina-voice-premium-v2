@@ -14,8 +14,9 @@ export const NeonButton = React.forwardRef<HTMLButtonElement, NeonButtonProps>(
     const baseStyles = "relative px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 overflow-hidden group";
     
     const variants = {
-      primary: "bg-primary text-primary-foreground hover:shadow-[0_0_30px_rgba(196,155,255,0.6)] border border-primary/50",
-      secondary: "bg-secondary text-secondary-foreground hover:shadow-[0_0_30px_rgba(0,255,255,0.6)] border border-secondary/50",
+      // Enforce text-black/text-white explicitly to avoid theme variable issues
+      primary: "bg-primary text-black hover:shadow-[0_0_30px_rgba(196,155,255,0.6)] border border-primary/50",
+      secondary: "bg-secondary text-black hover:shadow-[0_0_30px_rgba(0,255,255,0.6)] border border-secondary/50",
       outline: "bg-transparent border-2 border-primary text-primary hover:bg-primary/10 hover:shadow-[0_0_20px_rgba(196,155,255,0.4)]"
     };
 
