@@ -44,8 +44,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0 z-50">
-            <div className="w-10 h-10 bg-gradient-to-br from-electric-purple to-neon-blue flex items-center justify-center rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.5)] group-hover:shadow-[0_0_25px_rgba(124,58,237,0.8)] transition-all duration-300">
-              <span className="font-playfair font-bold text-xl text-white">L</span>
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-electric-purple/50 shadow-[0_0_15px_rgba(124,58,237,0.5)] group-hover:shadow-[0_0_25px_rgba(124,58,237,0.8)] transition-all duration-300">
+              <img src="/images/logo-lr.png" alt="Lina Voice Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
               <span className="font-playfair font-bold text-xl tracking-wide text-white leading-none">

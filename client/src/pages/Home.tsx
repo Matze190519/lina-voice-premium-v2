@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="relative z-10">
       {/* Hero Section - ROBUST FLEX LAYOUT */}
-      <section className="min-h-[calc(100vh-80px)] flex items-center justify-center py-12 lg:py-20 relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center py-24 lg:py-32 relative overflow-hidden">
         
         {/* Background Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
@@ -40,7 +40,7 @@ export default function Home() {
                     </span>
                   </motion.div>
 
-                  <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight">
+                  <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight text-white">
                     Die KI, die für dich<br />
                     <span className="bg-gradient-to-r from-electric-purple to-neon-cyan bg-clip-text text-transparent animate-gradient-x">
                       ans Telefon geht.
@@ -135,7 +135,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
+                <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6 text-white">
                 Dein Sekretariat der <span className="text-neon-cyan">Zukunft</span>.
                 </h2>
                 <p className="text-gray-400 text-lg">
@@ -164,7 +164,7 @@ export default function Home() {
                   <div className="w-14 h-14 rounded-xl bg-electric-purple/10 flex items-center justify-center mb-6 group-hover:bg-neon-cyan/10 transition-colors duration-300">
                     <CheckCircle className="w-8 h-8 text-electric-purple group-hover:text-neon-cyan transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4 font-playfair group-hover:text-white transition-colors">{feature.title}</h3>
+                  <h3 className="text-xl font-bold mb-4 font-playfair text-white group-hover:text-white transition-colors">{feature.title}</h3>
                   <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">{feature.description}</p>
                 </div>
               </ScrollReveal>
@@ -181,7 +181,7 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal>
             <div className="glass-card p-12 rounded-3xl text-center max-w-4xl mx-auto border border-electric-purple/30 bg-deep-navy/80 backdrop-blur-xl shadow-2xl hover:shadow-electric-purple/20 transition-shadow duration-500">
-              <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8">
+              <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8 text-white">
                 Bereit für die <span className="text-electric-purple">Zukunft?</span>
               </h2>
               <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
