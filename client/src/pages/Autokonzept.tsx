@@ -1,222 +1,166 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Check, Car, TrendingUp, Wallet, Briefcase, Phone, Mail } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
-import { useState } from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import ScrollReveal from '../components/ScrollReveal';
+import { NeonButton } from '../components/ui/NeonButton';
+import { Check, Shield, Zap, ChevronRight } from 'lucide-react';
 
 export default function Autokonzept() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
-
   return (
-    <div className="pb-20">
-      <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} />
-      
-      {/* Hero Section - B2B Focused */}
-      <section className="relative pt-20 pb-32 overflow-hidden bg-background border-b border-border">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Fuhrpark-Management 2.0</Badge>
-              <h1 className="text-5xl md:text-6xl font-heading font-bold leading-tight mb-6 text-primary">
-                Intelligente Mobilität <br />
-                <span className="text-muted-foreground">für Ihr Unternehmen.</span>
-              </h1>
-              <p className="text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
-                Warum marktübliche Leasingraten zahlen? Nutzen Sie unser Großkunden-Konzept als strategischen Wettbewerbsvorteil. 
-                <strong>Keine Anzahlung. Sofort verfügbar.</strong>
-              </p>
-              <Button 
-                className="h-14 px-8 text-lg font-bold shadow-lg shadow-primary/20"
-                onClick={() => setIsContactOpen(true)}
-              >
-                Konditionen prüfen
-              </Button>
+    <main className="relative z-10 pt-32 pb-20">
+      <div className="container mx-auto px-4">
+        {/* Hero Section */}
+        <ScrollReveal>
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-1 rounded-full bg-electric-purple/20 border border-electric-purple/50 text-neon-cyan text-sm font-bold mb-6">
+              Fuhrpark-Management 2.0
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl transform rotate-3" />
-              <img 
-                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop" 
-                alt="Premium Business Fleet" 
-                className="relative rounded-2xl shadow-xl w-full h-auto border border-border bg-white p-2 object-cover aspect-video"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Hard Facts Section - Corrected per User Input */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-primary">Die Fakten für Entscheider</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Optimieren Sie Ihre Fixkosten durch Zugriff auf exklusive Rahmenverträge.
+            <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight">
+              Intelligente <span className="text-neon-cyan">Mobilität</span><br />
+              für Ihr Unternehmen.
+            </h1>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+              Warum marktübliche Leasingraten zahlen? Nutzen Sie unser Großkunden-Konzept als strategischen Wettbewerbsvorteil.
+              <br /><span className="text-white font-bold">Keine Anzahlung. Sofort verfügbar.</span>
             </p>
+            <NeonButton onClick={() => window.location.href = 'tel:+4923827658750'}>
+              Konditionen prüfen
+            </NeonButton>
           </div>
+        </ScrollReveal>
+
+        {/* Key Facts */}
+        <ScrollReveal delay={0.2}>
+          <div className="grid md:grid-cols-3 gap-8 mb-32">
+            <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/50 transition-colors">
+              <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
+                <Shield className="w-6 h-6 text-neon-cyan" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">Keine Anzahlung</h3>
+              <p className="text-gray-400">
+                Schonen Sie Ihre Liquidität. Unsere Fahrzeuge bestellen Sie <span className="text-white font-bold">ohne Anzahlung</span> und ohne Schlussrate. Volle Kostentransparenz ab dem ersten Kilometer.
+              </p>
+            </div>
+            <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/50 transition-colors">
+              <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
+                <Check className="w-6 h-6 text-neon-cyan" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">Einmalige Qualifikation</h3>
+              <p className="text-gray-400">
+                Kein monatlicher Druck. Sie qualifizieren sich <span className="text-white font-bold">ein einziges Mal</span> (z.B. durch Ihr Startpaket) und sind sofort bestellberechtigt.
+              </p>
+            </div>
+            <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/50 transition-colors">
+              <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
+                <Zap className="w-6 h-6 text-neon-cyan" />
+              </div>
+              <h3 className="text-xl font-bold mb-4">Sofortiger Zugriff</h3>
+              <p className="text-gray-400">
+                Mit Ihrem <span className="text-white font-bold">Profi Business Startpaket</span> (2.000 PW) und nur <span className="text-white font-bold">zwei Empfehlungen</span> erreichen Sie die nötigen 4.000 PW. Damit sind Sie sofort bestellberechtigt.
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Fleet Showcase */}
+        <div className="mb-32">
+          <ScrollReveal>
+            <h2 className="text-4xl font-playfair font-bold text-center mb-16">
+              Premium-Flotte <span className="text-neon-cyan">Sofort bestellbar</span>
+            </h2>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-white border-border shadow-sm hover:shadow-md transition-all">
-              <CardHeader>
-                <div className="mb-4 p-3 w-fit rounded-lg bg-primary/5">
-                  <Wallet className="w-8 h-8 text-primary" />
+            {/* Mercedes A-Class */}
+            <ScrollReveal delay={0.1}>
+              <div className="group relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <img 
+                  src="/images/mercedes-a-class.jpg" 
+                  alt="Mercedes A-Klasse" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
+                  <h3 className="text-2xl font-bold mb-2">Mercedes A-Klasse</h3>
+                  <p className="text-gray-300 mb-4">Kompaktlimousine, Business-Ausstattung</p>
+                  <div className="flex items-center text-neon-cyan font-bold">
+                    Top-Konditionen <ChevronRight className="w-5 h-5 ml-2" />
+                  </div>
                 </div>
-                <CardTitle className="font-heading text-xl text-primary">Keine Anzahlung</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Schonen Sie Ihre Liquidität. Unsere Fahrzeuge bestellen Sie <strong>ohne Anzahlung</strong> und ohne Schlussrate. 
-                  Volle Kostentransparenz ab dem ersten Kilometer.
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+            </ScrollReveal>
 
-            <Card className="bg-white border-border shadow-sm hover:shadow-md transition-all">
-              <CardHeader>
-                <div className="mb-4 p-3 w-fit rounded-lg bg-primary/5">
-                  <Check className="w-8 h-8 text-primary" />
+            {/* VW Golf */}
+            <ScrollReveal delay={0.2}>
+              <div className="group relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <img 
+                  src="/images/vw-tiguan.jpg" 
+                  alt="VW Golf Variant" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
+                  <h3 className="text-2xl font-bold mb-2">VW Golf Variant R-Line</h3>
+                  <p className="text-gray-300 mb-4">Der ideale Firmenwagen</p>
+                  <div className="flex items-center text-neon-cyan font-bold">
+                    Top-Konditionen <ChevronRight className="w-5 h-5 ml-2" />
+                  </div>
                 </div>
-                <CardTitle className="font-heading text-xl text-primary">Einmalige Qualifikation</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Kein monatlicher Druck. Sie qualifizieren sich <strong>ein einziges Mal</strong> (z.B. durch Ihr Startpaket) und sind sofort bestellberechtigt.
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+            </ScrollReveal>
 
-            <Card className="bg-white border-border shadow-sm hover:shadow-md transition-all">
-              <CardHeader>
-                <div className="mb-4 p-3 w-fit rounded-lg bg-primary/5">
-                  <Briefcase className="w-8 h-8 text-primary" />
+            {/* Audi Q3 */}
+            <ScrollReveal delay={0.3}>
+              <div className="group relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <img 
+                  src="/images/audi-q3.jpg" 
+                  alt="Audi Q3 Sportback" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end">
+                  <h3 className="text-2xl font-bold mb-2">Audi Q3 Sportback</h3>
+                  <p className="text-gray-300 mb-4">Repräsentativ & Sportlich</p>
+                  <div className="flex items-center text-neon-cyan font-bold">
+                    Top-Konditionen <ChevronRight className="w-5 h-5 ml-2" />
+                  </div>
                 </div>
-                <CardTitle className="font-heading text-xl text-primary">Sofortiger Zugriff</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                 Mit Ihrem <strong>Profi Business Startpaket</strong> (2.000 PW) und nur <strong>zwei Empfehlungen</strong> erreichen Sie die nötigen 4.000 PW. Damit sind Sie sofort bestellberechtigt.
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
-      </section>
 
-      {/* Car Gallery */}
-      <section className="py-24 bg-background border-y border-border">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-12 text-center text-primary">Premium-Flotte</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="group">
-              <div className="relative overflow-hidden rounded-xl aspect-[4/3] mb-4 border border-border">
-                <img src="/images/mercedes-a-class.jpg" alt="Mercedes A-Class" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm">
-                  Sofort bestellbar
+        {/* FAQ Section */}
+        <div className="max-w-3xl mx-auto mb-32">
+          <ScrollReveal>
+            <h2 className="text-3xl font-playfair font-bold text-center mb-12">Häufige Fragen von Unternehmern</h2>
+            <div className="space-y-4">
+              {[
+                "Wie schnell kann ich ein Fahrzeug bestellen?",
+                "Wirklich keine Anzahlung?",
+                "Kann ich das Fahrzeug auch privat nutzen?",
+                "Welche Marken stehen zur Verfügung?"
+              ].map((question, i) => (
+                <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-neon-cyan/30 cursor-pointer transition-colors">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">{question}</span>
+                    <ChevronRight className="w-5 h-5 text-gray-500" />
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-xl font-bold mb-2">Mercedes A-Klasse</h3>
-              <p className="text-sm text-muted-foreground mb-2">Kompaktlimousine, Business-Ausstattung</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-lg font-bold text-primary">Top-Konditionen</span>
-              </div>
+              ))}
             </div>
+          </ScrollReveal>
+        </div>
 
-            <div className="group">
-              <div className="relative overflow-hidden rounded-xl aspect-[4/3] mb-4 border border-border">
-                <img src="/images/vw-tiguan.jpg" alt="VW Tiguan" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm">
-                  Sofort bestellbar
-                </div>
-              </div>
-              <h3 className="text-xl font-bold mb-2">VW Golf Variant R-Line</h3>
-              <p className="text-sm text-muted-foreground mb-2">Der ideale Firmenwagen</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-lg font-bold text-primary">Top-Konditionen</span>
-              </div>
-            </div>
-
-            <div className="group">
-              <div className="relative overflow-hidden rounded-xl aspect-[4/3] mb-4 border border-border">
-                <img src="/images/audi-q3.jpg" alt="Audi Q3" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm">
-                  Sofort bestellbar
-                </div>
-              </div>
-              <h3 className="text-xl font-bold mb-2">Audi Q3 Sportback</h3>
-              <p className="text-sm text-muted-foreground mb-2">Repräsentativ & Sportlich</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-lg font-bold text-primary">Top-Konditionen</span>
-              </div>
+        {/* CTA Section */}
+        <ScrollReveal>
+          <div className="text-center bg-gradient-to-r from-electric-purple/20 to-neon-cyan/20 rounded-3xl p-12 border border-white/10">
+            <h2 className="text-4xl font-playfair font-bold mb-6">Optimieren Sie jetzt Ihren Fuhrpark</h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Business Hotline: <a href="tel:+4923827658750" className="text-white font-bold hover:text-neon-cyan transition-colors">+49 2382 / 7658–750</a>
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <NeonButton onClick={() => window.location.href = 'mailto:incentives@LRworld.com'}>
+                Angebot anfordern
+              </NeonButton>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ - B2B Oriented */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-heading font-bold mb-12 text-center text-primary">Häufige Fragen von Unternehmern</h2>
-          
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Wie schnell kann ich ein Fahrzeug bestellen?</AccordionTrigger>
-              <AccordionContent>
-                Sobald Sie gesamt 4.000 Punktwerte erreicht haben. Das schaffen Sie einfach: Ihr eigenes Profi Business Paket bringt bereits 2.000 PW. Vermitteln Sie das Konzept an nur zwei weitere Partner (z.B. aus Ihrem Netzwerk), haben Sie die Qualifikation sofort erreicht.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Wirklich keine Anzahlung?</AccordionTrigger>
-              <AccordionContent>
-                Ja. Unser Konzept sieht keine Anzahlung vor. Sie zahlen lediglich die monatliche Leasingrate, was Ihre Liquidität im Unternehmen schont.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Kann ich das Fahrzeug auch privat nutzen?</AccordionTrigger>
-              <AccordionContent>
-                Selbstverständlich. Die Nutzung ist nicht eingeschränkt. Sie entscheiden, ob das Fahrzeug als Firmenwagen oder privat genutzt wird.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4">
-              <AccordionTrigger>Welche Marken stehen zur Verfügung?</AccordionTrigger>
-              <AccordionContent>
-                Wir kooperieren mit deutschen Premium-Herstellern: Mercedes-Benz, Audi, Volkswagen und BMW.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
-
-      {/* Contact Footer */}
-      <section className="py-16 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-8">Optimieren Sie jetzt Ihren Fuhrpark</h2>
-          <div className="flex flex-col md:flex-row justify-center gap-8 mb-8">
-            <div className="flex items-center justify-center gap-3">
-              <Phone className="w-6 h-6 opacity-80" />
-              <span className="text-lg">Business Hotline: +49 2382 / 7658–750</span>
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <Mail className="w-6 h-6 opacity-80" />
-              <span className="text-lg">incentives@LRworld.com</span>
-            </div>
-          </div>
-          <Button 
-            variant="secondary" 
-            size="lg" 
-            className="font-bold"
-            onClick={() => setIsContactOpen(true)}
-          >
-            Angebot anfordern
-          </Button>
-        </div>
-      </section>
-    </div>
+        </ScrollReveal>
+      </div>
+    </main>
   );
 }

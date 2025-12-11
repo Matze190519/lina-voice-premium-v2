@@ -1,9 +1,10 @@
 import { Link, useLocation } from "wouter";
-import { Button } from "@/components/ui/button";
+import { NeonButton } from "@/components/ui/NeonButton";
 import { Phone, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import BotpressChat from "./BotpressChat";
+import TrustBar from "./TrustBar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,9 +21,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const navLinks = [
     { href: "/", label: "Vision" },
-    { href: "/technology", label: "Technologie" }, // Fixed: /technologie -> /technology
+    { href: "/technology", label: "Technologie" },
     { href: "/partners", label: "Partner" },
-    { href: "/concept", label: "Konzept & Preise" }, // Fixed: /konzept -> /concept
+    { href: "/concept", label: "Konzept & Preise" },
     { href: "/autokonzept", label: "Autokonzept" },
     { href: "/lr-partner", label: "LR Partner" },
     { href: "/process", label: "Ablauf" },
@@ -30,7 +31,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground font-sans selection:bg-primary/10 selection:text-primary">
+    <div className="min-h-screen flex flex-col bg-deep-space text-white font-sans selection:bg-neon-cyan/30 selection:text-white overflow-x-hidden">
       <BotpressChat />
       
       {/* Navigation */}
@@ -38,50 +39,62 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         className={cn(
           "fixed top-0 w-full z-50 transition-all duration-300 border-b",
           isScrolled 
-            ? "bg-white/90 backdrop-blur-md border-border shadow-sm py-2" 
-            : "bg-transparent border-transparent py-4"
+            ? "bg-deep-space/90 backdrop-blur-md border-white/10 shadow-lg shadow-neon-cyan/5 py-2" 
+            : "bg-transparent border-transparent py-6"
         )}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-primary text-white flex items-center justify-center rounded-sm shadow-lg group-hover:shadow-primary/20 transition-all">
-              <span className="font-heading font-bold text-xl">L</span>
+            <div className="w-10 h-10 bg-gradient-to-br from-electric-purple to-neon-blue flex items-center justify-center rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.5)] group-hover:shadow-[0_0_25px_rgba(124,58,237,0.8)] transition-all duration-300">
+              <span className="font-playfair font-bold text-xl text-white">L</span>
             </div>
-            <span className="font-heading font-bold text-xl tracking-tight text-primary">
-              LINA VOICE
-            </span>
+            <div className="flex flex-col">
+              <span className="font-playfair font-bold text-xl tracking-wide text-white leading-none">
+                LINA
+              </span>
+              <span className="font-sans text-xs tracking-[0.2em] text-neon-cyan font-bold">
+                VOICE
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary relative py-1",
+                  "text-sm font-medium transition-all duration-300 hover:text-neon-cyan relative py-1 group",
                   location === link.href 
-                    ? "text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary" 
-                    : "text-muted-foreground"
+                    ? "text-neon-cyan" 
+                    : "text-gray-300"
                 )}
               >
                 {link.label}
+                <span className={cn(
+                  "absolute bottom-0 left-0 w-0 h-0.5 bg-neon-cyan transition-all duration-300 group-hover:w-full",
+                  location === link.href ? "w-full" : ""
+                )} />
               </Link>
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+4951116653654" className="text-sm font-bold text-primary hover:underline">
-              +49 511 16653654
-            </a>
-            <Button className="bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 rounded-sm px-6">
+          <div className="hidden lg:flex items-center gap-6">
+            <div className="flex flex-col items-end">
+              <span className="text-xs text-gray-400 uppercase tracking-wider">24/7 Support</span>
+              <a href="tel:+4951116653654" className="text-sm font-bold text-white hover:text-neon-cyan transition-colors">
+                +49 511 16653654
+              </a>
+            </div>
+            <NeonButton className="px-6 py-2 text-sm">
               Live Demo Starten
-            </Button>
+            </NeonButton>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden p-2 text-primary"
+            className="lg:hidden p-2 text-white hover:text-neon-cyan transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
@@ -90,72 +103,81 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-border shadow-xl p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-deep-space/95 backdrop-blur-xl border-b border-white/10 shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
                 href={link.href}
                 className={cn(
-                  "text-lg font-medium py-2 border-b border-border/50",
-                  location === link.href ? "text-primary" : "text-muted-foreground"
+                  "text-lg font-medium py-3 border-b border-white/5",
+                  location === link.href ? "text-neon-cyan" : "text-gray-300"
                 )}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <Button className="w-full mt-4 bg-primary text-white">
+            <NeonButton className="w-full mt-4 justify-center">
               <Phone className="w-4 h-4 mr-2" />
               Jetzt Anrufen
-            </Button>
+            </NeonButton>
           </div>
         )}
       </nav>
 
       {/* Main Content */}
-      <main className="flex-grow pt-20">
-        {children}
+      <main className="flex-grow relative">
+        {/* TrustBar integrated into flow but visually distinct */}
+        <div className="pt-24 lg:pt-32">
+          <TrustBar />
+          {children}
+        </div>
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-16 border-t border-white/10">
+      <footer className="bg-black/40 backdrop-blur-lg border-t border-white/5 pt-20 pb-10 relative z-10">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 bg-white text-primary flex items-center justify-center rounded-sm">
-                  <span className="font-heading font-bold text-lg">L</span>
+                <div className="w-8 h-8 bg-gradient-to-br from-electric-purple to-neon-blue flex items-center justify-center rounded-md">
+                  <span className="font-playfair font-bold text-lg text-white">L</span>
                 </div>
-                <span className="font-heading font-bold text-2xl">LINA VOICE</span>
+                <span className="font-playfair font-bold text-2xl text-white">LINA VOICE</span>
               </div>
-              <p className="text-white/70 max-w-md leading-relaxed">
+              <p className="text-gray-400 max-w-md leading-relaxed mb-8">
                 Die fortschrittlichste KI-Sprachassistentin für den deutschen Mittelstand. 
                 Entwickelt für höchste Ansprüche an Datenschutz, Latenz und Zuverlässigkeit.
               </p>
+              <div className="flex gap-4">
+                {/* Social Icons could go here */}
+              </div>
             </div>
             
             <div>
-              <h4 className="font-heading font-bold text-lg mb-6">Unternehmen</h4>
-              <ul className="space-y-3 text-white/70">
-                <li><Link href="/ueber-uns" className="hover:text-white transition-colors">Über Uns</Link></li>
-                <li><Link href="/concept" className="hover:text-white transition-colors">Karriere</Link></li>
-                <li><Link href="/kontakt" className="hover:text-white transition-colors">Kontakt</Link></li>
+              <h4 className="font-playfair font-bold text-lg text-white mb-6">Unternehmen</h4>
+              <ul className="space-y-3 text-gray-400">
+                <li><Link href="/ueber-uns" className="hover:text-neon-cyan transition-colors">Über Uns</Link></li>
+                <li><Link href="/concept" className="hover:text-neon-cyan transition-colors">Karriere</Link></li>
+                <li><Link href="/kontakt" className="hover:text-neon-cyan transition-colors">Kontakt</Link></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-heading font-bold text-lg mb-6">Rechtliches</h4>
-              <ul className="space-y-3 text-white/70">
-                <li><Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link></li>
-                <li><Link href="/privacy" className="hover:text-white transition-colors">Datenschutz</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">AGB</a></li>
+              <h4 className="font-playfair font-bold text-lg text-white mb-6">Rechtliches</h4>
+              <ul className="space-y-3 text-gray-400">
+                <li><Link href="/impressum" className="hover:text-neon-cyan transition-colors">Impressum</Link></li>
+                <li><Link href="/privacy" className="hover:text-neon-cyan transition-colors">Datenschutz</Link></li>
+                <li><a href="#" className="hover:text-neon-cyan transition-colors">AGB</a></li>
               </ul>
             </div>
           </div>
           
-          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
+          <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
             <p>© 2025 Lina Voice AI. Alle Rechte vorbehalten.</p>
-            <p>Made with ❤️ in Mallorca & Germany.</p>
+            <p className="flex items-center gap-1">
+              Made with <span className="text-red-500">❤️</span> in Mallorca & Germany.
+            </p>
           </div>
         </div>
       </footer>
