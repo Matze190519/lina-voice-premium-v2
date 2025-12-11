@@ -45,7 +45,7 @@ export default function LRPartner() {
               <br />
               <span className="text-gray-300">2.-4. Rate: 142,50 €</span>
             </p>
-            <div className="mt-12 mb-12 relative max-w-4xl mx-auto">
+            <div className="mt-12 mb-12 relative max-w-xl mx-auto">
               <div className="absolute inset-0 bg-electric-purple/20 blur-3xl rounded-full opacity-30"></div>
               <img 
                 src="/images/profi-business-pro.png" 
