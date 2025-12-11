@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 
 interface NeonButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline";
@@ -25,7 +25,7 @@ export const NeonButton = React.forwardRef<HTMLButtonElement, NeonButtonProps>(
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className={cn(baseStyles, variants[variant], className)}
-        {...props}
+        {...(props as HTMLMotionProps<"button">)}
       >
         <span className="relative z-10 flex items-center justify-center gap-2">
           {children}

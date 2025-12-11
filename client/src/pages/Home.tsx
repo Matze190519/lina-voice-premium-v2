@@ -1,249 +1,187 @@
-import { Button } from "@/components/ui/button";
-import { NeonButton } from "@/components/ui/NeonButton";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Check, Phone, Zap, Shield, Globe, Cpu, ChevronRight, Play, Star, TrendingUp, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-import BotpressChat from "@/components/BotpressChat";
-import ScrollReveal from "@/components/ScrollReveal";
-import VoiceOrb from "@/components/VoiceOrb";
-import ContactForm from "@/components/ContactForm";
-import { useState } from "react";
+import { Phone, CheckCircle, Play } from 'lucide-react';
+import { NeonButton } from '../components/ui/NeonButton';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function Home() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
-  const [contactType, setContactType] = useState<'default' | 'consultation'>('default');
-
-  const openContact = (type: 'default' | 'consultation' = 'default') => {
-    setContactType(type);
-    setIsContactOpen(true);
-  };
-
   return (
-    <div className="pb-20">
-      <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} type={contactType} />
-      {/* Hero Section */}
-      <section className="relative pt-24 pb-32 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse-slow" />
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-primary/30 text-primary font-mono text-sm mb-8 neon-border">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                ULTRAVOX v0.7 ENGINE ONLINE
-              </div>
-              
-              <h1 className="text-5xl lg:text-7xl font-heading font-bold leading-tight mb-6 text-foreground">
-                Die KI, die für dich <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary animate-gradient bg-300%">ans Telefon geht.</span>
-              </h1>
-              <p className="text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
-                Lina ist deine intelligente Telefon-Assistentin. Sie nimmt Anrufe an, vereinbart Termine und qualifiziert Leads – 24/7, mehrsprachig und in Echtzeit. <br/>
-                <span className="text-primary font-medium">Verpasse nie wieder einen Kunden.</span>
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="glass-panel p-1 rounded-lg inline-block">
-                  <a href="tel:+4951116653654" className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-md bg-primary/10 border border-primary/50 px-8 font-medium text-primary transition-all duration-300 hover:bg-primary/20 hover:shadow-[0_0_20px_rgba(196,155,255,0.3)]">
-                    <Phone className="w-5 h-5 mr-3 transition-transform group-hover:rotate-12" />
-                    <span className="text-lg font-bold tracking-wide">+49 511 16653654</span>
-                    <span className="ml-2 text-xs opacity-70 font-mono border-l border-primary/30 pl-2">TESTE LIVE</span>
-                  </a>
-                </div>
-                <NeonButton 
-                  variant="primary"
-                  className="h-16 text-lg"
-                  onClick={() => openContact('consultation')}
-                >
-                  Unverbindlich anfragen <ArrowRight className="ml-2 w-5 h-5" />
-                </NeonButton>
-              </div>
-              
-              <div className="mt-12 flex items-center gap-4 text-sm text-muted-foreground">
-                <div className="flex -space-x-2">
-                  {[1,2,3,4].map(i => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-background overflow-hidden">
-                      <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i+10}`} alt="User" className="w-full h-full bg-muted" />
-                    </div>
-                  ))}
-                </div>
-                <p>Bereits <span className="text-primary font-bold">100+</span> Unternehmer auf der Warteliste</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-border glass-card group h-[500px] w-full bg-black/20">
-                <VoiceOrb className="w-full h-full" />
-                
-                {/* Floating UI Elements - Futuristic Style */}
-                <div className="absolute top-4 right-4 md:top-8 md:right-8 glass-panel p-3 md:p-4 rounded-lg shadow-lg border border-primary/20 z-20 max-w-[160px] md:max-w-none pointer-events-none">
-                  <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
-                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-secondary animate-pulse" />
-                    <span className="text-[10px] md:text-xs font-mono font-bold text-secondary uppercase tracking-wider">System Active</span>
+    <main className="relative z-10">
+      {/* Hero Section - ROBUST FLEX LAYOUT */}
+      <section className="min-h-[calc(100vh-80px)] flex items-center justify-center py-12 lg:py-20">
+        <div className="container mx-auto px-4">
+          {/* 
+            Using flex-col for mobile and lg:flex-row for desktop.
+            lg:flex-nowrap ensures side-by-side layout on large screens.
+            items-center ensures vertical centering.
+          */}
+          <div className="flex flex-col lg:flex-row lg:flex-nowrap items-center gap-12 lg:gap-20">
+            
+            {/* Left: Text Content */}
+            <div className="w-full lg:w-1/2 flex flex-col items-start shrink-0">
+              <ScrollReveal>
+                <div>
+                  <div className="inline-block px-4 py-2 rounded-full glass-panel border border-electric-purple/30 mb-6 bg-deep-navy/50 backdrop-blur-sm">
+                    <span className="text-sm font-jetbrains text-neon-cyan flex items-center gap-2">
+                      <span className="w-2 h-2 bg-neon-cyan rounded-full animate-pulse"></span>
+                      ULTRAVOX v0.7 ENGINE ONLINE
+                    </span>
                   </div>
-                  <div className="text-2xl md:text-3xl font-mono font-bold text-white text-glow">200ms</div>
-                  <div className="text-[10px] md:text-xs text-muted-foreground font-mono">Reaktionszeit (Ultravox v0.7)</div>
+
+                  <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight">
+                    Die KI, die für dich<br />
+                    <span className="bg-gradient-to-r from-electric-purple to-neon-cyan bg-clip-text text-transparent">
+                      ans Telefon geht.
+                    </span>
+                  </h1>
+
+                  <p className="text-xl text-gray-300 mb-4 leading-relaxed max-w-xl">
+                    Lina ist deine intelligente Telefon-Assistentin. Sie nimmt Anrufe an, 
+                    vereinbart Termine und qualifiziert Leads – 24/7, mehrsprachig und in Echtzeit.
+                  </p>
+
+                  <p className="text-lg text-electric-purple mb-8 font-semibold">
+                    Verpasse nie wieder einen Kunden.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <NeonButton onClick={() => window.location.href = 'tel:+4951116653654'} className="w-full sm:w-auto justify-center">
+                      <Phone className="w-5 h-5 inline mr-2" />
+                      +49 511 16653654
+                    </NeonButton>
+                    <NeonButton variant="secondary" className="w-full sm:w-auto justify-center">
+                      Unverbindlich anfragen
+                    </NeonButton>
+                  </div>
+
+                  <div className="mt-8 flex items-center gap-4 text-sm text-gray-400">
+                    <div className="flex -space-x-3">
+                      {[1, 2, 3, 4].map((i) => (
+                        <div 
+                          key={i} 
+                          className="rounded-full bg-gradient-to-br from-electric-purple to-neon-cyan border-2 border-deep-navy overflow-hidden shrink-0"
+                          style={{ width: '40px', height: '40px' }} // HARD CONSTRAINT
+                        >
+                           <img 
+                            src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i+20}`} 
+                            alt="User" 
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <span>Bereits <span className="text-neon-cyan font-bold">100+</span> Unternehmer auf der Warteliste</span>
+                  </div>
                 </div>
-                
-                <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 glass-panel p-3 md:p-4 rounded-lg shadow-lg border border-primary/20 z-20 pointer-events-none">
-                   <div className="text-sm font-mono text-primary mb-1">AI VOICE CORE</div>
-                   <div className="text-xs text-muted-foreground">Neural Processing Active</div>
+              </ScrollReveal>
+            </div>
+
+            {/* Right: Video / Visual */}
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end shrink-0 mt-8 lg:mt-0">
+              <ScrollReveal delay={0.2} className="w-full max-w-lg">
+                <div className="relative aspect-video glass-card rounded-2xl flex items-center justify-center border border-electric-purple/20 bg-deep-navy/30 backdrop-blur-md overflow-hidden group shadow-2xl shadow-electric-purple/20">
+                  
+                  {/* Video Element */}
+                  <video 
+                    className="w-full h-full object-cover rounded-2xl"
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline
+                    poster="/images/video-poster.jpg" // Fallback
+                  >
+                    <source src="/videos/lina-demo.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-transparent to-transparent pointer-events-none"></div>
+
+                  {/* Play Button Overlay (Optional, for style) */}
+                  <div className="absolute bottom-6 left-6 flex items-center gap-3 pointer-events-none">
+                    <div className="w-10 h-10 rounded-full bg-neon-cyan/20 backdrop-blur-md flex items-center justify-center border border-neon-cyan/50">
+                      <Play className="w-4 h-4 text-neon-cyan fill-neon-cyan" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-neon-cyan font-bold tracking-wider">LIVE DEMO</p>
+                      <p className="text-xs text-gray-300">Lina in Aktion</p>
+                    </div>
+                  </div>
+
                 </div>
-              </div>
-              
-              {/* Decorative Elements - Neon Glow */}
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-secondary/20 blur-[80px] rounded-full opacity-50" />
-              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/20 blur-[80px] rounded-full opacity-50" />
-            </motion.div>
+              </ScrollReveal>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Value Proposition */}
-      <section className="py-24 bg-muted/30 relative">
+      {/* Features Section */}
+      <section className="py-20 bg-deep-navy/50">
         <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-foreground">
-              Dein Sekretariat der <span className="text-gradient">Zukunft.</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Lina übernimmt die Routineaufgaben, damit du dich zu 100% auf dein Kerngeschäft konzentrieren kannst.
-            </p>
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+                <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
+                Dein Sekretariat der <span className="text-neon-cyan">Zukunft</span>.
+                </h2>
+                <p className="text-gray-400 text-lg">
+                Lina übernimmt die Routineaufgaben, damit du dich zu 100% auf dein Kerngeschäft konzentrieren kannst.
+                </p>
+            </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Phone className="w-8 h-8 text-secondary" />,
-                title: "Nimmt alle Anrufe ab",
-                desc: "Freundliche Begrüßung im Namen deiner Firma – egal ob du im Meeting, auf der Baustelle oder im Urlaub bist."
+                title: '24/7 Anrufannahme',
+                description: 'Freundliche Begrüßung im Namen deiner Firma – egal ob du im Meeting, auf der Baustelle oder im Urlaub bist.',
               },
               {
-                icon: <Zap className="w-8 h-8 text-secondary" />,
-                title: "Qualifiziert Leads",
-                desc: "Lina filtert Anrufer vor, fragt Budget und Bedarf ab und bereitet das Gespräch perfekt für dich vor."
+                title: 'Lead-Qualifizierung',
+                description: 'Lina filtert Anrufer vor, fragt Budget und Bedarf ab und bereitet das Gespräch perfekt für dich vor.',
               },
               {
-                icon: <Globe className="w-8 h-8 text-secondary" />,
-                title: "Mehrsprachig Global",
-                desc: "Lina spricht Deutsch und über 20 weitere Sprachen fließend. Perfekt für internationale Kunden."
-              }
-            ].map((feature, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <Card className="glass-card border-border/50 hover:border-primary/50 transition-all duration-300 group h-full">
-                <CardHeader>
-                  <div className="mb-4 p-3 w-fit rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    {feature.icon}
+                title: 'Mehrsprachig',
+                description: 'Lina spricht Deutsch und über 20 weitere Sprachen fließend. Perfekt für internationale Kunden.',
+              },
+            ].map((feature, index) => (
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <div className="glass-card p-8 rounded-2xl border border-white/5 hover:border-neon-cyan/50 transition-all hover:-translate-y-1 h-full group">
+                  <div className="w-14 h-14 rounded-xl bg-electric-purple/10 flex items-center justify-center mb-6 group-hover:bg-neon-cyan/10 transition-colors">
+                    <CheckCircle className="w-8 h-8 text-electric-purple group-hover:text-neon-cyan transition-colors" />
                   </div>
-                  <CardTitle className="font-heading text-xl text-foreground group-hover:text-primary transition-colors">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
-                </CardContent>
-              </Card>
+                  <h3 className="text-xl font-bold mb-4 font-playfair">{feature.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                </div>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* LR Product Set Teaser */}
-      <section className="py-24 border-y border-border/50 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <ScrollReveal className="order-2 lg:order-1">
-              <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">Ihr Startpaket</Badge>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-foreground">
-                Mehr als nur Software. <br />
-                <span className="text-gradient">Realer Warenwert inklusive.</span>
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Mit dem LR Profi Business Pro Set erhalten Sie nicht nur Zugang zu Lina, sondern hochwertige Produkte im Wert von über 1.500€.
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-primary" />
-                  <span className="text-foreground font-medium">Zeitgard Pro Cosmetic Device</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-primary" />
-                  <span className="text-foreground font-medium">Aloe Vera Special Care Box</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-primary" />
-                  <span className="text-foreground font-medium">Mind Master & Pro Balance</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-primary" />
-                  <span className="text-foreground font-medium">Komplette Lina Voice Einrichtung</span>
-                </div>
-              </div>
-
-              <Button variant="outline" className="text-primary border-primary/20 hover:bg-primary/10 hover:text-primary" onClick={() => window.location.href = '/process'}>
-                Details zum Ablauf ansehen <ChevronRight className="w-4 h-4 ml-2" />
-              </Button>
-            </ScrollReveal>
-            <ScrollReveal className="order-1 lg:order-2 relative" delay={0.2}>
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform rotate-3 blur-xl" />
-              <img 
-                src="/images/lr-set-preview.png" 
-                alt="LR Profi Business Pro Set" 
-                className="relative rounded-2xl shadow-2xl w-full h-auto border border-border/50 bg-black/40 backdrop-blur-sm p-2"
-                onError={(e) => {
-                  e.currentTarget.src = "https://via.placeholder.com/600x400?text=LR+Profi+Business+Pro+Set";
-                }}
-              />
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-24">
-        <div className="glass-panel rounded-2xl p-12 md:p-20 text-center relative overflow-hidden shadow-2xl border border-primary/30">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
-          
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8 text-white">Bereit für die Zukunft?</h2>
-            <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto font-light">
-              Sichern Sie sich jetzt Ihren Platz im Pilotprojekt und profitieren Sie von Konditionen, die es so nie wieder geben wird.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <a href="tel:+4951116653654" className="bg-white text-black hover:bg-white/90 px-10 py-4 rounded-md font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105">
-                <Phone className="w-5 h-5" />
-                +49 511 16653654
-              </a>
-              <Button 
-                variant="outline" 
-                className="px-10 py-8 border-white/20 hover:bg-white/10 text-lg text-white font-medium rounded-md backdrop-blur-sm"
-                onClick={() => openContact('default')}
-              >
-                Jetzt anfragen
-              </Button>
+      <section className="py-24 relative overflow-hidden">
+        {/* Background Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-electric-purple/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <div className="glass-card p-12 rounded-3xl text-center max-w-4xl mx-auto border border-electric-purple/30 bg-deep-navy/80 backdrop-blur-xl shadow-2xl">
+              <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8">
+                Bereit für die <span className="text-electric-purple">Zukunft?</span>
+              </h2>
+              <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                Sichern Sie sich jetzt Ihren Platz im Pilotprojekt und profitieren Sie von 
+                Konditionen, die es so nie wieder geben wird.
+              </p>
+              <div className="flex justify-center">
+                <NeonButton onClick={() => window.location.href = 'tel:+4951116653654'} className="text-lg px-10 py-4">
+                    <Phone className="w-6 h-6 inline mr-3" />
+                    +49 511 16653654
+                </NeonButton>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
