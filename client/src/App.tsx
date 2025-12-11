@@ -6,7 +6,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Technology from "./pages/Technology";
+import Technology from "@/pages/Technology";
+import Partners from "@/pages/Partners";
 import Concept from "@/pages/Concept";
 import Autokonzept from "@/pages/Autokonzept";
 import LRPartner from "@/pages/LRPartner";
@@ -20,8 +21,9 @@ function Router() {
     <Layout>
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/technologie" component={Technology} />
-        <Route path="/konzept" component={Concept} />
+        <Route path="/technology" component={Technology} />
+      <Route path="/partners" component={Partners} />
+      <Route path="/concept" component={Concept} />
       <Route path="/autokonzept" component={Autokonzept} />
       <Route path="/lr-partner" component={LRPartner} />
         <Route path="/ueber-uns" component={About} />

@@ -21,6 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { href: "/", label: "Vision" },
     { href: "/technologie", label: "Technologie" },
+    { href: "/partners", label: "Partner" },
     { href: "/konzept", label: "Konzept & Preise" },
     { href: "/autokonzept", label: "Autokonzept" },
     { href: "/lr-partner", label: "LR Partner" },
