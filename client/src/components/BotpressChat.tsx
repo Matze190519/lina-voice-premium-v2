@@ -27,14 +27,35 @@ export default function BotpressChat() {
     
     // Add event listener to configure feedback when the webchat is ready
     script2.onload = () => {
-      window.botpressWebChat.onEvent(
-        function (event: any) {
-          if (event.type === 'LIFECYCLE.LOADED') {
-            window.botpressWebChat.sendEvent({ type: 'show' });
+      // Ensure botpressWebChat is available before accessing it
+      if (window.botpressWebChat) {
+        window.botpressWebChat.onEvent(
+          function (event: any) {
+            if (event.type === 'LIFECYCLE.LOADED') {
+              window.botpressWebChat.sendEvent({ type: 'show' });
+            }
+          },
+          ['LIFECYCLE.LOADED']
+        );
+      } else {
+        // Retry if not immediately available
+        const checkInterval = setInterval(() => {
+          if (window.botpressWebChat) {
+            clearInterval(checkInterval);
+            window.botpressWebChat.onEvent(
+              function (event: any) {
+                if (event.type === 'LIFECYCLE.LOADED') {
+                  window.botpressWebChat.sendEvent({ type: 'show' });
+                }
+              },
+              ['LIFECYCLE.LOADED']
+            );
           }
-        },
-        ['LIFECYCLE.LOADED']
-      );
+        }, 100);
+        
+        // Clear interval after 10 seconds to prevent infinite loop
+        setTimeout(() => clearInterval(checkInterval), 10000);
+      }
     };
     
     document.body.appendChild(script2);
