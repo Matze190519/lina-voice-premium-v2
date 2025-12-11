@@ -73,6 +73,7 @@ export default function BotpressChat() {
     document.body.appendChild(script);
 
     // Force high z-index via global style to ensure visibility
+    // Adjusted for mobile to avoid overlap with bottom navigation or other elements
     const style = document.createElement('style');
     style.innerHTML = `
       .bpw-widget-btn {
@@ -82,6 +83,16 @@ export default function BotpressChat() {
       }
       .bpw-chat-container {
         z-index: 2147483647 !important;
+      }
+      
+      /* Mobile specific adjustments */
+      @media (max-width: 768px) {
+        .bpw-widget-btn {
+          bottom: 20px !important;
+          right: 16px !important;
+          width: 56px !important;
+          height: 56px !important;
+        }
       }
     `;
     document.head.appendChild(style);

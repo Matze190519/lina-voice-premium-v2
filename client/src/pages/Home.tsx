@@ -96,13 +96,13 @@ export default function Home() {
                 />
                 
                 {/* Floating UI Elements - Futuristic Style */}
-                <div className="absolute top-8 right-8 glass-panel p-4 rounded-lg shadow-lg border border-primary/20">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                    <span className="text-xs font-bold text-secondary uppercase tracking-wider">System Active</span>
+                <div className="absolute top-4 right-4 md:top-8 md:right-8 glass-panel p-3 md:p-4 rounded-lg shadow-lg border border-primary/20 z-20 max-w-[160px] md:max-w-none">
+                  <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-secondary animate-pulse" />
+                    <span className="text-[10px] md:text-xs font-bold text-secondary uppercase tracking-wider">System Active</span>
                   </div>
-                  <div className="text-3xl font-heading font-bold text-white text-glow">300ms</div>
-                  <div className="text-xs text-muted-foreground font-medium">Reaktionszeit (Ultravox v0.7)</div>
+                  <div className="text-2xl md:text-3xl font-heading font-bold text-white text-glow">200ms</div>
+                  <div className="text-[10px] md:text-xs text-muted-foreground font-medium">Reaktionszeit (Ultravox v0.7)</div>
                 </div>
               </div>
               
