@@ -87,7 +87,7 @@ export default function Home() {
             >
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-border glass-card group">
                 <video 
-                  src="/videos/lina-demo-optimized.mp4" 
+                  src="/videos/lina-demo.mp4" 
                   className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                   loop
                   muted={false}

@@ -32,7 +32,7 @@ export default function BotpressChat() {
             "configuration": {
               "version": "v2", // Explicitly set version if needed, though v3.5 handles it
               "botName": "Lina vom LR Lifestyle Team",
-              // CUSTOM ICON HERE
+              // CUSTOM ICON HERE - Ensure absolute path
               "botAvatar": window.location.origin + "/images/lina-avatar-future.png",
               "botDescription": "Hallo, ich bin Lina, der Chat bot des LR Lifestyle Teams. Achtung, diese Version von mir ist extrem eingeschränkt, wenn du im LR Lifestyle Team bist werden alle Funktionen für dich freigeschaltet. ",
               "website": {},
