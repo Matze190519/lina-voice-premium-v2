@@ -60,38 +60,38 @@ export default function Concept() {
                 {/* Car Gallery */}
                 <div className="grid grid-cols-3 gap-2 mb-6">
                   <div className="relative group cursor-pointer overflow-hidden rounded-lg aspect-[4/3]">
-                    <img src="/images/mercedes-a-class.jpg" alt="Mercedes A-Class" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img src="/images/audi-q8.png" alt="Audi Q8" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
-                      <span className="text-white text-xs font-bold">Mercedes-Benz</span>
+                      <span className="text-white text-xs font-bold">Audi Q8</span>
                     </div>
                   </div>
                   <div className="relative group cursor-pointer overflow-hidden rounded-lg aspect-[4/3]">
-                    <img src="/images/audi-q3.jpg" alt="Audi Q3" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img src="/images/audi-a4.png" alt="Audi A4 Avant" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
-                      <span className="text-white text-xs font-bold">Audi Q3</span>
+                      <span className="text-white text-xs font-bold">Audi A4</span>
                     </div>
                   </div>
                   <div className="relative group cursor-pointer overflow-hidden rounded-lg aspect-[4/3]">
-                    <img src="/images/vw-tiguan.jpg" alt="VW Tiguan" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img src="/images/mercedes-cla.png" alt="Mercedes CLA" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
-                      <span className="text-white text-xs font-bold">VW Tiguan</span>
+                      <span className="text-white text-xs font-bold">Mercedes CLA</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-white font-bold text-xs">VW</div>
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-white font-bold text-xs">AUDI</div>
                     <div>
-                      <p className="font-bold text-white text-sm">Volkswagen & Audi</p>
-                      <p className="text-xs text-gray-400">Attraktive Leasingraten für Einsteiger und Profis.</p>
+                      <p className="font-bold text-white text-sm">Audi Q8 & A4 Avant</p>
+                      <p className="text-xs text-gray-400">Premium-Fahrzeuge ab 249 € monatlich.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-white font-bold text-xs">MB</div>
                     <div>
-                      <p className="font-bold text-white text-sm">Mercedes-Benz</p>
-                      <p className="text-xs text-gray-400">Premium-Fahrzeuge zu Sonderkonditionen.</p>
+                      <p className="font-bold text-white text-sm">Mercedes-Benz CLA</p>
+                      <p className="text-xs text-gray-400">Sportliches Coupé ab 199 € monatlich.</p>
                     </div>
                   </div>
                 </div>
@@ -153,7 +153,7 @@ export default function Concept() {
                 <div className="p-6">
                   <div className="aspect-[4/3] bg-black/50 rounded-lg mb-6 overflow-hidden relative group border border-white/10">
                     <img 
-                      src="/images/lr-profi-set.jpg" 
+                      src="/images/lr-profi-set-gold.png" 
                       alt="LR Profi Business Set Inhalt" 
                       className="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
                     />

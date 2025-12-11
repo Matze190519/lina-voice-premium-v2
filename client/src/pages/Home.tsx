@@ -68,23 +68,9 @@ export default function Home() {
                     Die KI wird später perfekt auf Ihr eigenes Unternehmen angepasst.
                   </p>
 
-                  <div className="mt-4 flex items-center gap-4 text-sm text-gray-400">
-                    <div className="flex -space-x-3">
-                      {[1, 2, 3, 4].map((i) => (
-                        <div 
-                          key={i} 
-                          className="rounded-full bg-gradient-to-br from-electric-purple to-neon-cyan border-2 border-deep-navy overflow-hidden shrink-0 transition-transform hover:scale-110 hover:z-10"
-                          style={{ width: '40px', height: '40px' }} // HARD CONSTRAINT
-                        >
-                           <img 
-                            src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i+20}`} 
-                            alt="User" 
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                    <span>Bereits <span className="text-neon-cyan font-bold">100+</span> Unternehmer auf der Warteliste</span>
+                  <div className="mt-6 flex items-center gap-3 text-sm text-gray-300 bg-white/5 px-4 py-2 rounded-full border border-white/10 w-fit backdrop-blur-sm">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                    <span>Hohe Nachfrage – <span className="text-neon-cyan font-semibold">Begrenzte Plätze für das Pilotprojekt</span></span>
                   </div>
                 </div>
               </ScrollReveal>
