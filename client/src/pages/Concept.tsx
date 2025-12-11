@@ -58,23 +58,23 @@ export default function Concept() {
                 </div>
                 
                 {/* Car Gallery */}
-                <div className="grid grid-cols-3 gap-2 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                   <div className="relative group cursor-pointer overflow-hidden rounded-lg aspect-[4/3]">
                     <img src="/images/cars/audi-q8.png" alt="Audi Q8" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
-                      <span className="text-white text-xs font-bold">Audi Q8</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <span className="text-white text-sm font-bold">Audi Q8</span>
                     </div>
                   </div>
                   <div className="relative group cursor-pointer overflow-hidden rounded-lg aspect-[4/3]">
                     <img src="/images/cars/audi-a4-avant.png" alt="Audi A4 Avant" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
-                      <span className="text-white text-xs font-bold">Audi A4</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <span className="text-white text-sm font-bold">Audi A4</span>
                     </div>
                   </div>
                   <div className="relative group cursor-pointer overflow-hidden rounded-lg aspect-[4/3]">
                     <img src="/images/cars/mercedes-cla.png" alt="Mercedes CLA" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
-                      <span className="text-white text-xs font-bold">Mercedes CLA</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <span className="text-white text-sm font-bold">Mercedes CLA</span>
                     </div>
                   </div>
                 </div>
