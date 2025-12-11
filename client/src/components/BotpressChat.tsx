@@ -13,10 +13,10 @@ export default function BotpressChat() {
       return;
     }
 
-    // 1. Inject the main Botpress script (v2.2 stable)
+    // 1. Inject the main Botpress script (v3.4 as found on reference site)
     const script = document.createElement('script');
     script.id = 'botpress-inject';
-    script.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js'; 
+    script.src = 'https://cdn.botpress.cloud/webchat/v3.4/inject.js'; 
     script.async = true;
     
     script.onload = () => {
