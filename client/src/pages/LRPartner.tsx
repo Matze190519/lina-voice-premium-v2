@@ -201,7 +201,7 @@ export default function LRPartner() {
               className="bg-white text-black hover:bg-gray-100 font-bold text-xl px-10 py-6 rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all transform hover:scale-105"
               onClick={() => setIsContactOpen(true)}
             >
-              Jetzt Startpaket anfragen
+              Startpaket anfordern
             </Button>
           </ScrollReveal>
         </div>
