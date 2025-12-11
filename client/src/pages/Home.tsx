@@ -92,11 +92,17 @@ export default function Home() {
                   </div>
                   <video 
                     src="/videos/lina-demo.mp4" 
+                    poster="/images/hero-core.png"
                     className="relative z-10 w-full h-full object-cover opacity-90 mix-blend-lighten group-hover:opacity-100 transition-opacity"
                     loop
                     muted={false}
                     playsInline
                     controls={true}
+                    onError={(e) => {
+                      console.error("Video load error", e);
+                      // Fallback if video fails
+                      e.currentTarget.style.display = 'none';
+                    }}
                   />
                   
                   {/* Floating UI Elements */}

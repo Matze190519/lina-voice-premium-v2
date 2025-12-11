@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import BotpressChat from "./BotpressChat";
 
@@ -27,23 +27,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Navigation - Sticky Header */}
       <nav className="sticky top-0 z-50 w-full bg-[#0b0e18]/95 backdrop-blur-md border-b border-white/10 shadow-lg h-20 flex items-center">
         <div className="container mx-auto px-4 flex items-center justify-between h-full">
-          <Link href="/" className="flex items-center gap-3 group z-50 relative">
+          <Link href="/" className="flex items-center gap-3 group z-50 relative no-underline">
             <div className="w-10 h-10 bg-transparent border border-[#00f0ff] text-[#00f0ff] flex items-center justify-center rounded-full shadow-[0_0_15px_rgba(0,240,255,0.3)] group-hover:shadow-[0_0_25px_rgba(0,240,255,0.5)] transition-all">
               <span className="font-playfair font-bold text-xl">L</span>
             </div>
-            <span className="font-playfair font-bold text-xl tracking-tight text-white group-hover:text-[#00f0ff] transition-colors">
+            <span className="font-playfair font-bold text-xl tracking-tight !text-white group-hover:!text-[#00f0ff] transition-colors">
               LINA VOICE
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden xl:flex items-center gap-8">
+          {/* Desktop Nav - Visible on LG and up */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-all hover:text-[#00f0ff] relative py-1",
+                  "text-sm font-medium transition-all hover:text-[#00f0ff] relative py-1 no-underline",
                   location === link.href 
                     ? "text-[#00f0ff] after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-[#00f0ff] after:shadow-[0_0_10px_#00f0ff]" 
                     : "text-gray-400"
@@ -54,8 +54,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+4951116653654" className="text-sm font-bold text-[#00f0ff] hover:text-white transition-colors">
+          <div className="hidden lg:flex items-center gap-4">
+            <a href="tel:+4951116653654" className="text-sm font-bold text-[#00f0ff] hover:text-white transition-colors no-underline">
               +49 511 16653654
             </a>
             <Button className="bg-[#00f0ff]/10 text-[#00f0ff] border border-[#00f0ff]/50 hover:bg-[#00f0ff]/20 hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] rounded-full px-6 transition-all">
@@ -63,9 +63,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle - Hidden on LG and up */}
           <button 
-            className="xl:hidden p-2 text-white hover:text-[#00f0ff] transition-colors z-50 relative"
+            className="lg:hidden p-2 text-white hover:text-[#00f0ff] transition-colors z-50 relative"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
@@ -81,7 +81,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   key={link.href} 
                   href={link.href}
                   className={cn(
-                    "text-2xl font-playfair font-bold py-2 border-b border-white/5",
+                    "text-2xl font-playfair font-bold py-2 border-b border-white/5 no-underline",
                     location === link.href ? "text-[#00f0ff]" : "text-gray-400"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -98,7 +98,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       </nav>
 
-      {/* Main Content - No extra padding needed for sticky header */}
+      {/* Main Content */}
       <main className="flex-grow">
         {children}
       </main>
@@ -125,18 +125,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="font-playfair font-bold text-lg mb-6 text-white">Unternehmen</h4>
               <ul className="space-y-3 text-gray-400">
-                <li><Link href="/ueber-uns" className="hover:text-[#00f0ff] transition-colors">Über Uns</Link></li>
-                <li><Link href="/konzept" className="hover:text-[#00f0ff] transition-colors">Karriere</Link></li>
-                <li><Link href="/kontakt" className="hover:text-[#00f0ff] transition-colors">Kontakt</Link></li>
+                <li><Link href="/ueber-uns" className="hover:text-[#00f0ff] transition-colors no-underline">Über Uns</Link></li>
+                <li><Link href="/konzept" className="hover:text-[#00f0ff] transition-colors no-underline">Karriere</Link></li>
+                <li><Link href="/kontakt" className="hover:text-[#00f0ff] transition-colors no-underline">Kontakt</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-playfair font-bold text-lg mb-6 text-white">Rechtliches</h4>
               <ul className="space-y-3 text-gray-400">
-                <li><Link href="/impressum" className="hover:text-[#00f0ff] transition-colors">Impressum</Link></li>
-                <li><Link href="/privacy" className="hover:text-[#00f0ff] transition-colors">Datenschutz</Link></li>
-                <li><a href="#" className="hover:text-[#00f0ff] transition-colors">AGB</a></li>
+                <li><Link href="/impressum" className="hover:text-[#00f0ff] transition-colors no-underline">Impressum</Link></li>
+                <li><Link href="/privacy" className="hover:text-[#00f0ff] transition-colors no-underline">Datenschutz</Link></li>
+                <li><a href="#" className="hover:text-[#00f0ff] transition-colors no-underline">AGB</a></li>
               </ul>
             </div>
           </div>
