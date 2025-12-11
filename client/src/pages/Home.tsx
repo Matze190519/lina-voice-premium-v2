@@ -91,9 +91,9 @@ export default function Home() {
                   className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                   autoPlay
                   loop
-                  muted
+                  muted={false}
                   playsInline
-                  controls={false}
+                  controls={true}
                 />
                 
                 {/* Floating UI Elements - Futuristic Style */}

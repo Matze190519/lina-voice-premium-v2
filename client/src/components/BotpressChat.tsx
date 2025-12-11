@@ -21,37 +21,15 @@ export default function BotpressChat() {
     script1.async = true;
     document.body.appendChild(script1);
 
-    // 2. Inject the configuration script provided by the user
-    const script2 = document.createElement('script');
-    script2.src = 'https://files.bpcontent.cloud/2025/05/06/15/20250506153427-V2JQXLMN.js';
-    script2.defer = true;
-    
-    // 3. Override the avatar after the config script loads
-    script2.onload = () => {
-      // Wait for Botpress to be available
+    // 2. Initialize Botpress manually to ensure custom icon is used
+    // We do NOT load the external config script because we want to override the avatar
+    script1.onload = () => {
       const checkBotpress = setInterval(() => {
         const bp = window.botpressWebChat || window.botpress;
         if (bp && bp.init) {
           clearInterval(checkBotpress);
           
-          // Re-initialize or update configuration with the custom avatar
-          // Since the external script calls init(), we might need to call it again or update it
-          // However, calling init() again might not work as expected if it's already initialized.
-          // A safer bet is to intercept the config or update it if the API allows.
-          // But v2/v3 often requires a full init.
-          // Let's try to re-init with the merged config, overriding the avatar.
-          
-          // We can't easily read the config passed to the previous init call unless we intercept it.
-          // But we know the config from the file we downloaded.
-          // So we can just call init() ourselves with the modified config INSTEAD of loading the external config script?
-          // NO, the user explicitly asked to use the provided scripts.
-          // So we should let the external script load, but maybe we can use the `configure` method if available?
-          
-          // Actually, the best way to ensure our icon is used is to define the config OURSELVES
-          // and NOT load the external config script, BUT copy its content and modify it.
-          // However, the user said "Implement the exact Botpress v3.5 scripts provided by the user".
-          // But now they say "Change the default chat icon".
-          // So we must modify the implementation to use the content of the script but with a different avatar.
+          console.log("Initializing Botpress with custom icon...");
           
           bp.init({
             "botId": "cac882a1-cf8f-4b8f-9740-8f96ea9558db",
@@ -95,12 +73,6 @@ export default function BotpressChat() {
         }
       }, 100);
     };
-    
-    // NOTE: We are NOT appending script2 (the external config) anymore because we are inlining the config
-    // to override the avatar. If we appended it, it would init with the old avatar first.
-    // This satisfies "Change the default chat icon" while keeping the rest of the config identical.
-    
-    // document.body.appendChild(script2); // Removed to avoid double init
 
     // Add custom styles to adjust position on mobile
     const style = document.createElement('style');
