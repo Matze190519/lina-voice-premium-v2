@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 declare global {
   interface Window {
     botpressWebChat: any;
-    botpress: any;
   }
 }
 
@@ -14,23 +13,27 @@ export default function BotpressChat() {
       return;
     }
 
-    // 1. Inject the main Botpress script
+    // 1. Inject the main Botpress script (v3.4 as found on reference site)
     const script = document.createElement('script');
     script.id = 'botpress-inject';
-    script.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js'; // Use stable v2.2
+    script.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js'; 
+    // Note: Reference site uses v3.4 inject.js but the config structure we have is for v2.
+    // Let's try to stick with v2.2 first but ensure the config is passed correctly.
+    // If this fails, we will switch to the exact script src from reference site.
+    // Wait, the reference site had: <script src="https://cdn.botpress.cloud/webchat/v3.4/inject.js"></script>
+    // But the config object structure in our previous file looked like v2.
+    // Let's try to use the exact script from reference site.
+    script.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js'; 
     script.async = true;
     
     script.onload = () => {
-      // 2. Initialize Botpress with the configuration extracted from the reference site
-      // This avoids loading an external config file that might fail or be blocked
       if (window.botpressWebChat) {
         window.botpressWebChat.init({
           "botId": "cac882a1-cf8f-4b8f-9740-8f96ea9558db",
           "configuration": {
-            "version": "v2",
             "botName": "Lina vom LR Lifestyle Team",
             "botAvatar": "https://files.bpcontent.cloud/2025/09/30/22/20250930222336-BY08EPCV.jpeg",
-            "botDescription": "Hallo, ich bin Lina, der Chat bot des LR Lifestyle Teams. Achtung, diese Version von mir ist extrem eingeschränkt, wenn du im LR Lifestyle Team bist werden alle Funktionen für dich freigeschaltet. ",
+            "botDescription": "Hallo, ich bin Lina, der Chat bot des LR Lifestyle Teams.",
             "website": {},
             "email": {
               "title": "Info@lr-lifestyle.info",
@@ -44,34 +47,13 @@ export default function BotpressChat() {
             "privacyPolicy": {},
             "color": "#9333EA",
             "variant": "solid",
-            "headerVariant": "solid",
             "themeMode": "dark",
             "fontFamily": "AR One Sans",
             "radius": 4,
-            "feedbackEnabled": false,
-            "footer": "[⚡ LR Lifestyle Team](https://botpress.com/?from=webchat)",
             "additionalStylesheetUrl": "https://files.bpcontent.cloud/2025/11/17/18/20251117183249-ODXZWBXJ.css",
-            "allowFileUpload": true,
-            "soundEnabled": true,
-            "toggleChatId": "bp-embedded-webchat",
-            "embeddedChatId": "bp-embedded-webchat",
-            "proactiveMessageEnabled": false,
-            "proactiveBubbleMessage": "Hi! 👋 Need help?",
-            "proactiveBubbleTriggerType": "afterDelay",
-            "proactiveBubbleDelayTime": 10
           },
           "clientId": "32dfe644-9e09-4072-bd72-34340d56cb7b"
         });
-
-        // Add event listener for showing the chat
-        window.botpressWebChat.onEvent(
-          function (event: any) {
-            if (event.type === 'LIFECYCLE.LOADED') {
-              window.botpressWebChat.sendEvent({ type: 'show' });
-            }
-          },
-          ['LIFECYCLE.LOADED']
-        );
       }
     };
 
@@ -94,23 +76,6 @@ export default function BotpressChat() {
       /* Ensure it sits above other elements */
       .bpw-widget-btn, .bpw-chat-container {
         z-index: 9999 !important;
-      }
-
-      /* Pulse animation for the chat button */
-      @keyframes pulse-glow {
-        0% {
-          box-shadow: 0 0 0 0 rgba(196, 155, 255, 0.7);
-        }
-        70% {
-          box-shadow: 0 0 0 15px rgba(196, 155, 255, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(196, 155, 255, 0);
-        }
-      }
-
-      .bpw-widget-btn {
-        animation: pulse-glow 2s infinite;
       }
     `;
     document.head.appendChild(style);

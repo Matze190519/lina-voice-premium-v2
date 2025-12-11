@@ -22,12 +22,12 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/technology" component={Technology} />
-      <Route path="/partners" component={Partners} />
-      <Route path="/concept" component={Concept} />
-      <Route path="/autokonzept" component={Autokonzept} />
-      <Route path="/lr-partner" component={LRPartner} />
+        <Route path="/partners" component={Partners} />
+        <Route path="/concept" component={Concept} />
+        <Route path="/autokonzept" component={Autokonzept} />
+        <Route path="/lr-partner" component={LRPartner} />
         <Route path="/ueber-uns" component={About} />
-          <Route path="/process" component={Process} />
+        <Route path="/process" component={Process} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/impressum" component={Impressum} />
         <Route component={NotFound} />
