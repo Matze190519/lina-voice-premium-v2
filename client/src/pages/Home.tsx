@@ -25,7 +25,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row lg:flex-nowrap items-center gap-12 lg:gap-20">
             
             {/* Left: Text Content */}
-            <div className="w-full lg:w-1/2 flex flex-col items-start shrink-0">
+            <div className="w-full lg:w-1/2 flex flex-col items-start shrink-0 relative z-20">
               <ScrollReveal>
                 <div>
                   <motion.div 
@@ -86,7 +86,7 @@ export default function Home() {
             </div>
 
             {/* Right: Video / Visual */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end shrink-0 mt-8 lg:mt-0 relative">
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end shrink-0 mt-8 lg:mt-0 relative z-20">
               {/* Voice Orb Floating Effect */}
               <div className="absolute -top-20 -right-20 w-40 h-40 opacity-50 pointer-events-none hidden lg:block">
                  <VoiceOrb />
