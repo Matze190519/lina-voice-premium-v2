@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
+          <Link href="/" className="flex items-center gap-3 group shrink-0 z-50">
             <div className="w-10 h-10 bg-gradient-to-br from-electric-purple to-neon-blue flex items-center justify-center rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.5)] group-hover:shadow-[0_0_25px_rgba(124,58,237,0.8)] transition-all duration-300">
               <span className="font-playfair font-bold text-xl text-white">L</span>
             </div>
@@ -57,44 +57,46 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </Link>
 
-          {/* Desktop Nav - Centered & Simplified */}
-          <div className="hidden xl:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.href} 
-                href={link.href}
-                className={cn(
-                  "text-sm font-medium transition-all duration-300 hover:text-neon-cyan relative py-1 group uppercase tracking-wide",
-                  location === link.href 
-                    ? "text-neon-cyan" 
-                    : "text-gray-300"
-                )}
-              >
-                {link.label}
-                <span className={cn(
-                  "absolute bottom-0 left-0 w-0 h-0.5 bg-neon-cyan transition-all duration-300 group-hover:w-full",
-                  location === link.href ? "w-full" : ""
-                )} />
-              </Link>
-            ))}
+          {/* Desktop Nav - Flexible spacing to prevent overlap */}
+          <div className="hidden lg:flex flex-1 justify-center items-center px-4">
+            <div className="flex items-center gap-4 xl:gap-8">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.href} 
+                  href={link.href}
+                  className={cn(
+                    "text-xs xl:text-sm font-medium transition-all duration-300 hover:text-neon-cyan relative py-1 group uppercase tracking-wide whitespace-nowrap",
+                    location === link.href 
+                      ? "text-neon-cyan" 
+                      : "text-gray-300"
+                  )}
+                >
+                  {link.label}
+                  <span className={cn(
+                    "absolute bottom-0 left-0 w-0 h-0.5 bg-neon-cyan transition-all duration-300 group-hover:w-full",
+                    location === link.href ? "w-full" : ""
+                  )} />
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center gap-6 shrink-0">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0 z-50">
             <div className="flex flex-col items-end hidden xl:flex">
               <span className="text-[10px] text-gray-400 uppercase tracking-wider">24/7 Support</span>
               <a href="tel:+4951116653654" className="text-sm font-bold text-white hover:text-neon-cyan transition-colors font-mono">
                 +49 511 16653654
               </a>
             </div>
-            <NeonButton className="px-6 py-2 text-sm h-10 min-h-0">
+            <NeonButton className="px-4 xl:px-6 py-2 text-xs xl:text-sm h-9 xl:h-10 min-h-0 whitespace-nowrap">
               Live Demo
             </NeonButton>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden p-2 text-white hover:text-neon-cyan transition-colors"
+            className="lg:hidden p-2 text-white hover:text-neon-cyan transition-colors z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
