@@ -33,10 +33,18 @@ export default function LRPartner() {
               <span className="text-gray-400">Ihr All-in-One Startpaket.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Starten Sie professionell ohne hohe Agenturkosten. Das Business Set Pro beinhaltet alles, was Sie brauchen: Technik, Hardware und den Zugang zur Plattform.
+              Starten Sie professionell ohne hohe Agenturkosten. Das Business Set Pro beinhaltet hochwertige LR-Produkte für Ihr Unternehmen.
               <br /><br />
-              <span className="text-neon-cyan font-bold">Einmalige Investition: ca. 720 €</span>
+              <span className="text-neon-cyan font-bold">Einmalige Investition: ca. 1.000 € (2.000 PW)</span>
             </p>
+            <div className="mt-12 mb-12 relative max-w-4xl mx-auto">
+              <div className="absolute inset-0 bg-electric-purple/20 blur-3xl rounded-full opacity-30"></div>
+              <img 
+                src="/images/IMG_0009.png" 
+                alt="Business Set Pro" 
+                className="relative z-10 rounded-2xl border border-white/10 shadow-2xl w-full"
+              />
+            </div>
           </ScrollReveal>
         </div>
       </section>

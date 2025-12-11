@@ -105,7 +105,7 @@ export default function Autokonzept() {
               <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-b from-gray-900 to-black border border-white/10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-electric-purple/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=1000" 
+                  src="/images/IMG_0023.png" 
                   alt="Mercedes A-Klasse" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10"
                 />
@@ -127,7 +127,7 @@ export default function Autokonzept() {
               <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-b from-gray-900 to-black border border-white/10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neon-cyan/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=1000" 
+                  src="/images/IMG_0024.png" 
                   alt="Audi Q3" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10"
                 />
@@ -149,7 +149,7 @@ export default function Autokonzept() {
               <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-b from-gray-900 to-black border border-white/10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-electric-purple/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=1000" 
+                  src="/images/IMG_0025.png" 
                   alt="VW Tiguan" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10"
                 />
