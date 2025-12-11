@@ -101,6 +101,9 @@ export default function Technology() {
                     Verbinden Sie Ihren Google Calendar, Outlook oder Calendly. Lina bucht Termine nur dann, 
                     wenn Sie wirklich frei sind. Echtzeit-Abgleich verhindert Doppelbuchungen.
                   </p>
+                  <div className="mt-4 flex gap-4">
+                    <img src="/images/google-calendar-logo.png" alt="Google Calendar" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
+                  </div>
                 </div>
               </div>
 
@@ -114,6 +117,10 @@ export default function Technology() {
                     Nach jedem Gespräch erhalten Sie eine Zusammenfassung per E-Mail, SMS oder direkt in Ihr CRM 
                     (HubSpot, Salesforce, Pipedrive, etc.) via Webhook oder Zapier.
                   </p>
+                  <div className="mt-4 flex gap-4">
+                    <img src="/images/hubspot-logo.png" alt="HubSpot" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
+                    <img src="/images/salesforce-logo.png" alt="Salesforce" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
+                  </div>
                 </div>
               </div>
             </div>
