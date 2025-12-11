@@ -14,42 +14,41 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-[#0b0e18] min-h-screen text-white overflow-x-hidden">
+    <div className="bg-[#0b0e18] min-h-screen text-white overflow-x-hidden font-sans">
       <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} type={contactType} />
       
-      {/* Hero Section - Bulletproof Grid Layout */}
-      <section className="relative pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
+      {/* Hero Section - REPAIRED LAYOUT */}
+      <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
         {/* Background Noise & Gradient */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#c49bff]/10 blur-[120px] rounded-full pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00f0ff]/10 blur-[120px] rounded-full pointer-events-none"></div>
-
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             
             {/* Left Column: Text Content */}
-            <div className="flex flex-col space-y-8">
-              <div className="inline-flex items-center self-start px-4 py-2 rounded-full border border-[#00f0ff]/30 bg-[#00f0ff]/5 backdrop-blur-sm">
+            <div className="flex flex-col items-start space-y-8 w-full lg:w-1/2">
+              <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#00f0ff]/30 bg-[#00f0ff]/5 backdrop-blur-sm">
                 <span className="w-2 h-2 bg-[#00f0ff] rounded-full animate-pulse mr-2"></span>
                 <span className="text-sm font-mono text-[#00f0ff] tracking-wide">ULTRAVOX v0.7 ONLINE</span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold leading-[1.1] tracking-tight">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold leading-[1.1] tracking-tight text-left">
                 Die KI, die für dich <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c49bff] to-[#00f0ff]">
                   ans Telefon geht.
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed max-w-xl text-left">
                 Lina ist deine intelligente Telefon-Assistentin. Sie nimmt Anrufe an, 
                 vereinbart Termine und qualifiziert Leads – 24/7, mehrsprachig und in Echtzeit.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              {/* Buttons with explicit width constraints */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
                 <a 
                   href="tel:+4951116653654" 
-                  className="inline-flex h-14 items-center justify-center rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/50 px-8 font-medium text-[#00f0ff] hover:bg-[#00f0ff]/20 hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all"
+                  className="inline-flex h-14 items-center justify-center rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/50 px-8 font-medium text-[#00f0ff] hover:bg-[#00f0ff]/20 transition-all whitespace-nowrap w-full sm:w-auto"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   +49 511 16653654
@@ -57,35 +56,41 @@ export default function Home() {
                 
                 <button 
                   onClick={() => openContact('consultation')} 
-                  className="inline-flex h-14 items-center justify-center rounded-full bg-white/5 border border-white/10 px-8 font-medium text-white hover:bg-white/10 transition-all"
+                  className="inline-flex h-14 items-center justify-center rounded-full bg-white/5 border border-white/10 px-8 font-medium text-white hover:bg-white/10 transition-all whitespace-nowrap w-full sm:w-auto"
                 >
                   Unverbindlich anfragen <ArrowRight className="ml-2 w-5 h-5" />
                 </button>
               </div>
 
-              <div className="flex items-center gap-4 pt-4 border-t border-white/5 mt-8">
+              {/* Avatars with HARDCODED SIZES to prevent explosion */}
+              <div className="flex items-center gap-4 pt-4 border-t border-white/5 mt-8 w-full">
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0b0e18] bg-gray-800 overflow-hidden">
+                    <div 
+                      key={i} 
+                      className="rounded-full border-2 border-[#0b0e18] bg-gray-800 overflow-hidden shrink-0"
+                      style={{ width: '40px', height: '40px', minWidth: '40px', minHeight: '40px' }}
+                    >
                       <img 
                         src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i+15}`} 
                         alt="User" 
                         className="w-full h-full object-cover"
+                        style={{ width: '100%', height: '100%' }}
                       />
                     </div>
                   ))}
                 </div>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-400 whitespace-nowrap">
                   Bereits <span className="text-[#00f0ff] font-bold">100+</span> Unternehmer auf der Warteliste
                 </p>
               </div>
             </div>
 
             {/* Right Column: Video/Visual */}
-            <div className="relative w-full max-w-lg mx-auto lg:max-w-none">
-              <div className="relative aspect-video rounded-2xl overflow-hidden border border-[#c49bff]/20 shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-black/50 backdrop-blur-sm group">
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <div className="relative w-full max-w-lg aspect-video rounded-2xl overflow-hidden border border-[#c49bff]/20 shadow-2xl bg-black/50 backdrop-blur-sm group">
                 {/* Background Orb Animation */}
-                <div className="absolute inset-0 z-0 opacity-50">
+                <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
                   <VoiceOrb />
                 </div>
                 
