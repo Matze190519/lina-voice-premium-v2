@@ -29,7 +29,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row lg:flex-nowrap items-center gap-12 lg:gap-20">
             
             {/* Left: Text Content */}
-            <div className="w-full lg:w-1/2 flex flex-col items-start shrink-0 relative z-20">
+            <div className="w-full lg:w-1/2 flex flex-col items-start shrink-0 relative z-30">
               <ScrollReveal>
                 <div>
                   <motion.div 
@@ -81,13 +81,16 @@ export default function Home() {
             </div>
 
             {/* Right: Video / Visual */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end shrink-0 mt-8 lg:mt-0 relative z-20">
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end shrink-0 mt-8 lg:mt-0 relative z-20 pointer-events-none lg:pointer-events-auto">
+              {/* Re-enable pointer events for the video itself */}
+              <div className="pointer-events-auto w-full flex justify-center lg:justify-end">
               {/* 3D AI Core Background Effect */}
               <div className="absolute -top-40 -right-40 w-[600px] h-[600px] opacity-60 pointer-events-none hidden lg:block z-0">
                  <AICore />
               </div>
 
-              <ScrollReveal delay={0.2} className="w-full max-w-lg relative z-10">
+              </div>
+              <ScrollReveal delay={0.2} className="w-full max-w-lg relative z-10 pointer-events-auto">
                 <div className="relative aspect-video glass-card rounded-2xl flex items-center justify-center border border-electric-purple/20 bg-deep-navy/30 backdrop-blur-md overflow-hidden group shadow-2xl shadow-electric-purple/20 transition-all duration-500 hover:shadow-neon-cyan/20 hover:border-neon-cyan/30">
                   
                   {/* Video Element */}
