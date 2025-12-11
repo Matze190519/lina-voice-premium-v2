@@ -9,14 +9,11 @@
   --color-neon-cyan: oklch(0.90 0.20 190);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Removed aggressive global reset that conflicts with Tailwind */
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -26,6 +23,15 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Glassmorphism Effects */
