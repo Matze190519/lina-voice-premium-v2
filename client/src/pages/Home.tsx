@@ -6,6 +6,7 @@ import { Check, Phone, Zap, Shield, Globe, Cpu, ChevronRight, Play, Star, Trendi
 import { motion } from "framer-motion";
 import BotpressChat from "@/components/BotpressChat";
 import ScrollReveal from "@/components/ScrollReveal";
+import VoiceOrb from "@/components/VoiceOrb";
 import ContactForm from "@/components/ContactForm";
 import { useState } from "react";
 
@@ -88,24 +89,22 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-border glass-card group">
-                <video 
-                  src="/videos/lina-demo.mp4" 
-                  className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
-                  loop
-                  muted={false}
-                  playsInline
-                  controls={true}
-                />
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-border glass-card group h-[500px] w-full bg-black/20">
+                <VoiceOrb className="w-full h-full" />
                 
                 {/* Floating UI Elements - Futuristic Style */}
-                <div className="absolute top-4 right-4 md:top-8 md:right-8 glass-panel p-3 md:p-4 rounded-lg shadow-lg border border-primary/20 z-20 max-w-[160px] md:max-w-none">
+                <div className="absolute top-4 right-4 md:top-8 md:right-8 glass-panel p-3 md:p-4 rounded-lg shadow-lg border border-primary/20 z-20 max-w-[160px] md:max-w-none pointer-events-none">
                   <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
                     <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-secondary animate-pulse" />
                     <span className="text-[10px] md:text-xs font-mono font-bold text-secondary uppercase tracking-wider">System Active</span>
                   </div>
                   <div className="text-2xl md:text-3xl font-mono font-bold text-white text-glow">200ms</div>
                   <div className="text-[10px] md:text-xs text-muted-foreground font-mono">Reaktionszeit (Ultravox v0.7)</div>
+                </div>
+                
+                <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 glass-panel p-3 md:p-4 rounded-lg shadow-lg border border-primary/20 z-20 pointer-events-none">
+                   <div className="text-sm font-mono text-primary mb-1">AI VOICE CORE</div>
+                   <div className="text-xs text-muted-foreground">Neural Processing Active</div>
                 </div>
               </div>
               
