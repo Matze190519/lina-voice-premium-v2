@@ -1,7 +1,7 @@
 import { Phone, CheckCircle, Play, ArrowRight } from 'lucide-react';
 import { NeonButton } from '../components/ui/NeonButton';
 import ScrollReveal from '../components/ScrollReveal';
-import VoiceOrb from '../components/VoiceOrb'; // Re-import VoiceOrb
+import AICore from '../components/3d/AICore';
 import { motion } from 'framer-motion'; // Re-import framer-motion
 
 export default function Home() {
@@ -82,9 +82,9 @@ export default function Home() {
 
             {/* Right: Video / Visual */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end shrink-0 mt-8 lg:mt-0 relative z-20">
-              {/* Voice Orb Floating Effect */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 opacity-50 pointer-events-none hidden lg:block">
-                 <VoiceOrb />
+              {/* 3D AI Core Background Effect */}
+              <div className="absolute -top-40 -right-40 w-[600px] h-[600px] opacity-60 pointer-events-none hidden lg:block z-0">
+                 <AICore />
               </div>
 
               <ScrollReveal delay={0.2} className="w-full max-w-lg relative z-10">
