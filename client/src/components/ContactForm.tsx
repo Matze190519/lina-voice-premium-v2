@@ -121,7 +121,7 @@ export default function ContactForm({ open, onOpenChange, type = 'default' }: Co
             </div>
 
             <div className="flex items-start space-x-2 pt-2">
-              <Checkbox id="terms" required className="border-white/30 data-[state=checked]:bg-neon-cyan data-[state=checked]:text-black mt-1" />
+              <Checkbox id="terms" name="privacy_consent" value="yes" required className="border-white/30 data-[state=checked]:bg-neon-cyan data-[state=checked]:text-black mt-1" />
               <Label htmlFor="terms" className="text-xs font-normal leading-tight peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400">
                 Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden. Hinweis: Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Weitere Informationen finden Sie in der <a href="/privacy" className="underline text-neon-cyan hover:text-neon-cyan/80">Datenschutzerklärung</a>.
               </Label>
