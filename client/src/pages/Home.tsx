@@ -63,6 +63,11 @@ export default function Home() {
                     </NeonButton>
                   </div>
 
+                  <p className="text-xs text-gray-500 mb-6 max-w-md italic">
+                    * Diese Nummer dient nur zu Testzwecken und demonstriert alle Branchen. 
+                    Die KI wird später perfekt auf Ihr eigenes Unternehmen angepasst.
+                  </p>
+
                   <div className="mt-4 flex items-center gap-4 text-sm text-gray-400">
                     <div className="flex -space-x-3">
                       {[1, 2, 3, 4].map((i) => (
