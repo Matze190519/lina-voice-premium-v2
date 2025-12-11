@@ -18,6 +18,8 @@ export default function LRPartner() {
   return (
     <div className="pb-20 pt-20">
       <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} />
+      {/* Fallback for mobile if dialog fails */}
+      <div id="contact-fallback" className="hidden"></div>
       
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden bg-deep-space border-b border-white/10">
