@@ -26,14 +26,14 @@ export default function LRPartner() {
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
             <div className="inline-block px-4 py-1 rounded-full bg-electric-purple/20 border border-electric-purple/50 text-neon-cyan text-sm font-bold mb-6">
-              Unser Produkt-Partner
+              Das Fundament für Ihren Start
             </div>
             <h1 className="text-5xl md:text-7xl font-playfair font-bold leading-tight mb-6 text-white">
-              LR Health & Beauty <br />
-              <span className="text-gray-400">Der Lieferant Ihres Business-Pakets.</span>
+              Business Set Pro <br />
+              <span className="text-gray-400">Ihr All-in-One Startpaket.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Warum LR? Wir nutzen die Infrastruktur und die hochwertigen Produkt-Bundles eines der größten deutschen Direktvertriebsunternehmen als Basis für unser Geschäftsmodell.
+              Starten Sie professionell ohne hohe Agenturkosten. Das Business Set Pro beinhaltet alles, was Sie brauchen: Technik, Hardware und den Zugang zur Plattform.
             </p>
           </ScrollReveal>
         </div>
@@ -74,7 +74,7 @@ export default function LRPartner() {
                 </div>
                 <h3 className="font-playfair font-bold text-2xl text-white mb-4">Logistik & Fulfillment</h3>
                 <p className="text-lg text-gray-400 leading-relaxed">
-                  LR liefert das "Profi Business Set" (Zeitgard Pro, etc.), das als materieller Gegenwert Ihres Einstiegs dient.
+                  Sie erhalten das "Business Set Pro" mit hochwertiger Hardware (Zeitgard Pro) als materiellen Gegenwert Ihrer Investition.
                 </p>
               </div>
             </ScrollReveal>
@@ -88,11 +88,11 @@ export default function LRPartner() {
           <ScrollReveal>
             <div className="glass-card p-10 rounded-3xl border border-electric-purple/30 bg-deep-navy/50">
               <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-8 text-white text-center">
-                Das Prinzip: Produktwert statt Setup-Kosten
+                Das Prinzip: Echter Wert statt Setup-Gebühren
               </h2>
               <p className="text-xl text-gray-300 mb-12 leading-relaxed text-center max-w-3xl mx-auto">
-                Anstatt einer hohen Einrichtungsgebühr für die KI-Integration erwerben Sie das <strong className="text-white">LR Profi Business Set</strong>. 
-                Dies dient als "Eintrittskarte" in unsere Plattform.
+                Anstatt 1.500€ - 2.500€ für die Einrichtung zu zahlen, investieren Sie in das <strong className="text-white">Business Set Pro</strong>. 
+                Sie erhalten echte Ware und Hardware, die KI-Einrichtung ist inklusive.
               </p>
               
               <div className="grid md:grid-cols-2 gap-12 mt-12">
@@ -110,7 +110,7 @@ export default function LRPartner() {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-green-500 mt-1">•</span>
-                      <span>Das hochwertige LR Profi Business Set (Warenwert &gt; 1.500€)</span>
+                      <span>Das hochwertige Business Set Pro (Warenwert ca. 1.500€)</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-green-500 mt-1">•</span>
@@ -118,7 +118,7 @@ export default function LRPartner() {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-green-500 mt-1">•</span>
-                      <span>Einkaufskonditionen (-30%) für Eigenbedarf</span>
+                      <span>Ca. 30% Einkaufsvorteil auf zukünftige Bestellungen</span>
                     </li>
                   </ul>
                 </div>
@@ -167,7 +167,7 @@ export default function LRPartner() {
                   Warum läuft die Abwicklung über LR?
                 </AccordionTrigger>
                 <AccordionContent className="text-lg text-gray-400 pb-6 leading-relaxed">
-                  Wir nutzen das LR Profi Business Set als standardisiertes Business-Paket. Dies ermöglicht uns, die KI-Einrichtung ohne separate Agentur-Rechnung anzubieten. Sie erhalten für Ihr Geld also echten Warenwert statt nur einer Dienstleistung.
+                  Wir nutzen das Business Set Pro von LR als Basis. Dies ermöglicht uns, die KI-Einrichtung ohne separate Agentur-Rechnung anzubieten. Sie erhalten für Ihr Geld also echten Warenwert (Hardware & Produkte) statt nur einer Dienstleistung.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2" className="border border-white/10 rounded-xl bg-black/20 px-4">
@@ -175,7 +175,7 @@ export default function LRPartner() {
                   Bin ich dann LR-Vertreter?
                 </AccordionTrigger>
                 <AccordionContent className="text-lg text-gray-400 pb-6 leading-relaxed">
-                  Formal werden Sie als Partner registriert, um das Set zu beziehen und Zugriff auf das Autokonzept zu erhalten. Praktisch nutzen Sie dies jedoch rein als Endkunde/Unternehmer für die KI-Lösung und ggf. das Firmenleasing. Sie müssen nicht als Vertriebspartner aktiv werden.
+                  Mit dem Business Set Pro werden Sie LR-Partner. Sie bleiben selbständig, es entsteht kein Arbeitsverhältnis. Die Nutzung als reiner Endkunde für die KI-Lösung ist problemlos möglich. Die Empfehlung des Systems an andere ist optional.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3" className="border border-white/10 rounded-xl bg-black/20 px-4">
@@ -201,7 +201,7 @@ export default function LRPartner() {
               className="bg-white text-black hover:bg-primary hover:text-white font-bold text-xl px-10 py-6 rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(196,155,255,0.8)] transition-all transform hover:scale-105"
               onClick={() => setIsContactOpen(true)}
             >
-              Startpaket anfordern
+              Business Set Pro anfordern
             </Button>
           </ScrollReveal>
         </div>

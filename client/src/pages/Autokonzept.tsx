@@ -37,15 +37,14 @@ export default function Autokonzept() {
         <ScrollReveal>
           <div className="text-center mb-20">
             <div className="inline-block px-4 py-1 rounded-full bg-electric-purple/20 border border-electric-purple/50 text-neon-cyan text-sm font-bold mb-6">
-              Fuhrpark-Management 2.0
+              Mobilität inklusive
             </div>
             <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight text-white">
-              Intelligente <span className="text-neon-cyan">Mobilität</span><br />
-              für Ihr Unternehmen.
+              Ihr Firmenwagen <br />
+              <span className="text-gray-400">ab Junior Manager.</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-              Warum marktübliche Leasingraten zahlen? Nutzen Sie unser Großkunden-Konzept als strategischen Wettbewerbsvorteil.
-              <br /><span className="text-white font-bold">Keine Anzahlung. Sofort verfügbar.</span>
+              Erreichen Sie die erste Karrierestufe "Junior Manager" und fahren Sie einen Mercedes A-Klasse, Audi Q3 oder VW Tiguan für nur 125€ netto im Monat.
             </p>
             <NeonButton href="tel:+491715060008">
               Konditionen prüfen
@@ -93,26 +92,27 @@ export default function Autokonzept() {
               Premium-Flotte <span className="text-neon-cyan">Sofort bestellbar</span>
             </h2>
             <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
-              Dies sind nur einige Beispiele. Aktuell stehen ca. 20 verschiedene Modelle für Sie zur Verfügung.
+              * Rate gilt bei Erreichung und Bestätigung des Titels "Junior Manager". Ohne Anzahlung, ohne Schlussrate. 
+              Inklusive KFZ-Versicherung und Steuern (je nach Paket). Bonität vorausgesetzt.
             </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Audi Q8 */}
+            {/* Mercedes A-Klasse */}
             <ScrollReveal delay={0.1}>
               <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-b from-gray-900 to-black border border-white/10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-electric-purple/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img 
-                  src="/images/cars/audi-q8.png" 
-                  alt="Audi Q8" 
-                  className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 relative z-10"
+                  src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=1000" 
+                  alt="Mercedes A-Klasse" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end z-20">
-                  <h3 className="text-2xl font-bold mb-1 text-white">Audi Q8</h3>
-                  <p className="text-gray-300 mb-4 text-sm">SUV Coupé, S-Line</p>
+                  <h3 className="text-2xl font-bold mb-1 text-white">Mercedes A-Klasse</h3>
+                  <p className="text-gray-300 mb-4 text-sm">Kompaktklasse</p>
                   <div className="flex items-center justify-between">
                     <div className="text-neon-cyan font-bold text-xl">
-                      ab 349€ <span className="text-xs text-gray-400 font-normal">/Monat</span>
+                      125€ <span className="text-xs text-gray-400 font-normal">/Monat (netto)*</span>
                     </div>
                     <ChevronRight className="w-5 h-5 text-neon-cyan group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -120,21 +120,21 @@ export default function Autokonzept() {
               </div>
             </ScrollReveal>
 
-            {/* Audi A4 Avant */}
+            {/* Audi Q3 */}
             <ScrollReveal delay={0.2}>
               <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-b from-gray-900 to-black border border-white/10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neon-cyan/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img 
-                  src="/images/cars/audi-a4-avant.png" 
-                  alt="Audi A4 Avant" 
-                  className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 relative z-10"
+                  src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=1000" 
+                  alt="Audi Q3" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end z-20">
-                  <h3 className="text-2xl font-bold mb-1 text-white">Audi A4 Avant</h3>
-                  <p className="text-gray-300 mb-4 text-sm">Business Kombi</p>
+                  <h3 className="text-2xl font-bold mb-1 text-white">Audi Q3</h3>
+                  <p className="text-gray-300 mb-4 text-sm">Kompakt-SUV</p>
                   <div className="flex items-center justify-between">
                     <div className="text-neon-cyan font-bold text-xl">
-                      ab 249€ <span className="text-xs text-gray-400 font-normal">/Monat</span>
+                      125€ <span className="text-xs text-gray-400 font-normal">/Monat (netto)*</span>
                     </div>
                     <ChevronRight className="w-5 h-5 text-neon-cyan group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -142,21 +142,21 @@ export default function Autokonzept() {
               </div>
             </ScrollReveal>
 
-            {/* Mercedes CLA */}
+            {/* VW Tiguan */}
             <ScrollReveal delay={0.3}>
               <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-b from-gray-900 to-black border border-white/10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-electric-purple/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img 
-                  src="/images/cars/mercedes-cla.png" 
-                  alt="Mercedes CLA" 
-                  className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 relative z-10"
+                  src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=1000" 
+                  alt="VW Tiguan" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10"
                 />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end z-20">
-                  <h3 className="text-2xl font-bold mb-1 text-white">Mercedes CLA</h3>
-                  <p className="text-gray-300 mb-4 text-sm">Coupé, AMG Line</p>
+                  <h3 className="text-2xl font-bold mb-1 text-white">VW Tiguan</h3>
+                  <p className="text-gray-300 mb-4 text-sm">SUV</p>
                   <div className="flex items-center justify-between">
                     <div className="text-neon-cyan font-bold text-xl">
-                      ab 199€ <span className="text-xs text-gray-400 font-normal">/Monat</span>
+                      125€ <span className="text-xs text-gray-400 font-normal">/Monat (netto)*</span>
                     </div>
                     <ChevronRight className="w-5 h-5 text-neon-cyan group-hover:translate-x-1 transition-transform" />
                   </div>

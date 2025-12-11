@@ -20,12 +20,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, []);
 
   const navLinks = [
-    { href: "/", label: "Vision" },
-    { href: "/technology", label: "Technologie" },
-    { href: "/concept", label: "Konzept" },
-    { href: "/autokonzept", label: "Auto" },
-    { href: "/lr-partner", label: "Partner" },
-    { href: "/process", label: "Ablauf" },
+    { href: "/", label: "Home" },
+    { href: "/lr-partner", label: "Business Set Pro" },
+    { href: "/autokonzept", label: "Autokonzept" },
+    { href: "/preise", label: "Preise" },
+    { href: "/kontakt", label: "Kontakt" },
   ];
 
   return (

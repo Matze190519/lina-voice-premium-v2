@@ -46,15 +46,17 @@ export default function Home() {
                   </motion.div>
 
                   <h1 className="text-6xl md:text-8xl font-heading font-bold mb-8 leading-tight text-white tracking-tight">
-                    Die KI, die für dich<br />
+                    Nie wieder einen<br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-white to-secondary animate-shimmer bg-[length:200%_100%]">
-                      ans Telefon geht.
+                      Kunden verpassen.
                     </span>
                   </h1>
 
                   <p className="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed max-w-xl font-light">
                     Lina ist deine intelligente Telefon-Assistentin. Sie nimmt Anrufe an, 
                     vereinbart Termine und qualifiziert Leads – <span className="text-white font-medium">24/7, mehrsprachig und in Echtzeit.</span>
+                    <br /><br />
+                    <span className="text-neon-cyan font-bold">Jetzt neu:</span> Komplettes Business-Setup inklusive Hardware & Firmenwagen-Option.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10 relative z-50 pointer-events-auto">
@@ -131,6 +133,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How it works */}
+      <section className="py-24 bg-deep-navy/30 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-16 text-center text-white">
+              So funktioniert <span className="text-neon-cyan">Lina Voice.</span>
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-4 gap-8 relative">
+            {/* Connecting Line */}
+            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-electric-purple/0 via-electric-purple/50 to-electric-purple/0 z-0" />
+
+            {[
+              {
+                step: '01',
+                title: 'Anruf kommt rein',
+                description: 'Kunde ruft deine bestehende Firmennummer an. Die Nummer kann i.d.R. einfach weitergeleitet werden.',
+                icon: Phone,
+              },
+              {
+                step: '02',
+                title: 'Lina begrüßt',
+                description: 'Lina stellt sich als digitale Assistenz vor, beantwortet Fragen (Öffnungszeiten, Preise) und qualifiziert.',
+                icon: CheckCircle,
+              },
+              {
+                step: '03',
+                title: 'Aktion',
+                description: 'Lina bucht Termine direkt in deinen Kalender, plant Rückrufe oder verbindet wichtige Gespräche weiter.',
+                icon: CheckCircle,
+              },
+              {
+                step: '04',
+                title: 'Abrechnung',
+                description: 'Minutengenaue Abrechnung. Du zahlst nur, wenn Lina wirklich arbeitet (ab 0,20€/Min + Providerkosten).',
+                icon: CheckCircle,
+              },
+            ].map((item, index) => (
+              <ScrollReveal key={index} delay={index * 0.1}>
+                <div className="relative z-10 text-center group">
+                  <div className="w-24 h-24 rounded-full bg-deep-navy border-4 border-electric-purple flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_rgba(124,58,237,0.3)] group-hover:shadow-[0_0_40px_rgba(6,182,212,0.5)] group-hover:border-neon-cyan transition-all duration-500">
+                    <item.icon className="w-10 h-10 text-white group-hover:text-neon-cyan transition-colors duration-300" />
+                  </div>
+                  <div className="glass-card p-6 rounded-xl border border-white/5 min-h-[200px] hover:border-neon-cyan/30 transition-colors">
+                    <div className="text-electric-purple font-bold text-sm mb-2 group-hover:text-neon-cyan transition-colors">{item.step}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-20 bg-deep-navy/50 relative">
         <div className="container mx-auto px-4">
@@ -148,16 +206,28 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: '24/7 Anrufannahme',
-                description: 'Freundliche Begrüßung im Namen deiner Firma – egal ob du im Meeting, auf der Baustelle oder im Urlaub bist.',
+                title: 'Termine buchen & verschieben',
+                description: 'Integration in Online-Kalender / Buchungssysteme (z. B. Praxis, Friseur, Coach).',
               },
               {
-                title: 'Lead-Qualifizierung',
-                description: 'Lina filtert Anrufer vor, fragt Budget und Bedarf ab und bereitet das Gespräch perfekt für dich vor.',
+                title: 'Anfragen qualifizieren',
+                description: 'Fragen stellen („Neupatient oder Bestandspatient?“, „Welche Leistung?“) und Infos strukturiert erfassen.',
               },
               {
-                title: 'Mehrsprachig',
-                description: 'Lina spricht Deutsch und über 20 weitere Sprachen fließend. Perfekt für internationale Kunden.',
+                title: 'Rückrufe organisieren',
+                description: 'Rückrufwunsch aufnehmen, Zeitfenster abstimmen und an das Team übergeben.',
+              },
+              {
+                title: 'Weiterleitung an Mitarbeiter',
+                description: 'Auf Wunsch direkte Verbindung zu einer Durchwahl, optional mit Kurz-Zusammenfassung des bisherigen Gesprächs.',
+              },
+              {
+                title: 'Mehrsprachige Gespräche',
+                description: 'Basiert auf Ultravox v0.7, unterstützt viele Sprachen (z. B. bis zu 26 Sprachen laut Ultravox-Doku).',
+              },
+              {
+                title: 'Anbindung an Systeme',
+                description: 'CRM, E-Mail, Ticketsysteme, Buchungssysteme über Tools/Function Calls.',
               },
             ].map((feature, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
