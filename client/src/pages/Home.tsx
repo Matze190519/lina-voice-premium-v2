@@ -29,7 +29,8 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row lg:flex-nowrap items-center gap-12 lg:gap-20">
             
             {/* Left: Text Content */}
-            <div className="w-full lg:w-1/2 flex flex-col items-start shrink-0 relative z-30">
+            <div className="w-full lg:w-1/2 flex flex-col items-start shrink-0 relative z-50 pointer-events-none">
+              <div className="pointer-events-auto w-full">
               <ScrollReveal>
                 <div>
                   <motion.div 
@@ -56,12 +57,12 @@ export default function Home() {
                     vereinbart Termine und qualifiziert Leads – <span className="text-white font-medium">24/7, mehrsprachig und in Echtzeit.</span>
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10">
-                    <NeonButton onClick={() => window.location.href = 'tel:+4951116653654'} className="w-full sm:w-auto justify-center group">
+                  <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10 relative z-50 pointer-events-auto">
+                    <NeonButton href="tel:+4951116653654" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
                       <Phone className="w-5 h-5 inline mr-2 group-hover:animate-bounce" />
                       +49 511 16653654
                     </NeonButton>
-                    <NeonButton variant="secondary" className="w-full sm:w-auto justify-center group">
+                    <NeonButton href="/kontakt" variant="secondary" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
                       Unverbindlich anfragen
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </NeonButton>
@@ -78,6 +79,7 @@ export default function Home() {
                   </div>
                 </div>
               </ScrollReveal>
+              </div>
             </div>
 
             {/* Right: Video / Visual */}
