@@ -17,22 +17,23 @@ export default function Home() {
     <div className="bg-[#0b0e18] min-h-screen text-white overflow-x-hidden font-sans">
       <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} type={contactType} />
       
-      {/* Hero Section - REPAIRED LAYOUT */}
+      {/* Hero Section - FLEXBOX REWRITE */}
       <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
-        {/* Background Noise & Gradient */}
+        {/* Background Noise */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+          {/* Main Layout: Flexbox with Wrap */}
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             
             {/* Left Column: Text Content */}
-            <div className="flex flex-col items-start space-y-8 w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 flex flex-col items-start space-y-8">
               <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#00f0ff]/30 bg-[#00f0ff]/5 backdrop-blur-sm">
                 <span className="w-2 h-2 bg-[#00f0ff] rounded-full animate-pulse mr-2"></span>
                 <span className="text-sm font-mono text-[#00f0ff] tracking-wide">ULTRAVOX v0.7 ONLINE</span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold leading-[1.1] tracking-tight text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-playfair font-bold leading-[1.1] tracking-tight text-left">
                 Die KI, die für dich <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c49bff] to-[#00f0ff]">
                   ans Telefon geht.
@@ -44,11 +45,11 @@ export default function Home() {
                 vereinbart Termine und qualifiziert Leads – 24/7, mehrsprachig und in Echtzeit.
               </p>
 
-              {/* Buttons with explicit width constraints */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
+              {/* Buttons - Fixed: items-start to prevent stretching */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto items-start sm:items-center">
                 <a 
                   href="tel:+4951116653654" 
-                  className="inline-flex h-14 items-center justify-center rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/50 px-8 font-medium text-[#00f0ff] hover:bg-[#00f0ff]/20 transition-all whitespace-nowrap w-full sm:w-auto"
+                  className="inline-flex items-center justify-center h-14 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/50 px-8 font-medium text-[#00f0ff] hover:bg-[#00f0ff]/20 transition-all whitespace-nowrap w-auto min-w-[200px]"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   +49 511 16653654
@@ -56,26 +57,25 @@ export default function Home() {
                 
                 <button 
                   onClick={() => openContact('consultation')} 
-                  className="inline-flex h-14 items-center justify-center rounded-full bg-white/5 border border-white/10 px-8 font-medium text-white hover:bg-white/10 transition-all whitespace-nowrap w-full sm:w-auto"
+                  className="inline-flex items-center justify-center h-14 rounded-full bg-white/5 border border-white/10 px-8 font-medium text-white hover:bg-white/10 transition-all whitespace-nowrap w-auto min-w-[200px]"
                 >
                   Unverbindlich anfragen <ArrowRight className="ml-2 w-5 h-5" />
                 </button>
               </div>
 
-              {/* Avatars with HARDCODED SIZES to prevent explosion */}
+              {/* Avatars */}
               <div className="flex items-center gap-4 pt-4 border-t border-white/5 mt-8 w-full">
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((i) => (
                     <div 
                       key={i} 
                       className="rounded-full border-2 border-[#0b0e18] bg-gray-800 overflow-hidden shrink-0"
-                      style={{ width: '40px', height: '40px', minWidth: '40px', minHeight: '40px' }}
+                      style={{ width: '40px', height: '40px' }}
                     >
                       <img 
                         src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i+15}`} 
                         alt="User" 
                         className="w-full h-full object-cover"
-                        style={{ width: '100%', height: '100%' }}
                       />
                     </div>
                   ))}
@@ -86,9 +86,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column: Video/Visual */}
-            <div className="w-full lg:w-1/2 flex justify-center">
-              <div className="relative w-full max-w-lg aspect-video rounded-2xl overflow-hidden border border-[#c49bff]/20 shadow-2xl bg-black/50 backdrop-blur-sm group">
+            {/* Right Column: Video */}
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0">
+              <div className="relative w-full max-w-[600px] aspect-video rounded-2xl overflow-hidden border border-[#c49bff]/20 shadow-2xl bg-black/50 backdrop-blur-sm group">
                 {/* Background Orb Animation */}
                 <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
                   <VoiceOrb />
