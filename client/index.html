@@ -7,96 +7,40 @@
     <title>Lina Voice - AI Sprachassistentin für Unternehmer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Botpress WebChat Injection - CRITICAL: MUST BE IN HEAD -->
-    <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+    <!-- Botpress WebChat Injection -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/02/11/19/20250211192328-CAC882A1.js"></script>
+    
     <script>
-      window.addEventListener('load', function() {
-        // Poll for Botpress global object
-        var interval = setInterval(function() {
-          if (window.botpressWebChat) {
-            clearInterval(interval);
-            console.log("Botpress initializing with USER CONFIG...");
-            
-            // Configuration derived EXACTLY from: 
-            // https://files.bpcontent.cloud/2025/05/06/15/20250506153427-MY6191NK.json
-            // With custom icon override as requested previously
-            
-            window.botpressWebChat.init({
-              "botId": "cac882a1-cf8f-4b8f-9740-8f96ea9558db",
-              "configuration": {
-                "version": "v2",
-                "botName": "Lina vom LR Lifestyle Team",
-                // Using local custom icon as requested, falling back to config one if needed
-                "botAvatar": window.location.origin + "/images/lina-avatar-future.png",
-                "botDescription": "Hallo, ich bin Lina, der Chat bot des LR Lifestyle Teams. Achtung, diese Version von mir ist extrem eingeschränkt, wenn du im LR Lifestyle Team bist werden alle Funktionen für dich freigeschaltet. ",
-                "website": {},
-                "email": {
-                  "title": "Info@lr-lifestyle.info",
-                  "link": "Info@lr-lifestyle.info"
-                },
-                "phone": {
-                  "title": "+491715060008",
-                  "link": "+491715060008"
-                },
-                "termsOfService": {},
-                "privacyPolicy": {},
-                "color": "#9333EA",
-                "variant": "solid",
-                "headerVariant": "solid",
-                "themeMode": "dark",
-                "fontFamily": "AR One Sans",
-                "radius": 4,
-                "feedbackEnabled": false,
-                "footer": "[⚡ LR Lifestyle Team](https://botpress.com/?from=webchat)",
-                "additionalStylesheetUrl": "https://files.bpcontent.cloud/2025/11/17/18/20251117183249-ODXZWBXJ.css",
-                "allowFileUpload": true,
-                "soundEnabled": true,
-                "toggleChatId": "bp-embedded-webchat",
-                "embeddedChatId": "bp-embedded-webchat",
-                "proactiveMessageEnabled": false,
-                "proactiveBubbleMessage": "Hi! 👋 Need help?",
-                "proactiveBubbleTriggerType": "afterDelay",
-                "proactiveBubbleDelayTime": 10
-              },
-              "clientId": "32dfe644-9e09-4072-bd72-34340d56cb7b"
-            });
-          }
-        }, 100);
+      window.botpressWebChat.init({
+        "composerPlaceholder": "Frag Lina etwas...",
+        "botConversationDescription": "Lina beantwortet deine Fragen zu Lina Voice & LR",
+        "botId": "cac882a1-cf8f-4b8f-9740-8f96ea9558db",
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v2.2",
+        "messagingUrl": "https://messaging.botpress.cloud",
+        "clientId": "cac882a1-cf8f-4b8f-9740-8f96ea9558db",
+        "webhookId": "20250211192328-CAC882A1",
+        "lazySocket": true,
+        "themeName": "prism",
+        "botName": "Lina",
+        "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=LinaVoice",
+        "stylesheet": "https://webchat-styler-css.botpress.app/prod/code/06b14d43-c0f8-4b8f-9740-8f96ea9558db/v22342/style.css",
+        "frontendVersion": "v2.2",
+        "useSessionStorage": true,
+        "enableConversationDeletion": true,
+        "showPoweredBy": false,
+        "theme": "prism",
+        "themeColor": "#2563eb",
+        "allowedOrigins": []
       });
     </script>
+    
     <style>
-      /* Force Chatbot Visibility - AGGRESSIVE OVERRIDE */
+      /* Ensure Chatbot is visible above everything */
       .bpw-widget-btn {
-        z-index: 2147483647 !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: fixed !important;
-      }
-      .bpw-chat-container {
-        z-index: 2147483647 !important;
-        display: block !important;
-        visibility: visible !important;
-      }
-      /* Ensure the icon image inside is visible */
-      .bpw-widget-btn img {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-      
-      /* Mobile specific adjustments */
-      @media (max-width: 768px) {
-        .bpw-widget-btn {
-          bottom: 20px !important;
-          right: 16px !important;
-          width: 60px !important;
-          height: 60px !important;
-        }
+        z-index: 9999 !important;
       }
     </style>
   </head>
