@@ -1,55 +1,53 @@
-import { Suspense, lazy } from 'react';
-import { Route, Switch } from 'wouter';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import BackgroundEffects from './components/BackgroundEffects';
-import TrustBar from './components/TrustBar';
-import LiveTicker from './components/LiveTicker';
-import ExitIntent from './components/ExitIntent';
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import NotFound from "@/pages/NotFound";
+import { Route, Switch } from "wouter";
+import ErrorBoundary from "./components/ErrorBoundary";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import Layout from "./components/Layout";
+import BackgroundEffects from "@/components/BackgroundEffects";
+import Home from "./pages/Home";
+import Technology from "@/pages/Technology";
+import Partners from "@/pages/Partners";
+import Concept from "@/pages/Concept";
+import Autokonzept from "@/pages/Autokonzept";
+import LRPartner from "@/pages/LRPartner";
+import About from "./pages/About";
+import Process from "./pages/Process";
+import Privacy from "./pages/Privacy";
+import Impressum from "./pages/Impressum";
 
-// Lazy Loading für Performance
-const Home = lazy(() => import('./pages/Home'));
-const Technologie = lazy(() => import('./pages/Technologie'));
-const Preise = lazy(() => import('./pages/Preise'));
+function Router() {
+  return (
+    <Layout>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/technology" component={Technology} />
+        <Route path="/partners" component={Partners} />
+        <Route path="/concept" component={Concept} />
+        <Route path="/autokonzept" component={Autokonzept} />
+        <Route path="/lr-partner" component={LRPartner} />
+        <Route path="/ueber-uns" component={About} />
+        <Route path="/process" component={Process} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path="/impressum" component={Impressum} />
+        <Route component={NotFound} />
+      </Switch>
+    </Layout>
+  );
+}
 
 function App() {
   return (
-    <div className="min-h-screen bg-deep-navy text-white relative overflow-x-hidden font-inter">
-      {/* Background Effects */}
-      <BackgroundEffects />
-
-      {/* Navigation - Fixed Top */}
-      <Navigation />
-
-      {/* Main Content Wrapper - Add padding-top to account for fixed nav */}
-      <div className="pt-20">
-        
-        {/* Trust Bar - Now part of the flow, below nav */}
-        <TrustBar />
-
-        {/* Main Content with Lazy Loading */}
-        <Suspense fallback={
-          <div className="flex items-center justify-center min-h-[60vh]">
-            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-neon-cyan"></div>
-          </div>
-        }>
-          <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/technologie" component={Technologie} />
-            <Route path="/preise" component={Preise} />
-            {/* Fallback route */}
-            <Route path="/:rest*" component={Home} />
-          </Switch>
-        </Suspense>
-      </div>
-
-      {/* Footer */}
-      <Footer />
-
-      {/* Conversion Booster */}
-      <LiveTicker />
-      <ExitIntent />
-    </div>
+    <ErrorBoundary>
+      <ThemeProvider defaultTheme="dark">
+        <TooltipProvider>
+          <Toaster />
+          <BackgroundEffects />
+          <Router />
+        </TooltipProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 
