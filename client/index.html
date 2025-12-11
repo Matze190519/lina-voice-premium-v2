@@ -1,24 +1,69 @@
 <!doctype html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Lina Voice - AI Sprachassistentin für Unternehmer</title>    
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lina Voice - AI Sprachassistentin für Unternehmer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Botpress WebChat Injection - CRITICAL: MUST BE IN HEAD -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        // Poll for Botpress global object
+        var interval = setInterval(function() {
+          if (window.botpressWebChat) {
+            clearInterval(interval);
+            console.log("Botpress initializing...");
+            
+            window.botpressWebChat.init({
+              "botId": "cac882a1-cf8f-4b8f-9740-8f96ea9558db",
+              "configuration": {
+                "botName": "Lina vom LR Lifestyle Team",
+                "botAvatar": window.location.origin + "/images/lina-avatar-future.png",
+                "botDescription": "Hallo, ich bin Lina, der Chat bot des LR Lifestyle Teams.",
+                "website": {},
+                "email": { "title": "Info@lr-lifestyle.info", "link": "Info@lr-lifestyle.info" },
+                "phone": { "title": "+491715060008", "link": "+491715060008" },
+                "termsOfService": {},
+                "privacyPolicy": {},
+                "color": "#9333EA",
+                "variant": "solid",
+                "themeMode": "dark",
+                "fontFamily": "AR One Sans",
+                "radius": 4,
+                "allowFileUpload": true,
+                "soundEnabled": true,
+                "toggleChatId": "bp-embedded-webchat",
+                "embeddedChatId": "bp-embedded-webchat"
+              },
+              "clientId": "32dfe644-9e09-4072-bd72-34340d56cb7b"
+            });
+          }
+        }, 100);
+      });
+    </script>
+    <style>
+      /* Force Chatbot Visibility */
+      .bpw-widget-btn {
+        z-index: 2147483647 !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
+      }
+      .bpw-chat-container {
+        z-index: 2147483647 !important;
+      }
+    </style>
   </head>
-
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
-
 </html>
