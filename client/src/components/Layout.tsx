@@ -20,9 +20,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const navLinks = [
     { href: "/", label: "Vision" },
-    { href: "/technologie", label: "Technologie" },
+    { href: "/technology", label: "Technologie" }, // Fixed: /technologie -> /technology
     { href: "/partners", label: "Partner" },
-    { href: "/konzept", label: "Konzept & Preise" },
+    { href: "/concept", label: "Konzept & Preise" }, // Fixed: /konzept -> /concept
     { href: "/autokonzept", label: "Autokonzept" },
     { href: "/lr-partner", label: "LR Partner" },
     { href: "/process", label: "Ablauf" },
@@ -53,7 +53,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
@@ -70,7 +70,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <a href="tel:+4951116653654" className="text-sm font-bold text-primary hover:underline">
               +49 511 16653654
             </a>
@@ -81,7 +81,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-2 text-primary"
+            className="lg:hidden p-2 text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
@@ -90,7 +90,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-border shadow-xl p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-border shadow-xl p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
@@ -138,7 +138,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="font-heading font-bold text-lg mb-6">Unternehmen</h4>
               <ul className="space-y-3 text-white/70">
                 <li><Link href="/ueber-uns" className="hover:text-white transition-colors">Über Uns</Link></li>
-                <li><Link href="/konzept" className="hover:text-white transition-colors">Karriere</Link></li>
+                <li><Link href="/concept" className="hover:text-white transition-colors">Karriere</Link></li>
                 <li><Link href="/kontakt" className="hover:text-white transition-colors">Kontakt</Link></li>
               </ul>
             </div>
