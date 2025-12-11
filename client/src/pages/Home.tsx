@@ -89,7 +89,6 @@ export default function Home() {
                 <video 
                   src="/videos/lina-demo-optimized.mp4" 
                   className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
-                  autoPlay
                   loop
                   muted={false}
                   playsInline

@@ -3,40 +3,36 @@ import { useEffect } from 'react';
 declare global {
   interface Window {
     botpressWebChat: any;
-    botpress: any;
   }
 }
 
 export default function BotpressChat() {
   useEffect(() => {
-    // Check if script is already present to avoid duplicates
-    if (document.getElementById('botpress-inject')) {
-      return;
-    }
+    // Prevent duplicate injection
+    if (document.getElementById('botpress-inject')) return;
 
-    // 1. Inject the main Botpress script (v3.5)
-    const script1 = document.createElement('script');
-    script1.id = 'botpress-inject';
-    script1.src = 'https://cdn.botpress.cloud/webchat/v3.5/inject.js';
-    script1.async = true;
-    document.body.appendChild(script1);
+    // 1. Load the main Botpress WebChat script
+    const script = document.createElement('script');
+    script.id = 'botpress-inject';
+    script.src = 'https://cdn.botpress.cloud/webchat/v3.5/inject.js';
+    script.async = true;
+    
+    script.onload = () => {
+      console.log("Botpress inject.js loaded. Waiting for window.botpressWebChat...");
+      
+      // 2. Poll for the global object to be ready
+      const intervalId = setInterval(() => {
+        if (window.botpressWebChat) {
+          clearInterval(intervalId);
+          console.log("Botpress global object found. Initializing...");
 
-    // 2. Initialize Botpress manually to ensure custom icon is used
-    // We do NOT load the external config script because we want to override the avatar
-    script1.onload = () => {
-      const checkBotpress = setInterval(() => {
-        const bp = window.botpressWebChat || window.botpress;
-        if (bp && bp.init) {
-          clearInterval(checkBotpress);
-          
-          console.log("Initializing Botpress with custom icon...");
-          
-          bp.init({
+          // 3. Initialize with the configuration (derived from user's script + custom icon)
+          window.botpressWebChat.init({
             "botId": "cac882a1-cf8f-4b8f-9740-8f96ea9558db",
             "configuration": {
-              "version": "v2",
+              "version": "v2", // Explicitly set version if needed, though v3.5 handles it
               "botName": "Lina vom LR Lifestyle Team",
-              // Use the local image for the avatar
+              // CUSTOM ICON HERE
               "botAvatar": window.location.origin + "/images/lina-avatar-future.png",
               "botDescription": "Hallo, ich bin Lina, der Chat bot des LR Lifestyle Teams. Achtung, diese Version von mir ist extrem eingeschränkt, wenn du im LR Lifestyle Team bist werden alle Funktionen für dich freigeschaltet. ",
               "website": {},
@@ -74,30 +70,22 @@ export default function BotpressChat() {
       }, 100);
     };
 
-    // Add custom styles to adjust position on mobile
+    document.body.appendChild(script);
+
+    // Force high z-index via global style to ensure visibility
     const style = document.createElement('style');
     style.innerHTML = `
-      @media (max-width: 768px) {
-        .bpw-widget-btn {
-          bottom: 90px !important; /* Move up to avoid overlapping bottom navigation/buttons */
-          right: 20px !important;
-          z-index: 9999 !important;
-        }
-        .bpw-chat-container {
-          z-index: 9999 !important;
-          bottom: 90px !important;
-        }
+      .bpw-widget-btn {
+        z-index: 2147483647 !important; /* Max z-index */
+        bottom: 20px !important;
+        right: 20px !important;
       }
-      /* Ensure it sits above other elements */
-      .bpw-widget-btn, .bpw-chat-container {
-        z-index: 9999 !important;
+      .bpw-chat-container {
+        z-index: 2147483647 !important;
       }
     `;
     document.head.appendChild(style);
 
-    return () => {
-      // Cleanup
-    };
   }, []);
 
   return null;
