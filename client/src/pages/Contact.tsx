@@ -34,10 +34,25 @@ export default function Contact() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real app, this would send data to an API
-    console.log(values);
-    toast.success("Vielen Dank für Ihre Nachricht! Wir melden uns in Kürze.");
-    form.reset();
+    const formData = new FormData();
+    formData.append("form-name", "contact");
+    Object.entries(values).forEach(([key, value]) => {
+      formData.append(key, value.toString());
+    });
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    })
+      .then(() => {
+        toast.success("Vielen Dank für Ihre Nachricht! Wir melden uns in Kürze.");
+        form.reset();
+      })
+      .catch((error) => {
+        console.error("Form submission error:", error);
+        toast.error("Fehler beim Senden der Nachricht. Bitte versuchen Sie es später erneut.");
+      });
   }
 
   return (
