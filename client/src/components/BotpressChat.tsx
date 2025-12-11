@@ -26,15 +26,17 @@ export default function BotpressChat() {
           clearInterval(intervalId);
           console.log("Botpress global object found. Initializing...");
 
-          // 3. Initialize with the configuration (derived from user's script + custom icon)
+          // 3. Initialize with the configuration
+          // Use a fallback image if the local one has issues, but try local first
+          const iconUrl = window.location.origin + "/images/lina-avatar-future.png";
+          
           window.botpressWebChat.init({
             "botId": "cac882a1-cf8f-4b8f-9740-8f96ea9558db",
             "configuration": {
-              "version": "v2", // Explicitly set version if needed, though v3.5 handles it
+              "version": "v2", 
               "botName": "Lina vom LR Lifestyle Team",
-              // CUSTOM ICON HERE - Ensure absolute path
-              "botAvatar": window.location.origin + "/images/lina-avatar-future.png",
-              "botDescription": "Hallo, ich bin Lina, der Chat bot des LR Lifestyle Teams. Achtung, diese Version von mir ist extrem eingeschränkt, wenn du im LR Lifestyle Team bist werden alle Funktionen für dich freigeschaltet. ",
+              "botAvatar": iconUrl,
+              "botDescription": "Hallo, ich bin Lina, der Chat bot des LR Lifestyle Teams.",
               "website": {},
               "email": {
                 "title": "Info@lr-lifestyle.info",
@@ -59,10 +61,7 @@ export default function BotpressChat() {
               "soundEnabled": true,
               "toggleChatId": "bp-embedded-webchat",
               "embeddedChatId": "bp-embedded-webchat",
-              "proactiveMessageEnabled": false,
-              "proactiveBubbleMessage": "Hi! 👋 Need help?",
-              "proactiveBubbleTriggerType": "afterDelay",
-              "proactiveBubbleDelayTime": 10
+              "proactiveMessageEnabled": false
             },
             "clientId": "32dfe644-9e09-4072-bd72-34340d56cb7b"
           });
@@ -73,12 +72,10 @@ export default function BotpressChat() {
     document.body.appendChild(script);
 
     // Force high z-index via global style to ensure visibility
-    // Adjusted for mobile to avoid overlap with bottom navigation or other elements
     const style = document.createElement('style');
     style.innerHTML = `
-      /* Force visibility on the widget button container */
       .bpw-widget-btn {
-        z-index: 2147483647 !important; /* Max z-index */
+        z-index: 2147483647 !important;
         bottom: 20px !important;
         right: 20px !important;
         display: block !important;
@@ -86,22 +83,11 @@ export default function BotpressChat() {
         opacity: 1 !important;
         position: fixed !important;
       }
-      
-      /* Force visibility on the chat container */
       .bpw-chat-container {
         z-index: 2147483647 !important;
         display: block !important;
         visibility: visible !important;
       }
-
-      /* Ensure the icon image inside is visible */
-      .bpw-widget-btn img {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-      
-      /* Mobile specific adjustments */
       @media (max-width: 768px) {
         .bpw-widget-btn {
           bottom: 20px !important;
