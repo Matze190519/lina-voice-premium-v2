@@ -153,7 +153,7 @@ export default function Concept() {
                 <div className="p-6">
                   <div className="aspect-[4/3] bg-black/50 rounded-lg mb-6 overflow-hidden relative group border border-white/10">
                     <img 
-                      src="/images/lr-profi-set-gold.png" 
+                      src="/images/lr-profi-set-final.png" 
                       alt="LR Profi Business Set Inhalt" 
                       className="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
                     />
