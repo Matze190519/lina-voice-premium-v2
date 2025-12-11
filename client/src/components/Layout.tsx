@@ -6,17 +6,8 @@ import { cn } from "@/lib/utils";
 import BotpressChat from "./BotpressChat";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location] = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { href: "/", label: "Vision" },
@@ -33,15 +24,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col bg-[#0b0e18] text-white font-sans selection:bg-[#00f0ff]/20 selection:text-[#00f0ff]">
       <BotpressChat />
       
-      {/* Navigation - Fixed Header */}
-      <nav 
-        className={cn(
-          "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent h-24 flex items-center",
-          isScrolled 
-            ? "bg-[#0b0e18]/95 backdrop-blur-md border-white/10 shadow-lg" 
-            : "bg-[#0b0e18]/80 backdrop-blur-sm"
-        )}
-      >
+      {/* Navigation - Sticky Header */}
+      <nav className="sticky top-0 z-50 w-full bg-[#0b0e18]/95 backdrop-blur-md border-b border-white/10 shadow-lg h-20 flex items-center">
         <div className="container mx-auto px-4 flex items-center justify-between h-full">
           <Link href="/" className="flex items-center gap-3 group z-50 relative">
             <div className="w-10 h-10 bg-transparent border border-[#00f0ff] text-[#00f0ff] flex items-center justify-center rounded-full shadow-[0_0_15px_rgba(0,240,255,0.3)] group-hover:shadow-[0_0_25px_rgba(0,240,255,0.5)] transition-all">
@@ -90,7 +74,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-[#0b0e18] z-40 flex flex-col pt-28 px-6 animate-in slide-in-from-top-5 duration-300 overflow-y-auto">
+          <div className="fixed inset-0 bg-[#0b0e18] z-40 flex flex-col pt-24 px-6 animate-in slide-in-from-top-5 duration-300 overflow-y-auto">
             <div className="flex flex-col gap-6 pb-10">
               {navLinks.map((link) => (
                 <Link 
@@ -114,8 +98,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       </nav>
 
-      {/* Main Content - Significantly increased padding-top */}
-      <main className="flex-grow pt-32 md:pt-40">
+      {/* Main Content - No extra padding needed for sticky header */}
+      <main className="flex-grow">
         {children}
       </main>
 

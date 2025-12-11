@@ -20,8 +20,8 @@ export default function Home() {
     <main className="relative z-10 overflow-x-hidden bg-[#0b0e18] text-white min-h-screen">
       <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} type={contactType} />
       
-      {/* Hero Section - Simplified Layout */}
-      <section className="min-h-[calc(100vh-80px)] flex items-center py-12 md:py-20 relative overflow-hidden">
+      {/* Hero Section - Natural Flow Layout */}
+      <section className="py-12 md:py-20 relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(196,155,255,0.1),_transparent_50%)] pointer-events-none" />
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
@@ -30,7 +30,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             
             {/* Left Column: Content */}
-            <div className="flex flex-col items-start space-y-8 w-full lg:w-1/2">
+            <div className="flex flex-col items-start space-y-8 w-full lg:w-1/2 pt-4 lg:pt-0">
               <div className="inline-flex items-center px-4 py-2 rounded-full glass-panel border border-[#c49bff]/30 bg-[#c49bff]/5 backdrop-blur-md">
                 <span className="text-sm font-mono text-[#00f0ff] flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#00f0ff] rounded-full animate-pulse"></span>
@@ -84,7 +84,7 @@ export default function Home() {
             </div>
 
             {/* Right Column: Visual */}
-            <div className="flex justify-center items-center w-full lg:w-1/2 mt-8 lg:mt-0">
+            <div className="flex justify-center items-center w-full lg:w-1/2 mt-12 lg:mt-0">
               <div className="w-full max-w-lg relative">
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-[#c49bff]/20 glass-card bg-black/40 backdrop-blur-sm group">
                   <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
