@@ -30,13 +30,13 @@ export default function Preise() {
 
               {/* Image Section */}
               <div className="flex justify-center mb-8">
-                <div className="relative w-full max-w-md aspect-[4/3] rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-electric-purple/20">
+                <div className="relative w-full max-w-2xl rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-electric-purple/20 bg-black/50">
                   <img 
-                    src="/images/lr-profi-set.jpg" 
+                    src="/images/lr-profi-business-set.png" 
                     alt="LR Profi Business Pro Set" 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-transparent to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/20 via-transparent to-transparent pointer-events-none"></div>
                 </div>
               </div>
 
