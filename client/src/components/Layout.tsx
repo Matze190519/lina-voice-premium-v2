@@ -22,12 +22,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { href: "/", label: "Vision" },
     { href: "/technology", label: "Technologie" },
-    { href: "/partners", label: "Partner" },
-    { href: "/concept", label: "Konzept & Preise" },
-    { href: "/autokonzept", label: "Autokonzept" },
-    { href: "/lr-partner", label: "LR Partner" },
+    { href: "/concept", label: "Konzept" },
+    { href: "/autokonzept", label: "Auto" },
+    { href: "/lr-partner", label: "Partner" },
     { href: "/process", label: "Ablauf" },
-    { href: "/ueber-uns", label: "Über Uns" },
   ];
 
   return (
@@ -39,12 +37,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         className={cn(
           "fixed top-0 w-full z-50 transition-all duration-300 border-b",
           isScrolled 
-            ? "bg-deep-space/90 backdrop-blur-md border-white/10 shadow-lg shadow-neon-cyan/5 py-2" 
+            ? "bg-deep-space/90 backdrop-blur-md border-white/10 shadow-lg shadow-neon-cyan/5 py-3" 
             : "bg-transparent border-transparent py-6"
         )}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 group shrink-0">
             <div className="w-10 h-10 bg-gradient-to-br from-electric-purple to-neon-blue flex items-center justify-center rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.5)] group-hover:shadow-[0_0_25px_rgba(124,58,237,0.8)] transition-all duration-300">
               <span className="font-playfair font-bold text-xl text-white">L</span>
             </div>
@@ -58,14 +57,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {/* Desktop Nav - Centered & Simplified */}
+          <div className="hidden xl:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-all duration-300 hover:text-neon-cyan relative py-1 group",
+                  "text-sm font-medium transition-all duration-300 hover:text-neon-cyan relative py-1 group uppercase tracking-wide",
                   location === link.href 
                     ? "text-neon-cyan" 
                     : "text-gray-300"
@@ -80,15 +79,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-6">
-            <div className="flex flex-col items-end">
-              <span className="text-xs text-gray-400 uppercase tracking-wider">24/7 Support</span>
-              <a href="tel:+4951116653654" className="text-sm font-bold text-white hover:text-neon-cyan transition-colors">
+          {/* Right Side Actions */}
+          <div className="hidden lg:flex items-center gap-6 shrink-0">
+            <div className="flex flex-col items-end hidden xl:flex">
+              <span className="text-[10px] text-gray-400 uppercase tracking-wider">24/7 Support</span>
+              <a href="tel:+4951116653654" className="text-sm font-bold text-white hover:text-neon-cyan transition-colors font-mono">
                 +49 511 16653654
               </a>
             </div>
-            <NeonButton className="px-6 py-2 text-sm">
-              Live Demo Starten
+            <NeonButton className="px-6 py-2 text-sm h-10 min-h-0">
+              Live Demo
             </NeonButton>
           </div>
 
@@ -103,13 +103,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-deep-space/95 backdrop-blur-xl border-b border-white/10 shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-deep-space/95 backdrop-blur-xl border-b border-white/10 shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top-5 h-[calc(100vh-80px)] overflow-y-auto">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
                 href={link.href}
                 className={cn(
-                  "text-lg font-medium py-3 border-b border-white/5",
+                  "text-xl font-medium py-4 border-b border-white/5",
                   location === link.href ? "text-neon-cyan" : "text-gray-300"
                 )}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -117,13 +117,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {link.label}
               </Link>
             ))}
-            <NeonButton 
-              className="w-full mt-4 justify-center"
-              onClick={() => window.location.href = 'tel:+4951116653654'}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Jetzt Anrufen
-            </NeonButton>
+            <div className="mt-auto pb-8">
+               <div className="flex flex-col items-center mb-6">
+                <span className="text-xs text-gray-400 uppercase tracking-wider mb-1">24/7 Support</span>
+                <a href="tel:+4951116653654" className="text-lg font-bold text-white hover:text-neon-cyan transition-colors font-mono">
+                  +49 511 16653654
+                </a>
+              </div>
+              <NeonButton 
+                className="w-full justify-center"
+                onClick={() => window.location.href = 'tel:+4951116653654'}
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                Jetzt Anrufen
+              </NeonButton>
+            </div>
           </div>
         )}
       </nav>
