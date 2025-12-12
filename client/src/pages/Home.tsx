@@ -1,101 +1,81 @@
-import { Phone, CheckCircle, Play, ArrowRight } from 'lucide-react';
+import { Phone, CheckCircle, Play, ArrowRight, Clock, Globe, Zap, Calendar } from 'lucide-react';
 import { NeonButton } from '../components/ui/NeonButton';
 import ScrollReveal from '../components/ScrollReveal';
 import AICore from '../components/3d/AICore';
-import { motion } from 'framer-motion'; // Re-import framer-motion
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
     <main className="relative z-10">
-      {/* Hero Section - IMMERSIVE FUTURISTIC DESIGN */}
+      {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center py-24 lg:py-32 relative overflow-hidden bg-background">
-        
-        {/* Immersive Background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background opacity-60"></div>
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/grid-pattern.svg')] opacity-[0.03] bg-repeat"></div>
-          
-          {/* Animated Orbs */}
           <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] animate-pulse-slow mix-blend-screen"></div>
           <div className="absolute bottom-[-20%] left-[-10%] w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[150px] animate-pulse-slow delay-1000 mix-blend-screen"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          {/* 
-            Using flex-col for mobile and lg:flex-row for desktop.
-            lg:flex-nowrap ensures side-by-side layout on large screens.
-            items-center ensures vertical centering.
-          */}
           <div className="flex flex-col lg:flex-row lg:flex-nowrap items-center gap-12 lg:gap-20">
-            
             {/* Left: Text Content */}
             <div className="w-full lg:w-1/2 flex flex-col items-start shrink-0 relative z-50 pointer-events-none">
               <div className="pointer-events-auto w-full">
-              <ScrollReveal>
-                <div>
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-block px-4 py-2 rounded-full glass-panel border border-electric-purple/30 mb-6 bg-deep-navy/50 backdrop-blur-sm"
-                  >
-                    <span className="text-sm font-jetbrains text-neon-cyan flex items-center gap-2">
-                      <span className="w-2 h-2 bg-neon-cyan rounded-full animate-pulse"></span>
-                      ULTRAVOX v0.7 ENGINE ONLINE
-                    </span>
-                  </motion.div>
+                <ScrollReveal>
+                  <div>
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="inline-block px-4 py-2 rounded-full glass-panel border border-electric-purple/30 mb-6 bg-deep-navy/50 backdrop-blur-sm"
+                    >
+                      <span className="text-sm font-jetbrains text-neon-cyan flex items-center gap-2">
+                        <span className="w-2 h-2 bg-neon-cyan rounded-full animate-pulse"></span>
+                        ULTRAVOX v0.7 ENGINE ONLINE
+                      </span>
+                    </motion.div>
 
-                  <h1 className="text-6xl md:text-8xl font-heading font-bold mb-8 leading-tight text-white tracking-tight">
-                    Die KI, die für dich<br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-white to-secondary animate-shimmer bg-[length:200%_100%]">
-                      ans Telefon geht.
-                    </span>
-                  </h1>
+                    <h1 className="text-6xl md:text-8xl font-heading font-bold mb-8 leading-tight text-white tracking-tight">
+                      Die KI, die für dich<br />
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-white to-secondary animate-shimmer bg-[length:200%_100%]">
+                        ans Telefon geht.
+                      </span>
+                    </h1>
 
-                  <p className="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed max-w-xl font-light">
-                    Lina ist deine intelligente Telefon-Assistentin. Sie nimmt Anrufe an, 
-                    vereinbart Termine und qualifiziert Leads – <span className="text-white font-medium">24/7, mehrsprachig und in Echtzeit.</span>
-                  </p>
+                    <p className="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed max-w-xl font-light">
+                      Lina ist deine intelligente Telefon-Assistentin. Sie nimmt Anrufe an, 
+                      vereinbart Termine und qualifiziert Leads – <span className="text-white font-medium">24/7, mehrsprachig und in Echtzeit.</span>
+                    </p>
 
-                  <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10 relative z-50 pointer-events-auto">
-                    <NeonButton href="tel:+4951116653654" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
-                      <Phone className="w-5 h-5 inline mr-2 group-hover:animate-bounce" />
-                      +49 511 16653654
-                    </NeonButton>
-                    <NeonButton href="/kontakt" variant="secondary" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
-                      Unverbindlich anfragen
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </NeonButton>
+                    <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10 relative z-50 pointer-events-auto">
+                      <NeonButton href="tel:+4951116653654" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
+                        <Phone className="w-5 h-5 inline mr-2 group-hover:animate-bounce" />
+                        +49 511 16653654
+                      </NeonButton>
+                      <NeonButton href="/kontakt" variant="secondary" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
+                        Unverbindlich anfragen
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </NeonButton>
+                    </div>
+
+                    <p className="text-xs text-gray-500 mb-6 max-w-md italic">
+                      * Diese Nummer dient nur zu Testzwecken und demonstriert alle Branchen. 
+                      Die KI wird später perfekt auf Ihr eigenes Unternehmen angepasst.
+                    </p>
                   </div>
-
-                  <p className="text-xs text-gray-500 mb-6 max-w-md italic">
-                    * Diese Nummer dient nur zu Testzwecken und demonstriert alle Branchen. 
-                    Die KI wird später perfekt auf Ihr eigenes Unternehmen angepasst.
-                  </p>
-
-                  <div className="mt-6 flex items-center gap-3 text-sm text-gray-300 bg-white/5 px-4 py-2 rounded-full border border-white/10 w-fit backdrop-blur-sm">
-                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span>Hohe Nachfrage – <span className="text-neon-cyan font-semibold">Begrenzte Plätze für das Pilotprojekt</span></span>
-                  </div>
-                </div>
-              </ScrollReveal>
+                </ScrollReveal>
               </div>
             </div>
 
             {/* Right: Video / Visual */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end shrink-0 mt-8 lg:mt-0 relative z-20 pointer-events-none lg:pointer-events-auto">
-              {/* Re-enable pointer events for the video itself */}
               <div className="pointer-events-auto w-full flex justify-center lg:justify-end">
-              {/* 3D AI Core Background Effect */}
-              <div className="absolute -top-40 -right-40 w-[600px] h-[600px] opacity-60 pointer-events-none hidden lg:block z-0">
-                 <AICore />
-              </div>
-
+                <div className="absolute -top-40 -right-40 w-[600px] h-[600px] opacity-60 pointer-events-none hidden lg:block z-0">
+                   <AICore />
+                </div>
               </div>
               <ScrollReveal delay={0.2} className="w-full max-w-lg relative z-10 pointer-events-auto">
                 <div className="relative aspect-video glass-card rounded-2xl flex items-center justify-center border border-electric-purple/20 bg-deep-navy/30 backdrop-blur-md overflow-hidden group shadow-2xl shadow-electric-purple/20 transition-all duration-500 hover:shadow-neon-cyan/20 hover:border-neon-cyan/30">
-                  
-                  {/* Video Element */}
                   <video 
                     className="w-full h-full object-cover rounded-2xl transform transition-transform duration-700 group-hover:scale-105"
                     autoPlay 
@@ -103,16 +83,12 @@ export default function Home() {
                     loop 
                     playsInline
                     controls
-                    poster="/images/video-poster.jpg" // Fallback
+                    poster="/images/video-poster.jpg"
                   >
                     <source src="/videos/lina-demo.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
-
-                  {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-transparent to-transparent pointer-events-none"></div>
-
-                  {/* Play Button Overlay (Optional, for style) */}
                   <div className="absolute bottom-6 left-6 flex items-center gap-3 pointer-events-none">
                     <div className="w-10 h-10 rounded-full bg-neon-cyan/20 backdrop-blur-md flex items-center justify-center border border-neon-cyan/50 animate-pulse">
                       <Play className="w-4 h-4 text-neon-cyan fill-neon-cyan" />
@@ -122,51 +98,100 @@ export default function Home() {
                       <p className="text-xs text-gray-300">Lina in Aktion</p>
                     </div>
                   </div>
-
                 </div>
               </ScrollReveal>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Problem Section */}
+      <section className="py-20 bg-deep-navy/30 relative">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-8 text-white">Das Problem mit dem klassischen Telefon-Alltag</h2>
+              <div className="grid md:grid-cols-2 gap-8 text-left">
+                <div className="glass-card p-6 rounded-xl border border-white/5">
+                  <p className="text-gray-400 leading-relaxed">
+                    <span className="text-red-500 font-bold mr-2">✕</span>
+                    Das Telefon klingelt, während Sie mitten im Kundenkontakt sind.
+                  </p>
+                </div>
+                <div className="glass-card p-6 rounded-xl border border-white/5">
+                  <p className="text-gray-400 leading-relaxed">
+                    <span className="text-red-500 font-bold mr-2">✕</span>
+                    Mitarbeiter springen ständig zwischen Arbeit und Telefon hin und her.
+                  </p>
+                </div>
+                <div className="glass-card p-6 rounded-xl border border-white/5">
+                  <p className="text-gray-400 leading-relaxed">
+                    <span className="text-red-500 font-bold mr-2">✕</span>
+                    Wichtige Anrufe landen auf der Mailbox – und gehen manchmal ganz verloren.
+                  </p>
+                </div>
+                <div className="glass-card p-6 rounded-xl border border-white/5">
+                  <p className="text-gray-400 leading-relaxed">
+                    <span className="text-red-500 font-bold mr-2">✕</span>
+                    Termine werden über Zettel, Post-Its und „Ich rufe Sie gleich zurück“ organisiert.
+                  </p>
+                </div>
+              </div>
+              <p className="mt-8 text-lg text-gray-300 font-medium">
+                Das kostet Zeit, Nerven und im Zweifel auch Umsatz – und lässt sich mit heutigen Möglichkeiten deutlich besser lösen.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Solution Section */}
       <section className="py-20 bg-deep-navy/50 relative">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6 text-white">
-                Dein Sekretariat der <span className="text-neon-cyan">Zukunft</span>.
-                </h2>
-                <p className="text-gray-400 text-lg">
-                Lina übernimmt die Routineaufgaben, damit du dich zu 100% auf dein Kerngeschäft konzentrieren kannst.
-                </p>
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <div className="inline-block px-4 py-1 rounded-full bg-neon-cyan/20 border border-neon-cyan/50 text-neon-cyan text-sm font-bold mb-6">
+                Die Lösung
+              </div>
+              <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6 text-white">
+                LINA Voice als digitale <span className="text-neon-cyan">Telefonassistenz</span>
+              </h2>
+              <p className="text-xl text-gray-400 leading-relaxed mb-12">
+                LINA Voice nimmt Anrufe im Namen Ihres Unternehmens entgegen, beantwortet Standardfragen, bucht Termine, strukturiert Anfragen vor und organisiert Rückrufe.
+              </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-6">
             {[
               {
-                title: '24/7 Anrufannahme',
-                description: 'Freundliche Begrüßung im Namen deiner Firma – egal ob du im Meeting, auf der Baustelle oder im Urlaub bist.',
+                icon: Clock,
+                title: '24/7 Erreichbar',
+                description: 'Sie arbeitet rund um die Uhr, ohne Pause, Urlaub oder Krankheit.'
               },
               {
-                title: 'Lead-Qualifizierung',
-                description: 'Lina filtert Anrufer vor, fragt Budget und Bedarf ab und bereitet das Gespräch perfekt für dich vor.',
-              },
-              {
+                icon: Globe,
                 title: 'Mehrsprachig',
-                description: 'Lina spricht Deutsch und über 20 weitere Sprachen fließend. Perfekt für internationale Kunden.',
+                description: 'Lina spricht Deutsch und über 20 weitere Sprachen fließend.'
               },
+              {
+                icon: Zap,
+                title: 'Echtzeit',
+                description: 'Keine Wartezeiten. Lina geht sofort ran und hilft weiter.'
+              },
+              {
+                icon: Calendar,
+                title: 'Terminbuchung',
+                description: 'Direkte Anbindung an Ihren Kalender für automatische Termine.'
+              }
             ].map((feature, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="glass-card p-8 rounded-2xl border border-white/5 hover:border-neon-cyan/50 transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-neon-cyan/10 h-full group duration-300">
-                  <div className="w-14 h-14 rounded-xl bg-electric-purple/10 flex items-center justify-center mb-6 group-hover:bg-neon-cyan/10 transition-colors duration-300">
-                    <CheckCircle className="w-8 h-8 text-electric-purple group-hover:text-neon-cyan transition-colors duration-300" />
+                <div className="glass-card p-6 rounded-2xl border border-white/5 hover:border-neon-cyan/50 transition-all hover:-translate-y-2 h-full group">
+                  <div className="w-12 h-12 rounded-xl bg-electric-purple/10 flex items-center justify-center mb-4 group-hover:bg-neon-cyan/10 transition-colors">
+                    <feature.icon className="w-6 h-6 text-electric-purple group-hover:text-neon-cyan transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4 font-playfair text-white group-hover:text-white transition-colors">{feature.title}</h3>
-                  <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">{feature.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-white">{feature.title}</h3>
+                  <p className="text-sm text-gray-400">{feature.description}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -174,25 +199,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        {/* Background Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-electric-purple/10 blur-[100px] rounded-full pointer-events-none animate-pulse-slow"></div>
-
+      {/* Offer Teaser */}
+      <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal>
-            <div className="glass-card p-12 rounded-3xl text-center max-w-4xl mx-auto border border-electric-purple/30 bg-deep-navy/80 backdrop-blur-xl shadow-2xl hover:shadow-electric-purple/20 transition-shadow duration-500">
-              <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8 text-white">
-                Bereit für die <span className="text-electric-purple">Zukunft?</span>
+            <div className="glass-card p-12 rounded-3xl text-center max-w-4xl mx-auto border border-electric-purple/30 bg-deep-navy/80 backdrop-blur-xl shadow-2xl">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6 text-white">
+                Starten Sie professionell ohne hohe Agenturkosten
               </h2>
-              <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                Sichern Sie sich jetzt Ihren Platz im Pilotprojekt und profitieren Sie von 
-                Konditionen, die es so nie wieder geben wird.
-              </p>
-              <div className="flex justify-center">
-                <NeonButton href="tel:+491715060008" className="text-lg px-10 py-4 w-full sm:w-auto cursor-pointer">
-                    <Phone className="w-6 h-6 inline mr-3" />
-                    +49 171 5060008
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
+                <div className="text-center">
+                  <p className="text-sm text-gray-400 mb-1">Business Set Pro</p>
+                  <p className="text-3xl font-bold text-white">ca. 720 €</p>
+                  <p className="text-xs text-gray-500">einmalig (inkl. Warenwert)</p>
+                </div>
+                <div className="text-2xl font-bold text-neon-cyan">+</div>
+                <div className="text-center">
+                  <p className="text-sm text-gray-400 mb-1">Laufende Nutzung</p>
+                  <p className="text-3xl font-bold text-white">0,20 €</p>
+                  <p className="text-xs text-gray-500">pro Gesprächsminute</p>
+                </div>
+              </div>
+              <div className="flex justify-center gap-4">
+                <NeonButton href="/concept">
+                  Mehr zum Konzept
+                </NeonButton>
+                <NeonButton href="/process" variant="secondary">
+                  Zum Ablauf
                 </NeonButton>
               </div>
             </div>
