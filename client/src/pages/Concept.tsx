@@ -1,6 +1,6 @@
 import ScrollReveal from '../components/ScrollReveal';
 import { NeonButton } from '../components/ui/NeonButton';
-import { Check, Sparkles, CreditCard, Car, ShieldCheck } from 'lucide-react';
+import { Check, Phone, Users, Clock, Calendar, ShieldCheck, Car } from 'lucide-react';
 
 export default function Concept() {
   return (
@@ -12,204 +12,172 @@ export default function Concept() {
             <div className="inline-block px-4 py-1 rounded-full bg-electric-purple/20 border border-electric-purple/50 text-neon-cyan text-sm font-bold mb-6">
               Das Geschäftsmodell
             </div>
-            <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight">
-              Produktwert statt <br />
-              <span className="text-neon-cyan">Setup-Kosten.</span>
+            <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight text-white">
+              Das Konzept hinter <br />
+              <span className="text-neon-cyan">LINA Voice</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-              Statt hoher Setup-Kosten erwerben Sie einen realen Warenwert. Die KI-Einrichtung ist inklusive.
-              Ein transparentes Modell für Unternehmer.
+              LINA Voice ist eine Telefon-KI für Unternehmen, die echte Mitarbeiter am Telefon entlastet – ohne klassische Agentur-Setups für 1.500–2.500 €.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* The Concept & Autokonzept */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start mb-32">
-          <div className="space-y-8">
-            <ScrollReveal delay={0.1}>
-              <div>
-                <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">Warum dieses Modell?</h2>
-                <p className="text-lg text-gray-400 leading-relaxed mb-4">
-                  Marktübliche KI-Lösungen verlangen hohe Setup-Gebühren (2.500€ - 5.000€) ohne materiellen Gegenwert. 
-                  Bei uns ist das anders.
-                </p>
-                <p className="text-lg text-gray-400 leading-relaxed">
-                  Wir nutzen die Infrastruktur von LR Health & Beauty als Produkt-Partner. 
-                  Sie erwerben das <strong className="text-white">LR Profi Business Pro Set</strong> als Produktgegenwert. 
-                  Die KI-Technologie Lina Voice erhalten Sie im Rahmen dieses Produkt-Investition <strong className="text-neon-cyan">kostenfrei</strong> dazu.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/30 transition-colors">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-electric-purple/20 rounded-lg flex items-center justify-center">
-                    <Car className="w-6 h-6 text-neon-cyan" />
+        {/* Block 1: Einfache Erklärung */}
+        <ScrollReveal delay={0.1}>
+          <div className="mb-32">
+            <div className="glass-card p-8 md:p-12 rounded-3xl border border-white/10">
+              <h2 className="text-3xl font-playfair font-bold mb-8 text-white">Unser Modell verbindet drei Bausteine:</h2>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-neon-cyan" />
                   </div>
-                  <h3 className="text-xl font-bold">Das LR Autokonzept</h3>
-                </div>
-                
-                <div className="mb-6">
-                  <p className="text-gray-400 mb-4">
-                    Seit über 40 Jahren erfolgreich: Über 50.000 Firmenwagen wurden bereits übergeben. 
-                    Als Unternehmer profitieren Sie von Großkunden-Konditionen, die sonst nur Konzernen vorbehalten sind.
+                  <h3 className="text-xl font-bold text-white">Telefon-KI auf Ultravox-Basis</h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    LINA versteht natürliche Sprache in Echtzeit, kann Fragen beantworten, Termine buchen, Rückrufe planen und Anrufer an Menschen weiterleiten.
                   </p>
                 </div>
-                
-                {/* Car Gallery */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                  <div className="relative group cursor-pointer overflow-hidden rounded-lg aspect-[4/3]">
-                    <img src="/images/cars/audi-q8.png" alt="Audi Q8" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <span className="text-white text-sm font-bold">Audi Q8</span>
-                    </div>
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center">
+                    <Users className="w-6 h-6 text-neon-cyan" />
                   </div>
-                  <div className="relative group cursor-pointer overflow-hidden rounded-lg aspect-[4/3]">
-                    <img src="/images/cars/audi-a4-avant.png" alt="Audi A4 Avant" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <span className="text-white text-sm font-bold">Audi A4</span>
-                    </div>
-                  </div>
-                  <div className="relative group cursor-pointer overflow-hidden rounded-lg aspect-[4/3]">
-                    <img src="/images/cars/mercedes-cla.png" alt="Mercedes CLA" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <span className="text-white text-sm font-bold">Mercedes CLA</span>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold text-white">Business Set Pro als Einstieg</h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    Unternehmer investieren einmalig ca. 720 € in ein hochwertiges LR-Produktpaket. Damit sichern sie sich Produkte im Wert von ca. 1.500 €, ca. 30 % Einkaufsvorteil, den LR-Partnerstatus und das Setup von LINA Voice.
+                  </p>
                 </div>
-
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-white font-bold text-xs">AUDI</div>
-                    <div>
-                      <p className="font-bold text-white text-sm">Audi Q8 & A4 Avant</p>
-                      <p className="text-xs text-gray-400">Premium-Fahrzeuge ab 249 € monatlich.</p>
-                    </div>
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-neon-cyan" />
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-white font-bold text-xs">MB</div>
-                    <div>
-                      <p className="font-bold text-white text-sm">Mercedes-Benz CLA</p>
-                      <p className="text-xs text-gray-400">Sportliches Coupé ab 199 € monatlich.</p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold text-white">Klare, nutzungsbasierte Kosten</h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    Die technischen Plattformkosten (Ultravox + Telefondienstleister) zahlt der Unternehmer direkt. Für Einrichtung, Betreuung und laufende Optimierung von LINA fällt nur 0,20 € pro Gesprächsminute an.
+                  </p>
                 </div>
-                
-                <ul className="space-y-2 text-sm border-t border-white/10 pt-4 text-gray-300">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-neon-cyan" /> <strong>Keine Anzahlung</strong> (Liquiditätsschonend)</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-neon-cyan" /> <strong>Sofort bestellbar</strong> (ab 4.000 PW Gesamtumsatz)</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-neon-cyan" /> Privat & geschäftlich nutzbar</li>
-                </ul>
               </div>
-            </ScrollReveal>
+            </div>
+          </div>
+        </ScrollReveal>
 
-            <ScrollReveal delay={0.3}>
-              <div className="glass-card p-6 rounded-xl border border-white/10">
-                <h3 className="font-bold text-white mb-4 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-neon-pink" />
-                  Inhalt des Profi Business Pro Sets:
+        {/* Block 2: Was bekommt der Unternehmer konkret? */}
+        <ScrollReveal delay={0.2}>
+          <div className="mb-32">
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-12 text-center text-white">Was Sie mit LINA Voice konkret bekommen</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="glass-card p-8 rounded-2xl border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan text-sm">1</span>
+                  Individuelles Onboarding
                 </h3>
-                <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-neon-cyan shrink-0 mt-1" />
-                    <span><strong>Zeitgard Pro Cosmetic Device</strong> (Patentierte Technologie)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-neon-cyan shrink-0 mt-1" />
-                    <span>Zeitgard Face Cleansing Tool & Brush</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-neon-cyan shrink-0 mt-1" />
-                    <span>Anti-Aging System (Smoothing & Peeling Tools)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-neon-cyan shrink-0 mt-1" />
-                    <span>Aloe Vera Special Care Box (Die "Hausapotheke")</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-neon-cyan shrink-0 mt-1" />
-                    <span>Mind Master & ProBalance (Mikronährstoffe für Leistungsträger)</span>
-                  </li>
+                <ul className="space-y-3 text-gray-400">
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Analyse Ihrer aktuellen Telefon-Situation</li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Festlegung der Ziele (z. B. mehr Termine, weniger Unterbrechungen)</li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Auswahl eines Branchen-Templates (z. B. Praxis, Friseur, Handwerk)</li>
                 </ul>
               </div>
-            </ScrollReveal>
+
+              <div className="glass-card p-8 rounded-2xl border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan text-sm">2</span>
+                  Technische Einrichtung
+                </h3>
+                <ul className="space-y-3 text-gray-400">
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Anbindung Ihrer Telefonnummer über einen Telefondienstleister</li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Einrichtung eines Ultravox-Agents für Ihr Unternehmen</li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Begrüßung, Erkennung typischer Themen, sinnvolle Rückfragen</li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Anbindung an Kalender, Buchungs-Tool oder CRM – je nach Bedarf</li>
+                </ul>
+              </div>
+
+              <div className="glass-card p-8 rounded-2xl border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan text-sm">3</span>
+                  Praxis-Dialoge statt Spielerei
+                </h3>
+                <ul className="space-y-3 text-gray-400">
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Terminvereinbarung und -verschiebung</li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Rückruforganisation mit Wunschzeitfenstern</li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Qualifizierung von Anfragen (z. B. Art des Projekts, Dringlichkeit)</li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Weiterleitung an einen Mitarbeitenden, wenn sinnvoll</li>
+                </ul>
+              </div>
+
+              <div className="glass-card p-8 rounded-2xl border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan text-sm">4</span>
+                  Laufende Betreuung
+                </h3>
+                <ul className="space-y-3 text-gray-400">
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Anpassung der Dialoge, wenn sich Abläufe ändern</li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Monitoring und Optimierung von Verständnis & Trefferquote</li>
+                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Unterstützung bei Fragen zu Technik, Datenschutz und Weiterentwicklung</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          
-          <div className="relative sticky top-32">
-            <ScrollReveal delay={0.4}>
-              <div className="absolute inset-0 bg-gradient-to-br from-electric-purple/20 to-neon-blue/20 rounded-3xl transform rotate-3 blur-xl" />
-              <div className="relative glass-card rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <div className="p-6 border-b border-white/10 flex justify-between items-start bg-black/40">
-                  <div>
-                    <h3 className="font-playfair font-bold text-2xl">LR Profi Business Pro</h3>
-                    <p className="text-sm text-gray-400 mt-1">Ihr Einstieg in die Lina-Welt</p>
-                  </div>
-                  <div className="px-3 py-1 rounded-full bg-white/10 text-xs font-mono border border-white/20">
-                    Art.-Nr. 96726101
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="aspect-[4/3] bg-black/50 rounded-lg mb-6 overflow-hidden relative group border border-white/10">
-                    <img 
-                      src="/images/lr-profi-set-final.png" 
-                      alt="LR Profi Business Set Inhalt" 
-                      className="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  
-                  <div className="flex justify-between items-end mb-6 border-b border-white/10 pb-6">
-                    <div>
-                      <p className="text-sm text-gray-400">Warenwert (UVP)</p>
-                      <p className="text-lg line-through decoration-red-500/50 text-gray-500">ca. 1.500,00 €</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm text-neon-cyan font-bold">Ihr Investitions-Preis</p>
-                      <p className="text-4xl font-bold text-white">712,50 €</p>
-                    </div>
-                  </div>
+        </ScrollReveal>
 
-                  <div className="bg-white/5 p-5 rounded-lg mb-6 border border-white/10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <CreditCard className="w-5 h-5 text-neon-cyan" />
-                      <span className="font-bold text-white">Flexible Ratenzahlung</span>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-black/40 p-3 rounded border border-white/10 text-center">
-                        <span className="block text-xs text-gray-400 mb-1">1. Rate (Sofort)</span>
-                        <span className="font-bold text-white">285,00 €</span>
-                      </div>
-                      <div className="bg-black/40 p-3 rounded border border-white/10 text-center">
-                        <span className="block text-xs text-gray-400 mb-1">2.-4. Rate</span>
-                        <span className="font-bold text-white">142,50 €</span>
-                      </div>
-                    </div>
+        {/* Block 3: Für wen lohnt sich das? */}
+        <ScrollReveal delay={0.3}>
+          <div className="mb-32 bg-deep-navy/30 rounded-3xl p-8 md:p-12 border border-white/5">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-playfair font-bold mb-6 text-white">Für welche Unternehmen lohnt sich LINA Voice?</h2>
+                <p className="text-gray-400 mb-6">
+                  LINA Voice ist ideal für Unternehmen, in denen das Telefon regelmäßig klingelt, Mitarbeiter ständig zwischen Kunden vor Ort und Telefon hin- und hergerissen sind, Anfragen verloren gehen oder Termine koordiniert werden müssen.
+                </p>
+                <p className="text-white font-medium italic border-l-4 border-neon-cyan pl-4">
+                  LINA ersetzt keine Mitarbeiter – sie sorgt dafür, dass Ihre Mitarbeiter sich um die wichtigen Gespräche kümmern können, statt in Endlosschleifen aus Standardfragen zu hängen.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-white mb-4">Typische Beispiele:</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-black/20 p-4 rounded-xl border border-white/5 flex items-center gap-3">
+                    <ShieldCheck className="w-5 h-5 text-neon-cyan" />
+                    <span className="text-gray-300">Arzt- & Zahnarztpraxen</span>
                   </div>
-
-                  <div className="space-y-3 mb-8">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Admin-Gebühr (einmalig)</span>
-                      <span className="font-medium text-white">29,90 €</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Lina Voice Setup</span>
-                      <span className="font-bold text-neon-green">INKLUSIVE</span>
-                    </div>
+                  <div className="bg-black/20 p-4 rounded-xl border border-white/5 flex items-center gap-3">
+                    <Users className="w-5 h-5 text-neon-cyan" />
+                    <span className="text-gray-300">Friseure & Kosmetik</span>
                   </div>
-
-                  <NeonButton className="w-full justify-center py-4 text-lg" href="/lr-partner">
-                    Jetzt Starten & Lina sichern
-                  </NeonButton>
-                  
-                  <p className="text-xs text-center text-gray-500 mt-4">
-                    Alle Preise zzgl. MwSt. Angebot richtet sich an Gewerbetreibende.
-                  </p>
+                  <div className="bg-black/20 p-4 rounded-xl border border-white/5 flex items-center gap-3">
+                    <Calendar className="w-5 h-5 text-neon-cyan" />
+                    <span className="text-gray-300">Handwerk & Bau</span>
+                  </div>
+                  <div className="bg-black/20 p-4 rounded-xl border border-white/5 flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-neon-cyan" />
+                    <span className="text-gray-300">Agenturen & Beratung</span>
+                  </div>
                 </div>
               </div>
-            </ScrollReveal>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
+
+        {/* Block 4: Hinweis zu LR & Autokonzept */}
+        <ScrollReveal delay={0.4}>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="glass-card p-8 rounded-2xl border border-white/10 bg-gradient-to-b from-electric-purple/10 to-transparent">
+              <div className="w-12 h-12 bg-electric-purple/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Car className="w-6 h-6 text-neon-cyan" />
+              </div>
+              <h2 className="text-2xl font-playfair font-bold mb-4 text-white">Zusatzvorteile durch LR-Partnerschaft</h2>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Mit dem Business Set Pro werden Sie LR-Partner. Dadurch haben Sie – zusätzlich zur Telefon-KI – Zugang zu vergünstigten Produktkonditionen und optionalen Vorteilen wie dem LR-Autokonzept, bei dem Sie sich bei entsprechender Qualifikation für besonders günstige Leasingkonditionen auf ausgewählte Fahrzeuge bewerben können.
+              </p>
+              <p className="text-sm text-gray-500 italic">
+                Details zu diesen Vorteilen klären wir gemeinsam im Gespräch – immer auf Basis der aktuellen offiziellen LR-Unterlagen.
+              </p>
+              <div className="mt-8">
+                <NeonButton href="/autokonzept">
+                  Mehr zum Autokonzept
+                </NeonButton>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </main>
   );
