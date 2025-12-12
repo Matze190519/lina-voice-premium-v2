@@ -17,6 +17,7 @@ interface ContactFormProps {
 export default function ContactForm({ open, onOpenChange, type = 'default' }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [interest, setInterest] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -102,6 +103,20 @@ export default function ContactForm({ open, onOpenChange, type = 'default' }: Co
             </div>
 
             <div className="space-y-2">
+              <Label htmlFor="interest" className="text-gray-300">Wofür interessieren Sie sich?</Label>
+              <Select name="interest" onValueChange={setInterest}>
+                <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50">
+                  <SelectValue placeholder="Bitte auswählen" />
+                </SelectTrigger>
+                <SelectContent className="bg-deep-navy border-white/10 text-white">
+                  <SelectItem value="demo">LINA Voice Demo / Beratung</SelectItem>
+                  <SelectItem value="startset">Startset / Business-Paket (LR)</SelectItem>
+                  <SelectItem value="other">Sonstiges</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
               <Label htmlFor="source" className="text-gray-300">Wie sind Sie auf uns aufmerksam geworden?</Label>
               <Select name="source">
                 <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50">
@@ -132,9 +147,18 @@ export default function ContactForm({ open, onOpenChange, type = 'default' }: Co
             <div className="flex items-start space-x-2 pt-2">
               <Checkbox id="terms" name="privacy_consent" value="yes" required className="border-white/30 data-[state=checked]:bg-neon-cyan data-[state=checked]:text-black mt-1" />
               <Label htmlFor="terms" className="text-xs font-normal leading-tight peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400">
-                Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden. Hinweis: Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Weitere Informationen finden Sie in der <a href="/privacy" className="underline text-neon-cyan hover:text-neon-cyan/80">Datenschutzerklärung</a>.
+                Wir verarbeiten Ihre Angaben zur Bearbeitung Ihrer Anfrage und zur Kontaktaufnahme. Details finden Sie in der <a href="/datenschutz" className="underline text-neon-cyan hover:text-neon-cyan/80">Datenschutzerklärung</a>.
               </Label>
             </div>
+
+            {interest === "startset" && (
+              <div className="flex items-start space-x-2 pt-2 bg-electric-purple/10 p-3 rounded-lg border border-electric-purple/30">
+                <Checkbox id="lr_consent" name="lr_consent" value="yes" required className="border-white/30 data-[state=checked]:bg-neon-cyan data-[state=checked]:text-black mt-1" />
+                <Label htmlFor="lr_consent" className="text-xs font-normal leading-tight peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-300">
+                  Ich möchte das Startset/Business-Paket bestellen und bin einverstanden, dass die hierfür erforderlichen Daten zur Online-Anlage/Bestellabwicklung an LR übermittelt bzw. im LR-System eingetragen werden (Details: <a href="/datenschutz" className="underline text-neon-cyan hover:text-neon-cyan/80">Datenschutzerklärung</a>).
+                </Label>
+              </div>
+            )}
 
             <Button type="submit" className="w-full bg-electric-purple text-white hover:bg-electric-purple/90 font-bold py-6" disabled={isSubmitting}>
               {isSubmitting ? (

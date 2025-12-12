@@ -6,11 +6,11 @@ export default function TrustBar() {
       <div className="container mx-auto px-4 flex flex-wrap justify-center gap-6 md:gap-12 text-xs md:text-sm text-gray-400 font-medium tracking-wide uppercase">
         <div className="flex items-center gap-2">
           <Shield className="w-4 h-4 text-neon-cyan" />
-          <span>DSGVO-konform</span>
+          <span>DSGVO-konform (Details: Datenschutz)</span>
         </div>
         <div className="flex items-center gap-2">
           <Server className="w-4 h-4 text-electric-purple" />
-          <span>Server in Frankfurt</span>
+          <span>Implementierung über IT-Partner</span>
         </div>
         <div className="flex items-center gap-2">
           <Lock className="w-4 h-4 text-neon-pink" />

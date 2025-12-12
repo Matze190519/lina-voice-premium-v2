@@ -1,84 +1,56 @@
-import { Badge } from "@/components/ui/badge";
+import React from 'react';
+import { motion } from 'framer-motion';
+import Layout from '../components/Layout';
 
 export default function Impressum() {
   return (
-    <div className="pb-20 pt-20">
-      <section className="bg-background py-24 border-b border-border">
-        <div className="container mx-auto px-4 text-center">
-          <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Rechtliches</Badge>
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-primary">
-            Impressum
-          </h1>
-        </div>
-      </section>
-
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="space-y-8 text-muted-foreground">
-            <div>
-              <h2 className="text-xl font-bold text-primary mb-2">Angaben gemäß § 5 TMG / § 18 MStV</h2>
-              <p className="mb-4">
-                <strong>Diensteanbieter / Verantwortlich für die Inhalte dieser Website:</strong><br />
-                Online Network Vision S.L.<br />
-                Vertreten durch: Mathias Vinzing<br />
-                Santanyi, Spanien
-              </p>
+    <Layout>
+      <div className="pt-32 pb-20 px-4 md:px-8 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-12">Impressum</h1>
+          
+          <div className="space-y-8 text-gray-300 font-light leading-relaxed">
+            <section>
+              <h2 className="text-2xl font-heading font-bold text-white mb-4">Angaben gemäß § 5 DDG</h2>
               
-              <p className="mb-4">
-                <strong>Kontakt:</strong><br />
-                Telefon: <a href="tel:+491715060008" className="hover:text-primary transition-colors">+49 171 5060008</a><br />
-                E-Mail: <a href="mailto:info@lr-lifestyle.info" className="hover:text-primary transition-colors">info@lr-lifestyle.info</a>
-              </p>
+              <div className="glass-card p-6 rounded-xl border border-white/10 bg-black/20">
+                <h3 className="text-xl font-bold text-white mb-4">Anbieter</h3>
+                <p className="mb-2"><strong>Online Network Vision S.L.</strong></p>
+                <p className="mb-2">NIF: B55478382</p>
+                <p className="mb-2">Vertreten durch: Mathias Vinzing</p>
+                <p>Anschrift: Calle Mare de Déu de Consolació 33 B, 07660 Santanyí (Illes Balears), Spanien</p>
+              </div>
+            </section>
 
-              <p className="mb-4">
-                <strong>Rechtsform:</strong><br />
-                Sociedad Limitada (S.L.)
-              </p>
+            <section>
+              <h3 className="text-xl font-bold text-white mb-4">Kontakt</h3>
+              <p className="mb-2">Telefon: <a href="tel:+491715060008" className="text-neon-cyan hover:underline">+49 171 5060008</a></p>
+              <p>E-Mail: <a href="mailto:info@lr-lifestyle.info" className="text-neon-cyan hover:underline">info@lr-lifestyle.info</a></p>
+            </section>
 
-              <p className="mb-4">
-                <strong>Vertreten durch:</strong><br />
-                Mathias Vinzing (Geschäftsführer)
-              </p>
-            </div>
+            <section>
+              <h3 className="text-xl font-bold text-white mb-4">Hinweis zur Unabhängigkeit</h3>
+              <p>Diese Website wird von selbständigen Partnern betrieben und ist keine offizielle Website der LR Health & Beauty SE & Co. KG.</p>
+            </section>
 
-            <div>
-              <h2 className="text-xl font-bold text-primary mb-2">Umsatzsteuer-ID</h2>
-              <p>
-                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                [USt-IdNr. hier einfügen]
-              </p>
-            </div>
+            <section>
+              <h3 className="text-xl font-bold text-white mb-4">EU-Streitschlichtung (ODR)</h3>
+              <p className="mb-4">Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:</p>
+              <p className="mb-4"><a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-neon-cyan hover:underline">https://ec.europa.eu/consumers/odr/</a></p>
+              <p>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+            </section>
 
-            <div>
-              <h2 className="text-xl font-bold text-primary mb-2">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-              <p>
-                Mathias Vinzing<br />
-                Santanyi, Spanien
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-xl font-bold text-primary mb-2">Online-Streitbeilegung</h2>
-              <p>
-                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <br />
-                <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">https://ec.europa.eu/consumers/odr/</a>
-              </p>
-              <p className="mt-2">Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
-            </div>
-
-            <div>
-              <h2 className="text-xl font-bold text-primary mb-2">Verbraucherstreitbeilegung</h2>
-              <p>
-                Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-              </p>
-            </div>
-
-            <div className="pt-8 border-t border-border mt-8 text-sm">
-              <p>© 2025 Online Network Vision S.L. Alle Rechte vorbehalten.</p>
-            </div>
+            <section>
+              <h3 className="text-xl font-bold text-white mb-4">Verbraucherstreitbeilegung / Universalschlichtungsstelle</h3>
+              <p>Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            </section>
           </div>
-        </div>
-      </section>
-    </div>
+        </motion.div>
+      </div>
+    </Layout>
   );
 }

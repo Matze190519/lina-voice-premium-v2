@@ -56,7 +56,7 @@ export default function Concept() {
                   <div className="font-bold text-gray-300">Technikaufwand</div>
                   <div className="text-gray-400">Abstimmung mit Entwicklern, Wochen/Monate</div>
                   <div className="text-gray-400">Hoher Aufwand: APIs, Doku, alles selbst bauen</div>
-                  <div className="text-white font-medium">IT-Firma aus Frankfurt richtet alles schlüsselfertig ein</div>
+                  <div className="text-white font-medium">IT-Partner richtet alles schlüsselfertig ein</div>
                 </div>
 
                 {/* Row 4 */}
@@ -71,7 +71,7 @@ export default function Concept() {
                 <div className="grid grid-cols-4 gap-4 p-6 rounded-xl bg-white/5 border border-white/10 items-center hover:bg-white/10 transition-colors">
                   <div className="font-bold text-gray-300">Datenschutz</div>
                   <div className="text-gray-400">Oft intransparente Blackbox</div>
-                  <div className="text-gray-400">Selbst zuständig für DSGVO, DPA etc.</div>
+                  <div className="text-gray-400">Datenschutz-Verantwortung liegt beim Nutzer</div>
                   <div className="text-white font-medium">Infrastruktur in D, Ultravox-USA mit DPA, transparente Abrechnung</div>
                 </div>
 
