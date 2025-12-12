@@ -181,6 +181,7 @@ export default function Layout({ children, hideFooter = false }: { children: Rea
                 <li><Link href="/about" className="hover:text-neon-cyan transition-colors">Über Uns</Link></li>
                 <li><Link href="/concept" className="hover:text-neon-cyan transition-colors">Karriere</Link></li>
                 <li><Link href="/kontakt" className="hover:text-neon-cyan transition-colors">Kontakt</Link></li>
+                <li><Link href="/faq" className="hover:text-neon-cyan transition-colors">FAQ</Link></li>
               </ul>
             </div>
 

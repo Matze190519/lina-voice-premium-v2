@@ -18,6 +18,7 @@ import Datenschutz from "./pages/Datenschutz";
 import Impressum from "./pages/Impressum";
 import AGB from "./pages/AGB";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 
 function Router() {
   return (
@@ -35,6 +36,7 @@ function Router() {
         <Route path="/impressum" component={Impressum} />
         <Route path="/agb" component={AGB} />
         <Route path="/kontakt" component={Contact} />
+        <Route path="/faq" component={FAQ} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
