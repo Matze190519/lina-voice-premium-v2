@@ -80,7 +80,7 @@ export default function Autokonzept() {
               </div>
               <h3 className="text-xl font-bold mb-4 text-white">Sofortiger Zugriff</h3>
               <p className="text-gray-400">
-                Mit Ihrem <span className="text-white font-bold">Profi Business Startpaket</span> (2.000 PW) und nur <span className="text-white font-bold">zwei Empfehlungen</span> erreichen Sie die nötigen 4.000 PW. Damit sind Sie sofort bestellberechtigt.
+                Mit Ihrem <span className="text-white font-bold">Profi Business Startpaket</span> (2.000 PW) und nur <span className="text-white font-bold">zwei Empfehlungen</span> (d.h. Sie gewinnen zwei weitere Nutzer für das Business Set) erreichen Sie die nötigen 4.000 PW. Damit sind Sie sofort bestellberechtigt.
               </p>
             </div>
           </div>
