@@ -102,6 +102,8 @@
           background-color: #9333EA !important; /* Fallback color */
           border-radius: 50% !important;
           box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+          z-index: 2147483647 !important; /* Ensure max z-index on mobile */
+          transform: translateZ(0); /* Force hardware acceleration */
         }
         .bpw-widget-btn img {
           width: 60% !important;
