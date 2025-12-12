@@ -43,8 +43,7 @@ export default function Home() {
                     </h1>
 
                     <p className="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed max-w-xl font-light">
-                      Lina ist deine intelligente Telefon-Assistentin. Sie nimmt Anrufe an, 
-                      vereinbart Termine und qualifiziert Leads – <span className="text-white font-medium">24/7, mehrsprachig und in Echtzeit.</span>
+                      LINA läuft auf Ultravox v0.7 – einer der modernsten Voice-KI-Plattformen mit GLM 4.6, 26 Sprachen, RAG, Tool-Calling und extrem niedriger Latenz.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10 relative z-50 pointer-events-auto">
