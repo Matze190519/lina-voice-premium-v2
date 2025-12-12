@@ -25,6 +25,19 @@
       #bp-web-widget-container {
         animation: botpress-pulse 2s infinite;
         border-radius: 50%;
+        z-index: 2147483647 !important; /* Max z-index */
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+      }
+      /* Ensure the iframe itself is also visible */
+      #bp-web-widget-container iframe {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
     </style>
   </head>

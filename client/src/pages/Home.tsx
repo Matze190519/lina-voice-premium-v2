@@ -27,7 +27,7 @@ export default function Home() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
-                      className="inline-block px-4 py-2 rounded-full glass-panel border border-electric-purple/30 mb-6 bg-deep-navy/50 backdrop-blur-sm"
+                      className="inline-block px-4 py-2 rounded-full glass-panel border border-electric-purple/30 mb-6 bg-deep-navy/50 backdrop-blur-sm relative z-50"
                     >
                       <span className="text-sm font-jetbrains text-neon-cyan flex items-center gap-2">
                         <span className="w-2 h-2 bg-neon-cyan rounded-full animate-pulse"></span>
@@ -68,7 +68,7 @@ export default function Home() {
 
             {/* Right: Video / Visual */}
             <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-end shrink-0 mt-12 lg:mt-0 relative z-20 pointer-events-none lg:pointer-events-auto">
-              <div className="pointer-events-auto w-full flex justify-center lg:justify-end relative">
+              <div id="demo" className="pointer-events-auto w-full flex justify-center lg:justify-end relative scroll-mt-32">
                 {/* Mobile: Centered and larger orb behind video */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] md:w-[600px] md:h-[600px] md:-top-40 md:-right-40 md:translate-x-0 md:translate-y-0 opacity-60 pointer-events-none z-0 group-hover:opacity-80 transition-opacity duration-500">
                    <AICore />
@@ -79,7 +79,7 @@ export default function Home() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1, duration: 0.8 }}
-                  className="absolute -right-4 top-0 md:-right-12 md:-top-12 z-10 hidden md:block"
+                  className="absolute right-0 -top-16 md:-right-12 md:-top-12 z-30 block"
                 >
                   <div className="glass-panel px-4 py-2 rounded-lg border border-neon-cyan/30 bg-black/40 backdrop-blur-md">
                     <div className="flex items-center gap-2 mb-1">
@@ -90,7 +90,7 @@ export default function Home() {
                       Neuronales Netzwerk verarbeitet Sprache in Echtzeit
                     </p>
                   </div>
-                  <div className="w-px h-12 bg-gradient-to-b from-neon-cyan/50 to-transparent absolute left-4 top-full"></div>
+                  <div className="w-px h-12 bg-gradient-to-b from-neon-cyan/50 to-transparent absolute left-4 top-full hidden md:block"></div>
                 </motion.div>
               </div>
               <ScrollReveal delay={0.2} className="w-full max-w-full md:max-w-lg relative z-10 pointer-events-auto px-4 md:px-0">
