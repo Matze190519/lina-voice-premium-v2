@@ -1,78 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lina Voice - AI Sprachassistentin für Unternehmer</title>
-    <meta name="description" content="LINA Voice ist die fortschrittliche KI-Sprachassistentin für den Mittelstand. Automatisieren Sie Ihre Telefonie mit modernster Ultravox-Technologie." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Botpress WebChat Injection -->
-    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-    <!-- Paste from Botpress Dashboard -->
-    <script src="https://files.bpcontent.cloud/2025/02/12/12/20250212121242-70685600.js" defer></script>
-    
-    <style>
-      /* Force Chatbot Visibility - AGGRESSIVE OVERRIDE */
-      .bpw-widget-btn {
-        z-index: 2147483647 !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: fixed !important;
-      }
-      .bpw-chat-container {
-        z-index: 2147483647 !important;
-        display: block !important;
-        visibility: visible !important;
-      }
-      /* Ensure the icon image inside is visible */
-      .bpw-widget-btn img {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-      
-      /* Mobile specific adjustments */
-      @media (max-width: 768px) {
-        .bpw-widget-btn {
-          bottom: 20px !important;
-          right: 16px !important;
-          width: 60px !important;
-          height: 60px !important;
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          background-color: #9333EA !important; /* Fallback color */
-          border-radius: 50% !important;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
-          z-index: 2147483647 !important; /* Ensure max z-index on mobile */
-          transform: translateZ(0); /* Force hardware acceleration */
-        }
-        .bpw-widget-btn img {
-          width: 60% !important;
-          height: 60% !important;
-          object-fit: contain !important;
-        }
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LINA Voice</title>
+
+    <!-- Botpress Webchat -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/05/06/15/20250506153427-V2JQXLMN.js" defer></script>
   </head>
   <body>
     <div id="root"></div>
-    <!-- Netlify Form Detection (Hidden) -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <input type="tel" name="phone" />
-      <input type="text" name="company" />
-      <textarea name="message"></textarea>
-      <input type="checkbox" name="privacy" />
-    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
