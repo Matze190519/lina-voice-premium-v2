@@ -27,8 +27,14 @@ export default function About() {
             <ScrollReveal>
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-electric-purple to-neon-cyan opacity-20 blur-xl rounded-full"></div>
-                <div className="relative glass-card p-8 rounded-2xl border border-white/10">
-                  <User className="w-16 h-16 text-neon-cyan mb-6" />
+                <div className="relative glass-card p-8 rounded-2xl border border-white/10 overflow-hidden">
+                  <div className="mb-6 rounded-xl overflow-hidden aspect-square border border-white/10 shadow-lg">
+                    <img 
+                      src="/images/mathias-vinzing.png" 
+                      alt="Mathias Vinzing" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <h2 className="text-3xl font-playfair font-bold text-white mb-6">Aus der Praxis für die Praxis</h2>
                   <p className="text-gray-400 mb-4 leading-relaxed">
                     Mein Name ist <strong>Mathias Vinzing</strong>. Ich führe seit Jahren ein wachsendes Vertriebsteam im LR Umfeld und habe früh gemerkt: Telefon, Anfragen, Social Media, Schulung, Follow-ups – das alles frisst Zeit.

@@ -1,5 +1,6 @@
 import ScrollReveal from '../components/ScrollReveal';
 import { NeonButton } from '../components/ui/NeonButton';
+import PricingCalculator from '../components/PricingCalculator';
 import { Check, Phone, Users, Clock, Calendar, ShieldCheck, Car, X } from 'lucide-react';
 
 export default function Concept() {
@@ -141,29 +142,8 @@ export default function Concept() {
             </div>
 
             {/* Calculation Example */}
-            <div className="mt-12 max-w-2xl mx-auto glass-card p-8 rounded-2xl border border-neon-cyan/30 bg-deep-navy/50">
-              <h3 className="text-xl font-bold text-white mb-6 text-center">Rechenbeispiel: 100 Minuten LINA Voice im Monat</h3>
-              <div className="space-y-3 text-gray-300 mb-6">
-                <div className="flex justify-between border-b border-white/10 pb-2">
-                  <span>Ultravox (100 Min × 0,05 $)</span>
-                  <span>≈ 5,00 €</span>
-                </div>
-                <div className="flex justify-between border-b border-white/10 pb-2">
-                  <span>Telefondienstleister (100 Min × ~0,015 $)</span>
-                  <span>≈ 1,50 €</span>
-                </div>
-                <div className="flex justify-between border-b border-white/10 pb-2">
-                  <span>LINA Voice Service (100 Min × 0,20 €)</span>
-                  <span>= 20,00 €</span>
-                </div>
-                <div className="flex justify-between pt-2 font-bold text-xl text-neon-cyan">
-                  <span>Gesamtkosten:</span>
-                  <span>≈ 26,50 € zzgl. MwSt.</span>
-                </div>
-              </div>
-              <p className="text-center text-sm text-gray-400">
-                Kein Vertrag, keine Grundgebühr: Wenn LINA nicht telefoniert, zahlen Sie faktisch nur Ihre Basis-Anschlüsse.
-              </p>
+            <div className="mt-12">
+              <PricingCalculator />
             </div>
           </div>
         </ScrollReveal>

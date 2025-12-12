@@ -39,7 +39,7 @@ export default function Technology() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             <ScrollReveal delay={0.1}>
               <div className="space-y-8">
                 <div className="glass-card p-8 rounded-2xl border border-white/10">
