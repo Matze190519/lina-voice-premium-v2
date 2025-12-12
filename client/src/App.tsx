@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Process from "./pages/Process";
 import Datenschutz from "./pages/Datenschutz";
 import Impressum from "./pages/Impressum";
+import AGB from "./pages/AGB";
 import Contact from "./pages/Contact";
 
 function Router() {
@@ -32,6 +33,7 @@ function Router() {
         <Route path="/process" component={Process} />
         <Route path="/datenschutz" component={Datenschutz} />
         <Route path="/impressum" component={Impressum} />
+        <Route path="/agb" component={AGB} />
         <Route path="/kontakt" component={Contact} />
         <Route component={NotFound} />
       </Switch>

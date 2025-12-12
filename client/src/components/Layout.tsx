@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import BotpressChat from "./BotpressChat";
 import TrustBar from "./TrustBar";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children, hideFooter = false }: { children: React.ReactNode; hideFooter?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location] = useLocation();
@@ -148,6 +148,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </main>
 
       {/* Footer */}
+      {!hideFooter && (
       <footer className="bg-black/40 backdrop-blur-lg border-t border-white/5 pt-20 pb-10 relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-12 mb-16">
@@ -188,7 +189,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-3 text-gray-400">
                 <li><Link href="/impressum" className="hover:text-neon-cyan transition-colors">Impressum</Link></li>
                 <li><Link href="/datenschutz" className="hover:text-neon-cyan transition-colors">Datenschutz</Link></li>
-                <li><a href="#" className="hover:text-neon-cyan transition-colors">AGB</a></li>
+                <li><Link href="/agb" className="hover:text-neon-cyan transition-colors">AGB</Link></li>
               </ul>
             </div>
           </div>
@@ -201,6 +202,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </footer>
+      )}
     </div>
   );
 }

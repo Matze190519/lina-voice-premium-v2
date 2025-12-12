@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 
 export default function Datenschutz() {
   return (
-    <Layout>
+    <Layout hideFooter={true}>
       <div className="pt-32 pb-20 px-4 md:px-8 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
