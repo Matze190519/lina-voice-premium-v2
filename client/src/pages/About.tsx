@@ -59,8 +59,6 @@ export default function About() {
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   Ich bin in Schwerin geboren und aufgewachsen. Dort habe ich ganz klassisch eine Ausbildung zum Dachdecker gemacht. 
                   Harte Arbeit, bei Wind und Wetter draußen. Das prägt. Man lernt, dass Ergebnisse zählen, nicht schöne Worte.
-                  <br /><br />
-                  <span className="text-neon-cyan font-bold">Matze - Gründer von Lina Voice</span>
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Später zog es mich nach Hannover, wo ich bis 2023 lebte. In dieser Zeit veränderte sich mein berufliches Leben komplett. 

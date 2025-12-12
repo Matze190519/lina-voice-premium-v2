@@ -8,97 +8,96 @@ export default function Preise() {
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <h1 className="text-5xl md:text-6xl font-playfair font-bold text-center mb-6">
-            Transparent & <span className="text-neon-cyan">Fair</span>
+            Ihr <span className="text-neon-cyan">Startpaket</span>
           </h1>
           <p className="text-xl text-gray-400 text-center max-w-3xl mx-auto mb-16">
-            Keine Setup-Gebühr für die KI. Sie investieren lediglich in das Business Set Pro (Hardware & Produkte).
+            Mehr als nur Software. Realer Warenwert inklusive.
           </p>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Setup */}
-            <ScrollReveal delay={0.1}>
-              <div className="glass-card p-8 rounded-3xl border border-neon-cyan/50 bg-deep-navy/50 hover:border-neon-cyan transition-all hover:-translate-y-2 relative group h-full flex flex-col shadow-[0_0_30px_rgba(6,182,212,0.1)]">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-neon-cyan text-black font-bold px-4 py-1 rounded-full text-sm">
-                  Einmalig
-                </div>
-                <div className="mb-8 text-center">
-                  <h3 className="text-2xl font-bold text-white mb-2">Setup & Einrichtung</h3>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-5xl font-bold text-neon-cyan">0€</span>
-                    <span className="text-gray-400 text-xl">/Dienstleistung</span>
-                  </div>
-                  <p className="text-sm text-gray-400 mt-4">
-                    Sie zahlen nur das <strong>Business Set Pro</strong> (ca. 720€) direkt an den Lieferanten LR.
-                  </p>
-                </div>
-                <ul className="space-y-4 mb-8 flex-grow">
-                  <li className="flex items-start gap-3 text-white">
-                    <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span><strong>Komplette KI-Konfiguration</strong> (Prompting, Voice, Flow)</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-white">
-                    <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span><strong>Hardware inklusive</strong> (Zeitgard Pro Set, Wert ca. 1.500€)</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-white">
-                    <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span>Zugang zum Autokonzept</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-white">
-                    <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span>Persönliches Onboarding</span>
-                  </li>
-                </ul>
-                <NeonButton href="/lr-partner" className="w-full justify-center">
-                  Business Set Pro anfordern
-                </NeonButton>
-              </div>
-            </ScrollReveal>
-
-            {/* Running Costs */}
-            <ScrollReveal delay={0.2}>
-              <div className="glass-card p-8 rounded-3xl border border-white/10 hover:border-neon-cyan/30 transition-all hover:-translate-y-2 relative group h-full flex flex-col">
-                <div className="mb-8 text-center">
-                  <h3 className="text-2xl font-bold text-white mb-2">Laufende Kosten</h3>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-5xl font-bold text-white">Nutzung</span>
-                  </div>
-                  <p className="text-sm text-gray-400 mt-4">
-                    Faire Abrechnung nach tatsächlichem Verbrauch.
-                  </p>
-                </div>
-                <ul className="space-y-4 mb-8 flex-grow">
-                  <li className="flex items-start gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span><strong>Keine monatliche Grundgebühr</strong> für die KI-Software</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span>Ultravox-Realtime: ca. 0,05 $ pro Minute (Sprach-KI)</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span>Telefondienstleister: ca. 0,01–0,02 $ pro Minute</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span>IT-Service: 0,20 € pro Minute (Setup, Betreuung, Optimierung)</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                    <span>Volle Kostenkontrolle & Transparenz</span>
-                  </li>
-                </ul>
-                <p className="text-xs text-gray-500 mb-4 italic text-center">
-                  Preise können sich ändern. Es gelten stets die aktuellen Konditionen der jeweiligen Anbieter (Ultravox, Telefondienstleister).
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal delay={0.2}>
+            <div className="glass-card p-10 rounded-2xl border-2 border-electric-purple/50">
+              <div className="text-center mb-8">
+                <Package className="w-16 h-16 text-neon-cyan mx-auto mb-4" />
+                <h2 className="text-3xl font-playfair font-bold mb-2">
+                  LR Profi Business Pro Set
+                </h2>
+                <p className="text-gray-400">
+                  Warenwert über <span className="text-neon-cyan font-bold">1.500€</span>
                 </p>
-                <NeonButton href="/kontakt" variant="secondary" className="w-full justify-center">
-                  Fragen zur Abrechnung?
-                </NeonButton>
               </div>
-            </ScrollReveal>
-          </div>
+
+              {/* Image Section */}
+              <div className="flex justify-center mb-8">
+                <div className="relative w-full max-w-2xl rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-electric-purple/20 bg-black/50">
+                  <img 
+                    src="/images/lr-profi-set.jpg" 
+                    alt="LR Profi Business Pro Set" 
+                    className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/20 via-transparent to-transparent pointer-events-none"></div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-deep-navy/50 p-6 rounded-xl border border-white/5">
+                  <Gift className="w-8 h-8 text-neon-cyan mb-3" />
+                  <h3 className="font-bold mb-2 text-lg">Enthaltene Produkte:</h3>
+                  <ul className="space-y-3 text-sm text-gray-300">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan flex-shrink-0" />
+                      <span>Zeitgard Pro Cosmetic Device</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan flex-shrink-0" />
+                      <span>Aloe Vera Special Care Box</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan flex-shrink-0" />
+                      <span>Mind Master & Pro Balance</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-deep-navy/50 p-6 rounded-xl border border-white/5">
+                  <Phone className="w-8 h-8 text-neon-cyan mb-3" />
+                  <h3 className="font-bold mb-2 text-lg">Lina Voice Service:</h3>
+                  <ul className="space-y-3 text-sm text-gray-300">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan flex-shrink-0" />
+                      <span>Komplette Einrichtung & Setup</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan flex-shrink-0" />
+                      <span>30 Tage kostenloser Zugang</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan flex-shrink-0" />
+                      <span>Persönlicher Onboarding-Call</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan flex-shrink-0" />
+                      <span>24/7 Premium Support</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="text-center mt-10">
+                <NeonButton 
+                  className="text-xl px-12 py-4 w-full sm:w-auto"
+                  href="tel:+491715060008"
+                >
+                  Jetzt Pilotprojekt-Platz sichern
+                </NeonButton>
+                <p className="text-sm text-gray-500 mt-4 flex items-center justify-center gap-2">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  Nur noch 7 Plätze verfügbar • Keine versteckten Kosten
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
             <div className="mt-12 text-center text-gray-400">
@@ -112,6 +111,7 @@ export default function Preise() {
               </a>
             </div>
           </ScrollReveal>
+        </div>
       </div>
     </main>
   );

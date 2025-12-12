@@ -6,26 +6,33 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Layout from "./components/Layout";
 import BackgroundEffects from "@/components/BackgroundEffects";
-import Home from "@/pages/Home";
+import Home from "./pages/Home";
+import Technology from "@/pages/Technology";
+import Partners from "@/pages/Partners";
+import Concept from "@/pages/Concept";
 import Autokonzept from "@/pages/Autokonzept";
 import LRPartner from "@/pages/LRPartner";
-import About from "@/pages/About";
-import Preise from "@/pages/Preise";
-import Privacy from "@/pages/Privacy";
-import Impressum from "@/pages/Impressum";
-import Contact from "@/pages/Contact";
+import About from "./pages/About";
+import Process from "./pages/Process";
+import Privacy from "./pages/Privacy";
+import Impressum from "./pages/Impressum";
+import Contact from "./pages/Contact";
+
 function Router() {
   return (
     <Layout>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/technology" component={Technology} />
+        <Route path="/partners" component={Partners} />
+        <Route path="/concept" component={Concept} />
         <Route path="/autokonzept" component={Autokonzept} />
-      <Route path="/lr-partner" component={LRPartner} />
-      <Route path="/ueber-uns" component={About} />
-      <Route path="/preise" component={Preise} />
-      <Route path="/kontakt" component={Contact} />
-      <Route path="/impressum" component={Impressum} />
-      <Route path="/privacy" component={Privacy} />
+        <Route path="/lr-partner" component={LRPartner} />
+        <Route path="/ueber-uns" component={About} />
+        <Route path="/process" component={Process} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path="/impressum" component={Impressum} />
+        <Route path="/kontakt" component={Contact} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

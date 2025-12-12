@@ -20,8 +20,7 @@ export default function Impressum() {
               <p>
                 <strong>Online Network Vision S.L.</strong><br />
                 Vertreten durch: Mathias Vinzing<br />
-                Carrer de s'Aljub 34<br />
-                07650 Santanyi, Spanien
+                Santanyi, Spanien
               </p>
               <p className="text-sm mt-2 italic">
                 Diese Website wird von selbständigen LR-Partnern betrieben und ist keine offizielle Seite der LR Health & Beauty SE & Co. KG.
