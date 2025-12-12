@@ -154,57 +154,7 @@ export default function LRPartner() {
         </div>
       </section>
 
-      {/* Mini TEAM-KIT Section */}
-      <section className="py-24 bg-deep-space border-b border-white/10">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <ScrollReveal>
-            <div className="glass-card p-10 rounded-3xl border border-neon-cyan/30 bg-deep-navy/50">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 rounded-full bg-neon-cyan/20 flex items-center justify-center border border-neon-cyan/50">
-                  <Globe className="w-6 h-6 text-neon-cyan" />
-                </div>
-                <h2 className="text-3xl font-playfair font-bold text-white">
-                  Mini TEAM-KIT für dein LR-Team
-                </h2>
-              </div>
-              
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Damit deine Partner nicht wieder irgendwas Falsches erzählen, hier eine ultra-knappe Version, die du per WhatsApp rumschicken kannst:
-              </p>
 
-              <div className="space-y-6 bg-black/30 p-6 rounded-xl border border-white/10">
-                <div>
-                  <h4 className="text-neon-cyan font-bold mb-2">Was ist LINA Voice?</h4>
-                  <p className="text-gray-400 text-sm">
-                    LINA ist nicht nur eine Telefonansage. Sie kann Anrufe entgegennehmen, direkt Termine in deinem Kalender buchen, Termine verschieben oder absagen, Rückrufe organisieren und Anrufer gezielt an die richtige Person weiterleiten. Das Ganze läuft in Echtzeit – also ohne nervige Verzögerungen – und lässt sich an deine Systeme wie Kalender, CRM oder Buchungstool anbinden. Du zahlst nur die Minuten, in denen LINA wirklich mit deinen Kunden spricht.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 className="text-neon-cyan font-bold mb-2">Wie startet ein Unternehmer?</h4>
-                  <p className="text-gray-400 text-sm">
-                    Er bestellt einmal das Business Set Pro (ca. 720 €) mit LR-Produkten (~1.500 € Wert) und wird LR-Partner. Das Setup von LINA ist in diesem Paket enthalten, es gibt keine extra 2.000 € Setup-Gebühr.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-neon-cyan font-bold mb-2">Was kostet es danach?</h4>
-                  <p className="text-gray-400 text-sm">
-                    Ultravox & Telefondienstleister zahlt der Unternehmer direkt (ca. wenige Cent pro Minute, abhängig vom Anbieter). Für das LINA-System mit Setup, Betreuung & Optimierung zahlt er 0,20 € pro Gesprächsminute – minutengenau.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-neon-cyan font-bold mb-2">Muss er Network Marketing machen?</h4>
-                  <p className="text-gray-400 text-sm">
-                    Nein. Er muss nicht aktiv Network Marketing betreiben oder Produkte verkaufen. Er kann LINA und die LR-Vorteile nur als Unternehmerlösung nutzen. Alles Weitere ist optional.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section className="py-24 bg-deep-navy/30">
