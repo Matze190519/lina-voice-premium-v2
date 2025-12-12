@@ -35,24 +35,24 @@ export default function Home() {
                       </span>
                     </motion.div>
 
-                    <h1 className="text-6xl md:text-8xl font-heading font-bold mb-8 leading-tight text-white tracking-tight">
-                      Die KI, die für dich<br />
+                    <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8 leading-tight text-white tracking-tight">
+                      Telefon-KI, die Anrufe übernimmt und<br />
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-white to-secondary animate-shimmer bg-[length:200%_100%]">
-                        ans Telefon geht.
+                        Termine organisiert.
                       </span>
                     </h1>
 
                     <p className="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed max-w-xl font-light">
-                      LINA läuft auf Ultravox v0.7 – einer der modernsten Voice-KI-Plattformen mit GLM 4.6, 26 Sprachen, RAG, Tool-Calling und extrem niedriger Latenz.
+                      Echtzeit-Gespräche, Weiterleitung, Rückruflogik, Kalender/CRM – eingerichtet durch unser IT-Team.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10 relative z-50 pointer-events-auto">
-                      <NeonButton href="tel:+4951116653654" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
-                        <Phone className="w-5 h-5 inline mr-2 group-hover:animate-bounce" />
-                        +49 511 16653654
+                      <NeonButton href="#demo" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
+                        <Play className="w-5 h-5 inline mr-2 group-hover:scale-110 transition-transform" />
+                        Demo hören
                       </NeonButton>
                       <NeonButton href="/kontakt" variant="secondary" className="w-full sm:w-auto justify-center group cursor-pointer relative z-50">
-                        Unverbindlich anfragen
+                        Setup anfragen
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </NeonButton>
                     </div>
@@ -124,41 +124,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-20 bg-deep-navy/30 relative">
+      {/* Features Section - Was LINA kann */}
+      <section className="py-20 bg-deep-navy/30 relative" id="features">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-8 text-white">Das Problem mit dem klassischen Telefon-Alltag</h2>
-              <div className="grid md:grid-cols-2 gap-8 text-left">
-                <div className="glass-card p-6 rounded-xl border border-white/5">
-                  <p className="text-gray-400 leading-relaxed">
-                    <span className="text-red-500 font-bold mr-2">✕</span>
-                    Das Telefon klingelt, während Sie mitten im Kundenkontakt sind.
-                  </p>
-                </div>
-                <div className="glass-card p-6 rounded-xl border border-white/5">
-                  <p className="text-gray-400 leading-relaxed">
-                    <span className="text-red-500 font-bold mr-2">✕</span>
-                    Mitarbeiter springen ständig zwischen Arbeit und Telefon hin und her.
-                  </p>
-                </div>
-                <div className="glass-card p-6 rounded-xl border border-white/5">
-                  <p className="text-gray-400 leading-relaxed">
-                    <span className="text-red-500 font-bold mr-2">✕</span>
-                    Wichtige Anrufe landen auf der Mailbox – und gehen manchmal ganz verloren.
-                  </p>
-                </div>
-                <div className="glass-card p-6 rounded-xl border border-white/5">
-                  <p className="text-gray-400 leading-relaxed">
-                    <span className="text-red-500 font-bold mr-2">✕</span>
-                    Termine werden über Zettel, Post-Its und „Ich rufe Sie gleich zurück“ organisiert.
-                  </p>
-                </div>
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-white">Was LINA kann</h2>
+                <p className="text-xl text-gray-400">Belegbare Features für Ihren Geschäftsalltag</p>
               </div>
-              <p className="mt-8 text-lg text-gray-300 font-medium">
-                Das kostet Zeit, Nerven und im Zweifel auch Umsatz – und lässt sich mit heutigen Möglichkeiten deutlich besser lösen.
-              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { icon: Phone, title: "Weiterleitung / Durchstellen", desc: "Verbindet Anrufer direkt mit dem richtigen Ansprechpartner." },
+                  { icon: Clock, title: "Rückruf & Follow-up", desc: "Nimmt Rückrufbitten auf und organisiert die Wiedervorlage." },
+                  { icon: Calendar, title: "Terminmanagement", desc: "Bucht, verschiebt oder sagt Termine direkt in Ihrem Kalender ab." },
+                  { icon: Globe, title: "Mehrsprachigkeit", desc: "Kommuniziert fließend in mehreren Sprachen (wenn aktiviert)." },
+                  { icon: CheckCircle, title: "Zusammenfassung", desc: "Erstellt Gesprächsprotokolle und übergibt sie an Ihr Team." },
+                  { icon: Zap, title: "24/7 Erreichbarkeit", desc: "Nimmt jeden Anruf an – auch nachts und am Wochenende." }
+                ].map((feature, i) => (
+                  <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-neon-cyan/30 transition-colors group">
+                    <feature.icon className="w-10 h-10 text-neon-cyan mb-4 group-hover:scale-110 transition-transform" />
+                    <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-gray-400 text-sm">{feature.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Process Section - So läuft's ab */}
+      <section className="py-20 bg-background relative border-t border-white/5">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-16 text-center text-white">So läuft's ab</h2>
+              
+              <div className="grid md:grid-cols-3 gap-12 relative">
+                {/* Connector Line */}
+                <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-electric-purple/0 via-electric-purple/50 to-electric-purple/0"></div>
+                
+                {[
+                  { step: "01", title: "Anfrage & Bedarf", desc: "Sie schildern uns kurz Ihre Situation und was die KI übernehmen soll." },
+                  { step: "02", title: "Einrichtung", desc: "Wir passen Stimme, Wissen und Regeln exakt an Ihr Unternehmen an." },
+                  { step: "03", title: "Live & Support", desc: "LINA geht ans Telefon. Wir kümmern uns um den laufenden Betrieb." }
+                ].map((item, i) => (
+                  <div key={i} className="relative flex flex-col items-center text-center z-10">
+                    <div className="w-24 h-24 rounded-full bg-deep-navy border border-electric-purple/30 flex items-center justify-center mb-6 shadow-[0_0_30px_-10px_rgba(124,58,237,0.3)]">
+                      <span className="text-3xl font-bold text-neon-cyan font-heading">{item.step}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </ScrollReveal>
         </div>
