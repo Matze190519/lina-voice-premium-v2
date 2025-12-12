@@ -20,8 +20,7 @@ export default function Technology() {
               <span className="text-neon-cyan">versteht.</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
-              Lina basiert auf dem weltweit fortschrittlichsten Speech-Language-Model (SLM). 
-              Keine Transkription. Keine Verzögerung. Reines Verstehen.
+              LINA läuft auf Ultravox v0.7 – einer der modernsten Voice-KI-Plattformen mit GLM 4.6, 26 Sprachen, RAG, Tool-Calling und extrem niedriger Latenz.
             </p>
           </ScrollReveal>
         </div>
@@ -36,8 +35,7 @@ export default function Technology() {
                 <Zap className="w-10 h-10 text-neon-cyan mb-6" />
                 <h3 className="font-playfair font-bold text-2xl text-white mb-4">Echtzeit-Latenz</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Mit unter <strong className="text-white">200ms Reaktionszeit</strong> ist Lina schneller als ein menschlicher Gedanke. 
-                  Herkömmliche Systeme (Bland AI, Retell) benötigen oft 800ms+, was zu unangenehmen Pausen führt.
+                  Ultravox v0.7 ist bekannt für "lowest latency". Das bedeutet: Keine unangenehmen Pausen, sondern ein flüssiges Gesprächsgefühl wie mit einem echten Menschen.
                 </p>
               </div>
             </ScrollReveal>
@@ -45,10 +43,9 @@ export default function Technology() {
             <ScrollReveal delay={0.2}>
               <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/30 transition-colors h-full">
                 <Cpu className="w-10 h-10 text-electric-purple mb-6" />
-                <h3 className="font-playfair font-bold text-2xl text-white mb-4">Multimodal Native</h3>
+                <h3 className="font-playfair font-bold text-2xl text-white mb-4">Audio Reasoning</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Lina "hört" Audio direkt, statt es erst in Text umzuwandeln. 
-                  Dadurch erkennt sie <strong className="text-white">Emotionen, Zögern und Unterbrechungen</strong> sofort und reagiert natürlich.
+                  Basierend auf GLM 4.6 versteht LINA nicht nur Worte, sondern den Kontext. Sie kann komplexe Anfragen verarbeiten und logisch darauf reagieren.
                 </p>
               </div>
             </ScrollReveal>
@@ -58,8 +55,7 @@ export default function Technology() {
                 <Lock className="w-10 h-10 text-neon-pink mb-6" />
                 <h3 className="font-playfair font-bold text-2xl text-white mb-4">Enterprise Security</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  DSGVO-konforme Verarbeitung. Ihre Daten bleiben Ihre Daten. 
-                  Kein Training an Ihren Kundengesprächen ohne explizite Zustimmung.
+                  Klare Trennung: Infrastruktur in Deutschland, Ultravox-USA mit DPA. Transparente Minute-für-Minute-Abrechnung ohne versteckte Datenverarbeitung.
                 </p>
               </div>
             </ScrollReveal>
@@ -155,97 +151,6 @@ export default function Technology() {
             </ScrollReveal>
           </div>
         </div>
-      </section>
-
-      {/* Comparison Table */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-white">Der Marktvergleich</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                Warum wir uns für Ultravox v0.7 entschieden haben – und warum Sie das auch tun sollten.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.2}>
-            <div className="glass-card rounded-xl border border-white/10 overflow-hidden shadow-2xl">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="bg-white/5 border-b border-white/10">
-                      <th className="p-6 font-playfair font-bold text-white text-lg">Feature</th>
-                      <th className="p-6 font-playfair font-bold text-neon-cyan bg-electric-purple/10 border-x border-white/10 w-1/4 text-lg">LINA VOICE</th>
-                      <th className="p-6 font-playfair font-bold text-gray-300 w-1/5">Bland AI</th>
-                      <th className="p-6 font-playfair font-bold text-gray-300 w-1/5">Vapi AI</th>
-                      <th className="p-6 font-playfair font-bold text-gray-300 w-1/5">Retell AI</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-white/10">
-                    <tr className="hover:bg-white/5 transition-colors">
-                      <td className="p-6 font-medium text-gray-300">KI-Architektur</td>
-                      <td className="p-6 font-bold text-white bg-electric-purple/5 border-x border-white/10">End-to-End SLM</td>
-                      <td className="p-6 text-gray-400">STT + LLM + TTS</td>
-                      <td className="p-6 text-gray-400">Wrapper (GPT-4)</td>
-                      <td className="p-6 text-gray-400">Wrapper</td>
-                    </tr>
-                    <tr className="hover:bg-white/5 transition-colors">
-                      <td className="p-6 font-medium text-gray-300">Latenzzeit (Ø)</td>
-                      <td className="p-6 font-bold text-neon-green bg-electric-purple/5 border-x border-white/10">~200 ms ⚡</td>
-                      <td className="p-6 text-gray-400">~800 ms</td>
-                      <td className="p-6 text-gray-400">~500 ms</td>
-                      <td className="p-6 text-gray-400">~600 ms</td>
-                    </tr>
-                    <tr className="hover:bg-white/5 transition-colors">
-                      <td className="p-6 font-medium text-gray-300">Unterbrechbarkeit</td>
-                      <td className="p-6 font-bold text-white bg-electric-purple/5 border-x border-white/10">Sofort (Native)</td>
-                      <td className="p-6 text-gray-400">Verzögert</td>
-                      <td className="p-6 text-gray-400">Gut</td>
-                      <td className="p-6 text-gray-400">Mittel</td>
-                    </tr>
-                    <tr className="hover:bg-white/5 transition-colors">
-                      <td className="p-6 font-medium text-gray-300">Emotionale Intelligenz</td>
-                      <td className="p-6 font-bold text-white bg-electric-purple/5 border-x border-white/10">Sehr Hoch</td>
-                      <td className="p-6 text-gray-400">Niedrig</td>
-                      <td className="p-6 text-gray-400">Mittel</td>
-                      <td className="p-6 text-gray-400">Mittel</td>
-                    </tr>
-                    <tr className="hover:bg-white/5 transition-colors">
-                      <td className="p-6 font-medium text-gray-300">Setup-Aufwand</td>
-                      <td className="p-6 font-bold text-white bg-electric-purple/5 border-x border-white/10">Full Service</td>
-                      <td className="p-6 text-gray-400">Self-Service</td>
-                      <td className="p-6 text-gray-400">Developer</td>
-                      <td className="p-6 text-gray-400">Developer</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="container mx-auto px-4 mt-24">
-        <ScrollReveal>
-          <div className="bg-gradient-to-r from-electric-purple to-neon-blue rounded-2xl p-12 text-center text-white relative overflow-hidden shadow-[0_0_50px_rgba(124,58,237,0.3)]">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">Erleben Sie den Unterschied.</h2>
-              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                Technische Daten sind gut. Ein echtes Gespräch ist besser. 
-                Rufen Sie Lina jetzt an und versuchen Sie, sie aus dem Konzept zu bringen.
-              </p>
-              <div className="flex justify-center">
-                <a href="tel:+4951116653654" className="inline-flex items-center justify-center bg-white text-black font-bold text-xl py-4 px-10 rounded-xl hover:bg-gray-100 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.4)]">
-                  <Phone className="w-6 h-6 mr-3" />
-                  <span>+49 511 16653654 anrufen</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
       </section>
     </div>
   );
