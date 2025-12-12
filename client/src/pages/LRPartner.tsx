@@ -176,7 +176,7 @@ export default function LRPartner() {
                 <div>
                   <h4 className="text-neon-cyan font-bold mb-2">Was ist LINA Voice?</h4>
                   <p className="text-gray-400 text-sm">
-                    LINA ist eine Telefon-KI, die Anrufe annimmt, Fragen beantwortet, Termine bucht und Rückrufe organisiert – auf Basis der Ultravox-Voice-KI und mit Setup durch eine IT-Firma aus Frankfurt.
+                    LINA ist nicht nur eine Telefonansage. Sie kann Anrufe entgegennehmen, direkt Termine in deinem Kalender buchen, Termine verschieben oder absagen, Rückrufe organisieren und Anrufer gezielt an die richtige Person weiterleiten. Das Ganze läuft in Echtzeit – also ohne nervige Verzögerungen – und lässt sich an deine Systeme wie Kalender, CRM oder Buchungstool anbinden. Du zahlst nur die Minuten, in denen LINA wirklich mit deinen Kunden spricht.
                   </p>
                 </div>
                 

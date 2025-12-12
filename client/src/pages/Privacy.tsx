@@ -1,123 +1,141 @@
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Lock, Server, FileCheck, Check, Eye, Database, Globe } from "lucide-react";
+import { Check } from "lucide-react";
 
 export default function Privacy() {
   return (
-    <div className="pb-20">
+    <div className="pb-20 pt-20">
       {/* Hero */}
       <section className="bg-background py-24 border-b border-border">
         <div className="container mx-auto px-4 text-center">
           <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Datenschutz & Sicherheit</Badge>
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-primary">
-            Ihre Daten sind sicher. <br />
-            <span className="text-muted-foreground">Ohne Kompromisse.</span>
+            Datenschutzerklärung
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Wir wissen, dass Vertrauen die Währung der Zukunft ist. Deshalb setzen wir auf höchste Sicherheitsstandards und deutsche Partner.
-          </p>
         </div>
       </section>
 
-      {/* Security Features */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div className="col-span-2 space-y-10">
-              <div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Technische Infrastruktur & Datenflüsse</h3>
-                <p className="text-muted-foreground mb-4">
-                  Die technische Einrichtung und laufende Betreuung erfolgt durch unseren IT-Partner <strong>esagh-it.de</strong> aus Deutschland.
-                </p>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                    <span>Konfiguration, Routing und Dashboard-Zugriff werden auf Servern eines deutschen Rechenzentrums (z. B. Frankfurt am Main) betrieben.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                    <span>Die eigentliche Sprachverarbeitung (Echtzeit-KI) erfolgt über die Ultravox Realtime Plattform von Fixie.ai.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Ultravox Realtime (Voice-KI)</h3>
-                <p className="text-muted-foreground mb-4">
-                  Ultravox ist eine spezialisierte Voice-AI-Plattform. Laut offizieller Datenschutzerklärung werden dabei u. a. folgende Daten verarbeitet: Audio-Daten, Transkripte, Interaktionsdaten sowie hochgeladene Dokumente zur Wissensbasis.
-                </p>
-                <div className="bg-muted/50 p-6 rounded-lg border border-border">
-                  <h4 className="font-bold text-primary mb-3">Wichtige Punkte:</h4>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                      <span>Voice-Daten und Transkripte werden gespeichert, um die Dienstleistung bereitzustellen.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                      <span>Laut Ultravox werden Ihre Voice-Daten <strong>nicht</strong> zum Training der zugrunde liegenden KI-Modelle verwendet; Daten bleiben zwischen Accounts getrennt.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                      <span>Die Plattform setzt auf Verschlüsselung und technische Schutzmaßnahmen, um unbefugten Zugriff zu verhindern.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Internationale Datenübertragung</h3>
-                <p className="text-muted-foreground mb-4">
-                  Die Services von Ultravox werden in den USA betrieben. Das bedeutet, dass im Rahmen der Nutzung von Lina Voice personenbezogene Daten in die USA übertragen und dort verarbeitet werden können.
-                </p>
-                <p className="text-muted-foreground">
-                  Wir empfehlen und unterstützen den Abschluss geeigneter datenschutzrechtlicher Vereinbarungen (z. B. Auftragsverarbeitungsvertrag / DPA inkl. Standardvertragsklauseln) direkt zwischen Ihrem Unternehmen und Ultravox.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Speicher- & Löschkonzept</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                    <span>Standardmäßig konfigurieren wir Lina so, dass <strong>keine dauerhaften Gesprächsmitschnitte</strong> erstellt werden, sofern Ihr Use Case dies zulässt.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                    <span>Optionale Gesprächsaufzeichnungen (z. B. zu Schulungszwecken) werden nur aktiviert, wenn Sie als Verantwortlicher eine entsprechende Rechtsgrundlage (z. B. Einwilligung der Anrufenden) sicherstellen.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                    <span>Ultravox bietet Funktionen, um Voice-Profile und Voice-Datensätze zu löschen bzw. zu exportieren. Auf Wunsch unterstützen wir Sie bei der Umsetzung Ihrer Löschkonzepte.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section for Privacy */}
       <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-heading font-bold text-center mb-12 text-primary">Häufige Fragen zum Datenschutz</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="space-y-4">
-              <h3 className="font-bold text-lg">Hört Lina immer zu?</h3>
-              <p className="text-muted-foreground">Nein. Lina wird nur aktiv, wenn ein Anruf eingeht oder getätigt wird. Es gibt kein permanentes "Mithören" wie bei Smart Speakern.</p>
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="space-y-12 text-muted-foreground">
+            
+            {/* 1. Verantwortlicher */}
+            <div>
+              <h2 className="text-2xl font-bold text-primary mb-4">1. Verantwortlicher</h2>
+              <p className="mb-4">Verantwortlicher im Sinne der DSGVO ist:</p>
+              <p>
+                Online Network Vision S.L.<br />
+                Vertreten durch Mathias Vinzing<br />
+                Santanyi, Spanien<br />
+                E-Mail: info@lr-lifestyle.info<br />
+                Telefon: +49 171 5060008
+              </p>
             </div>
-            <div className="space-y-4">
-              <h3 className="font-bold text-lg">Werden Gespräche aufgezeichnet?</h3>
-              <p className="text-muted-foreground">Standardmäßig nicht. Auf Wunsch können Aufzeichnungen aktiviert werden (z.B. zur Qualitätssicherung), dies erfordert jedoch die explizite Zustimmung des Anrufers.</p>
+
+            {/* 2. Hosting */}
+            <div>
+              <h2 className="text-2xl font-bold text-primary mb-4">2. Hosting & Server-Logfiles</h2>
+              <p className="mb-4">
+                Unsere Website wird bei einem externen Dienstleister betrieben. Beim Aufruf der Seiten werden automatisch Informationen erfasst, die Ihr Browser übermittelt (Server-Logfiles), z. B.:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 mb-4">
+                <li>IP-Adresse des zugreifenden Geräts</li>
+                <li>Datum und Uhrzeit des Abrufs</li>
+                <li>aufgerufene Datei/URL</li>
+                <li>Menge der übertragenen Daten</li>
+                <li>Browsertyp und -version</li>
+              </ul>
+              <p>
+                Die Verarbeitung erfolgt zur Sicherstellung eines technisch stabilen und sicheren Betriebs der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionalen Webauftritt). Logdaten werden regelmäßig automatisiert gelöscht, sofern keine weitere Aufbewahrung zu Beweiszwecken erforderlich ist.
+              </p>
             </div>
-            <div className="space-y-4">
-              <h3 className="font-bold text-lg">Was passiert bei einer Auskunftsanfrage?</h3>
-              <p className="text-muted-foreground">Wir stellen Ihnen alle gespeicherten Daten in einem maschinenlesbaren Format zur Verfügung, damit Sie Auskunftsanfragen Ihrer Kunden fristgerecht beantworten können.</p>
+
+            {/* 3. Kontakt */}
+            <div>
+              <h2 className="text-2xl font-bold text-primary mb-4">3. Kontaktaufnahme (Formular, E-Mail, Telefon)</h2>
+              <p>
+                Wenn Sie uns per Formular, E-Mail oder Telefon kontaktieren, verarbeiten wir die von Ihnen übermittelten Daten (z. B. Name, Kontaktdaten, Unternehmen, Anliegen) zur Bearbeitung Ihrer Anfrage.
+              </p>
+              <p className="mt-4">
+                Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder -anbahnung), sofern es um konkrete Leistungen geht, ansonsten Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).
+              </p>
+              <p className="mt-4">
+                Wir speichern diese Daten nur so lange, wie es für die Bearbeitung Ihrer Anfrage und etwaige Rückfragen erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
+              </p>
             </div>
-            <div className="space-y-4">
-              <h3 className="font-bold text-lg">Ist Ultravox sicher?</h3>
-              <p className="text-muted-foreground">Ja. Ultravox ist ein Enterprise-Anbieter, der speziell für geschäftskritische Anwendungen entwickelt wurde. Sicherheit steht hier an erster Stelle, anders als bei Consumer-Modellen.</p>
+
+            {/* 4. Telefon-KI */}
+            <div>
+              <h2 className="text-2xl font-bold text-primary mb-4">4. Telefon-KI „LINA Voice“</h2>
+              <p className="mb-4">
+                Für bestimmte Rufnummern setzen wir die Telefon-KI „LINA Voice“ ein, um Anrufe entgegenzunehmen, zu qualifizieren und zu dokumentieren.
+              </p>
+              
+              <h3 className="text-xl font-bold text-primary mb-2 mt-6">Technische Abwicklung</h3>
+              <ul className="space-y-2 mb-4">
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
+                  <span>Telefonverbindungen werden über einen Telefondienstleister (z. B. Twilio) hergestellt.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
+                  <span>Die Sprachverarbeitung erfolgt über die Voice-AI-Plattform Ultravox Realtime.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
+                  <span>Konfiguration, Routing und Integrationslogik werden über eine IT-Firma mit Serverstandort in Deutschland (z. B. Frankfurt am Main) bereitgestellt.</span>
+                </li>
+              </ul>
+
+              <h3 className="text-xl font-bold text-primary mb-2 mt-6">Welche Daten werden verarbeitet?</h3>
+              <ul className="list-disc pl-6 space-y-2 mb-4">
+                <li>Verbindungsdaten (z. B. Rufnummer, Zeitpunkt, Dauer, Zielrufnummer)</li>
+                <li>Audiodaten (Gesprächsinhalte) und daraus erzeugte Transkripte</li>
+                <li>Meta-Informationen zum Gesprächsverlauf (z. B. Gesprächsstatus, verwendete Funktionen/Tools)</li>
+              </ul>
+              <p className="mb-4">
+                Laut Ultravox-Dokumentation werden Audio und Transkripte gespeichert, um die Dienstleistung bereitzustellen. Voice-Daten werden nicht zum Training der zugrunde liegenden KI-Modelle verwendet; Daten bleiben zwischen Accounts getrennt.
+              </p>
+
+              <h3 className="text-xl font-bold text-primary mb-2 mt-6">Rechtsgrundlage</h3>
+              <p className="mb-4">
+                Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder -anbahnung), wenn Anrufe im Rahmen laufender oder angebahnender Geschäftsbeziehungen erfolgen.<br />
+                Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) bei allgemeinen Anfragen (Optimierung von Erreichbarkeit, Entlastung von Mitarbeitenden, strukturierte Bearbeitung von Anliegen).
+              </p>
+
+              <h3 className="text-xl font-bold text-primary mb-2 mt-6">Internationale Datenübertragung</h3>
+              <p className="mb-4">
+                Ultravox wird in den USA betrieben. Personenbezogene Daten können daher in die USA übertragen und dort verarbeitet werden. Für den Einsatz von Ultravox empfehlen und unterstützen wir den Abschluss eines Auftragsverarbeitungsvertrages (Data Processing Agreement, DPA) inkl. geeigneter Garantien (z. B. Standardvertragsklauseln).
+              </p>
+              <p className="mb-4">
+                Gesprächsdaten werden so lange aufbewahrt, wie es für die Erfüllung der Zwecke erforderlich ist (z. B. Nachweis, Rückruf, Dokumentation). Ultravox stellt Funktionen bereit, um Voice-Profile und Voice-Daten zu exportieren oder zu löschen; auf Wunsch unterstützen wir Sie bei der Umsetzung Ihrer Löschkonzepte.
+              </p>
             </div>
+
+            {/* 5. Cookies */}
+            <div>
+              <h2 className="text-2xl font-bold text-primary mb-4">5. Cookies & Analyse-Tools</h2>
+              <p>
+                Unsere Website verwendet derzeit keine Tracking- oder Analyse-Tools, die personenbezogene Daten zu Marketing- oder Statistikzwecken auswerten. Falls wir zukünftig Analyse-Tools (z. B. Matomo, Google Analytics o. Ä.) einsetzen sollten, werden wir diese Datenschutzerklärung entsprechend erweitern und – soweit erforderlich – Ihre Einwilligung einholen.
+              </p>
+            </div>
+
+            {/* 6. Rechte */}
+            <div>
+              <h2 className="text-2xl font-bold text-primary mb-4">6. Ihre Rechte</h2>
+              <p className="mb-4">Sie haben im Rahmen der gesetzlichen Vorgaben das Recht auf:</p>
+              <ul className="list-disc pl-6 space-y-2 mb-4">
+                <li>Auskunft über die bei uns gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>
+                <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+                <li>Löschung (Art. 17 DSGVO)</li>
+                <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+                <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+                <li>Widerspruch gegen bestimmte Verarbeitungen (Art. 21 DSGVO)</li>
+              </ul>
+              <p>
+                Zudem haben Sie das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten rechtswidrig erfolgt.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>

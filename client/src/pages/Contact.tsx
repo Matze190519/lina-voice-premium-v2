@@ -172,7 +172,7 @@ export default function Contact() {
                           name="name"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-gray-300">Name</FormLabel>
+                              <FormLabel className="text-gray-300">Name *</FormLabel>
                               <FormControl>
                                 <Input placeholder="Ihr Name" {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
                               </FormControl>
@@ -201,7 +201,7 @@ export default function Contact() {
                           name="email"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-gray-300">E-Mail</FormLabel>
+                              <FormLabel className="text-gray-300">E-Mail *</FormLabel>
                               <FormControl>
                                 <Input placeholder="ihre@email.de" {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
                               </FormControl>
@@ -214,7 +214,7 @@ export default function Contact() {
                           name="phone"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className="text-gray-300">Telefon</FormLabel>
+                              <FormLabel className="text-gray-300">Telefon *</FormLabel>
                               <FormControl>
                                 <Input placeholder="+49 ..." {...field} className="bg-white/5 border-white/10 text-white focus:border-neon-cyan/50" />
                               </FormControl>
@@ -229,7 +229,7 @@ export default function Contact() {
                         name="message"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-gray-300">Nachricht</FormLabel>
+                            <FormLabel className="text-gray-300">Nachricht *</FormLabel>
                             <FormControl>
                               <Textarea 
                                 placeholder="Wie können wir Ihnen helfen?" 
@@ -257,7 +257,7 @@ export default function Contact() {
                             </FormControl>
                             <div className="space-y-1 leading-none">
                               <FormLabel className="text-gray-300">
-                                Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden.
+                                Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zur Bearbeitung der Anfrage zu (Details in der Datenschutzerklärung).
                               </FormLabel>
                               <FormMessage />
                             </div>
