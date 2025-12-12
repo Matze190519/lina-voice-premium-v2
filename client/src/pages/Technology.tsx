@@ -117,7 +117,7 @@ export default function Technology() {
                   <ul className="space-y-4 text-gray-400 text-sm">
                     <li>
                       <strong className="text-white block mb-1">Edge-Cutting-Technologie</strong>
-                      Antwortzeiten im Bereich von rund 150 ms auf Modellseite für flüssige Gespräche.
+                      Antwortzeiten im Bereich von rund 150-200 ms auf Modellseite für absolut flüssige Echtzeit-Interaktion.
                     </li>
                     <li>
                       <strong className="text-white block mb-1">Was bedeutet Latenz?</strong>
@@ -231,7 +231,7 @@ export default function Technology() {
                   <Activity className="w-5 h-5 text-neon-cyan mt-1" />
                   <div>
                     <strong className="text-white block">Sehr niedrige Latenz</strong>
-                    <span className="text-sm text-gray-400">Antwortzeiten im Bereich von ca. 600 ms für flüssige Interaktion.</span>
+                    <span className="text-sm text-gray-400">Antwortzeiten im Bereich von ca. 150-200 ms für absolut flüssige Echtzeit-Interaktion.</span>
                   </div>
                 </li>
               </ul>

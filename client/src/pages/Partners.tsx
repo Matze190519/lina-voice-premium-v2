@@ -108,7 +108,7 @@ export default function Partners() {
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
                   Bieten Sie Ihren Kunden etwas, das sie woanders nicht bekommen: 
-                  Echte Echtzeit-Kommunikation mit &lt; 300ms Latenz dank Ultravox v0.7 Core.
+                  Echte Echtzeit-Kommunikation mit ca. 150-200 ms Latenz dank Ultravox v0.7 Core.
                 </p>
               </CardContent>
             </Card>
