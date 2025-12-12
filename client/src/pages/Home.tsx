@@ -69,7 +69,7 @@ export default function Home() {
             {/* Right: Video / Visual */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end shrink-0 mt-8 lg:mt-0 relative z-20 pointer-events-none lg:pointer-events-auto">
               <div className="pointer-events-auto w-full flex justify-center lg:justify-end">
-                <div className="absolute -top-40 -right-40 w-[600px] h-[600px] opacity-60 pointer-events-none hidden lg:block z-0">
+                <div className="absolute -top-20 -right-20 md:-top-40 md:-right-40 w-[300px] h-[300px] md:w-[600px] md:h-[600px] opacity-60 pointer-events-none z-0">
                    <AICore />
                 </div>
               </div>
