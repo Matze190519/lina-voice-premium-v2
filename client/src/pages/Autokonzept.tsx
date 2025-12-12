@@ -55,48 +55,33 @@ export default function Autokonzept() {
 
         {/* Key Facts */}
         <ScrollReveal delay={0.2}>
-          <div className="mb-32">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6 text-white">
-                Warum marktübliche Leasingraten zahlen, wenn Sie von Großkunden-Konditionen profitieren können?
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Unser Ansatz: Sie qualifizieren sich einmalig über Ihr LR Geschäftsvolumen und können anschließend auf eine Auswahl von Firmenfahrzeugen zurückgreifen.
+          <div className="grid md:grid-cols-3 gap-8 mb-32">
+            <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/50 transition-colors">
+              <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
+                <Shield className="w-6 h-6 text-neon-cyan" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-white">Keine Anzahlung</h3>
+              <p className="text-gray-400">
+                Schonen Sie Ihre Liquidität. Unsere Fahrzeuge bestellen Sie <span className="text-white font-bold">ohne Anzahlung</span> und ohne Schlussrate. Volle Kostentransparenz ab dem ersten Kilometer.
               </p>
             </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/50 transition-colors">
-                <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
-                  <Check className="w-6 h-6 text-neon-cyan" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Einmalige Qualifikation</h3>
-                <p className="text-gray-400">
-                  Über ca. 4.000 Punktewert (PW) im LR-Vertriebssystem qualifizieren Sie sich für das Autokonzept. Die genaue Punktelogik ergibt sich aus den offiziellen LR-Unterlagen.
-                </p>
+            <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/50 transition-colors">
+              <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
+                <Check className="w-6 h-6 text-neon-cyan" />
               </div>
-
-              <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/50 transition-colors">
-                <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
-                  <Zap className="w-6 h-6 text-neon-cyan" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Deutlich reduzierte Leasingraten</h3>
-                <p className="text-gray-400">
-                  Durch die gebündelte Abnahme von Fahrzeugen kann LR Konditionen verhandeln, die im Vergleich zu üblichen Einzel-Leasingverträgen deutlich günstiger sind. In der Praxis können sich – je nach Modell und individueller Situation – Ersparnisse von rund 70–80 % gegenüber typischen Listenleasingraten ergeben.
-                  <br /><br />
-                  <span className="text-sm text-gray-500 italic">*Hinweis: Konkrete Konditionen hängen immer von Modell, Ausstattung und Ihrer persönlichen Situation ab.*</span>
-                </p>
+              <h3 className="text-xl font-bold mb-4 text-white">Einmalige Qualifikation</h3>
+              <p className="text-gray-400">
+                Kein monatlicher Druck. Sie qualifizieren sich <span className="text-white font-bold">ein einziges Mal</span> (z.B. durch Ihr Startpaket) und sind sofort bestellberechtigt.
+              </p>
+            </div>
+            <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/50 transition-colors">
+              <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
+                <Zap className="w-6 h-6 text-neon-cyan" />
               </div>
-
-              <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/50 transition-colors">
-                <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-neon-cyan" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Keine Anzahlung, keine Schlussrate</h3>
-                <p className="text-gray-400">
-                  Das Konzept ist darauf ausgelegt, Ihre Liquidität zu schonen: Im Regelfall zahlen Sie lediglich die monatliche Leasingrate. Details klären wir gemeinsam im Gespräch auf Basis der offiziellen LR-Fahrzeugübersichten.
-                </p>
-              </div>
+              <h3 className="text-xl font-bold mb-4 text-white">Sofortiger Zugriff</h3>
+              <p className="text-gray-400">
+                Mit Ihrem <span className="text-white font-bold">Profi Business Startpaket</span> (2.000 PW) und nur <span className="text-white font-bold">zwei Empfehlungen</span> erreichen Sie die nötigen 4.000 PW. Damit sind Sie sofort bestellberechtigt.
+              </p>
             </div>
           </div>
         </ScrollReveal>
@@ -105,94 +90,80 @@ export default function Autokonzept() {
         <div className="mb-32">
           <ScrollReveal>
             <h2 className="text-4xl font-playfair font-bold text-center mb-4 text-white">
-              Fahrzeugbeispiele
+              Premium-Flotte <span className="text-neon-cyan">Sofort bestellbar</span>
             </h2>
             <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
-              Aktuell stehen – je nach Verfügbarkeit – rund 20 verschiedene Modelle im LR Autokonzept zur Verfügung.
+              Dies sind nur einige Beispiele. Aktuell stehen ca. 20 verschiedene Modelle für Sie zur Verfügung.
             </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Business Limousinen */}
+            {/* Audi Q8 */}
             <ScrollReveal delay={0.1}>
               <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-b from-gray-900 to-black border border-white/10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-electric-purple/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img 
-                  src="/images/cars/audi-a4-avant.png" 
-                  alt="Business Limousinen" 
+                  src="/images/cars/audi-q8.png" 
+                  alt="Audi Q8" 
                   className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 relative z-10"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end z-20">
-                  <h3 className="text-2xl font-bold mb-1 text-white">Business-Limousinen</h3>
-                  <p className="text-gray-300 mb-4 text-sm">z.B. Audi A4, Mercedes C-Klasse</p>
+                  <h3 className="text-2xl font-bold mb-1 text-white">Audi Q8</h3>
+                  <p className="text-gray-300 mb-4 text-sm">SUV Coupé, S-Line</p>
+                  <div className="flex items-center justify-between">
+                    <div className="text-neon-cyan font-bold text-xl">
+                      ab 349€ <span className="text-xs text-gray-400 font-normal">/Monat</span>
+                    </div>
+                    <ChevronRight className="w-5 h-5 text-neon-cyan group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* SUVs */}
+            {/* Audi A4 Avant */}
             <ScrollReveal delay={0.2}>
               <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-b from-gray-900 to-black border border-white/10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neon-cyan/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img 
-                  src="/images/cars/audi-q8.png" 
-                  alt="SUVs" 
+                  src="/images/cars/audi-a4-avant.png" 
+                  alt="Audi A4 Avant" 
                   className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 relative z-10"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end z-20">
-                  <h3 className="text-2xl font-bold mb-1 text-white">Kombis und SUVs</h3>
-                  <p className="text-gray-300 mb-4 text-sm">Für Außendienst & Handwerk</p>
+                  <h3 className="text-2xl font-bold mb-1 text-white">Audi A4 Avant</h3>
+                  <p className="text-gray-300 mb-4 text-sm">Business Kombi</p>
+                  <div className="flex items-center justify-between">
+                    <div className="text-neon-cyan font-bold text-xl">
+                      ab 249€ <span className="text-xs text-gray-400 font-normal">/Monat</span>
+                    </div>
+                    <ChevronRight className="w-5 h-5 text-neon-cyan group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Sportliche Modelle */}
+            {/* Mercedes CLA */}
             <ScrollReveal delay={0.3}>
               <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-b from-gray-900 to-black border border-white/10">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-electric-purple/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img 
                   src="/images/cars/mercedes-cla.png" 
-                  alt="Sportliche Modelle" 
+                  alt="Mercedes CLA" 
                   className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 relative z-10"
                 />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 flex flex-col justify-end z-20">
-                  <h3 className="text-2xl font-bold mb-1 text-white">Sportliche Modelle</h3>
-                  <p className="text-gray-300 mb-4 text-sm">Für repräsentative Einsätze</p>
+                  <h3 className="text-2xl font-bold mb-1 text-white">Mercedes CLA</h3>
+                  <p className="text-gray-300 mb-4 text-sm">Coupé, AMG Line</p>
+                  <div className="flex items-center justify-between">
+                    <div className="text-neon-cyan font-bold text-xl">
+                      ab 199€ <span className="text-xs text-gray-400 font-normal">/Monat</span>
+                    </div>
+                    <ChevronRight className="w-5 h-5 text-neon-cyan group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
           </div>
-          
-          <div className="mt-12 p-6 bg-electric-purple/10 rounded-xl border border-electric-purple/20 text-center max-w-3xl mx-auto">
-            <p className="text-gray-300">
-              Konkrete Modelle, Ausstattungslinien und Beispielraten besprechen wir individuell und ausschließlich auf Grundlage der jeweils gültigen LR-Unterlagen. Preise und Verfügbarkeiten können sich ändern.
-            </p>
-          </div>
-        </div>
-
-        {/* Compliance Notice */}
-        <div className="mb-32 max-w-3xl mx-auto">
-          <ScrollReveal>
-            <div className="glass-card p-8 rounded-2xl border border-white/10">
-              <h2 className="text-2xl font-playfair font-bold mb-6 text-white">Wichtiger Hinweis (Transparenz & Compliance)</h2>
-              <ul className="space-y-4 text-gray-400">
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-neon-cyan mt-2.5 shrink-0" />
-                  <span>Das Autokonzept richtet sich an <strong>selbständige LR-Partner</strong> bei Erreichen bestimmter Karrierestufen und Punktzahlen.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-neon-cyan mt-2.5 shrink-0" />
-                  <span>Es gibt <strong>keine Garantie</strong> für ein bestimmtes Fahrzeug oder eine bestimmte monatliche Rate.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-neon-cyan mt-2.5 shrink-0" />
-                  <span>Maßgeblich sind immer die offiziellen Konditionen von LR Health & Beauty sowie die Vertragsbedingungen des Leasingpartners.</span>
-                </li>
-              </ul>
-              <p className="mt-6 text-gray-400">
-                Gerne erklären wir Ihnen im persönlichen Gespräch, wie Sie sich für das Autokonzept qualifizieren können und welche Fahrzeugoptionen aktuell verfügbar sind.
-              </p>
-            </div>
-          </ScrollReveal>
         </div>
 
         {/* FAQ Section */}
