@@ -14,7 +14,7 @@ import Autokonzept from "@/pages/Autokonzept";
 import LRPartner from "@/pages/LRPartner";
 import About from "./pages/About";
 import Process from "./pages/Process";
-import Privacy from "./pages/Privacy";
+import Datenschutz from "./pages/Datenschutz";
 import Impressum from "./pages/Impressum";
 import Contact from "./pages/Contact";
 
@@ -30,7 +30,7 @@ function Router() {
         <Route path="/lr-partner" component={LRPartner} />
         <Route path="/about" component={About} />
         <Route path="/process" component={Process} />
-        <Route path="/privacy" component={Privacy} />
+        <Route path="/datenschutz" component={Datenschutz} />
         <Route path="/impressum" component={Impressum} />
         <Route path="/kontakt" component={Contact} />
         <Route component={NotFound} />

@@ -70,9 +70,28 @@ export default function Home() {
             <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-end shrink-0 mt-12 lg:mt-0 relative z-20 pointer-events-none lg:pointer-events-auto">
               <div className="pointer-events-auto w-full flex justify-center lg:justify-end relative">
                 {/* Mobile: Centered and larger orb behind video */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] md:w-[600px] md:h-[600px] md:-top-40 md:-right-40 md:translate-x-0 md:translate-y-0 opacity-60 pointer-events-none z-0">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] md:w-[600px] md:h-[600px] md:-top-40 md:-right-40 md:translate-x-0 md:translate-y-0 opacity-60 pointer-events-none z-0 group-hover:opacity-80 transition-opacity duration-500">
                    <AICore />
                 </div>
+                
+                {/* AI Core Description - Floating Label */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1, duration: 0.8 }}
+                  className="absolute -right-4 top-0 md:-right-12 md:-top-12 z-10 hidden md:block"
+                >
+                  <div className="glass-panel px-4 py-2 rounded-lg border border-neon-cyan/30 bg-black/40 backdrop-blur-md">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></div>
+                      <span className="text-xs font-bold text-neon-cyan tracking-wider">AI CORE ACTIVE</span>
+                    </div>
+                    <p className="text-[10px] text-gray-400 max-w-[120px] leading-tight">
+                      Neuronales Netzwerk verarbeitet Sprache in Echtzeit
+                    </p>
+                  </div>
+                  <div className="w-px h-12 bg-gradient-to-b from-neon-cyan/50 to-transparent absolute left-4 top-full"></div>
+                </motion.div>
               </div>
               <ScrollReveal delay={0.2} className="w-full max-w-full md:max-w-lg relative z-10 pointer-events-auto px-4 md:px-0">
                 <div className="relative aspect-video glass-card rounded-2xl flex items-center justify-center border border-electric-purple/20 bg-deep-navy/30 backdrop-blur-md overflow-hidden group shadow-2xl shadow-electric-purple/20 transition-all duration-500 hover:shadow-neon-cyan/20 hover:border-neon-cyan/30">

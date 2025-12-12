@@ -8,8 +8,16 @@ function CoreMesh() {
 
   useFrame((state) => {
     if (meshRef.current) {
+      // Base rotation
       meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2;
       meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3;
+      
+      // React to mouse
+      const mouseX = state.mouse.x * 0.5;
+      const mouseY = state.mouse.y * 0.5;
+      
+      meshRef.current.rotation.x += mouseY;
+      meshRef.current.rotation.y += mouseX;
     }
   });
 
