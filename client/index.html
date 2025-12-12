@@ -8,6 +8,25 @@
     <!-- Botpress Webchat -->
     <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2025/05/06/15/20250506153427-V2JQXLMN.js" defer></script>
+    <style>
+      /* Botpress Bubble Pulse Effect */
+      @keyframes botpress-pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(0, 255, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 255, 255, 0);
+        }
+      }
+      /* Target the Botpress launcher button */
+      #bp-web-widget-container {
+        animation: botpress-pulse 2s infinite;
+        border-radius: 50%;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
