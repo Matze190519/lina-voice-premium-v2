@@ -1,199 +1,195 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, Package, ArrowRight, CreditCard, Clock, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import ScrollReveal from '../components/ScrollReveal';
+import { NeonButton } from '../components/ui/NeonButton';
+import { Phone, Package, Settings, Play, Rocket, Check } from 'lucide-react';
 
 export default function Process() {
   return (
-    <div className="pb-20">
-      {/* Hero */}
-      <section className="bg-background py-24 border-b border-border">
-        <div className="container mx-auto px-4 text-center">
-          <Badge className="bg-primary/10 text-primary border-primary/20 mb-6">Der Weg zu Ihrer Lina</Badge>
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-primary">
-            Einfach. Transparent. <br />
-            <span className="text-muted-foreground">Sofort startklar.</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Keine versteckten Kosten. Keine komplexe Einrichtung. Wir kümmern uns um alles.
-          </p>
-        </div>
-      </section>
-
-      {/* The Process Steps */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 relative">
-            {/* Connecting Line (Desktop only) */}
-            <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-border z-0" />
-
-            {/* Step 1 */}
-            <div className="relative z-10">
-              <div className="w-24 h-24 rounded-full bg-background border-4 border-primary flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <span className="text-3xl font-bold text-primary">1</span>
-              </div>
-              <Card className="border-border shadow-md h-full">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-xl font-bold text-primary">Bestellung</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center text-muted-foreground">
-                  <p>Sie bestellen das <strong>LR Profi Business Pro Set</strong> für einmalig 712,50€ (+ 29,90€ Startgebühr).</p>
-                  <div className="mt-4 flex justify-center">
-                    <Badge variant="outline" className="border-primary/30 text-primary">Ratenzahlung möglich</Badge>
-                  </div>
-                </CardContent>
-              </Card>
+    <main className="relative z-10 pt-32 pb-20">
+      <div className="container mx-auto px-4">
+        {/* Hero */}
+        <ScrollReveal>
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-1 rounded-full bg-electric-purple/20 border border-electric-purple/50 text-neon-cyan text-sm font-bold mb-6">
+              Der Ablauf
             </div>
-
-            {/* Step 2 */}
-            <div className="relative z-10">
-              <div className="w-24 h-24 rounded-full bg-background border-4 border-primary flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <span className="text-3xl font-bold text-primary">2</span>
-              </div>
-              <Card className="border-border shadow-md h-full">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-xl font-bold text-primary">Einrichtung</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center text-muted-foreground">
-                  <p>Unser deutsches IT-Team (esagh-it.de) kontaktiert Sie. Wir richten Ihre Nummer, das Dashboard und Lina komplett für Sie ein.</p>
-                  <div className="mt-4 flex justify-center">
-                    <Badge variant="outline" className="border-primary/30 text-primary">Dauer: ca. 48h</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Step 3 */}
-            <div className="relative z-10">
-              <div className="w-24 h-24 rounded-full bg-background border-4 border-primary flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <span className="text-3xl font-bold text-primary">3</span>
-              </div>
-              <Card className="border-border shadow-md h-full">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-xl font-bold text-primary">Start</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center text-muted-foreground">
-                  <p>Lina geht live. Sie zahlen ab jetzt nur noch <strong>0,20€ pro Minute</strong>, wenn Lina tatsächlich arbeitet.</p>
-                  <div className="mt-4 flex justify-center">
-                    <Badge variant="outline" className="border-primary/30 text-primary">Keine Fixkosten</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight text-white">
+              Der Weg zu Ihrer <br />
+              <span className="text-neon-cyan">eigenen Telefon-KI</span>
+            </h1>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+              Wir haben den Weg zu LINA Voice so klar wie möglich gemacht. Statt monatelanger IT-Projekte gibt es einen strukturierten Prozess in wenigen Schritten.
+            </p>
           </div>
+        </ScrollReveal>
+
+        {/* Steps */}
+        <div className="max-w-4xl mx-auto space-y-8 mb-32">
+          {/* Step 1 */}
+          <ScrollReveal delay={0.1}>
+            <div className="glass-card p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <span className="text-9xl font-bold text-white">1</span>
+              </div>
+              <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-16 h-16 rounded-2xl bg-electric-purple/20 flex items-center justify-center shrink-0 border border-electric-purple/50">
+                  <Phone className="w-8 h-8 text-neon-cyan" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Erstgespräch & Anforderungscheck</h3>
+                  <ul className="space-y-3 text-gray-400">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Kurzes Online- oder Telefonat mit Ihnen</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Analyse: Wie laufen Ihre Anrufe heute? Wo hakt es?</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Definition: Was soll LINA auf jeden Fall übernehmen (Termine, Rückrufe, Standardfragen)?</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Step 2 */}
+          <ScrollReveal delay={0.2}>
+            <div className="glass-card p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <span className="text-9xl font-bold text-white">2</span>
+              </div>
+              <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-16 h-16 rounded-2xl bg-electric-purple/20 flex items-center justify-center shrink-0 border border-electric-purple/50">
+                  <Package className="w-8 h-8 text-neon-cyan" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Business Set Pro & technische Basis</h3>
+                  <ul className="space-y-3 text-gray-400">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Sie bestellen einmalig das Business Set Pro (ca. 720 €).</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Sie erhalten Ihr LR-Produktpaket und Ihren LR-Partnerstatus.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Parallel richten wir die technischen Zugänge ein: Ultravox-Account, Telefondienstleister, ggf. Kalender-Anbindung.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Step 3 */}
+          <ScrollReveal delay={0.3}>
+            <div className="glass-card p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <span className="text-9xl font-bold text-white">3</span>
+              </div>
+              <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-16 h-16 rounded-2xl bg-electric-purple/20 flex items-center justify-center shrink-0 border border-electric-purple/50">
+                  <Settings className="w-8 h-8 text-neon-cyan" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Dialog-Design & Konfiguration</h3>
+                  <ul className="space-y-3 text-gray-400">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Wir legen fest, wie LINA Ihre Kunden begrüßt und welche Fragen sie stellt.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Wir definieren Regeln: Was darf LINA alleine lösen? Wann wird weitergeleitet?</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>LINA wird so konfiguriert, dass sie Ihre Abläufe widerspiegelt – nicht umgekehrt.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Step 4 */}
+          <ScrollReveal delay={0.4}>
+            <div className="glass-card p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <span className="text-9xl font-bold text-white">4</span>
+              </div>
+              <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-16 h-16 rounded-2xl bg-electric-purple/20 flex items-center justify-center shrink-0 border border-electric-purple/50">
+                  <Play className="w-8 h-8 text-neon-cyan" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Testphase im geschützten Rahmen</h3>
+                  <ul className="space-y-3 text-gray-400">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Zuerst testen wir LINA intern (mit Testanrufen).</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Danach schalten wir sie in einem definierten Rahmen live (z. B. außerhalb der Öffnungszeiten).</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Sie bekommen Feedback & Auswertungen zur Optimierung.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Step 5 */}
+          <ScrollReveal delay={0.5}>
+            <div className="glass-card p-8 rounded-2xl border border-white/10 relative overflow-hidden bg-gradient-to-br from-electric-purple/10 to-neon-cyan/5">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <span className="text-9xl font-bold text-white">5</span>
+              </div>
+              <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+                <div className="w-16 h-16 rounded-2xl bg-neon-cyan/20 flex items-center justify-center shrink-0 border border-neon-cyan/50 shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                  <Rocket className="w-8 h-8 text-neon-cyan" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Go-Live & laufende Optimierung</h3>
+                  <ul className="space-y-3 text-gray-400">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Nach der Testphase schalten wir LINA voll in Ihren gewünschten Betriebsmodus.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Unser IT-Partner überwacht das System technisch, wir optimieren bei Bedarf die Dialoge.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-neon-cyan mt-1 shrink-0" />
+                      <span>Sie behalten jederzeit die Kontrolle: Pausieren, anpassen oder erweitern.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
-      </section>
 
-      {/* The Product Set Detail */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <Badge className="bg-primary/10 text-primary border-primary/20 mb-4">Ihr Startpaket</Badge>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-primary">
-                Mehr als nur Software. <br />
-                <span className="text-muted-foreground">Das LR Profi Business Pro Set.</span>
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Sie investieren nicht in leere Setup-Kosten. Sie erhalten einen realen Warenwert. 
-                Hochwertige Health & Beauty Produkte im Wert von über 1.500€ (UVP).
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-bold text-primary">Zeitgard Pro Cosmetic Device</h4>
-                    <p className="text-sm text-muted-foreground">Das prämierte High-Tech Device für professionelle Gesichtsreinigung & Anti-Aging.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-bold text-primary">Aloe Vera Special Care Box</h4>
-                    <p className="text-sm text-muted-foreground">Die "Apotheke aus der Natur" für die ganze Familie.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-bold text-primary">Mind Master & Pro Balance</h4>
-                    <p className="text-sm text-muted-foreground">Mikronährstoffe für mehr Energie und weniger Stress im Business-Alltag.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-bold text-primary">Lina Voice Setup inklusive</h4>
-                    <p className="text-sm text-muted-foreground">Komplette technische Einrichtung im Wert von 2.500€ (Marktpreis) ist in diesem Paket enthalten.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-10 p-6 bg-muted/30 rounded-xl border border-border">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-bold text-lg">Einmalige Investition:</span>
-                  <span className="text-2xl font-bold text-primary">712,50€</span>
-                </div>
-                <div className="flex items-center justify-between text-sm text-muted-foreground mb-6">
-                  <span>+ Startgebühr (einmalig)</span>
-                  <span>29,90€</span>
-                </div>
-                <div className="border-t border-border pt-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <CreditCard className="w-4 h-4 text-primary" />
-                    <span className="font-bold">Ratenzahlung möglich:</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="bg-background p-3 rounded border border-border text-center">
-                      <span className="block text-muted-foreground text-xs">1. Rate (sofort)</span>
-                      <span className="font-bold text-primary">285,00€</span>
-                    </div>
-                    <div className="bg-background p-3 rounded border border-border text-center">
-                      <span className="block text-muted-foreground text-xs">2.-4. Rate (monatl.)</span>
-                      <span className="font-bold text-primary">142,50€</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform rotate-3" />
-              <img 
-                src="/images/lr-set-detail.png" 
-                alt="LR Profi Business Pro Set" 
-                className="relative rounded-2xl shadow-2xl w-full h-auto border border-border bg-white p-4"
-                onError={(e) => {
-                  e.currentTarget.src = "https://via.placeholder.com/600x800?text=LR+Profi+Business+Pro+Set";
-                }}
-              />
-              
-              {/* Floating Badge */}
-              <div className="absolute top-10 -left-6 bg-white p-4 rounded-xl shadow-lg border border-border animate-pulse-slow">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-primary" />
-                  <span className="font-bold text-primary">Gesamtwert &gt; 1.500€</span>
-                </div>
-              </div>
-            </div>
+        {/* CTA */}
+        <ScrollReveal>
+          <div className="text-center">
+            <h2 className="text-3xl font-playfair font-bold mb-8 text-white">Bereit für den Start?</h2>
+            <NeonButton href="mailto:info@lr-lifestyle.info">
+              Jetzt Erstgespräch vereinbaren
+            </NeonButton>
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Bereit für den nächsten Schritt?</h2>
-          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10">
-            Starten Sie jetzt mit Lina und sichern Sie sich Ihren Wettbewerbsvorteil.
-          </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-6 h-auto font-bold shadow-xl hover:scale-105 transition-transform">
-            Jetzt Startpaket anfragen
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-        </div>
-      </section>
-    </div>
+        </ScrollReveal>
+      </div>
+    </main>
   );
 }
