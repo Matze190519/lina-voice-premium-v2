@@ -133,21 +133,20 @@ export default function LRPartner() {
                   <ul className="space-y-4 text-lg text-gray-300">
                     <li className="flex items-start gap-3">
                       <span className="text-red-500 mt-1">•</span>
-                      <span>Kein Strukturvertrieb oder Network Marketing</span>
+                      <span>Sie <strong>müssen</strong> kein Team aufbauen oder aktiv Network Marketing betreiben.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-red-500 mt-1">•</span>
-                      <span>Kein Verkauf von Kosmetikprodukten</span>
+                      <span>Es gibt <strong>keine Verpflichtung</strong>, Produkte weiterzuverkaufen.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-red-500 mt-1">•</span>
-                      <span>Keine Anwerbung von neuen Partnern</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-red-500 mt-1">•</span>
-                      <span>Keine monatlichen Pflichtkäufe</span>
+                      <span>Es gibt <strong>keine monatlichen Mindestabnahmen</strong>, wenn Sie das Profi Business Set nur als Unternehmer-Paket für Lina Voice nutzen.</span>
                     </li>
                   </ul>
+                  <p className="mt-6 text-gray-400 text-sm italic">
+                    Natürlich haben Sie die Möglichkeit, das LR-Geschäft bei Interesse zusätzlich aufzubauen – das ist aber optional und kein Bestandteil unseres KI-Telefonservice-Angebots.
+                  </p>
                 </div>
               </div>
             </div>
@@ -175,7 +174,7 @@ export default function LRPartner() {
                   Bin ich dann LR-Vertreter?
                 </AccordionTrigger>
                 <AccordionContent className="text-lg text-gray-400 pb-6 leading-relaxed">
-                  Formal werden Sie als Partner registriert, um das Set zu beziehen und Zugriff auf das Autokonzept zu erhalten. Praktisch nutzen Sie dies jedoch rein als Endkunde/Unternehmer für die KI-Lösung und ggf. das Firmenleasing. Sie müssen nicht als Vertriebspartner aktiv werden.
+                  Formal werden Sie als LR-Partner registriert, um das Profi Business Set zu beziehen und z. B. Zugang zum Autokonzept zu erhalten. Sie <strong>müssen</strong> jedoch nicht aktiv als Vertriebspartner auftreten. Sie können LR rein als Infrastruktur für Ihr Unternehmer-Paket mit Lina Voice nutzen – alles Weitere ist optional.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3" className="border border-white/10 rounded-xl bg-black/20 px-4">
