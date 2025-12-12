@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 export default function FAQ() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("All");
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [expandedIds, setExpandedIds] = useState<string[]>([]);
 
   const categories = ["All", ...Array.from(new Set(faqs.map((item) => item.category)))];
 
@@ -20,7 +20,9 @@ export default function FAQ() {
   });
 
   const toggleExpand = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
+    setExpandedIds(prev => 
+      prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
+    );
   };
 
   return (
@@ -122,7 +124,7 @@ export default function FAQ() {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ delay: index * 0.05 }}
                     className={`group rounded-xl border transition-all duration-300 overflow-hidden ${
-                      expandedId === faq.id
+                      expandedIds.includes(faq.id)
                         ? "bg-deep-navy/60 border-neon-cyan/30 shadow-[0_0_15px_rgba(0,255,255,0.1)]"
                         : "bg-white/5 border-white/10 hover:border-white/20 hover:bg-white/10"
                     }`}
@@ -132,14 +134,14 @@ export default function FAQ() {
                       className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
                     >
                       <span className={`text-lg font-medium transition-colors ${
-                        expandedId === faq.id ? "text-white" : "text-gray-200 group-hover:text-white"
+                        expandedIds.includes(faq.id) ? "text-white" : "text-gray-200 group-hover:text-white"
                       }`}>
                         {faq.question}
                       </span>
                       <div className={`ml-4 p-1 rounded-full transition-colors ${
-                        expandedId === faq.id ? "bg-neon-cyan/20 text-neon-cyan" : "bg-white/5 text-gray-400"
+                        expandedIds.includes(faq.id) ? "bg-neon-cyan/20 text-neon-cyan" : "bg-white/5 text-gray-400"
                       }`}>
-                        {expandedId === faq.id ? (
+                        {expandedIds.includes(faq.id) ? (
                           <ChevronUp className="w-5 h-5" />
                         ) : (
                           <ChevronDown className="w-5 h-5" />
@@ -148,7 +150,7 @@ export default function FAQ() {
                     </button>
                     
                     <AnimatePresence>
-                      {expandedId === faq.id && (
+                      {expandedIds.includes(faq.id) && (
                         <motion.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}

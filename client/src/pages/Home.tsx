@@ -79,7 +79,7 @@ export default function Home() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1, duration: 0.8 }}
-                  className="absolute right-0 -top-16 md:-right-12 md:-top-12 z-30 block"
+                  className="absolute right-0 -top-20 md:-right-12 md:-top-12 z-30 block"
                 >
                   <div className="glass-panel px-4 py-2 rounded-lg border border-neon-cyan/30 bg-black/40 backdrop-blur-md">
                     <div className="flex items-center gap-2 mb-1">
