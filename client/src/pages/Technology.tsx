@@ -27,6 +27,114 @@ export default function Technology() {
         </div>
       </section>
 
+      {/* Enterprise Features */}
+      <section className="py-24 bg-white/5">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-white">Enterprise-Features & Automatisierung</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                LINA ist weit mehr als eine „intelligente Telefonzentrale“. Hinter der Voice-Ebene läuft eine komplette Automatisierungs- und Vertriebslogik.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <ScrollReveal delay={0.1}>
+              <div className="space-y-8">
+                <div className="glass-card p-8 rounded-2xl border border-white/10">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                    <Database className="w-6 h-6 text-neon-cyan" />
+                    1. Kontakte, Daten & Wissen
+                  </h3>
+                  <ul className="space-y-4 text-gray-400 text-sm">
+                    <li>
+                      <strong className="text-white block mb-1">Import von Kontaktlisten</strong>
+                      LINA kann Kontaktlisten (z. B. CSV) übernehmen und für Kampagnen oder Rückrufaktionen nutzen.
+                    </li>
+                    <li>
+                      <strong className="text-white block mb-1">Gesprächshistorien im Blick</strong>
+                      Kontakte werden inkl. Historie geführt – so wissen Sie jederzeit, was besprochen wurde.
+                    </li>
+                    <li>
+                      <strong className="text-white block mb-1">Vektordatenbanken für Ihr Wissen</strong>
+                      Echtzeit-Zugriff auf individuelles Unternehmenswissen (FAQ, Produkte) statt nur generisches KI-Wissen.
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="glass-card p-8 rounded-2xl border border-white/10">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                    <Zap className="w-6 h-6 text-neon-cyan" />
+                    2. Automatisierung im Vertrieb
+                  </h3>
+                  <ul className="space-y-4 text-gray-400 text-sm">
+                    <li>
+                      <strong className="text-white block mb-1">Aus kalten Leads werden warme Kontakte</strong>
+                      LINA qualifiziert Anrufer vor, fragt Bedarf ab und bereitet Leads für den Vertrieb vor.
+                    </li>
+                    <li>
+                      <strong className="text-white block mb-1">Automatische Terminvereinbarung</strong>
+                      Termine landen direkt im Kalender – inkl. Gesprächszusammenfassung für Ihr Team.
+                    </li>
+                    <li>
+                      <strong className="text-white block mb-1">Outbound-Kampagnen</strong>
+                      Skalierbare Kampagnensteuerung: LINA ruft Listen ab und protokolliert Ergebnisse.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="space-y-8">
+                <div className="glass-card p-8 rounded-2xl border border-white/10">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                    <Activity className="w-6 h-6 text-neon-cyan" />
+                    3. Qualität & Reporting
+                  </h3>
+                  <ul className="space-y-4 text-gray-400 text-sm">
+                    <li>
+                      <strong className="text-white block mb-1">Standardisierte Auswertung</strong>
+                      Strukturierte Protokolle machen den Erfolg von Kampagnen messbar.
+                    </li>
+                    <li>
+                      <strong className="text-white block mb-1">Steigerung der Effizienz</strong>
+                      Wiederkehrende Aufgaben werden ausgelagert, Ressourcen werden frei.
+                    </li>
+                    <li>
+                      <strong className="text-white block mb-1">Reduzierung von Aufwänden</strong>
+                      Informationen landen direkt im System statt auf Zetteln.
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="glass-card p-8 rounded-2xl border border-white/10">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                    <Cpu className="w-6 h-6 text-neon-cyan" />
+                    4. Performance & Latenz
+                  </h3>
+                  <ul className="space-y-4 text-gray-400 text-sm">
+                    <li>
+                      <strong className="text-white block mb-1">Edge-Cutting-Technologie</strong>
+                      Antwortzeiten im Bereich von rund 150 ms auf Modellseite für flüssige Gespräche.
+                    </li>
+                    <li>
+                      <strong className="text-white block mb-1">Was bedeutet Latenz?</strong>
+                      Die Zeit zwischen "Kunde spricht" und "LINA antwortet". Wenige hundert Millisekunden wirken natürlich.
+                    </li>
+                    <li>
+                      <strong className="text-white block mb-1">Skalierung auf viele Agenten</strong>
+                      Ob 10 oder 100 parallele Calls: LINA skaliert ohne Personalaufbau.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Architecture Overview */}
       <section className="py-24">
         <div className="container mx-auto px-4">

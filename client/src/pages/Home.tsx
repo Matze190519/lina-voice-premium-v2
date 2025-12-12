@@ -161,7 +161,23 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          {/* Latency Explanation Block */}
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto mb-16 glass-card p-8 rounded-2xl border border-white/10 bg-black/20">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Zap className="w-5 h-5 text-neon-cyan" />
+                Was bedeutet „Latenz“ – und warum ist sie so wichtig?
+              </h3>
+              <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+                Latenz ist die Zeitspanne zwischen "der Kunde sagt etwas" und "LINA reagiert hörbar".
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Liegt diese Verzögerung im Bereich von wenigen hundert Millisekunden (z. B. etwa 150 ms Modellreaktion), erlebt der Anrufer das Gespräch als flüssig und natürlich – ohne das typische „Roboter-Warten“. Gerade im Verkauf ist diese Dynamik entscheidend für Vertrauen.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-4 gap-6 mb-16">
             {[
               {
                 icon: Clock,
@@ -195,6 +211,47 @@ export default function Home() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Additional Highlights */}
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto glass-card p-8 rounded-2xl border border-white/10">
+              <h3 className="text-2xl font-playfair font-bold text-white mb-8 text-center">Zusätzliche Highlights von LINA Voice</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3 text-gray-400">
+                    <CheckCircle className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
+                    <span>Import von Kontaktlisten (z. B. CSV) für Kampagnen</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-gray-400">
+                    <CheckCircle className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
+                    <span>Vollautomatisierte Outbound-Kampagnen</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-gray-400">
+                    <CheckCircle className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
+                    <span>Automatische Umwandlung von kalten Leads in warme Kontakte</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-gray-400">
+                    <CheckCircle className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
+                    <span>Pay-as-you-go-Abrechnung statt hoher Fixkosten</span>
+                  </li>
+                </ul>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3 text-gray-400">
+                    <CheckCircle className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
+                    <span>Terminvereinbarung inkl. Gesprächszusammenfassung</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-gray-400">
+                    <CheckCircle className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
+                    <span>Qualifizierte Follow-Up-Termine mit Kontaktdaten</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-gray-400">
+                    <CheckCircle className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
+                    <span>Echtzeit-Zugriff auf Ihr Unternehmenswissen (Vektordatenbanken)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

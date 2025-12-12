@@ -79,9 +79,12 @@ export default function Autokonzept() {
                 <Zap className="w-6 h-6 text-neon-cyan" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-white">Sofortiger Zugriff</h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 mb-4">
                 Mit Ihrem <span className="text-white font-bold">Profi Business Startpaket</span> (2.000 PW) und nur <span className="text-white font-bold">zwei Empfehlungen</span> (d.h. Sie gewinnen zwei weitere Nutzer für das Business Set) erreichen Sie die nötigen 4.000 PW. Damit sind Sie sofort bestellberechtigt.
               </p>
+              <div className="text-xs text-gray-500 bg-white/5 p-3 rounded-lg border border-white/5">
+                <span className="text-neon-cyan font-bold">* Info:</span> 1 PW (Punktwert) entspricht ca. 0,50 € Netto-Umsatz. 4.000 PW sind also ca. 2.000 € Umsatzvolumen.
+              </div>
             </div>
           </div>
         </ScrollReveal>
