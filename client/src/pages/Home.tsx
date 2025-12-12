@@ -160,10 +160,10 @@ export default function Home() {
               </p>
               <div className="glass-card p-8 rounded-2xl border border-white/10 bg-black/20 text-left mb-8">
                 <p className="text-gray-400 mb-4 leading-relaxed">
-                  Ich bin <strong>Mathias Vinzing</strong>, Unternehmer im LR Umfeld. Zusammen mit einem IT-Partner aus Frankfurt habe ich LINA zuerst für mein eigenes Team entwickelt: als Telefon-KI, die Anrufe annimmt, Termine organisiert, Rückrufe vorbereitet und mit unseren Funnels, Webseiten und Automatisierungen zusammenarbeitet.
+                  Ich bin <strong>Mathias Vinzing</strong>, Unternehmer im LR Umfeld. Zusammen mit einem IT-Partner aus Frankfurt habe ich LINA zuerst für mein eigenes Team entwickelt: als Telefon-KI, die Anrufe annimmt, Termine organisiert, Rückrufe vorbereitet und mein Team sogar telefonisch coacht und Ziele bespricht.
                 </p>
                 <p className="text-gray-400 leading-relaxed">
-                  Nach Monaten im Echtbetrieb war klar: Diese Lösung ist zu wertvoll, um sie nur intern zu behalten. Heute stellen wir LINA Unternehmern zur Verfügung, die ein fertiges System wollen – statt sich von Agenturen für teure Einzelprojekte die Hose ausziehen zu lassen.
+                  Nach Monaten im Echtbetrieb war klar: Diese Lösung ist zu wertvoll, um sie nur intern zu behalten. Heute stellen wir LINA Unternehmern zur Verfügung, die ein fertiges System wollen – statt sich von Agenturen für teure Einzelprojekte das Geld aus der Tasche ziehen zu lassen.
                 </p>
               </div>
               <NeonButton href="/about" variant="secondary">
