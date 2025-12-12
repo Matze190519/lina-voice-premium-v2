@@ -1,150 +1,267 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Quote, MapPin, Briefcase, Heart, Cpu, Globe } from "lucide-react";
+import ScrollReveal from '../components/ScrollReveal';
+import { NeonButton } from '../components/ui/NeonButton';
+import { User, Cpu, Code, MessageSquare, Rocket, Shield, CheckCircle } from 'lucide-react';
 
 export default function About() {
   return (
-    <div className="pb-20">
-      {/* Hero */}
-      <section className="relative py-24 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-deep-navy/80 z-0"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/grid-pattern.svg')] opacity-[0.05] z-0"></div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-block px-4 py-1 rounded-full bg-electric-purple/20 border border-electric-purple/50 text-neon-cyan text-sm font-bold mb-6">
-            Die Geschichte hinter Lina
+    <main className="relative z-10 pt-32 pb-20">
+      <div className="container mx-auto px-4">
+        {/* Hero Section */}
+        <ScrollReveal>
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-1 rounded-full bg-electric-purple/20 border border-electric-purple/50 text-neon-cyan text-sm font-bold mb-6">
+              Die Geschichte hinter LINA
+            </div>
+            <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight text-white">
+              Wer hinter <span className="text-neon-cyan">LINA Voice</span> steht
+            </h1>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+              LINA Voice ist nicht im Meetingraum entstanden, sondern im echten Geschäftsalltag.
+            </p>
           </div>
-          <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 text-white">
-            Vom Dachdecker zum <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-electric-purple">KI-Pionier.</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
-            Eine Reise von Schwerin über Hannover nach Mallorca. Und wie aus einem persönlichen Bedürfnis eine Vision für den deutschen Mittelstand wurde.
-          </p>
-        </div>
-      </section>
+        </ScrollReveal>
 
-      {/* The Story */}
-      <section className="py-24 bg-black/20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div className="relative sticky top-24">
-              <div className="absolute inset-0 bg-primary/5 rounded-3xl transform -rotate-3" />
-              <div className="relative rounded-2xl overflow-hidden border border-electric-purple/30 bg-gradient-to-b from-electric-purple/10 to-deep-navy/50 shadow-2xl shadow-electric-purple/20">
-                <img 
-                  src="/images/founder-transparent.png" 
-                  alt="Matze - Gründer von Lina Voice" 
-                  className="relative w-full h-auto object-cover z-10 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
-                  onError={(e) => {
-                    // Fallback to original if transparent fails
-                    e.currentTarget.src = "/images/founder.png";
-                  }}
-                />
-                {/* Background Glow Effect behind the person */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-2/3 bg-gradient-to-t from-electric-purple/40 to-transparent opacity-60 z-0 blur-xl"></div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-xl shadow-lg border border-electric-purple/30 max-w-xs backdrop-blur-xl bg-deep-navy/80 z-20">
-                <div className="flex items-center gap-2 mb-2">
-                  <MapPin className="w-5 h-5 text-neon-pink" />
-                  <span className="font-bold text-white">Mallorca, Spanien</span>
+        {/* Founder Story */}
+        <section className="mb-32">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <ScrollReveal>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-electric-purple to-neon-cyan opacity-20 blur-xl rounded-full"></div>
+                <div className="relative glass-card p-8 rounded-2xl border border-white/10">
+                  <User className="w-16 h-16 text-neon-cyan mb-6" />
+                  <h2 className="text-3xl font-playfair font-bold text-white mb-6">Aus der Praxis für die Praxis</h2>
+                  <p className="text-gray-400 mb-4 leading-relaxed">
+                    Mein Name ist <strong>Mathias Vinzing</strong>. Ich führe seit Jahren ein wachsendes Vertriebsteam im LR Umfeld und habe früh gemerkt: Telefon, Anfragen, Social Media, Schulung, Follow-ups – das alles frisst Zeit.
+                  </p>
+                  <p className="text-gray-400 mb-4 leading-relaxed">
+                    Statt darüber zu reden, „dass man mal KI ausprobieren müsste“, habe ich angefangen, sie konsequent einzusetzen:
+                  </p>
+                  <ul className="space-y-2 text-gray-400 mb-6">
+                    <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-neon-cyan" /> für mein eigenes LR Business</li>
+                    <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-neon-cyan" /> für mein Team</li>
+                    <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-neon-cyan" /> für unsere Prozesse, Funnels und Kundenkommunikation</li>
+                  </ul>
+                  <p className="text-gray-400 leading-relaxed">
+                    Aus diesen Erfahrungen ist LINA entstanden – zuerst intern, dann als marktreife Lösung für Unternehmer.
+                  </p>
                 </div>
-                <p className="text-sm text-gray-300">Seit 2023 mein Zuhause. Mit Frau, Hund und dem Blick aufs Meer.</p>
               </div>
-            </div>
-
-            <div className="space-y-10">
-              <div>
-                <h2 className="text-3xl font-heading font-bold text-primary mb-6">Meine Wurzeln.</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  Ich bin in Schwerin geboren und aufgewachsen. Dort habe ich ganz klassisch eine Ausbildung zum Dachdecker gemacht. 
-                  Harte Arbeit, bei Wind und Wetter draußen. Das prägt. Man lernt, dass Ergebnisse zählen, nicht schöne Worte.
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.2}>
+              <div className="space-y-8">
+                <h3 className="text-2xl font-bold text-white mb-4">Von der Idee zur marktreifen KI-Lösung</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  LINA Voice ist nicht das Ergebnis eines schnellen Tools oder eines Wochenend-Projekts. Sie ist das Ergebnis von:
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Später zog es mich nach Hannover, wo ich bis 2023 lebte. In dieser Zeit veränderte sich mein berufliches Leben komplett. 
-                  Ich entdeckte den Vertrieb für mich und baute mir ein erfolgreiches Online-Business mit LR Health & Beauty auf.
-                </p>
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="glass-card p-4 rounded-xl border border-white/5 flex items-start gap-4">
+                    <div className="bg-white/5 p-2 rounded-lg"><Cpu className="w-5 h-5 text-neon-cyan" /></div>
+                    <div>
+                      <strong className="text-white block">Monatelange Entwicklung</strong>
+                      <span className="text-sm text-gray-400">Tausende Euro Invest in Technologie, Infrastruktur und Stimmen.</span>
+                    </div>
+                  </div>
+                  <div className="glass-card p-4 rounded-xl border border-white/5 flex items-start gap-4">
+                    <div className="bg-white/5 p-2 rounded-lg"><MessageSquare className="w-5 h-5 text-neon-cyan" /></div>
+                    <div>
+                      <strong className="text-white block">Hunderte echte Interaktionen</strong>
+                      <span className="text-sm text-gray-400">Tests im realen LR Vertriebsalltag mit einem großen Team.</span>
+                    </div>
+                  </div>
+                  <div className="glass-card p-4 rounded-xl border border-white/5 flex items-start gap-4">
+                    <div className="bg-white/5 p-2 rounded-lg"><Rocket className="w-5 h-5 text-neon-cyan" /></div>
+                    <div>
+                      <strong className="text-white block">Optimierung bis zur Reife</strong>
+                      <span className="text-sm text-gray-400">Erst als LINA stabil lief, haben wir sie für Unternehmer freigegeben.</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              <div className="pl-6 border-l-4 border-primary/20">
-                <h3 className="text-xl font-bold text-primary mb-4">Das Problem im Business</h3>
-                <p className="text-muted-foreground mb-4">
-                  Als Führungskraft mit tausenden Partnern im Team kannte ich die täglichen Herausforderungen nur zu gut:
-                </p>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-center gap-2"><Briefcase className="w-4 h-4 text-primary" /> Ständige Erreichbarkeit wird erwartet</li>
-                  <li className="flex items-center gap-2"><Briefcase className="w-4 h-4 text-primary" /> Wiederkehrende Fragen rauben Zeit</li>
-                  <li className="flex items-center gap-2"><Briefcase className="w-4 h-4 text-primary" /> Mitarbeiter sind teuer und schwer zu finden</li>
-                </ul>
-              </div>
-
-              <div>
-                <h2 className="text-3xl font-heading font-bold text-primary mb-6">Der Weg zur KI.</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  2023 erfüllten meine Frau und ich uns einen Traum: Wir wanderten mit unserem Hund nach Mallorca aus. 
-                  Mein Sohn (Jahrgang 1999) ist mittlerweile erwachsen und geht seinen eigenen Weg.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  Hier auf der Insel hatte ich die Ruhe, mich tief in ein neues Thema einzuarbeiten: Künstliche Intelligenz. 
-                  Ich bin kein studierter Informatiker. Ich bin Autodidakt. Ich habe mir alles selbst beigebracht – mit Hilfe von KI.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Ich baute Landingpages, Websites, Funnels und erstellte Social Media Content – alles KI-gestützt. 
-                  Dann entwickelte ich den ersten Lina Chatbot für mein LR-Team. Er läuft seit März 2025 stabil und entlastet uns täglich.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-3xl font-heading font-bold text-primary mb-6">Warum Lina Voice?</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  Ich sah, wie viele Unternehmer – vom Friseur bis zum Handwerker – mit der Digitalisierung kämpfen. 
-                  Sie haben keine Zeit, sich monatelang einzuarbeiten wie ich. Sie brauchen eine Lösung, die einfach funktioniert.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Deshalb habe ich Lina Voice gegründet. Nicht als Tech-Startup aus dem Silicon Valley, sondern als Lösung von einem Unternehmer für Unternehmer. 
-                  Ehrlich, transparent und bodenständig.
-                </p>
-              </div>
-            </div>
+            </ScrollReveal>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Values */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-12 text-primary">Wofür wir stehen.</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="border-border shadow-sm hover:shadow-md transition-all">
-              <CardContent className="pt-6">
-                <Globe className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">Bodenständigkeit</h3>
-                <p className="text-muted-foreground text-sm">
-                  Wir versprechen keine Wunder. Wir liefern Werkzeuge, die funktionieren.
+        {/* What We Do */}
+        <section className="mb-32">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-white">Was wir heute für Unternehmer tun</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                Unser Fokus ist klar: Wir bauen Systeme, mit denen Unternehmer weniger Chaos und mehr Struktur haben.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <ScrollReveal delay={0.1}>
+              <div className="glass-card p-6 rounded-2xl border border-white/10 h-full">
+                <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
+                  <Cpu className="w-6 h-6 text-neon-cyan" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">LINA Voice – die Telefon-KI</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Nimmt Anrufe entgegen, beantwortet Fragen, organisiert Termine. Läuft auf Ultravox v0.7 mit sehr niedriger Latenz.
                 </p>
-              </CardContent>
-            </Card>
-            <Card className="border-border shadow-sm hover:shadow-md transition-all">
-              <CardContent className="pt-6">
-                <Cpu className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">Innovation</h3>
-                <p className="text-muted-foreground text-sm">
-                  Wir nutzen die beste Technologie (Ultravox v0.7), machen sie aber für jeden nutzbar.
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="glass-card p-6 rounded-2xl border border-white/10 h-full">
+                <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
+                  <Code className="w-6 h-6 text-neon-cyan" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">Webseiten & Funnels</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Wir bauen Seiten, die LINA flankieren: Landingpages, Formulare und Automatisierungen – abgestimmt auf dein Geschäft.
                 </p>
-              </CardContent>
-            </Card>
-            <Card className="border-border shadow-sm hover:shadow-md transition-all">
-              <CardContent className="pt-6">
-                <Heart className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h3 className="font-bold text-lg mb-2">Familie & Freiheit</h3>
-                <p className="text-muted-foreground text-sm">
-                  Technologie soll uns nicht fesseln, sondern frei machen für das, was wirklich zählt.
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.3}>
+              <div className="glass-card p-6 rounded-2xl border border-white/10 h-full">
+                <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
+                  <Rocket className="w-6 h-6 text-neon-cyan" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">Automatisierte Flows</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  LINA ist eingebunden in Kalender, CRM, WhatsApp und E-Mail. Ein durchdachtes System vom ersten Kontakt bis zum Termin.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.4}>
+              <div className="glass-card p-6 rounded-2xl border border-white/10 h-full">
+                <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center mb-6">
+                  <MessageSquare className="w-6 h-6 text-neon-cyan" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">Social Media & Chat</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Automatisierter Content und Chatbots, die Fragen beantworten und Interessenten vorqualifizieren.
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        {/* Why LR & Business Set */}
+        <section className="mb-32 bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <ScrollReveal>
+              <h2 className="text-3xl font-playfair font-bold text-white mb-6">Warum LR und das Business Set Pro?</h2>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Die Idee, LINA Unternehmern zur Verfügung zu stellen, kommt direkt aus meinem LR Alltag. Ich habe gesehen, wie stark Unternehmer unter Telefon, Terminstress und Anfragen leiden.
+              </p>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Deshalb verknüpfen wir LINA mit dem Business Set Pro:
+              </p>
+              <ul className="space-y-4 text-gray-400">
+                <li className="flex items-start gap-3">
+                  <div className="bg-neon-cyan/20 p-1 rounded mt-1"><CheckCircle className="w-3 h-3 text-neon-cyan" /></div>
+                  <span>Investition von ca. 720 € in ein LR-Produktpaket (Warenwert ~1.500 €)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="bg-neon-cyan/20 p-1 rounded mt-1"><CheckCircle className="w-3 h-3 text-neon-cyan" /></div>
+                  <span>Ca. 30 % Einkaufsvorteil und LR-Partnerstatus</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="bg-neon-cyan/20 p-1 rounded mt-1"><CheckCircle className="w-3 h-3 text-neon-cyan" /></div>
+                  <span><strong>Inklusive Einrichtung von LINA Voice</strong> für dein Unternehmen</span>
+                </li>
+              </ul>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="glass-card p-8 rounded-2xl bg-black/40 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4">Wichtig zu wissen:</h3>
+                <p className="text-gray-400 mb-4 text-sm">
+                  Niemand muss Network Marketing machen. Aber wer zusätzlich zwei weitere Unternehmer mit LINA einführt, kann sich für weitere Vorteile wie das LR-Autokonzept qualifizieren.
+                </p>
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <p className="text-white font-bold mb-2">Entscheidend:</p>
+                  <p className="text-sm text-gray-400">
+                    Das KI-System ist fertig, erprobt und produktionsbereit – und das zu Kosten, bei denen andere Agenturen erst ein Angebot schreiben.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Difference & Values */}
+        <section className="mb-32">
+          <div className="grid md:grid-cols-2 gap-12">
+            <ScrollReveal>
+              <h2 className="text-3xl font-playfair font-bold text-white mb-6">Was uns unterscheidet</h2>
+              <div className="space-y-6">
+                <div className="glass-card p-6 rounded-xl border border-white/10">
+                  <h3 className="text-lg font-bold text-white mb-2">Aus der Praxis</h3>
+                  <p className="text-sm text-gray-400">Wir kommen nicht aus der reinen Beratung, sondern haben LINA in einem echten Team mit echten Kunden getestet.</p>
+                </div>
+                <div className="glass-card p-6 rounded-xl border border-white/10">
+                  <h3 className="text-lg font-bold text-white mb-2">Ganzheitliches System</h3>
+                  <p className="text-sm text-gray-400">Wir bauen Webseiten, Funnels, Flows und KI so, dass sie zusammen funktionieren.</p>
+                </div>
+                <div className="glass-card p-6 rounded-xl border border-white/10">
+                  <h3 className="text-lg font-bold text-white mb-2">Keine langen Projekte</h3>
+                  <p className="text-sm text-gray-400">Statt monatelanger Entwicklung bekommst du ein klares Startpaket und eine fertige Telefon-KI.</p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <h2 className="text-3xl font-playfair font-bold text-white mb-6">Wofür wir stehen</h2>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-4">
+                  <Shield className="w-6 h-6 text-neon-cyan shrink-0" />
+                  <div>
+                    <strong className="text-white block">Technologie, die entlastet</strong>
+                    <span className="text-sm text-gray-400">Strukturen, die Effizienz schaffen – keine Frickel-Lösungen.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <Shield className="w-6 h-6 text-neon-cyan shrink-0" />
+                  <div>
+                    <strong className="text-white block">Datenschutzbewusstsein</strong>
+                    <span className="text-sm text-gray-400">Infrastruktur in Deutschland und transparente Partner.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <Shield className="w-6 h-6 text-neon-cyan shrink-0" />
+                  <div>
+                    <strong className="text-white block">Schnelligkeit & Präzision</strong>
+                    <span className="text-sm text-gray-400">Kurze Reaktionszeiten am Telefon, klare Abläufe dahinter.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <Shield className="w-6 h-6 text-neon-cyan shrink-0" />
+                  <div>
+                    <strong className="text-white block">Ehrliche Kommunikation</strong>
+                    <span className="text-sm text-gray-400">Keine Einkommensversprechen, keine Wunderformeln.</span>
+                  </div>
+                </li>
+              </ul>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Future Outlook */}
+        <section className="mb-20">
+          <ScrollReveal>
+            <div className="glass-card p-12 rounded-3xl text-center max-w-4xl mx-auto border border-electric-purple/30 bg-deep-navy/80 backdrop-blur-xl">
+              <h2 className="text-3xl font-playfair font-bold mb-6 text-white">Blick nach vorne: LINA Light ab 2026</h2>
+              <p className="text-gray-400 mb-8 leading-relaxed max-w-2xl mx-auto">
+                LINA Voice ist erst der Anfang. Ab 2026 planen wir LINA Light – eine vereinfachte Version für alle Berufsgruppen, sowie noch tiefere Automatisierung von Social Media und Content.
+              </p>
+              <p className="text-lg text-white font-medium mb-8">
+                Das Ziel bleibt immer gleich: Entlastung statt Überforderung, Struktur statt Chaos, echte Ergebnisse statt KI-Spielerei.
+              </p>
+              <NeonButton href="/kontakt">
+                Jetzt Kontakt aufnehmen
+              </NeonButton>
+            </div>
+          </ScrollReveal>
+        </section>
+      </div>
+    </main>
   );
 }

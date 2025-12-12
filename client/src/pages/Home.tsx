@@ -144,6 +144,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Teaser Section */}
+      <section className="py-20 bg-deep-navy/30 relative border-b border-white/5">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-block px-4 py-1 rounded-full bg-electric-purple/20 border border-electric-purple/50 text-neon-cyan text-sm font-bold mb-6">
+                Wer wir sind
+              </div>
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6 text-white">
+                Wer hinter <span className="text-neon-cyan">LINA Voice</span> steckt
+              </h2>
+              <p className="text-xl text-gray-400 leading-relaxed mb-8">
+                LINA Voice ist aus einem echten Geschäftsalltag entstanden – nicht im Labor.
+              </p>
+              <div className="glass-card p-8 rounded-2xl border border-white/10 bg-black/20 text-left mb-8">
+                <p className="text-gray-400 mb-4 leading-relaxed">
+                  Ich bin <strong>Mathias Vinzing</strong>, Unternehmer im LR Umfeld. Zusammen mit einem IT-Partner aus Frankfurt habe ich LINA zuerst für mein eigenes Team entwickelt: als Telefon-KI, die Anrufe annimmt, Termine organisiert, Rückrufe vorbereitet und mit unseren Funnels, Webseiten und Automatisierungen zusammenarbeitet.
+                </p>
+                <p className="text-gray-400 leading-relaxed">
+                  Nach Monaten im Echtbetrieb war klar: Diese Lösung ist zu wertvoll, um sie nur intern zu behalten. Heute stellen wir LINA Unternehmern zur Verfügung, die ein fertiges System wollen – statt sich von Agenturen für teure Einzelprojekte die Hose ausziehen zu lassen.
+                </p>
+              </div>
+              <NeonButton href="/about" variant="secondary">
+                Mehr über uns erfahren <ArrowRight className="w-4 h-4 ml-2" />
+              </NeonButton>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Solution Section */}
       <section className="py-20 bg-deep-navy/50 relative">
         <div className="container mx-auto px-4">

@@ -28,7 +28,7 @@ function Router() {
         <Route path="/concept" component={Concept} />
         <Route path="/autokonzept" component={Autokonzept} />
         <Route path="/lr-partner" component={LRPartner} />
-        <Route path="/ueber-uns" component={About} />
+        <Route path="/about" component={About} />
         <Route path="/process" component={Process} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/impressum" component={Impressum} />
