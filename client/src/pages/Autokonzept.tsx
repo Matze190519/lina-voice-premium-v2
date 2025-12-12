@@ -71,7 +71,7 @@ export default function Autokonzept() {
               </div>
               <h3 className="text-xl font-bold mb-4 text-white">Einmalige Qualifikation</h3>
               <p className="text-gray-400">
-                Kein monatlicher Druck. Sie qualifizieren sich <span className="text-white font-bold">ein einziges Mal</span> (z.B. durch Ihr Startpaket) und sind sofort bestellberechtigt.
+                Kein monatlicher Druck. Sie qualifizieren sich <span className="text-white font-bold">ein einziges Mal</span> (durch Ihr Startpaket + 2 Empfehlungen) und sind sofort bestellberechtigt.
               </p>
             </div>
             <div className="glass-card p-8 rounded-2xl border border-white/10 hover:border-neon-cyan/50 transition-colors">
