@@ -1,6 +1,6 @@
 import ScrollReveal from '../components/ScrollReveal';
 import { NeonButton } from '../components/ui/NeonButton';
-import { Check, Phone, Users, Clock, Calendar, ShieldCheck, Car } from 'lucide-react';
+import { Check, Phone, Users, Clock, Calendar, ShieldCheck, Car, X } from 'lucide-react';
 
 export default function Concept() {
   return (
@@ -13,167 +13,185 @@ export default function Concept() {
               Das Geschäftsmodell
             </div>
             <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 leading-tight text-white">
-              Das Konzept hinter <br />
-              <span className="text-neon-cyan">LINA Voice</span>
+              Warum LINA Voice? <br />
+              <span className="text-neon-cyan">Der Vergleich.</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-              LINA Voice ist eine Telefon-KI für Unternehmen, die echte Mitarbeiter am Telefon entlastet – ohne klassische Agentur-Setups für 1.500–2.500 €.
+              Drei Wege zur Telefon-KI. Nur einer ist wirklich unternehmerfreundlich.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Block 1: Einfache Erklärung */}
+        {/* Comparison Table */}
         <ScrollReveal delay={0.1}>
-          <div className="mb-32">
-            <div className="glass-card p-8 md:p-12 rounded-3xl border border-white/10">
-              <h2 className="text-3xl font-playfair font-bold mb-8 text-white">Unser Modell verbindet drei Bausteine:</h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-neon-cyan" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Telefon-KI auf Ultravox-Basis</h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    LINA versteht natürliche Sprache in Echtzeit, kann Fragen beantworten, Termine buchen, Rückrufe planen und Anrufer an Menschen weiterleiten.
-                  </p>
+          <div className="mb-32 overflow-x-auto">
+            <div className="min-w-[900px]">
+              <div className="grid grid-cols-4 gap-4 mb-4 px-6">
+                <div className="font-bold text-gray-500 uppercase text-sm tracking-wider">Kriterium</div>
+                <div className="font-bold text-white text-lg">Klassische Voice-Agentur</div>
+                <div className="font-bold text-white text-lg">DIY mit Ultravox & Twilio</div>
+                <div className="font-bold text-neon-cyan text-lg">LINA Voice (Ultravox v0.7)</div>
+              </div>
+              
+              <div className="space-y-4">
+                {/* Row 1 */}
+                <div className="grid grid-cols-4 gap-4 p-6 rounded-xl bg-white/5 border border-white/10 items-center hover:bg-white/10 transition-colors">
+                  <div className="font-bold text-gray-300">Setup-Kosten</div>
+                  <div className="text-gray-400">2.500 € – 5.000 € einmalig (oft mehr)</div>
+                  <div className="text-gray-400">0 € Setup, aber hoher Eigenaufwand</div>
+                  <div className="text-white font-medium">Kein Agentur-Setup, Einstieg über Business Set Pro (~720 €)</div>
                 </div>
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center">
-                    <Users className="w-6 h-6 text-neon-cyan" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Business Set Pro als Einstieg</h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    Unternehmer investieren einmalig ca. 720 € in ein hochwertiges LR-Produktpaket. Damit sichern sie sich Produkte im Wert von ca. 1.500 €, ca. 30 % Einkaufsvorteil, den LR-Partnerstatus und das Setup von LINA Voice.
-                  </p>
+
+                {/* Row 2 */}
+                <div className="grid grid-cols-4 gap-4 p-6 rounded-xl bg-white/5 border border-white/10 items-center hover:bg-white/10 transition-colors">
+                  <div className="font-bold text-gray-300">Monatliche Fixkosten</div>
+                  <div className="text-gray-400">300 € – 2.500 €/Monat + Minutenpreise</div>
+                  <div className="text-gray-400">Keine Fixkosten, reine Usage-Kosten</div>
+                  <div className="text-white font-medium">Keine Fixkosten, nur Minutenpreise + LR-Vorteile</div>
                 </div>
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-electric-purple/20 rounded-xl flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-neon-cyan" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Klare, nutzungsbasierte Kosten</h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    Die technischen Plattformkosten (Ultravox + Telefondienstleister) zahlt der Unternehmer direkt. Für Einrichtung, Betreuung und laufende Optimierung von LINA fällt nur 0,20 € pro Gesprächsminute an.
-                  </p>
+
+                {/* Row 3 */}
+                <div className="grid grid-cols-4 gap-4 p-6 rounded-xl bg-white/5 border border-white/10 items-center hover:bg-white/10 transition-colors">
+                  <div className="font-bold text-gray-300">Technikaufwand</div>
+                  <div className="text-gray-400">Abstimmung mit Entwicklern, Wochen/Monate</div>
+                  <div className="text-gray-400">Hoher Aufwand: APIs, Doku, alles selbst bauen</div>
+                  <div className="text-white font-medium">IT-Firma aus Frankfurt richtet alles schlüsselfertig ein</div>
+                </div>
+
+                {/* Row 4 */}
+                <div className="grid grid-cols-4 gap-4 p-6 rounded-xl bg-white/5 border border-white/10 items-center hover:bg-white/10 transition-colors">
+                  <div className="font-bold text-gray-300">Modell & Technologie</div>
+                  <div className="text-gray-400">Oft Pipeline (STT → LLM → TTS), spürbare Latenz</div>
+                  <div className="text-gray-400">Ultravox Realtime direkt, aber "roh"</div>
+                  <div className="text-white font-medium">Ultravox v0.7 (GLM 4.6, RAG, Tools) + fertige Branchen-Dialoge</div>
+                </div>
+
+                {/* Row 5 */}
+                <div className="grid grid-cols-4 gap-4 p-6 rounded-xl bg-white/5 border border-white/10 items-center hover:bg-white/10 transition-colors">
+                  <div className="font-bold text-gray-300">Datenschutz</div>
+                  <div className="text-gray-400">Oft intransparente Blackbox</div>
+                  <div className="text-gray-400">Selbst zuständig für DSGVO, DPA etc.</div>
+                  <div className="text-white font-medium">Infrastruktur in D, Ultravox-USA mit DPA, transparente Abrechnung</div>
+                </div>
+
+                {/* Row 6 */}
+                <div className="grid grid-cols-4 gap-4 p-6 rounded-xl bg-white/5 border border-white/10 items-center hover:bg-white/10 transition-colors">
+                  <div className="font-bold text-gray-300">Für wen geeignet?</div>
+                  <div className="text-gray-400">Konzerne mit Budget & interner IT</div>
+                  <div className="text-gray-400">Tech-affine Firmen mit Dev-Team</div>
+                  <div className="text-white font-medium">Mittelstand, Praxen, Handwerk – die Ergebnisse wollen</div>
                 </div>
               </div>
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Block 2: Was bekommt der Unternehmer konkret? */}
+        {/* Pricing Overview */}
         <ScrollReveal delay={0.2}>
           <div className="mb-32">
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-12 text-center text-white">Was Sie mit LINA Voice konkret bekommen</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="glass-card p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan text-sm">1</span>
-                  Individuelles Onboarding
-                </h3>
-                <ul className="space-y-3 text-gray-400">
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Analyse Ihrer aktuellen Telefon-Situation</li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Festlegung der Ziele (z. B. mehr Termine, weniger Unterbrechungen)</li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Auswahl eines Branchen-Templates (z. B. Praxis, Friseur, Handwerk)</li>
-                </ul>
-              </div>
-
-              <div className="glass-card p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan text-sm">2</span>
-                  Technische Einrichtung
-                </h3>
-                <ul className="space-y-3 text-gray-400">
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Anbindung Ihrer Telefonnummer über einen Telefondienstleister</li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Einrichtung eines Ultravox-Agents für Ihr Unternehmen</li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Begrüßung, Erkennung typischer Themen, sinnvolle Rückfragen</li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Anbindung an Kalender, Buchungs-Tool oder CRM – je nach Bedarf</li>
-                </ul>
-              </div>
-
-              <div className="glass-card p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan text-sm">3</span>
-                  Praxis-Dialoge statt Spielerei
-                </h3>
-                <ul className="space-y-3 text-gray-400">
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Terminvereinbarung und -verschiebung</li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Rückruforganisation mit Wunschzeitfenstern</li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Qualifizierung von Anfragen (z. B. Art des Projekts, Dringlichkeit)</li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Weiterleitung an einen Mitarbeitenden, wenn sinnvoll</li>
-                </ul>
-              </div>
-
-              <div className="glass-card p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-neon-cyan/20 text-neon-cyan text-sm">4</span>
-                  Laufende Betreuung
-                </h3>
-                <ul className="space-y-3 text-gray-400">
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Anpassung der Dialoge, wenn sich Abläufe ändern</li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Monitoring und Optimierung von Verständnis & Trefferquote</li>
-                  <li className="flex items-start gap-2"><Check className="w-4 h-4 text-neon-cyan mt-1 shrink-0" /> Unterstützung bei Fragen zu Technik, Datenschutz und Weiterentwicklung</li>
-                </ul>
-              </div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-white">Was kostet LINA Voice wirklich?</h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Kein Lizenz-Dschungel, keine versteckten Setups. Sie zahlen einmalig für den Einstieg – und danach nur, wenn LINA wirklich telefoniert.
+              </p>
             </div>
-          </div>
-        </ScrollReveal>
 
-        {/* Block 3: Für wen lohnt sich das? */}
-        <ScrollReveal delay={0.3}>
-          <div className="mb-32 bg-deep-navy/30 rounded-3xl p-8 md:p-12 border border-white/5">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-playfair font-bold mb-6 text-white">Für welche Unternehmen lohnt sich LINA Voice?</h2>
-                <p className="text-gray-400 mb-6">
-                  LINA Voice ist ideal für Unternehmen, in denen das Telefon regelmäßig klingelt, Mitarbeiter ständig zwischen Kunden vor Ort und Telefon hin- und hergerissen sind, Anfragen verloren gehen oder Termine koordiniert werden müssen.
-                </p>
-                <p className="text-white font-medium italic border-l-4 border-neon-cyan pl-4">
-                  LINA ersetzt keine Mitarbeiter – sie sorgt dafür, dass Ihre Mitarbeiter sich um die wichtigen Gespräche kümmern können, statt in Endlosschleifen aus Standardfragen zu hängen.
-                </p>
+            <div className="glass-card p-8 rounded-3xl border border-white/10 overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="py-4 px-6 text-gray-300 font-bold">Baustein</th>
+                      <th className="py-4 px-6 text-gray-300 font-bold">Wofür genau?</th>
+                      <th className="py-4 px-6 text-gray-300 font-bold">Rechnungssteller</th>
+                      <th className="py-4 px-6 text-gray-300 font-bold">Typische Kosten*</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-400">
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-6 font-medium text-white">Business Set Pro (einmalig)</td>
+                      <td className="py-4 px-6">LR-Produktpaket (~1.500 € Wert) + Partnerstatus + LINA-Start</td>
+                      <td className="py-4 px-6">LR Health & Beauty</td>
+                      <td className="py-4 px-6 text-neon-cyan font-bold">ca. 720 € einmalig</td>
+                    </tr>
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-6 font-medium text-white">Ultravox Realtime</td>
+                      <td className="py-4 px-6">KI-Sprachverarbeitung (STT + LLM + TTS in Echtzeit)</td>
+                      <td className="py-4 px-6">Ultravox direkt</td>
+                      <td className="py-4 px-6">0,05 $/Minute (Pay-as-you-go)</td>
+                    </tr>
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-6 font-medium text-white">Telefondienstleister</td>
+                      <td className="py-4 px-6">Ein- & ausgehende Telefonie (z. B. Twilio)</td>
+                      <td className="py-4 px-6">Dienstleister direkt</td>
+                      <td className="py-4 px-6">ca. 0,01–0,02 $/Minute</td>
+                    </tr>
+                    <tr className="hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-6 font-medium text-white">LINA Voice Service</td>
+                      <td className="py-4 px-6">Einrichtung, Dialogdesign, Optimierung & Support</td>
+                      <td className="py-4 px-6">Ihre IT-Firma</td>
+                      <td className="py-4 px-6 text-neon-cyan font-bold">0,20 €/Minute</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-white mb-4">Typische Beispiele:</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="bg-black/20 p-4 rounded-xl border border-white/5 flex items-center gap-3">
-                    <ShieldCheck className="w-5 h-5 text-neon-cyan" />
-                    <span className="text-gray-300">Arzt- & Zahnarztpraxen</span>
-                  </div>
-                  <div className="bg-black/20 p-4 rounded-xl border border-white/5 flex items-center gap-3">
-                    <Users className="w-5 h-5 text-neon-cyan" />
-                    <span className="text-gray-300">Friseure & Kosmetik</span>
-                  </div>
-                  <div className="bg-black/20 p-4 rounded-xl border border-white/5 flex items-center gap-3">
-                    <Calendar className="w-5 h-5 text-neon-cyan" />
-                    <span className="text-gray-300">Handwerk & Bau</span>
-                  </div>
-                  <div className="bg-black/20 p-4 rounded-xl border border-white/5 flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-neon-cyan" />
-                    <span className="text-gray-300">Agenturen & Beratung</span>
-                  </div>
+              <p className="mt-6 text-xs text-gray-500 italic px-6">
+                *Alle Preise sind Richtwerte, Stand heute. Wechselkurse, Zielnummern und Tarifoptionen können zu Abweichungen führen. Ultravox berechnet 0,05 $/Minute ab der ersten verbrauchten Minute.
+              </p>
+            </div>
+
+            {/* Calculation Example */}
+            <div className="mt-12 max-w-2xl mx-auto glass-card p-8 rounded-2xl border border-neon-cyan/30 bg-deep-navy/50">
+              <h3 className="text-xl font-bold text-white mb-6 text-center">Rechenbeispiel: 100 Minuten LINA Voice im Monat</h3>
+              <div className="space-y-3 text-gray-300 mb-6">
+                <div className="flex justify-between border-b border-white/10 pb-2">
+                  <span>Ultravox (100 Min × 0,05 $)</span>
+                  <span>≈ 5,00 €</span>
+                </div>
+                <div className="flex justify-between border-b border-white/10 pb-2">
+                  <span>Telefondienstleister (100 Min × ~0,015 $)</span>
+                  <span>≈ 1,50 €</span>
+                </div>
+                <div className="flex justify-between border-b border-white/10 pb-2">
+                  <span>LINA Voice Service (100 Min × 0,20 €)</span>
+                  <span>= 20,00 €</span>
+                </div>
+                <div className="flex justify-between pt-2 font-bold text-xl text-neon-cyan">
+                  <span>Gesamtkosten:</span>
+                  <span>≈ 26,50 € zzgl. MwSt.</span>
                 </div>
               </div>
+              <p className="text-center text-sm text-gray-400">
+                Kein Vertrag, keine Grundgebühr: Wenn LINA nicht telefoniert, zahlen Sie faktisch nur Ihre Basis-Anschlüsse.
+              </p>
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Block 4: Hinweis zu LR & Autokonzept */}
-        <ScrollReveal delay={0.4}>
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="glass-card p-8 rounded-2xl border border-white/10 bg-gradient-to-b from-electric-purple/10 to-transparent">
-              <div className="w-12 h-12 bg-electric-purple/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Car className="w-6 h-6 text-neon-cyan" />
-              </div>
-              <h2 className="text-2xl font-playfair font-bold mb-4 text-white">Zusatzvorteile durch LR-Partnerschaft</h2>
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                Mit dem Business Set Pro werden Sie LR-Partner. Dadurch haben Sie – zusätzlich zur Telefon-KI – Zugang zu vergünstigten Produktkonditionen und optionalen Vorteilen wie dem LR-Autokonzept, bei dem Sie sich bei entsprechender Qualifikation für besonders günstige Leasingkonditionen auf ausgewählte Fahrzeuge bewerben können.
-              </p>
-              <p className="text-sm text-gray-500 italic">
-                Details zu diesen Vorteilen klären wir gemeinsam im Gespräch – immer auf Basis der aktuellen offiziellen LR-Unterlagen.
-              </p>
-              <div className="mt-8">
-                <NeonButton href="/autokonzept">
-                  Mehr zum Autokonzept
-                </NeonButton>
+        {/* Tech Stack Highlight */}
+        <ScrollReveal delay={0.3}>
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <div className="glass-card p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-electric-purple/10 to-transparent">
+              <h2 className="text-2xl font-playfair font-bold mb-6 text-white">Warum LINA + Ultravox v0.7?</h2>
+              <div className="grid md:grid-cols-3 gap-8 text-left">
+                <div>
+                  <h4 className="font-bold text-neon-cyan mb-2">Technologie</h4>
+                  <p className="text-sm text-gray-400">
+                    LINA läuft auf Ultravox v0.7 – basierend auf GLM 4.6, mit 26 Sprachen, RAG, Tool-Calling und extrem niedriger Latenz.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-neon-cyan mb-2">Setup & Betreuung</h4>
+                  <p className="text-sm text-gray-400">
+                    Statt teurer Agenturprojekte bekommen Sie eine fertig konfigurierte Telefon-KI – eingerichtet von einer deutschen IT-Firma.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-neon-cyan mb-2">Kostenmodell</h4>
+                  <p className="text-sm text-gray-400">
+                    Keine fünfstelligen Setup-Gebühren, keine teuren Lizenzen. Einmaliger Einstieg, danach minutengenaue Abrechnung.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
